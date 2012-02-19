@@ -10,15 +10,12 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel1" min="-2" pref="1148" max="-2" attributes="0"/>
+              <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
+              <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -33,32 +30,33 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="categoryPanel" max="32767" attributes="1"/>
-                          <Component id="logPanel" alignment="0" min="-2" max="-2" attributes="1"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="1">
-                              <EmptySpace min="467" pref="467" max="467" attributes="0"/>
-                              <Component id="valuePanel" max="32767" attributes="0"/>
+                          <Component id="logPanel" min="-2" max="-2" attributes="2"/>
+                          <Group type="102" attributes="0">
+                              <Component id="categoryPanel" min="-2" max="-2" attributes="2"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
-                          <Component id="featurePanel" alignment="1" min="-2" pref="897" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="1076" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace pref="475" max="32767" attributes="1"/>
+                              <Component id="valuePanel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="featurePanel" pref="929" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="logPanel" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="20" pref="20" max="20" attributes="0"/>
-                              <Component id="valuePanel" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="valuePanel" min="-2" max="-2" attributes="2"/>
+                          <Component id="logPanel" alignment="1" min="-2" max="-2" attributes="2"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="categoryPanel" max="32767" attributes="0"/>
                           <Component id="featurePanel" alignment="0" pref="566" max="32767" attributes="0"/>
@@ -77,12 +75,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="250" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="258" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -112,7 +110,7 @@
                               <Component id="nutsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="meatLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="breadLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="categoryLabel" alignment="0" pref="230" max="32767" attributes="0"/>
+                              <Component id="categoryLabel" alignment="0" pref="238" max="32767" attributes="0"/>
                               <Component id="drinksLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="fishLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="fruitLabel" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -120,11 +118,11 @@
                               <Component id="flourLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="favouriteLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="173" max="32767" attributes="0"/>
+                                  <EmptySpace pref="181" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="allProductsLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="141" max="32767" attributes="0"/>
+                                  <EmptySpace pref="149" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -301,7 +299,7 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="210" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="218" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -340,12 +338,12 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="461" max="32767" attributes="0"/>
+                                      <EmptySpace pref="493" max="32767" attributes="0"/>
                                       <Component id="searchPanel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jPanel2" pref="857" max="32767" attributes="0"/>
+                                      <Component id="jPanel2" pref="889" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -453,7 +451,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="187" max="32767" attributes="0"/>
+                          <EmptySpace pref="211" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="toShoppingCartLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="toShoppingCartLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -469,7 +467,7 @@
                           <Component id="toShoppingCartLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="toShoppingCartLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="62" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -513,6 +511,6 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-82,0,0,4,124"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-82,0,0,4,-93"/>
   </AuxValues>
 </Form>
