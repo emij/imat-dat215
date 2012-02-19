@@ -1,0 +1,518 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7">
+  <NonVisualComponents>
+    <Container class="javax.swing.JPanel" name="mainPanel">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="mainPanel" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" pref="1148" max="-2" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel1">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanel1" noResource="true"/>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="categoryPanel" max="32767" attributes="1"/>
+                          <Component id="logPanel" alignment="0" min="-2" max="-2" attributes="1"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="1">
+                              <EmptySpace min="467" pref="467" max="467" attributes="0"/>
+                              <Component id="valuePanel" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="featurePanel" alignment="1" min="-2" pref="897" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="1076" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="logPanel" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="20" pref="20" max="20" attributes="0"/>
+                              <Component id="valuePanel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="categoryPanel" max="32767" attributes="0"/>
+                          <Component id="featurePanel" alignment="0" pref="566" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="logPanel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" resourceKey="logPanel.background"/>
+                <Property name="name" type="java.lang.String" value="logPanel" noResource="true"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="250" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+            </Container>
+            <Container class="javax.swing.JPanel" name="categoryPanel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" resourceKey="categoryPanel.background"/>
+                <Property name="foreground" type="java.awt.Color" resourceKey="categoryPanel.foreground"/>
+                <Property name="font" type="java.awt.Font" resourceKey="categoryPanel.font"/>
+                <Property name="name" type="java.lang.String" value="categoryPanel" noResource="true"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="helpPanel" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="historyLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="sweetsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="potatoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="pastaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="nutsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="meatLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="breadLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="categoryLabel" alignment="0" pref="230" max="32767" attributes="0"/>
+                              <Component id="drinksLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="fishLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="fruitLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="milkLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="flourLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="favouriteLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="173" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="allProductsLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="141" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="categoryLabel" min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="breadLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="drinksLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="fishLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="fruitLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="meatLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="milkLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="flourLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="nutsLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="pastaLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="potatoLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="sweetsLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="57" max="32767" attributes="0"/>
+                          <Component id="allProductsLabel" min="-2" pref="27" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="favouriteLabel" min="-2" pref="28" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="historyLabel" min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="helpPanel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="java.awt.Label" name="categoryLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="categoryLabel.font"/>
+                    <Property name="name" type="java.lang.String" value="categoryLabel" noResource="true"/>
+                    <Property name="text" type="java.lang.String" resourceKey="categoryLabel.text"/>
+                  </Properties>
+                  <AccessibilityProperties>
+                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" resourceKey="categoryLabel.AccessibleContext.accessibleName"/>
+                  </AccessibilityProperties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="breadLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="breadLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="breadLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="breadLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="breadLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="drinksLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="drinksLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="drinksLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="drinksLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="drinksLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="fishLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="fishLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="fishLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="fishLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="fishLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="fruitLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="fruitLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="fruitLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="fruitLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="fruitLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="meatLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="meatLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="meatLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="meatLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="meatLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="milkLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="milkLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="milkLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="milkLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="milkLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="flourLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="flourLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="flourLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="flourLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="flourLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="nutsLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="nutsLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="nutsLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="nutsLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="nutsLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="pastaLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="pastaLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="pastaLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="pastaLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="pastaLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="potatoLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="potatoLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="potatoLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="potatoLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="potatoLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="sweetsLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="sweetsLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="sweetsLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="sweetsLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="sweetsLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="allProductsLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="allProductsLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="allProductsLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="allProductsLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="allProductsLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="favouriteLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="favouriteLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="favouriteLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="favouriteLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="favouriteLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="historyLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="historyLabel.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="historyLabel.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="historyLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="historyLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JPanel" name="helpPanel">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="helpPanel" noResource="true"/>
+                  </Properties>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace min="0" pref="210" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <EmptySpace min="0" pref="80" max="32767" attributes="0"/>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="featurePanel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" resourceKey="featurePanel.background"/>
+                <Property name="name" type="java.lang.String" value="featurePanel" noResource="true"/>
+              </Properties>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="categoryBigPanel">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" resourceKey="categoryBigPanel.background"/>
+                    <Property name="name" type="java.lang.String" value="categoryBigPanel" noResource="true"/>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                      <CardConstraints cardName="card2"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="461" max="32767" attributes="0"/>
+                                      <Component id="searchPanel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jPanel2" pref="857" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jButton1" min="-2" max="-2" attributes="1"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                      <Component id="searchPanel" min="-2" max="-2" attributes="1"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                              <Component id="jPanel2" pref="478" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JButton" name="jButton1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" resourceKey="jButton1.text"/>
+                        <Property name="name" type="java.lang.String" value="jButton1" noResource="true"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JPanel" name="jPanel2">
+                      <Properties>
+                        <Property name="foreground" type="java.awt.Color" resourceKey="jPanel2.foreground"/>
+                        <Property name="name" type="java.lang.String" value="jPanel2" noResource="true"/>
+                      </Properties>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+                    </Container>
+                    <Container class="javax.swing.JPanel" name="searchPanel">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" resourceKey="searchPanel.background"/>
+                        <Property name="name" type="java.lang.String" value="searchPanel" noResource="true"/>
+                      </Properties>
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="searchLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="textField1" pref="227" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="textField1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="searchLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                      <SubComponents>
+                        <Component class="java.awt.Label" name="searchLabel">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" resourceKey="searchLabel.font"/>
+                            <Property name="name" type="java.lang.String" value="searchLabel" noResource="true"/>
+                            <Property name="text" type="java.lang.String" resourceKey="searchLabel.text"/>
+                          </Properties>
+                        </Component>
+                        <Component class="java.awt.TextField" name="textField1">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" resourceKey="textField1.background"/>
+                            <Property name="font" type="java.awt.Font" resourceKey="textField1.font"/>
+                            <Property name="name" type="java.lang.String" value="textField1" noResource="true"/>
+                            <Property name="text" type="java.lang.String" resourceKey="textField1.text"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textField1ActionPerformed"/>
+                          </Events>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="valuePanel">
+              <Properties>
+                <Property name="background" type="java.awt.Color" resourceKey="valuePanel.background"/>
+                <Property name="name" type="java.lang.String" value="valuePanel" noResource="true"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="187" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="toShoppingCartLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="toShoppingCartLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="toShoppingCartLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="toShoppingCartLabel2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="toShoppingCartLabel1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="toShoppingCartLabel1.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="toShoppingCartLabel1.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="toShoppingCartLabel1.text"/>
+                    <Property name="name" type="java.lang.String" value="toShoppingCartLabel1" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="toShoppingCartLabel2">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="toShoppingCartLabel2.font"/>
+                    <Property name="foreground" type="java.awt.Color" resourceKey="toShoppingCartLabel2.foreground"/>
+                    <Property name="text" type="java.lang.String" resourceKey="toShoppingCartLabel2.text"/>
+                    <Property name="name" type="java.lang.String" value="toShoppingCartLabel2" noResource="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="component" type="javax.swing.JComponent" editor="org.netbeans.modules.form.ComponentChooserEditor">
+      <ComponentRef name="mainPanel"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-82,0,0,4,124"/>
+  </AuxValues>
+</Form>
