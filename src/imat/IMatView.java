@@ -4,7 +4,7 @@
 
 package imat;
 
-import java.awt.Dimension;
+import java.awt.*;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
@@ -17,6 +17,7 @@ import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import se.chalmers.ait.dat215.project.ProductCategory;
+import javax.swing.*;
 
 /**
  * The application's main frame.
@@ -28,10 +29,17 @@ public class IMatView extends FrameView {
         
         initComponents();
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
-        CategoryCard card = new CategoryCard();
-        categorySmallPanel.add(new CategoryCard(), "card1");
-        
+        categorySmallPanel.add(new CategoryGridPanel(), "card1");
+        categorySmallPanel.add(new CategoryCard(), "card2");
    
+    }
+    
+    /* Send the string of the panel you want the cardlayout to show
+     * and this method fixes it for you.
+     */
+    public void changePanel(String panel) {
+        CardLayout c = (CardLayout)(categorySmallPanel.getLayout());
+        c.show(categorySmallPanel, panel);
     }
 
     @Action
@@ -43,6 +51,10 @@ public class IMatView extends FrameView {
         }
         IMatApp.getApplication().show(aboutBox);
     }
+    /*
+    public JPanel getJPanel2() {
+        return jPanel2;
+    }*/
 
     /** This method is called from within the constructor to
      * initialize the form.

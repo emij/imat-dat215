@@ -6,6 +6,7 @@ package imat;
 
 import java.awt.*;
 import javax.swing.*;
+import se.chalmers.ait.dat215.project.*;
 
 /**
  *
@@ -13,41 +14,43 @@ import javax.swing.*;
  */
 public class GridPanel extends JPanel {
 
-private JPanel panel1 = new JPanel();
-private JPanel panel2 = new JPanel();
-private JPanel panel3 = new JPanel();
-private JPanel panel4 = new JPanel();
-private JPanel panel5 = new JPanel(); 
-private JPanel panel6 = new JPanel();
-private JPanel panel7 = new JPanel();
-private JPanel panel8 = new JPanel();
-private JPanel panel9 = new JPanel();
-private JPanel panel10 = new JPanel();
-private JPanel panel11 = new JPanel();
-private JPanel panel12 = new JPanel();
+private JPanel[] panelArr;
+private JButton[] buttonArr;
+private Dimension buttonDimension = new Dimension(160,130);
+private IMatDataHandler data;
 
-	public GridPanel() {
+/**
+ * 
+ * @param grids how many grids you want in your panel
+ */
+	public GridPanel(int grids) {
+                data = IMatDataHandler.getInstance();
+            
 		setLayout(new GridLayout(3, 4, 10, 10));
+                panelArr = new JPanel[grids];
+                buttonArr = new JButton[grids];
 		
-		//Add all panels to the grid
-		add(panel1);
-		add(panel2);
-		add(panel3);
-		add(panel4);
-		add(panel5);
-		add(panel6);
-		add(panel7);
-		add(panel8);
-		add(panel9);
-		add(panel10);
-		add(panel11);
-		add(panel12);
-                
-                //panel1.setBackground(Color.);
-                panel2.setBackground(Color.blue);
-                panel5.setBackground(Color.black);
-                
-
-		
-	}
+		//Add all panels to the grid et.c
+                for(int i = 0; i < grids; i++) {
+                    panelArr[i] = new JPanel();
+                    add(panelArr[i]);
+                    panelArr[i].setBackground(Color.WHITE);
+                    buttonArr[i] = new JButton("");
+                    buttonArr[i].setLocation(10,15);
+                    buttonArr[i].setPreferredSize(buttonDimension);
+                    panelArr[i].add(buttonArr[i]);
+                }
+      	}
+        
+        public JPanel[] getPanelArr() {
+            return panelArr;
+        }
+        
+        public JButton[] getButtonArr() {
+            return buttonArr;
+        }
+        
+        public void setButtonImage(JButton b, ImageIcon im) {
+            b.setIcon(im);
+        }
 }

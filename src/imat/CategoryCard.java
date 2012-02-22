@@ -6,11 +6,7 @@ package imat;
 
 import java.awt.*;
 import java.util.List;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.border.EtchedBorder;
+import javax.swing.*;
 import se.chalmers.ait.dat215.project.*;
 
 /**
@@ -58,22 +54,13 @@ public class CategoryCard extends JPanel {
             antal++;
             }*/
         panels[0] = new JPanel();
-        JLabel productPicture = new JLabel();
-        
-            //productPicture.setPreferredSize(iconDimension);
-            productPicture.setIcon(data.getImageIcon(products.get(0)));
-            //panels[0].add(productPicture);
-            panels[0].setMaximumSize(panelDimension);
-            //add(panels[0]);
-            /*
-            panels[1] = new JPanel();
-            productPicture.setPreferredSize(iconDimension);
-            productPicture.setIcon(data.getImageIcon(products.get(1)));
-            panels[1].add(productPicture);
-            add(panels[0]);
-            add(panels[1]);
-        System.out.println("" + products.size() + "::::" + antal);*/
-        
+        JLabel productPicture = new JLabel();  
+        productPicture.setPreferredSize(iconDimension);
+        //productPicture.setIcon(data.getImageIcon(products.get(0)), iconDimension);
+        panels[0].add(productPicture);
+        panels[0].setMaximumSize(panelDimension);
+        add(panels[0]);
+        System.out.println("" + products.size() + "::::" + antal);        
     }
 }
     

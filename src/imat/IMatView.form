@@ -36,7 +36,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="valuePanel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="featurePanel" pref="923" max="32767" attributes="0"/>
+                          <Component id="featurePanel" pref="919" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -102,7 +102,7 @@
                               <Component id="nutsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="meatLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="breadLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="categoryLabel" alignment="0" pref="240" max="32767" attributes="0"/>
+                              <Component id="categoryLabel" alignment="0" pref="248" max="32767" attributes="0"/>
                               <Component id="drinksLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="fishLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="fruitLabel" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -110,11 +110,11 @@
                               <Component id="flourLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="favouriteLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="181" max="32767" attributes="0"/>
+                                  <EmptySpace pref="191" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="allProductsLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="150" max="32767" attributes="0"/>
+                                  <EmptySpace pref="159" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -147,7 +147,7 @@
                           <Component id="potatoLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="sweetsLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="63" max="32767" attributes="0"/>
+                          <EmptySpace pref="57" max="32767" attributes="0"/>
                           <Component id="allProductsLabel" min="-2" pref="27" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="favouriteLabel" min="-2" pref="28" max="-2" attributes="0"/>
@@ -343,12 +343,16 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Component id="backButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="519" max="32767" attributes="0"/>
+                                      <EmptySpace pref="483" max="32767" attributes="0"/>
                                       <Component id="searchPanel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
                                       <Component id="categorySmallPanel" pref="899" max="32767" attributes="0"/>
+=======
+                                      <Component id="jPanel2" pref="879" max="32767" attributes="0"/>
+>>>>>>> updates on gridpanel
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
