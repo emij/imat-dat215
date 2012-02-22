@@ -69,9 +69,10 @@ public class IMatView extends FrameView {
         favouriteLabel = new javax.swing.JLabel();
         historyLabel = new javax.swing.JLabel();
         helpPanel = new javax.swing.JPanel();
+        helpButton = new javax.swing.JButton();
         featurePanel = new javax.swing.JPanel();
         categoryBigPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         searchPanel = new javax.swing.JPanel();
         searchLabel = new java.awt.Label();
@@ -180,15 +181,19 @@ public class IMatView extends FrameView {
 
         helpPanel.setName("helpPanel"); // NOI18N
 
+        helpButton.setText(resourceMap.getString("helpButton.text")); // NOI18N
+        helpButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        helpButton.setName("helpButton"); // NOI18N
+
         org.jdesktop.layout.GroupLayout helpPanelLayout = new org.jdesktop.layout.GroupLayout(helpPanel);
         helpPanel.setLayout(helpPanelLayout);
         helpPanelLayout.setHorizontalGroup(
             helpPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 218, Short.MAX_VALUE)
+            .add(helpButton, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
         );
         helpPanelLayout.setVerticalGroup(
             helpPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 80, Short.MAX_VALUE)
+            .add(helpButton, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
         );
 
         org.jdesktop.layout.GroupLayout categoryPanelLayout = new org.jdesktop.layout.GroupLayout(categoryPanel);
@@ -208,7 +213,7 @@ public class IMatView extends FrameView {
                     .add(nutsLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(meatLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(breadLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(categoryLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .add(categoryLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
                     .add(drinksLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(fishLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(fruitLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -219,7 +224,7 @@ public class IMatView extends FrameView {
                         .addContainerGap(181, Short.MAX_VALUE))
                     .add(categoryPanelLayout.createSequentialGroup()
                         .add(allProductsLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(149, Short.MAX_VALUE))))
+                        .addContainerGap(150, Short.MAX_VALUE))))
         );
         categoryPanelLayout.setVerticalGroup(
             categoryPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -248,7 +253,7 @@ public class IMatView extends FrameView {
                 .add(potatoLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(sweetsLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 63, Short.MAX_VALUE)
                 .add(allProductsLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(favouriteLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -268,8 +273,8 @@ public class IMatView extends FrameView {
         categoryBigPanel.setBackground(resourceMap.getColor("categoryBigPanel.background")); // NOI18N
         categoryBigPanel.setName("categoryBigPanel"); // NOI18N
 
-        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
-        jButton1.setName("jButton1"); // NOI18N
+        backButton.setText(resourceMap.getString("backButton.text")); // NOI18N
+        backButton.setName("backButton"); // NOI18N
 
         jPanel2.setForeground(resourceMap.getColor("jPanel2.foreground")); // NOI18N
         jPanel2.setName("jPanel2"); // NOI18N
@@ -286,9 +291,9 @@ public class IMatView extends FrameView {
         textField1.setFont(resourceMap.getFont("textField1.font")); // NOI18N
         textField1.setName("textField1"); // NOI18N
         textField1.setText(resourceMap.getString("textField1.text")); // NOI18N
-        textField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textField1ActionPerformed(evt);
+        textField1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                textField1FocusGained(evt);
             }
         });
 
@@ -321,12 +326,12 @@ public class IMatView extends FrameView {
                 .add(categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(categoryBigPanelLayout.createSequentialGroup()
                         .add(26, 26, 26)
-                        .add(jButton1)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 493, Short.MAX_VALUE)
+                        .add(backButton)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 519, Short.MAX_VALUE)
                         .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(categoryBigPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 889, Short.MAX_VALUE)))
+                        .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         categoryBigPanelLayout.setVerticalGroup(
@@ -335,7 +340,7 @@ public class IMatView extends FrameView {
                 .add(categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(categoryBigPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .add(jButton1))
+                        .add(backButton))
                     .add(categoryBigPanelLayout.createSequentialGroup()
                         .add(8, 8, 8)
                         .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
@@ -387,16 +392,11 @@ public class IMatView extends FrameView {
             .add(jPanel1Layout.createSequentialGroup()
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(logPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jPanel1Layout.createSequentialGroup()
-                        .add(categoryPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)))
+                    .add(categoryPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 475, Short.MAX_VALUE)
-                        .add(valuePanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 929, Short.MAX_VALUE))))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, valuePanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 923, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -407,7 +407,7 @@ public class IMatView extends FrameView {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(categoryPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)))
+                    .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         org.jdesktop.layout.GroupLayout mainPanelLayout = new org.jdesktop.layout.GroupLayout(mainPanel);
@@ -424,12 +424,13 @@ public class IMatView extends FrameView {
         setComponent(mainPanel);
     }// </editor-fold>//GEN-END:initComponents
 
-private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField1ActionPerformed
-    textField1.setText("");
-}//GEN-LAST:event_textField1ActionPerformed
+    private void textField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textField1FocusGained
+        textField1.setText("");
+    }//GEN-LAST:event_textField1FocusGained
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel allProductsLabel;
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel breadLabel;
     private javax.swing.JPanel categoryBigPanel;
     private java.awt.Label categoryLabel;
@@ -440,9 +441,9 @@ private void textField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
     private javax.swing.JLabel fishLabel;
     private javax.swing.JLabel flourLabel;
     private javax.swing.JLabel fruitLabel;
+    private javax.swing.JButton helpButton;
     private javax.swing.JPanel helpPanel;
     private javax.swing.JLabel historyLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel logPanel;
