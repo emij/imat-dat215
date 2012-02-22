@@ -1,0 +1,23 @@
+använd terminalen och se till att du står i mappen där dit projekt ligger.
+
+command				description
+git status			Visar vad som ändrats/filer som 				har skapats
+
+git add .			Används om ni har skapat fil/filer.
+
+git commit -a -m 'text'		Lägger in alla ändringar i ditt git
+				repository, med kommentar (skriv gärna vad ni
+				har gjort i koden)
+
+git fetch			Hämtar ändringar från servern utan att lägga till
+				dem i ditt workspace (de finns då i branchen 
+				origin/master)
+
+git rebase origin/master	lägger till redan nedtankade ändringar i ditt workspace.
+				Gör inte någon merge, utan ser till att dina lokala
+				commits läggs in i logisk följd.
+
+git push origin master		Laddar upp dina ändringar till servern
+
+lägg gärna till/ändra om ni kommer på något/hittar fel
+
