@@ -281,7 +281,7 @@ public class IMatView extends FrameView {
         backButton.setName("backButton"); // NOI18N
 
         categorySmallPanel.setForeground(resourceMap.getColor("categorySmallPanel.foreground")); // NOI18N
-        categorySmallPanel.setMaximumSize(new java.awt.Dimension(500, 500));
+        categorySmallPanel.setMaximumSize(new java.awt.Dimension(200, 200));
         categorySmallPanel.setName("categorySmallPanel"); // NOI18N
         categorySmallPanel.setLayout(new java.awt.CardLayout());
 

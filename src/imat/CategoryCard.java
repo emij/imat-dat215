@@ -8,6 +8,7 @@ import java.awt.*;
 import java.util.List;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 import se.chalmers.ait.dat215.project.*;
@@ -21,14 +22,14 @@ public class CategoryCard extends JPanel {
     JPanel[] panels;
     List<Product> products;
     Dimension iconDimension = new Dimension(55,55);
-    Dimension panelDimension = new Dimension(400,60);
-    Dimension windowDimension = new Dimension(400,400);
+    Dimension panelDimension = new Dimension(4,6);
+    Dimension windowDimension = new Dimension(40,40);
     ProductCategory productCategory;
     
     int antal = 0;
     
     public CategoryCard(){
-        setLayout(new GridLayout(10, 1));
+        setLayout(new FlowLayout(FlowLayout.TRAILING));
         productCategory = productCategory.BERRY;
         fillPanels(productCategory); 
         this.setMaximumSize(windowDimension);
@@ -57,12 +58,13 @@ public class CategoryCard extends JPanel {
             antal++;
             }*/
         panels[0] = new JPanel();
-        JButton productPicture = new JButton();
+        JLabel productPicture = new JLabel();
+        
             //productPicture.setPreferredSize(iconDimension);
             productPicture.setIcon(data.getImageIcon(products.get(0)));
-            panels[0].add(productPicture);
+            //panels[0].add(productPicture);
             panels[0].setMaximumSize(panelDimension);
-            add(panels[0]);
+            //add(panels[0]);
             /*
             panels[1] = new JPanel();
             productPicture.setPreferredSize(iconDimension);
