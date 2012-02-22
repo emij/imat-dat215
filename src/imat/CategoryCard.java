@@ -6,8 +6,10 @@ package imat;
 
 import java.awt.*;
 import java.util.List;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.border.EtchedBorder;
 import se.chalmers.ait.dat215.project.*;
 
 /**
@@ -18,30 +20,57 @@ public class CategoryCard extends JPanel {
     IMatDataHandler data = IMatDataHandler.getInstance();
     JPanel[] panels;
     List<Product> products;
-    Dimension dimension = new Dimension(50,50);
+    Dimension iconDimension = new Dimension(55,55);
+    Dimension panelDimension = new Dimension(400,60);
+    Dimension windowDimension = new Dimension(400,400);
     ProductCategory productCategory;
     
+    int antal = 0;
+    
     public CategoryCard(){
-        setLayout(new GridLayout(1, 10));
+        setLayout(new GridLayout(10, 1));
         productCategory = productCategory.BERRY;
         fillPanels(productCategory); 
+        this.setMaximumSize(windowDimension);
     }
     
     public CategoryCard(ProductCategory productCategory){
-        setLayout(new GridLayout(1, 10));
+        setLayout(new GridLayout(1, 1));
         fillPanels(productCategory);
+        this.setPreferredSize(windowDimension);
     }
     
     public void fillPanels(ProductCategory productCategory){
-        panels = new JPanel[products.size()];
-        for(int i=0; i < products.size(); i++){
-                panels[i] = new JPanel();
+        products = data.getProducts(productCategory);
+        panels = new JPanel[1];
+        /*for(int i=0; i < products.size(); i++){
+            panels[i] = new JPanel();
+            //panels[i].setPreferredSize(panelDimension);
+            panels[i].setMaximumSize(panelDimension);
             JButton productPicture = new JButton();
-            productPicture.setPreferredSize(dimension);
+            productPicture.setPreferredSize(iconDimension);
             productPicture.setIcon(data.getImageIcon(products.get(i)));
             panels[i].add(productPicture);
+            panels[i].setBorder(new EtchedBorder());
+            panels[i].setAlignmentX(Component.CENTER_ALIGNMENT);
             add(panels[i]);
-        }
+            antal++;
+            }*/
+        panels[0] = new JPanel();
+        JButton productPicture = new JButton();
+            //productPicture.setPreferredSize(iconDimension);
+            productPicture.setIcon(data.getImageIcon(products.get(0)));
+            panels[0].add(productPicture);
+            panels[0].setMaximumSize(panelDimension);
+            add(panels[0]);
+            /*
+            panels[1] = new JPanel();
+            productPicture.setPreferredSize(iconDimension);
+            productPicture.setIcon(data.getImageIcon(products.get(1)));
+            panels[1].add(productPicture);
+            add(panels[0]);
+            add(panels[1]);
+        System.out.println("" + products.size() + "::::" + antal);*/
         
     }
 }

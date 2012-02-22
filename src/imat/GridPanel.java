@@ -43,7 +43,7 @@ private JPanel panel12 = new JPanel();
 		add(panel11);
 		add(panel12);
                 
-                panel1.setBackground(Color.);
+                //panel1.setBackground(Color.);
                 panel2.setBackground(Color.blue);
                 panel5.setBackground(Color.black);
                 

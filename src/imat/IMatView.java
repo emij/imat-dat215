@@ -4,6 +4,7 @@
 
 package imat;
 
+import java.awt.Dimension;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
@@ -15,6 +16,7 @@ import javax.swing.Timer;
 import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
+import se.chalmers.ait.dat215.project.ProductCategory;
 
 /**
  * The application's main frame.
@@ -23,9 +25,11 @@ public class IMatView extends FrameView {
 
     public IMatView(SingleFrameApplication app) {
         super(app);
-
-        initComponents();
         
+        initComponents();
+        categorySmallPanel.setMaximumSize(new Dimension(500,500));
+        CategoryCard card = new CategoryCard();
+        categorySmallPanel.add(new CategoryCard(), "card1");
         
    
     }
@@ -73,7 +77,7 @@ public class IMatView extends FrameView {
         featurePanel = new javax.swing.JPanel();
         categoryBigPanel = new javax.swing.JPanel();
         backButton = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        categorySmallPanel = new javax.swing.JPanel();
         searchPanel = new javax.swing.JPanel();
         searchLabel = new java.awt.Label();
         textField1 = new java.awt.TextField();
@@ -276,9 +280,10 @@ public class IMatView extends FrameView {
         backButton.setText(resourceMap.getString("backButton.text")); // NOI18N
         backButton.setName("backButton"); // NOI18N
 
-        jPanel2.setForeground(resourceMap.getColor("jPanel2.foreground")); // NOI18N
-        jPanel2.setName("jPanel2"); // NOI18N
-        jPanel2.setLayout(new java.awt.CardLayout());
+        categorySmallPanel.setForeground(resourceMap.getColor("categorySmallPanel.foreground")); // NOI18N
+        categorySmallPanel.setMaximumSize(new java.awt.Dimension(500, 500));
+        categorySmallPanel.setName("categorySmallPanel"); // NOI18N
+        categorySmallPanel.setLayout(new java.awt.CardLayout());
 
         searchPanel.setBackground(resourceMap.getColor("searchPanel.background")); // NOI18N
         searchPanel.setName("searchPanel"); // NOI18N
@@ -331,7 +336,7 @@ public class IMatView extends FrameView {
                         .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(categoryBigPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)))
+                        .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         categoryBigPanelLayout.setVerticalGroup(
@@ -345,7 +350,7 @@ public class IMatView extends FrameView {
                         .add(8, 8, 8)
                         .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(21, 21, 21)
-                .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -435,6 +440,7 @@ public class IMatView extends FrameView {
     private javax.swing.JPanel categoryBigPanel;
     private java.awt.Label categoryLabel;
     private javax.swing.JPanel categoryPanel;
+    private javax.swing.JPanel categorySmallPanel;
     private javax.swing.JLabel drinksLabel;
     private javax.swing.JLabel favouriteLabel;
     private javax.swing.JPanel featurePanel;
@@ -445,7 +451,6 @@ public class IMatView extends FrameView {
     private javax.swing.JPanel helpPanel;
     private javax.swing.JLabel historyLabel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel logPanel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel meatLabel;
