@@ -491,7 +491,6 @@ private void searchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:
     private JDialog aboutBox;
 
     public void update(Observable o, Object o1) {
-        System.out.println("card23");
         if(o1 instanceof String){
             String tmp = (String)o1;
             changePanel(tmp);

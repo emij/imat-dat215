@@ -4,11 +4,17 @@
  */
 package imat;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.*;
+import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javax.swing.*;
 
 /**
@@ -24,7 +30,19 @@ public class CategoryGridPanel extends Observable implements ActionListener{
         g = new GridPanel(12);
         buttonArr = g.getButtonArr();
         
-        setButtonImages();
+        String imageName;
+        ImageIcon icon;
+        Image img;
+        for(int i = 0; i < 12; i++) {
+            imageName = "/imat/resources/kategoribilder/cat_" + i + ".png";
+            icon = new ImageIcon(getClass().getResource(imageName));
+            img = icon.getImage();        
+            buttonArr[i].setIcon(new ImageIcon(img.getScaledInstance(160, 130, 0)));
+        }
+        
+        
+        
+
         
         //Add actionlisteners to all buttons
         for(int i = 0; i < 12; i++) {
@@ -55,14 +73,13 @@ public class CategoryGridPanel extends Observable implements ActionListener{
         
         setChanged();
         if(ae.getSource() == buttonArr[0]) {
-            //IMatView.changePanel(breadPanel);
+
         } else if(ae.getSource() == buttonArr[1]) {
-            //changePanel("card2");
+            this.notifyObservers("card2");
         } else if(ae.getSource() == buttonArr[2]) {
             
         } else if(ae.getSource() == buttonArr[3]) {
-            System.out.println("card2");
-            this.notifyObservers("card2");
+            this.notifyObservers("card3");
         } else if(ae.getSource() == buttonArr[4]) {
             
         } else if(ae.getSource() == buttonArr[5]) {

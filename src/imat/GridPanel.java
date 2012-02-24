@@ -33,11 +33,11 @@ private IMatDataHandler data;
                 for(int i = 0; i < 12; i++) {
                     panelArr[i] = new JPanel();
                     add(panelArr[i]);
-                    panelArr[i].setBackground(Color.WHITE);
                 }
                 
 		//Add all panels to the grid et.c
                 for(int i = 0; i < grids; i++) {
+                    panelArr[i].setBackground(Color.WHITE);
                     buttonArr[i] = new JButton("");
                     buttonArr[i].setLocation(10,15);
                     panelArr[i].setOpaque(false);
@@ -54,7 +54,8 @@ private IMatDataHandler data;
             return buttonArr;
         }
         
+        /*
         public void setButtonImage(JButton b, ImageIcon im) {
             b.setIcon(im);
-        }
+        }*/
 }
