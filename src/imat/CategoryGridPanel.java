@@ -30,6 +30,8 @@ public class CategoryGridPanel extends Observable implements ActionListener{
         g = new GridPanel(12);
         buttonArr = g.getButtonArr();
         
+        setButtonImages();
+        /*
         String imageName;
         ImageIcon icon;
         Image img;
@@ -38,11 +40,7 @@ public class CategoryGridPanel extends Observable implements ActionListener{
             icon = new ImageIcon(getClass().getResource(imageName));
             img = icon.getImage();        
             buttonArr[i].setIcon(new ImageIcon(img.getScaledInstance(160, 130, 0)));
-        }
-        
-        
-        
-
+        }*/
         
         //Add actionlisteners to all buttons
         for(int i = 0; i < 12; i++) {
@@ -50,13 +48,10 @@ public class CategoryGridPanel extends Observable implements ActionListener{
         }
     }
     private void setButtonImages(){
-        File dir = new File("src/imat/resources/kategoriknappar/"); 
-        File imageFileNames[] = dir.listFiles();  
-        
-        String path = "resources/kategoriknappar/";
+        String path = "resources/kategoribilder/";
         
         for(int i=0; i<buttonArr.length; i++){
-            buttonArr[i].setIcon(new ImageIcon(getClass().getResource(path + imageFileNames[i+1].getName()))); // +1 är för DS_store-filen, orkar inte krångla..
+            buttonArr[i].setIcon(new ImageIcon(getClass().getResource(path + "cat_" + i + ".png")));
             buttonArr[i].setBorder(null);
         }
     }

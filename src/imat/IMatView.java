@@ -29,6 +29,7 @@ public class IMatView extends FrameView implements Observer{
     CategoryGridPanel c;
     DrinksGridPanel d;
     FruitGridPanel f;
+    SidebarPanel s;
     public IMatView(SingleFrameApplication app) {
         super(app);
 
@@ -37,10 +38,12 @@ public class IMatView extends FrameView implements Observer{
         c = new CategoryGridPanel(this);
         d = new DrinksGridPanel(this);
         f = new FruitGridPanel(this);
+        s = new SidebarPanel(this);
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
         categorySmallPanel.add(c.getPanel(), "card1");
         categorySmallPanel.add(d.getPanel(), "card2");
         categorySmallPanel.add(f.getPanel(), "card3");
+        categoryPanel.add(s.getPanel(), "card1");
     }
     
     /* Send the string of the panel you want the cardlayout to show
@@ -74,23 +77,6 @@ public class IMatView extends FrameView implements Observer{
         jPanel1 = new javax.swing.JPanel();
         logPanel = new javax.swing.JPanel();
         categoryPanel = new javax.swing.JPanel();
-        categoryLabel = new java.awt.Label();
-        breadLabel = new javax.swing.JLabel();
-        drinksLabel = new javax.swing.JLabel();
-        fishLabel = new javax.swing.JLabel();
-        fruitLabel = new javax.swing.JLabel();
-        meatLabel = new javax.swing.JLabel();
-        milkLabel = new javax.swing.JLabel();
-        flourLabel = new javax.swing.JLabel();
-        nutsLabel = new javax.swing.JLabel();
-        pastaLabel = new javax.swing.JLabel();
-        potatoLabel = new javax.swing.JLabel();
-        sweetsLabel = new javax.swing.JLabel();
-        allProductsLabel = new javax.swing.JLabel();
-        favouriteLabel = new javax.swing.JLabel();
-        historyLabel = new javax.swing.JLabel();
-        helpPanel = new javax.swing.JPanel();
-        helpButton = new javax.swing.JButton();
         featurePanel = new javax.swing.JPanel();
         categoryBigPanel = new javax.swing.JPanel();
         backButton = new javax.swing.JButton();
@@ -104,9 +90,10 @@ public class IMatView extends FrameView implements Observer{
 
         mainPanel.setName("mainPanel"); // NOI18N
 
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(IMatView.class);
+        jPanel1.setBackground(resourceMap.getColor("jPanel1.background")); // NOI18N
         jPanel1.setName("jPanel1"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(IMatView.class);
         logPanel.setBackground(resourceMap.getColor("logPanel.background")); // NOI18N
         logPanel.setName("logPanel"); // NOI18N
 
@@ -125,167 +112,7 @@ public class IMatView extends FrameView implements Observer{
         categoryPanel.setForeground(resourceMap.getColor("categoryPanel.foreground")); // NOI18N
         categoryPanel.setFont(resourceMap.getFont("categoryPanel.font")); // NOI18N
         categoryPanel.setName("categoryPanel"); // NOI18N
-
-        categoryLabel.setFont(resourceMap.getFont("categoryLabel.font")); // NOI18N
-        categoryLabel.setName("categoryLabel"); // NOI18N
-        categoryLabel.setText(resourceMap.getString("categoryLabel.text")); // NOI18N
-
-        breadLabel.setFont(resourceMap.getFont("breadLabel.font")); // NOI18N
-        breadLabel.setForeground(resourceMap.getColor("breadLabel.foreground")); // NOI18N
-        breadLabel.setText(resourceMap.getString("breadLabel.text")); // NOI18N
-        breadLabel.setName("breadLabel"); // NOI18N
-
-        drinksLabel.setFont(resourceMap.getFont("drinksLabel.font")); // NOI18N
-        drinksLabel.setForeground(resourceMap.getColor("drinksLabel.foreground")); // NOI18N
-        drinksLabel.setText(resourceMap.getString("drinksLabel.text")); // NOI18N
-        drinksLabel.setName("drinksLabel"); // NOI18N
-
-        fishLabel.setFont(resourceMap.getFont("fishLabel.font")); // NOI18N
-        fishLabel.setForeground(resourceMap.getColor("fishLabel.foreground")); // NOI18N
-        fishLabel.setText(resourceMap.getString("fishLabel.text")); // NOI18N
-        fishLabel.setName("fishLabel"); // NOI18N
-
-        fruitLabel.setFont(resourceMap.getFont("fruitLabel.font")); // NOI18N
-        fruitLabel.setForeground(resourceMap.getColor("fruitLabel.foreground")); // NOI18N
-        fruitLabel.setText(resourceMap.getString("fruitLabel.text")); // NOI18N
-        fruitLabel.setName("fruitLabel"); // NOI18N
-
-        meatLabel.setFont(resourceMap.getFont("meatLabel.font")); // NOI18N
-        meatLabel.setForeground(resourceMap.getColor("meatLabel.foreground")); // NOI18N
-        meatLabel.setText(resourceMap.getString("meatLabel.text")); // NOI18N
-        meatLabel.setName("meatLabel"); // NOI18N
-
-        milkLabel.setFont(resourceMap.getFont("milkLabel.font")); // NOI18N
-        milkLabel.setForeground(resourceMap.getColor("milkLabel.foreground")); // NOI18N
-        milkLabel.setText(resourceMap.getString("milkLabel.text")); // NOI18N
-        milkLabel.setName("milkLabel"); // NOI18N
-
-        flourLabel.setFont(resourceMap.getFont("flourLabel.font")); // NOI18N
-        flourLabel.setForeground(resourceMap.getColor("flourLabel.foreground")); // NOI18N
-        flourLabel.setText(resourceMap.getString("flourLabel.text")); // NOI18N
-        flourLabel.setName("flourLabel"); // NOI18N
-
-        nutsLabel.setFont(resourceMap.getFont("nutsLabel.font")); // NOI18N
-        nutsLabel.setForeground(resourceMap.getColor("nutsLabel.foreground")); // NOI18N
-        nutsLabel.setText(resourceMap.getString("nutsLabel.text")); // NOI18N
-        nutsLabel.setName("nutsLabel"); // NOI18N
-
-        pastaLabel.setFont(resourceMap.getFont("pastaLabel.font")); // NOI18N
-        pastaLabel.setForeground(resourceMap.getColor("pastaLabel.foreground")); // NOI18N
-        pastaLabel.setText(resourceMap.getString("pastaLabel.text")); // NOI18N
-        pastaLabel.setName("pastaLabel"); // NOI18N
-
-        potatoLabel.setFont(resourceMap.getFont("potatoLabel.font")); // NOI18N
-        potatoLabel.setForeground(resourceMap.getColor("potatoLabel.foreground")); // NOI18N
-        potatoLabel.setText(resourceMap.getString("potatoLabel.text")); // NOI18N
-        potatoLabel.setName("potatoLabel"); // NOI18N
-
-        sweetsLabel.setFont(resourceMap.getFont("sweetsLabel.font")); // NOI18N
-        sweetsLabel.setForeground(resourceMap.getColor("sweetsLabel.foreground")); // NOI18N
-        sweetsLabel.setText(resourceMap.getString("sweetsLabel.text")); // NOI18N
-        sweetsLabel.setName("sweetsLabel"); // NOI18N
-
-        allProductsLabel.setFont(resourceMap.getFont("allProductsLabel.font")); // NOI18N
-        allProductsLabel.setForeground(resourceMap.getColor("allProductsLabel.foreground")); // NOI18N
-        allProductsLabel.setText(resourceMap.getString("allProductsLabel.text")); // NOI18N
-        allProductsLabel.setName("allProductsLabel"); // NOI18N
-
-        favouriteLabel.setFont(resourceMap.getFont("favouriteLabel.font")); // NOI18N
-        favouriteLabel.setForeground(resourceMap.getColor("favouriteLabel.foreground")); // NOI18N
-        favouriteLabel.setText(resourceMap.getString("favouriteLabel.text")); // NOI18N
-        favouriteLabel.setName("favouriteLabel"); // NOI18N
-
-        historyLabel.setFont(resourceMap.getFont("historyLabel.font")); // NOI18N
-        historyLabel.setForeground(resourceMap.getColor("historyLabel.foreground")); // NOI18N
-        historyLabel.setText(resourceMap.getString("historyLabel.text")); // NOI18N
-        historyLabel.setName("historyLabel"); // NOI18N
-
-        helpPanel.setName("helpPanel"); // NOI18N
-
-        helpButton.setText(resourceMap.getString("helpButton.text")); // NOI18N
-        helpButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        helpButton.setName("helpButton"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout helpPanelLayout = new org.jdesktop.layout.GroupLayout(helpPanel);
-        helpPanel.setLayout(helpPanelLayout);
-        helpPanelLayout.setHorizontalGroup(
-            helpPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(helpButton, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
-        );
-        helpPanelLayout.setVerticalGroup(
-            helpPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(helpButton, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-        );
-
-        org.jdesktop.layout.GroupLayout categoryPanelLayout = new org.jdesktop.layout.GroupLayout(categoryPanel);
-        categoryPanel.setLayout(categoryPanelLayout);
-        categoryPanelLayout.setHorizontalGroup(
-            categoryPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(categoryPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(categoryPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(categoryPanelLayout.createSequentialGroup()
-                        .add(helpPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .add(historyLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(sweetsLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(potatoLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(pastaLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(nutsLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(meatLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(breadLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(categoryLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                    .add(drinksLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(fishLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(fruitLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(milkLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(flourLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(categoryPanelLayout.createSequentialGroup()
-                        .add(favouriteLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(191, Short.MAX_VALUE))
-                    .add(categoryPanelLayout.createSequentialGroup()
-                        .add(allProductsLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(159, Short.MAX_VALUE))))
-        );
-        categoryPanelLayout.setVerticalGroup(
-            categoryPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(categoryPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(categoryLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(breadLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(drinksLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(fishLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(fruitLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(meatLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(milkLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(flourLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(nutsLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(pastaLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(potatoLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(sweetsLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 57, Short.MAX_VALUE)
-                .add(allProductsLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(favouriteLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(historyLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(helpPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        categoryLabel.getAccessibleContext().setAccessibleName(resourceMap.getString("categoryLabel.AccessibleContext.accessibleName")); // NOI18N
+        categoryPanel.setLayout(new java.awt.CardLayout());
 
         featurePanel.setBackground(resourceMap.getColor("featurePanel.background")); // NOI18N
         featurePanel.setName("featurePanel"); // NOI18N
@@ -337,9 +164,9 @@ public class IMatView extends FrameView implements Observer{
             .add(searchPanelLayout.createSequentialGroup()
                 .add(8, 8, 8)
                 .add(searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(searchLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 38, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(searchField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
-                .add(8, 8, 8))
+                    .add(searchField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .add(searchLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 38, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(9, 9, 9))
         );
 
         org.jdesktop.layout.GroupLayout categoryBigPanelLayout = new org.jdesktop.layout.GroupLayout(categoryBigPanel);
@@ -347,29 +174,28 @@ public class IMatView extends FrameView implements Observer{
         categoryBigPanelLayout.setHorizontalGroup(
             categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(categoryBigPanelLayout.createSequentialGroup()
-                .add(categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(categoryBigPanelLayout.createSequentialGroup()
-                        .add(26, 26, 26)
-                        .add(backButton)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 422, Short.MAX_VALUE)
-                        .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(categoryBigPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 879, Short.MAX_VALUE)))
+                .addContainerGap()
+                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
                 .addContainerGap())
+            .add(categoryBigPanelLayout.createSequentialGroup()
+                .add(44, 44, 44)
+                .add(backButton)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 149, Short.MAX_VALUE)
+                .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(29, 29, 29))
         );
         categoryBigPanelLayout.setVerticalGroup(
             categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(categoryBigPanelLayout.createSequentialGroup()
                 .add(categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(categoryBigPanelLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .add(34, 34, 34)
                         .add(backButton))
                     .add(categoryBigPanelLayout.createSequentialGroup()
-                        .add(8, 8, 8)
-                        .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 54, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .add(18, 18, 18)
-                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .add(31, 31, 31)
+                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -414,13 +240,14 @@ public class IMatView extends FrameView implements Observer{
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(logPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(categoryPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .addContainerGap()
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(categoryPanel, 0, 0, Short.MAX_VALUE)
+                    .add(logPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(10, 10, 10)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, valuePanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 919, Short.MAX_VALUE)))
+                    .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -430,8 +257,10 @@ public class IMatView extends FrameView implements Observer{
                     .add(logPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(categoryPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)))
+                    .add(jPanel1Layout.createSequentialGroup()
+                        .add(categoryPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
+                        .add(20, 20, 20))
+                    .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)))
         );
 
         org.jdesktop.layout.GroupLayout mainPanelLayout = new org.jdesktop.layout.GroupLayout(mainPanel);
@@ -453,34 +282,17 @@ private void searchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:
 }//GEN-LAST:event_searchFieldFocusGained
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel allProductsLabel;
     private javax.swing.JButton backButton;
-    private javax.swing.JLabel breadLabel;
     private javax.swing.JPanel categoryBigPanel;
-    private java.awt.Label categoryLabel;
     private javax.swing.JPanel categoryPanel;
     private javax.swing.JPanel categorySmallPanel;
-    private javax.swing.JLabel drinksLabel;
-    private javax.swing.JLabel favouriteLabel;
     private javax.swing.JPanel featurePanel;
-    private javax.swing.JLabel fishLabel;
-    private javax.swing.JLabel flourLabel;
-    private javax.swing.JLabel fruitLabel;
-    private javax.swing.JButton helpButton;
-    private javax.swing.JPanel helpPanel;
-    private javax.swing.JLabel historyLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel logPanel;
     private javax.swing.JPanel mainPanel;
-    private javax.swing.JLabel meatLabel;
-    private javax.swing.JLabel milkLabel;
-    private javax.swing.JLabel nutsLabel;
-    private javax.swing.JLabel pastaLabel;
-    private javax.swing.JLabel potatoLabel;
     private javax.swing.JTextField searchField;
     private javax.swing.JLabel searchLabel;
     private javax.swing.JPanel searchPanel;
-    private javax.swing.JLabel sweetsLabel;
     private javax.swing.JLabel toShoppingCartLabel1;
     private javax.swing.JLabel toShoppingCartLabel2;
     private javax.swing.JPanel valuePanel;
