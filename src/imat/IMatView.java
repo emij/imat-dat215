@@ -5,6 +5,7 @@
 package imat;
 
 import java.awt.*;
+import java.util.Observable;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
@@ -12,6 +13,7 @@ import org.jdesktop.application.FrameView;
 import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observer;
 import javax.swing.Timer;
 import javax.swing.Icon;
 import javax.swing.JDialog;
@@ -22,16 +24,23 @@ import javax.swing.*;
 /**
  * The application's main frame.
  */
-public class IMatView extends FrameView {
+public class IMatView extends FrameView implements Observer{
 
+    CategoryGridPanel c;
+    DrinksGridPanel d;
+    FruitGridPanel f;
     public IMatView(SingleFrameApplication app) {
         super(app);
-        
+
         initComponents();
+        
+        c = new CategoryGridPanel(this);
+        d = new DrinksGridPanel(this);
+        f = new FruitGridPanel(this);
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
-        categorySmallPanel.add(new CategoryGridPanel(), "card1");
-        categorySmallPanel.add(new CategoryCard(), "card2");
-   
+        categorySmallPanel.add(c.getPanel(), "card1");
+        categorySmallPanel.add(d.getPanel(), "card2");
+        categorySmallPanel.add(f.getPanel(), "card3");
     }
     
     /* Send the string of the panel you want the cardlayout to show
@@ -51,10 +60,6 @@ public class IMatView extends FrameView {
         }
         IMatApp.getApplication().show(aboutBox);
     }
-    /*
-    public JPanel getJPanel2() {
-        return jPanel2;
-    }*/
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -482,4 +487,12 @@ public class IMatView extends FrameView {
   
 
     private JDialog aboutBox;
+
+    public void update(Observable o, Object o1) {
+        System.out.println("card23");
+        if(o1 instanceof String){
+            String tmp = (String)o1;
+            changePanel(tmp);
+        }
+    }
 }

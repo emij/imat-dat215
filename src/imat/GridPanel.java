@@ -14,7 +14,7 @@ import se.chalmers.ait.dat215.project.*;
  */
 public class GridPanel extends JPanel {
 
-private JPanel[] panelArr;
+private JPanel[] panelArr = new JPanel[12];
 private JButton[] buttonArr;
 private Dimension buttonDimension = new Dimension(160,130);
 private IMatDataHandler data;
@@ -27,14 +27,16 @@ private IMatDataHandler data;
                 data = IMatDataHandler.getInstance();
             
 		setLayout(new GridLayout(3, 4, 10, 10));
-                panelArr = new JPanel[grids];
                 buttonArr = new JButton[grids];
 		
-		//Add all panels to the grid et.c
-                for(int i = 0; i < grids; i++) {
+                for(int i = 0; i < 12; i++) {
                     panelArr[i] = new JPanel();
                     add(panelArr[i]);
                     panelArr[i].setBackground(Color.WHITE);
+                }
+                
+		//Add all panels to the grid et.c
+                for(int i = 0; i < grids; i++) {
                     buttonArr[i] = new JButton("");
                     buttonArr[i].setLocation(10,15);
                     buttonArr[i].setPreferredSize(buttonDimension);

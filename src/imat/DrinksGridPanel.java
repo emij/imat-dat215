@@ -5,18 +5,22 @@
 package imat;
 
 import java.awt.event.*;
+import java.util.*;
 import javax.swing.*;
 
 /**
  *
  * @author lisastenberg
  */
-public class DrinksGridPanel extends GridPanel implements ActionListener {
+public class DrinksGridPanel extends Observable implements ActionListener {
+    private GridPanel g;
     private JButton[] buttonArr;
     
-    public DrinksGridPanel() {
-        super(2);
-        buttonArr = getButtonArr();
+    public DrinksGridPanel(Observer o) {
+        g = new GridPanel(2);
+        buttonArr = g.getButtonArr();
+        this.addObserver(o);
+
         
         /* Set all buttonImages
          * 
@@ -30,14 +34,20 @@ public class DrinksGridPanel extends GridPanel implements ActionListener {
         }
     }
 
-    public void actionPerformed(ActionEvent ae) {
-        //CardLayout cl = (CardLayout)(jPanel2.getLayout());
-        if(ae.getSource() == buttonArr[0]) {
-            //Show Cold drinks
-        } else if(ae.getSource() == buttonArr[1]) {
-            //Show Hot drinks
-        }
-        throw new UnsupportedOperationException("Not supported yet.");
+    public JButton[] getButtons(){
+        return buttonArr;
     }
     
+    public JPanel getPanel() {
+        return g;
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        setChanged();
+        if(ae.getSource() == buttonArr[0]) {
+            //this.notifyObservers("The card you want to show");
+        } else if(ae.getSource() == buttonArr[1]) {
+            //this.notifyObservers("The card you want to show");
+        }
+    }
 }
