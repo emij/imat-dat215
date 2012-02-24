@@ -6,6 +6,7 @@ package imat;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
@@ -23,26 +24,22 @@ public class CategoryGridPanel extends Observable implements ActionListener{
         g = new GridPanel(12);
         buttonArr = g.getButtonArr();
         
-        /* Set all buttonImages
-         * 
-         * setButtonImage(buttonArr[0], image));
-         * setButtonImage(buttonArr[1], image));
-         * setButtonImage(buttonArr[2], image));
-         * setButtonImage(buttonArr[3], image));
-         * setButtonImage(buttonArr[4], image));
-         * setButtonImage(buttonArr[5], image));
-         * setButtonImage(buttonArr[6], image));
-         * setButtonImage(buttonArr[7], image));
-         * setButtonImage(buttonArr[8], image));
-         * setButtonImage(buttonArr[9], image));
-         * setButtonImage(buttonArr[10], image));
-         * setButtonImage(buttonArr[11], image));
-         * setButtonImage(buttonArr[12], image));
-         */
+        setButtonImages();
         
         //Add actionlisteners to all buttons
         for(int i = 0; i < 12; i++) {
             buttonArr[i].addActionListener(this);
+        }
+    }
+    private void setButtonImages(){
+        File dir = new File("src/imat/resources/kategoriknappar/"); 
+        File imageFileNames[] = dir.listFiles();  
+        
+        String path = "resources/kategoriknappar/";
+        
+        for(int i=0; i<buttonArr.length; i++){
+            buttonArr[i].setIcon(new ImageIcon(getClass().getResource(path + imageFileNames[i+1].getName()))); // +1 är för DS_store-filen, orkar inte krångla..
+            buttonArr[i].setBorder(null);
         }
     }
     

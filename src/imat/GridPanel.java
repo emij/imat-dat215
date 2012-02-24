@@ -39,7 +39,7 @@ private IMatDataHandler data;
                 for(int i = 0; i < grids; i++) {
                     buttonArr[i] = new JButton("");
                     buttonArr[i].setLocation(10,15);
-                    buttonArr[i].setPreferredSize(buttonDimension);
+                    //buttonArr[i].setPreferredSize(buttonDimension);
                     panelArr[i].add(buttonArr[i]);
                 }
       	}
