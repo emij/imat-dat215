@@ -24,6 +24,7 @@ private IMatDataHandler data;
  * @param grids how many grids you want in your panel
  */
 	public GridPanel(int grids) {
+                setOpaque(false);
                 data = IMatDataHandler.getInstance();
             
 		setLayout(new GridLayout(3, 4, 10, 10));
@@ -39,6 +40,7 @@ private IMatDataHandler data;
                 for(int i = 0; i < grids; i++) {
                     buttonArr[i] = new JButton("");
                     buttonArr[i].setLocation(10,15);
+                    panelArr[i].setOpaque(false);
                     //buttonArr[i].setPreferredSize(buttonDimension);
                     panelArr[i].add(buttonArr[i]);
                 }

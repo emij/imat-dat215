@@ -36,7 +36,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="valuePanel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="featurePanel" pref="923" max="32767" attributes="0"/>
+                          <Component id="featurePanel" pref="919" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -51,7 +51,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="categoryPanel" max="32767" attributes="0"/>
-                          <Component id="featurePanel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="featurePanel" alignment="0" pref="566" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -102,7 +102,7 @@
                               <Component id="nutsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="meatLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="breadLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="categoryLabel" alignment="0" pref="240" max="32767" attributes="0"/>
+                              <Component id="categoryLabel" alignment="0" pref="248" max="32767" attributes="0"/>
                               <Component id="drinksLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="fishLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="fruitLabel" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -110,11 +110,11 @@
                               <Component id="flourLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="favouriteLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="181" max="32767" attributes="0"/>
+                                  <EmptySpace pref="191" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="allProductsLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="150" max="32767" attributes="0"/>
+                                  <EmptySpace pref="159" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -147,7 +147,7 @@
                           <Component id="potatoLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="sweetsLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="63" max="32767" attributes="0"/>
+                          <EmptySpace pref="57" max="32767" attributes="0"/>
                           <Component id="allProductsLabel" min="-2" pref="27" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="favouriteLabel" min="-2" pref="28" max="-2" attributes="0"/>
@@ -343,12 +343,12 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                       <Component id="backButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="519" max="32767" attributes="0"/>
+                                      <EmptySpace pref="422" max="32767" attributes="0"/>
                                       <Component id="searchPanel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="categorySmallPanel" pref="899" max="32767" attributes="0"/>
+                                      <Component id="categorySmallPanel" pref="879" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -363,13 +363,13 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="backButton" min="-2" max="-2" attributes="1"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                      <Component id="searchPanel" min="-2" max="-2" attributes="1"/>
+                                      <Component id="searchPanel" min="-2" pref="54" max="-2" attributes="1"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                              <Component id="categorySmallPanel" pref="478" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="categorySmallPanel" pref="466" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -384,6 +384,9 @@
                     </Component>
                     <Container class="javax.swing.JPanel" name="categorySmallPanel">
                       <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="null" type="code"/>
+                        </Property>
                         <Property name="foreground" type="java.awt.Color" resourceKey="categorySmallPanel.foreground"/>
                         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                           <Dimension value="[200, 200]"/>
@@ -402,11 +405,11 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="searchLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="textField1" pref="227" max="32767" attributes="0"/>
+                                  <Component id="searchLabel" pref="49" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                  <Component id="searchField" min="-2" pref="267" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -414,33 +417,40 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="textField1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="searchLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="searchLabel" alignment="3" min="-2" pref="38" max="-2" attributes="1"/>
+                                      <Component id="searchField" alignment="3" pref="36" max="32767" attributes="3"/>
                                   </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="java.awt.Label" name="searchLabel">
+                        <Component class="javax.swing.JLabel" name="searchLabel">
                           <Properties>
                             <Property name="font" type="java.awt.Font" resourceKey="searchLabel.font"/>
-                            <Property name="name" type="java.lang.String" value="searchLabel" noResource="true"/>
                             <Property name="text" type="java.lang.String" resourceKey="searchLabel.text"/>
+                            <Property name="name" type="java.lang.String" value="searchLabel" noResource="true"/>
                           </Properties>
                         </Component>
-                        <Component class="java.awt.TextField" name="textField1">
+                        <Component class="javax.swing.JTextField" name="searchField">
                           <Properties>
-                            <Property name="background" type="java.awt.Color" resourceKey="textField1.background"/>
-                            <Property name="font" type="java.awt.Font" resourceKey="textField1.font"/>
-                            <Property name="name" type="java.lang.String" value="textField1" noResource="true"/>
-                            <Property name="text" type="java.lang.String" resourceKey="textField1.text"/>
+                            <Property name="background" type="java.awt.Color" resourceKey="searchField.background"/>
+                            <Property name="font" type="java.awt.Font" resourceKey="searchField.font"/>
+                            <Property name="text" type="java.lang.String" resourceKey="searchField.text"/>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                                <LineBorder>
+                                  <Property name="color" resourceKey="searchField.border.lineColor"/>
+                                </LineBorder>
+                              </Border>
+                            </Property>
+                            <Property name="name" type="java.lang.String" value="searchField" noResource="true"/>
                           </Properties>
                           <Events>
-                            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="textField1FocusGained"/>
+                            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="searchFieldFocusGained"/>
                           </Events>
                         </Component>
                       </SubComponents>
