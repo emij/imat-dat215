@@ -34,8 +34,9 @@ public class IMatView extends FrameView implements Observer{
         super(app);
 
         initComponents();
-        
-        c = new CategoryGridPanel(this);
+        categorySmallPanel.setMaximumSize(new Dimension(500,500));
+        categorySmallPanel.add(test, "card1");
+        /*c = new CategoryGridPanel(this);
         d = new DrinksGridPanel(this);
         f = new FruitGridPanel(this);
         s = new SidebarPanel(this);
@@ -44,7 +45,8 @@ public class IMatView extends FrameView implements Observer{
         categorySmallPanel.add(d.getPanel(), "card2");
         categorySmallPanel.add(f.getPanel(), "card3");
         categoryPanel.add(s.getPanel(), "card1");
-    }
+
+    */}
     
     /* Send the string of the panel you want the cardlayout to show
      * and this method fixes it for you.
