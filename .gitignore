@@ -1,3 +1,5 @@
 build/
 .DS_Store
 nbproject/private/private.properties
+src/imat/resources/testPanel.properties
+dist/
