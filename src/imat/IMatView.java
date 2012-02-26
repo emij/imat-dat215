@@ -29,7 +29,8 @@ public class IMatView extends FrameView implements Observer{
     CategoryGridPanel c;
     DrinksGridPanel d;
     FruitGridPanel f;
-    SidebarPanel s;
+    ValueObserver v;
+    //SidebarPanel s;
     public IMatView(SingleFrameApplication app) {
         super(app);
 
@@ -38,13 +39,16 @@ public class IMatView extends FrameView implements Observer{
         c = new CategoryGridPanel(this);
         d = new DrinksGridPanel(this);
         f = new FruitGridPanel(this);
-        s = new SidePanel(this);
+        v = new ValueObserver(this);
+        //s = new SidePanel(this);
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
         categorySmallPanel.add(c.getPanel(), "card1");
         categorySmallPanel.add(d.getPanel(), "card2");
         categorySmallPanel.add(f.getPanel(), "card3");
-        categoryPanel.add(s.getPanel(), "card1");
+        //categoryPanel.add(s.getPanel(), "card1");
 
+        valuePanel.setLayout(new BorderLayout());
+        valuePanel.add(v.getPanel(), BorderLayout.CENTER);
     }
     
     /* Send the string of the panel you want the cardlayout to show
@@ -86,8 +90,6 @@ public class IMatView extends FrameView implements Observer{
         searchLabel = new javax.swing.JLabel();
         searchField = new javax.swing.JTextField();
         valuePanel = new javax.swing.JPanel();
-        toShoppingCartLabel1 = new javax.swing.JLabel();
-        toShoppingCartLabel2 = new javax.swing.JLabel();
 
         mainPanel.setName("mainPanel"); // NOI18N
 
@@ -167,7 +169,7 @@ public class IMatView extends FrameView implements Observer{
                 .add(searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(searchField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                     .add(searchLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 38, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(9, 9, 9))
+                .add(20, 20, 20))
         );
 
         org.jdesktop.layout.GroupLayout categoryBigPanelLayout = new org.jdesktop.layout.GroupLayout(categoryBigPanel);
@@ -176,12 +178,12 @@ public class IMatView extends FrameView implements Observer{
             categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(categoryBigPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 633, Short.MAX_VALUE)
+                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
                 .addContainerGap())
             .add(categoryBigPanelLayout.createSequentialGroup()
                 .add(44, 44, 44)
                 .add(backButton)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 149, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 191, Short.MAX_VALUE)
                 .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(29, 29, 29))
         );
@@ -194,9 +196,9 @@ public class IMatView extends FrameView implements Observer{
                         .add(backButton))
                     .add(categoryBigPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 55, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(31, 31, 31)
-                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -205,35 +207,15 @@ public class IMatView extends FrameView implements Observer{
         valuePanel.setBackground(resourceMap.getColor("valuePanel.background")); // NOI18N
         valuePanel.setName("valuePanel"); // NOI18N
 
-        toShoppingCartLabel1.setFont(resourceMap.getFont("toShoppingCartLabel1.font")); // NOI18N
-        toShoppingCartLabel1.setForeground(resourceMap.getColor("toShoppingCartLabel1.foreground")); // NOI18N
-        toShoppingCartLabel1.setText(resourceMap.getString("toShoppingCartLabel1.text")); // NOI18N
-        toShoppingCartLabel1.setName("toShoppingCartLabel1"); // NOI18N
-
-        toShoppingCartLabel2.setFont(resourceMap.getFont("toShoppingCartLabel2.font")); // NOI18N
-        toShoppingCartLabel2.setForeground(resourceMap.getColor("toShoppingCartLabel2.foreground")); // NOI18N
-        toShoppingCartLabel2.setText(resourceMap.getString("toShoppingCartLabel2.text")); // NOI18N
-        toShoppingCartLabel2.setName("toShoppingCartLabel2"); // NOI18N
-
         org.jdesktop.layout.GroupLayout valuePanelLayout = new org.jdesktop.layout.GroupLayout(valuePanel);
         valuePanel.setLayout(valuePanelLayout);
         valuePanelLayout.setHorizontalGroup(
             valuePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, valuePanelLayout.createSequentialGroup()
-                .addContainerGap(211, Short.MAX_VALUE)
-                .add(valuePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(toShoppingCartLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(toShoppingCartLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+            .add(0, 524, Short.MAX_VALUE)
         );
         valuePanelLayout.setVerticalGroup(
             valuePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(valuePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(toShoppingCartLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(toShoppingCartLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+            .add(0, 132, Short.MAX_VALUE)
         );
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
@@ -248,7 +230,7 @@ public class IMatView extends FrameView implements Observer{
                 .add(10, 10, 10)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, valuePanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)))
+                    .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -294,8 +276,6 @@ private void searchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:
     private javax.swing.JTextField searchField;
     private javax.swing.JLabel searchLabel;
     private javax.swing.JPanel searchPanel;
-    private javax.swing.JLabel toShoppingCartLabel1;
-    private javax.swing.JLabel toShoppingCartLabel2;
     private javax.swing.JPanel valuePanel;
     // End of variables declaration//GEN-END:variables
 
