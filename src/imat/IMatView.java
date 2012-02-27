@@ -152,16 +152,9 @@ public class IMatView extends FrameView implements Observer{
         );
         searchPanelLayout.setVerticalGroup(
             searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-<<<<<<< HEAD
-            .add(searchPanelLayout.createSequentialGroup()
-                .add(8, 8, 8)
-                .add(searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(searchField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .add(searchLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 38, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(10, 10, 10))
-=======
+
             .add(0, 65, Short.MAX_VALUE)
->>>>>>> Startframe fixad
+
         );
 
         org.jdesktop.layout.GroupLayout categoryBigPanelLayout = new org.jdesktop.layout.GroupLayout(categoryBigPanel);
@@ -185,11 +178,7 @@ public class IMatView extends FrameView implements Observer{
             .add(categoryBigPanelLayout.createSequentialGroup()
                 .add(34, 34, 34)
                 .add(categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-<<<<<<< HEAD
-                    .add(backButton)
-                    .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 56, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(27, 27, 27)
-=======
+
                     .add(categoryBigPanelLayout.createSequentialGroup()
                         .add(57, 57, 57)
                         .add(backButton))
@@ -197,7 +186,6 @@ public class IMatView extends FrameView implements Observer{
                         .addContainerGap()
                         .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(31, 31, 31)
->>>>>>> Startframe fixad
                 .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
                 .addContainerGap())
         );
