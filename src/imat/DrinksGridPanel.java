@@ -10,7 +10,7 @@ import javax.swing.*;
 
 /**
  *
- * @author lisastenberg
+ * @author lisastenberg & ollewerme
  */
 public class DrinksGridPanel extends Observable implements ActionListener {
     private GridPanel g;

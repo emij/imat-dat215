@@ -19,7 +19,7 @@ import javax.swing.*;
 
 /**
  *
- * @author lisastenberg
+ * @author lisastenberg & ollewerme
  */
 public class CategoryGridPanel extends Observable implements ActionListener{
     private JButton[] buttonArr;

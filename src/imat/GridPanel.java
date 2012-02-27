@@ -10,7 +10,7 @@ import se.chalmers.ait.dat215.project.*;
 
 /**
  *
- * @author lisastenberg
+ * @author lisastenberg & ollewerme
  */
 public class GridPanel extends JPanel {
 
@@ -70,9 +70,4 @@ private IMatDataHandler data;
         public JButton[] getButtonArr() {
             return buttonArr;
         }
-        
-        /*
-        public void setButtonImage(JButton b, ImageIcon im) {
-            b.setIcon(im);
-        }*/
 }
