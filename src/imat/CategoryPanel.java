@@ -10,6 +10,8 @@ import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -29,7 +31,7 @@ public class CategoryPanel extends JPanel {
     private JLabel header;
     private JLabel labels[] = new JLabel[11];
     private JLabel tools[] = new JLabel[3];
-    private JLabel helpButton;
+    private JButton helpButton;
 
    
     public CategoryPanel(){
@@ -42,14 +44,15 @@ public class CategoryPanel extends JPanel {
             
         categoryMenu = new JPanel(new GridLayout(11, 1, 3, 3));
         toolsMenu = new JPanel(new GridLayout(3, 1, 3, 3));
-        helpButton = new JLabel("KNAPP");
+        helpButton = new JButton(new ImageIcon(getClass().getResource("resources/bilder/hjalp.png")));
+        helpButton.setBorder(null);
         
         setLayout(new BorderLayout());
         setBorder(new EmptyBorder(12,20,12,12));
         setBackground(new Color(252, 251, 237));
         //setPreferredSize(new Dimension(220,300));
               
-        northContainer.setPreferredSize(new Dimension(220,340));
+        northContainer.setPreferredSize(new Dimension(160,340));
         northContainer.setBackground(new Color(252, 251, 237));
         southContainer.setBackground(new Color(252, 251, 237));
         categoryMenu.setBorder(new EmptyBorder(12,0,12,12));
