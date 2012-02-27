@@ -35,18 +35,15 @@ public class SearchPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         searchPanel = new javax.swing.JPanel();
-        searchLabel = new javax.swing.JLabel();
         searchField = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setName("Form"); // NOI18N
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(SearchPanel.class);
         searchPanel.setBackground(resourceMap.getColor("searchPanel.background")); // NOI18N
         searchPanel.setName("searchPanel"); // NOI18N
-
-        searchLabel.setFont(resourceMap.getFont("searchLabel.font")); // NOI18N
-        searchLabel.setText(resourceMap.getString("searchLabel.text")); // NOI18N
-        searchLabel.setName("searchLabel"); // NOI18N
+        searchPanel.setPreferredSize(new java.awt.Dimension(357, 77));
 
         searchField.setBackground(resourceMap.getColor("searchField.background")); // NOI18N
         searchField.setFont(resourceMap.getFont("searchField.font")); // NOI18N
@@ -62,25 +59,34 @@ public class SearchPanel extends javax.swing.JPanel {
             }
         });
 
+        jButton1.setFont(resourceMap.getFont("jButton1.font")); // NOI18N
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setName("jButton1"); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout searchPanelLayout = new org.jdesktop.layout.GroupLayout(searchPanel);
         searchPanel.setLayout(searchPanelLayout);
         searchPanelLayout.setHorizontalGroup(
             searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, searchPanelLayout.createSequentialGroup()
+            .add(searchPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .add(searchLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .add(1, 1, 1)
-                .add(searchField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 267, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(searchField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 228, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 12, Short.MAX_VALUE)
+                .add(jButton1)
                 .addContainerGap())
         );
         searchPanelLayout.setVerticalGroup(
             searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(searchPanelLayout.createSequentialGroup()
-                .add(8, 8, 8)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, searchPanelLayout.createSequentialGroup()
+                .add(20, 20, 20)
                 .add(searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(searchField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .add(searchLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 38, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(20, 20, 20))
+                    .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
@@ -107,9 +113,13 @@ private void searchFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:ev
     }*/
 }//GEN-LAST:event_searchFieldFocusLost
 
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    //TODO: search
+}//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JTextField searchField;
-    private javax.swing.JLabel searchLabel;
     private javax.swing.JPanel searchPanel;
     // End of variables declaration//GEN-END:variables
 
