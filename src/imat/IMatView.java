@@ -36,7 +36,6 @@ public class IMatView extends FrameView implements Observer{
     SearchPanel sp;
     public IMatView(SingleFrameApplication app) {
         super(app);
-        prevList.add("category");
         this.getFrame().setVisible(true);
         this.getFrame().setSize(new Dimension(1000, 700));
         this.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,7 +56,7 @@ public class IMatView extends FrameView implements Observer{
         categoryPanel.add(s.getPanel(), "sidepanel");
         searchPanel.setLayout(new GridLayout(1, 1));
         searchPanel.add(sp, "search");
-
+        backButton.setEnabled(false);
         valuePanel.setLayout(new BorderLayout());
         valuePanel.add(v.getPanel(), BorderLayout.CENTER);
     }
@@ -69,12 +68,14 @@ public class IMatView extends FrameView implements Observer{
     private void changePanel(String panel) {
         if(!tempCard.equals(panel)){
             prevList.addFirst(tempCard);
-            tempCard=panel;
+            backButton.setEnabled(true);
         }
         changePanelHelp(panel);
     }
     
     private void changePanelHelp(String panel) {
+        
+            tempCard=panel;
         CardLayout c = (CardLayout)(categorySmallPanel.getLayout());
         c.show(categorySmallPanel, panel);
     }
@@ -143,6 +144,7 @@ public class IMatView extends FrameView implements Observer{
         categoryBigPanel.setName("categoryBigPanel"); // NOI18N
 
         backButton.setText(resourceMap.getString("backButton.text")); // NOI18N
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.setName("backButton"); // NOI18N
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,9 +258,12 @@ public class IMatView extends FrameView implements Observer{
 private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
     String s = prevList.getFirst();
     if(s!=null) {
+        prevList.removeFirst();
+        if(prevList.isEmpty()){
+            backButton.setEnabled(false);
+        }
         changePanelHelp(s);
     }
-    prevList.removeFirst();
 }//GEN-LAST:event_backButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
