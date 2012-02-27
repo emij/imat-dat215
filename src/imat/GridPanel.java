@@ -16,6 +16,8 @@ public class GridPanel extends JPanel {
 
 private JPanel[] panelArr = new JPanel[12];
 private JButton[] buttonArr;
+private JButton emptyButton;
+private JButton favoritesButton = new JButton(new ImageIcon(getClass().getResource("resources/kategoribilder/favoriter.png")));
 private Dimension buttonDimension = new Dimension(160,130);
 private IMatDataHandler data;
 
@@ -23,13 +25,14 @@ private IMatDataHandler data;
  * 
  * @param grids how many grids you want in your panel
  */
+
 	public GridPanel(int grids) {
                 setOpaque(false);
                 data = IMatDataHandler.getInstance();
             
 		setLayout(new GridLayout(3, 4, 10, 10));
                 buttonArr = new JButton[grids];
-		
+                
                 for(int i = 0; i < 12; i++) {
                     panelArr[i] = new JPanel();
                     add(panelArr[i]);
@@ -44,6 +47,20 @@ private IMatDataHandler data;
                     //buttonArr[i].setPreferredSize(buttonDimension);
                     panelArr[i].add(buttonArr[i]);
                 }
+                
+                // Add empty buttons in the remaining grid spaces
+                for(int i = grids; i < 11; i++) {
+                    panelArr[i].setBackground(Color.WHITE);
+                    panelArr[i].setOpaque(false);
+                    emptyButton = new JButton(new ImageIcon(getClass().getResource("resources/kategoribilder/tom.png")));
+                    panelArr[i].add(emptyButton);
+                    emptyButton.setBorder(null);
+                }
+                
+                // Add the favorite button last
+                panelArr[11].add(favoritesButton);
+                panelArr[11].setOpaque(false);
+                favoritesButton.setBorder(null);
       	}
         
         public JPanel[] getPanelArr() {

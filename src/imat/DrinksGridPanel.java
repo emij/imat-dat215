@@ -21,19 +21,22 @@ public class DrinksGridPanel extends Observable implements ActionListener {
         buttonArr = g.getButtonArr();
         this.addObserver(o);
 
-        
-        /* Set all buttonImages
-         * 
-         * setButtonImage(buttonArr[0], coldDrinks_image));
-         * setButtonImage(buttonArr[1], hotDrinks_image));
-         */
+        setButtonImages();
         
         //Add actionlisteners to all buttons
-        for(int i = 0; i < 2; i++) {
-            buttonArr[i].addActionListener(this);
+        for(int i = 0; i < buttonArr.length; i++) {
+        buttonArr[i].addActionListener(this);
         }
     }
-
+    private void setButtonImages(){
+        String path = "resources/kategoribilder/drycker/";
+        
+        for(int i=0; i<buttonArr.length; i++){
+            buttonArr[i].setIcon(new ImageIcon(getClass().getResource(path + "cat_" + i + ".png")));
+            buttonArr[i].setBorder(null);
+        }
+    }
+    
     public JButton[] getButtons(){
         return buttonArr;
     }

@@ -21,24 +21,19 @@ public class FruitGridPanel extends Observable implements ActionListener {
         buttonArr = g.getButtonArr();
         this.addObserver(o);
         
-        /* Set all buttonImages
-         * 
-         * setButtonImage(buttonArr[0], image));
-         * setButtonImage(buttonArr[1], image));
-         * setButtonImage(buttonArr[2], image));
-         * setButtonImage(buttonArr[3], image));
-         * setButtonImage(buttonArr[4], image));
-         * setButtonImage(buttonArr[5], image));
-         * setButtonImage(buttonArr[6], image));
-         * setButtonImage(buttonArr[7], image));
-         * setButtonImage(buttonArr[8], image));
-         * setButtonImage(buttonArr[9], image));
-         * setButtonImage(buttonArr[10], image));
-         */
+        setButtonImages();
         
         //Add actionlisteners to all buttons
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < buttonArr.length; i++) {
         buttonArr[i].addActionListener(this);
+        }
+    }
+    private void setButtonImages(){
+        String path = "resources/kategoribilder/gronsaker_och_frukter/";
+        
+        for(int i=0; i<buttonArr.length; i++){
+            buttonArr[i].setIcon(new ImageIcon(getClass().getResource(path + "cat_" + i + ".png")));
+            buttonArr[i].setBorder(null);
         }
     }
     

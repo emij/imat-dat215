@@ -27,7 +27,7 @@ public class CategoryGridPanel extends Observable implements ActionListener{
     
     public CategoryGridPanel(Observer o) {
         this.addObserver(o);
-        g = new GridPanel(12);
+        g = new GridPanel(11);
         buttonArr = g.getButtonArr();
         
         setButtonImages();
@@ -43,7 +43,7 @@ public class CategoryGridPanel extends Observable implements ActionListener{
         }*/
         
         //Add actionlisteners to all buttons
-        for(int i = 0; i < 12; i++) {
+        for(int i = 0; i < buttonArr.length; i++) {
             buttonArr[i].addActionListener(this);
         }
     }
