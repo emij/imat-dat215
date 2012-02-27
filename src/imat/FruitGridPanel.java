@@ -32,7 +32,7 @@ public class FruitGridPanel extends Observable implements ActionListener {
         String path = "resources/kategoribilder/gronsaker_och_frukter/";
         
         for(int i=0; i<buttonArr.length; i++){
-            buttonArr[i].setIcon(new ImageIcon(getClass().getResource(path + "cat_" + i + ".png")));
+            buttonArr[i].setIcon(new ImageIcon(getClass().getResource(path + "gronsakcat_" + i + ".png")));
             buttonArr[i].setBorder(null);
         }
     }

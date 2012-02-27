@@ -32,7 +32,7 @@ public class DrinksGridPanel extends Observable implements ActionListener {
         String path = "resources/kategoribilder/drycker/";
         
         for(int i=0; i<buttonArr.length; i++){
-            buttonArr[i].setIcon(new ImageIcon(getClass().getResource(path + "cat_" + i + ".png")));
+            buttonArr[i].setIcon(new ImageIcon(getClass().getResource(path + "drinkcat_" + i + ".png")));
             buttonArr[i].setBorder(null);
         }
     }
