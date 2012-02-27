@@ -152,41 +152,31 @@ public class IMatView extends FrameView implements Observer{
         );
         searchPanelLayout.setVerticalGroup(
             searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-
             .add(0, 65, Short.MAX_VALUE)
-
         );
 
         org.jdesktop.layout.GroupLayout categoryBigPanelLayout = new org.jdesktop.layout.GroupLayout(categoryBigPanel);
         categoryBigPanel.setLayout(categoryBigPanelLayout);
         categoryBigPanelLayout.setHorizontalGroup(
             categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(categoryBigPanelLayout.createSequentialGroup()
-                .add(categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, categoryBigPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
                     .add(categoryBigPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE))
-                    .add(categoryBigPanelLayout.createSequentialGroup()
-                        .add(44, 44, 44)
                         .add(backButton)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 200, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 224, Short.MAX_VALUE)
                         .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         categoryBigPanelLayout.setVerticalGroup(
             categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(categoryBigPanelLayout.createSequentialGroup()
-                .add(34, 34, 34)
                 .add(categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-
-                    .add(categoryBigPanelLayout.createSequentialGroup()
-                        .add(57, 57, 57)
-                        .add(backButton))
-                    .add(categoryBigPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .add(31, 31, 31)
-                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+                    .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(backButton))
+                .add(18, 18, 18)
+                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

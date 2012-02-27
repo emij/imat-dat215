@@ -104,6 +104,8 @@ public class CategoryPanel extends JPanel {
             l.setFont(new Font("Georgia", Font.PLAIN, 16));
             l.setCursor(new Cursor(Cursor.HAND_CURSOR));
         }
+        
+        header.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
     
     public JLabel[] getLabels() {
@@ -112,5 +114,9 @@ public class CategoryPanel extends JPanel {
     
     public JLabel[] getTools() {
         return tools;
+    }
+    
+    public JLabel getHeader() {
+        return header;
     }
 }

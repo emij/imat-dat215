@@ -36,6 +36,7 @@ public class SidebarPanel extends Observable implements MouseListener{
             l.addMouseListener(this);
         }
          
+        c.getHeader().addMouseListener(this);
         foreground = labels[0].getForeground();
     }
 
@@ -73,6 +74,8 @@ public class SidebarPanel extends Observable implements MouseListener{
             //this.notifyObservers("");
         } else if(me.getSource() == tools[2]) {
             //this.notifyObservers("");
+        } else if(me.getSource().equals(c.getHeader())) {
+            this.notifyObservers("category");
         }
     }
 
