@@ -26,7 +26,7 @@ public class StartFrame extends javax.swing.JFrame implements ActionListener {
         this.app = app;
         initComponents();
         
-        
+        this.setSize(new Dimension(1000, 700));
         goDirectlyButton.addActionListener(this);
         helpButton.addActionListener(this);
         
