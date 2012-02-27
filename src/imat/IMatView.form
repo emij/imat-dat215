@@ -30,15 +30,20 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="categoryPanel" min="0" pref="0" max="32767" attributes="3"/>
-                          <Component id="logPanel" alignment="0" max="32767" attributes="3"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="valuePanel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="featurePanel" pref="715" max="32767" attributes="0"/>
+                          <Component id="logPanel" min="-2" max="-2" attributes="3"/>
+                          <Component id="categoryPanel" min="-2" pref="201" max="-2" attributes="3"/>
+                      </Group>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="featurePanel" pref="628" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="valuePanel" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -46,17 +51,17 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="valuePanel" min="-2" max="-2" attributes="2"/>
-                          <Component id="logPanel" alignment="1" min="-2" max="-2" attributes="2"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="logPanel" min="-2" max="-2" attributes="3"/>
+                          <Component id="valuePanel" min="-2" max="-2" attributes="3"/>
                       </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="categoryPanel" pref="544" max="32767" attributes="0"/>
+                              <Component id="categoryPanel" pref="516" max="32767" attributes="0"/>
                               <EmptySpace min="20" pref="20" max="20" attributes="0"/>
                           </Group>
-                          <Component id="featurePanel" alignment="0" pref="564" max="32767" attributes="0"/>
+                          <Component id="featurePanel" alignment="0" pref="536" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -72,15 +77,31 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="258" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="28" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="120" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="29" max="32767" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="111" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="jLabel1">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" resourceKey="jLabel1.icon"/>
+                    <Property name="text" type="java.lang.String" resourceKey="jLabel1.text"/>
+                    <Property name="name" type="java.lang.String" value="jLabel1" noResource="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="categoryPanel">
               <Properties>
@@ -115,12 +136,15 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="categorySmallPanel" alignment="0" pref="675" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="categorySmallPanel" pref="588" max="32767" attributes="0"/>
+                                  </Group>
                                   <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                                       <Component id="backButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="224" max="32767" attributes="0"/>
+                                      <EmptySpace pref="109" max="32767" attributes="0"/>
                                       <Component id="searchPanel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -132,11 +156,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="backButton" min="-2" max="-2" attributes="1"/>
+                                  </Group>
                                   <Component id="searchPanel" min="-2" max="-2" attributes="1"/>
-                                  <Component id="backButton" min="-2" max="-2" attributes="1"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="categorySmallPanel" pref="461" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="categorySmallPanel" pref="433" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -147,7 +174,7 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" resourceKey="backButton.text"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Handmark&#xf6;r"/>
+                          <Color id="Default Cursor"/>
                         </Property>
                         <Property name="name" type="java.lang.String" value="backButton" noResource="true"/>
                       </Properties>
@@ -201,12 +228,12 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="524" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="376" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="132" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="103" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -231,6 +258,6 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-72,0,0,3,-21"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-72,0,0,3,-95"/>
   </AuxValues>
 </Form>
