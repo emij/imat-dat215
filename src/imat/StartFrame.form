@@ -4,6 +4,9 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[800, 800]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -23,12 +26,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="939" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Component id="jPanel1" alignment="0" pref="640" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -37,6 +40,9 @@
       <Properties>
         <Property name="background" type="java.awt.Color" resourceKey="jPanel1.background"/>
         <Property name="name" type="java.lang.String" value="jPanel1" noResource="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[900, 700]"/>
+        </Property>
       </Properties>
 
       <Layout>
@@ -48,7 +54,7 @@
                       <Component id="jPanel2" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Component id="welcomePanel" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="128" max="32767" attributes="0"/>
+                  <EmptySpace pref="136" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -59,7 +65,7 @@
                   <Component id="welcomePanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="55" max="32767" attributes="0"/>
+                  <EmptySpace pref="40" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -73,12 +79,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="welcomeLabel" alignment="0" pref="765" max="32767" attributes="0"/>
+                  <Component id="welcomeLabel" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="welcomeLabel" alignment="0" pref="186" max="32767" attributes="0"/>
+                  <Component id="welcomeLabel" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -87,6 +93,7 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" resourceKey="welcomeLabel.font"/>
                 <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="welcomeLabel.icon"/>
                 <Property name="text" type="java.lang.String" resourceKey="welcomeLabel.text"/>
                 <Property name="name" type="java.lang.String" value="welcomeLabel" noResource="true"/>
               </Properties>
@@ -102,12 +109,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="firstTimeLabel" alignment="0" pref="455" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="helpButton" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Component id="goDirectlyButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="firstTimeLabel" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -117,12 +124,12 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="firstTimeLabel" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="firstTimeLabel" min="-2" pref="39" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="helpButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="goDirectlyButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="38" max="32767" attributes="0"/>
+                      <Component id="goDirectlyButton" min="-2" pref="64" max="-2" attributes="0"/>
+                      <EmptySpace pref="77" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -132,19 +139,24 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" resourceKey="firstTimeLabel.font"/>
                 <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="firstTimeLabel.icon"/>
                 <Property name="text" type="java.lang.String" resourceKey="firstTimeLabel.text"/>
                 <Property name="name" type="java.lang.String" value="firstTimeLabel" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="helpButton">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="helpButton.icon"/>
                 <Property name="text" type="java.lang.String" resourceKey="helpButton.text"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="name" type="java.lang.String" value="helpButton" noResource="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="goDirectlyButton">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" resourceKey="goDirectlyButton.icon"/>
                 <Property name="text" type="java.lang.String" resourceKey="goDirectlyButton.text"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="name" type="java.lang.String" value="goDirectlyButton" noResource="true"/>
               </Properties>
             </Component>
