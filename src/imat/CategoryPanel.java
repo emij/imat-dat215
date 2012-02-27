@@ -36,7 +36,7 @@ public class CategoryPanel extends JPanel {
    
     public CategoryPanel(){
         northContainer = new JPanel(new BorderLayout());
-        southContainer = new JPanel();
+        southContainer = new JPanel(new BorderLayout());
         
         header = new JLabel("Kategorier");
         header.setForeground(Color.BLACK);
@@ -48,7 +48,7 @@ public class CategoryPanel extends JPanel {
         helpButton.setBorder(null);
         
         setLayout(new BorderLayout());
-        setBorder(new EmptyBorder(12,20,12,12));
+        setBorder(new EmptyBorder(20,20,20,20));
         setBackground(new Color(252, 251, 237));
         //setPreferredSize(new Dimension(220,300));
               
@@ -65,7 +65,7 @@ public class CategoryPanel extends JPanel {
         northContainer.add(header, BorderLayout.NORTH);
         northContainer.add(categoryMenu, BorderLayout.CENTER);
         northContainer.add(toolsMenu, BorderLayout.SOUTH); 
-        southContainer.add(helpButton);
+        southContainer.add(helpButton,BorderLayout.SOUTH);
         
         labels[0] = new JLabel("・Bröd");
         labels[1] = new JLabel("・Drycker");
