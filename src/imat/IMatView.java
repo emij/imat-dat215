@@ -31,7 +31,7 @@ public class IMatView extends FrameView implements Observer{
     FruitGridPanel f;
     ValueObserver v;
     CategoryCard cc;
-    //SidebarPanel s;
+    SidebarPanel s;
     public IMatView(SingleFrameApplication app) {
         super(app);
 
@@ -42,13 +42,13 @@ public class IMatView extends FrameView implements Observer{
         f = new FruitGridPanel(this);
         v = new ValueObserver(this);
         cc = new CategoryCard();
-        //s = new SidePanel(this);
+        s = new SidebarPanel(this);
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
         categorySmallPanel.add(c.getPanel(), "card1");
         categorySmallPanel.add(d.getPanel(), "card2");
         categorySmallPanel.add(f.getPanel(), "card3");
         categorySmallPanel.add(cc, "card4");
-        //categoryPanel.add(s.getPanel(), "card1");
+        categoryPanel.add(s.getPanel(), "card1");
 
         valuePanel.setLayout(new BorderLayout());
         valuePanel.add(v.getPanel(), BorderLayout.CENTER);
