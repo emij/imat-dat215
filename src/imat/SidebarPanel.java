@@ -4,11 +4,13 @@
  */
 package imat;
 
-import java.awt.*;
+import java.awt.Color;
+import java.util.*;
 import java.awt.event.*;
 import java.util.Observable;
 import java.util.Observer;
 import javax.swing.*;
+import se.chalmers.ait.dat215.project.*;
 
 /**
  *
@@ -16,6 +18,7 @@ import javax.swing.*;
  */
 public class SidebarPanel extends Observable implements MouseListener{
     
+    IMatDataHandler dh;
     private CategoryPanel c;
     private JLabel[] labels;
     private JLabel[] tools;
@@ -25,6 +28,7 @@ public class SidebarPanel extends Observable implements MouseListener{
     public SidebarPanel(Observer o) {
         this.addObserver(o);
         c = new CategoryPanel();
+        dh = IMatDataHandler.getInstance();
         
         labels = c.getLabels();
         tools = c.getTools();
@@ -46,6 +50,7 @@ public class SidebarPanel extends Observable implements MouseListener{
 
     public void mouseClicked(MouseEvent me) {
         setChanged();
+        List<Product> l;
         if(me.getSource() == labels[0]) {
             //this.notifyObserver("bread");
         } else if(me.getSource() == labels[1]) {
@@ -69,11 +74,22 @@ public class SidebarPanel extends Observable implements MouseListener{
         } else if(me.getSource() == labels[10]) {
             //this.notifyObservers("");
         } else if(me.getSource() == tools[0]) {
-            //this.notifyObservers("");
+            l = dh.getProducts();
+            Comparator<Product> a = new Comparator<Product>() {
+                public int compare(Product t, Product t1) {
+                    String s = t.getName();
+                    String s2 = t1.getName();
+                    return s.compareTo(s2);
+                }
+            };
+            Collections.sort(l, a);
+            //Anropa CategoryCard med l;
         } else if(me.getSource() == tools[1]) {
-            //this.notifyObservers("");
+            l = dh.favorites();
+            //Anropa CategoryCard med l;
         } else if(me.getSource() == tools[2]) {
-            //this.notifyObservers("");
+            List<Order> orderList = dh.getOrders();
+            //Anropa CategoryCard med orderList
         } else if(me.getSource().equals(c.getHeader())) {
             this.notifyObservers("category");
         }

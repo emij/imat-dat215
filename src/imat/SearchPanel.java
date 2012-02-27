@@ -11,6 +11,8 @@
 package imat;
 
 import java.awt.event.*;
+import java.util.List;
+import se.chalmers.ait.dat215.project.*;
 
 /**
  *
@@ -18,9 +20,11 @@ import java.awt.event.*;
  */
 public class SearchPanel extends javax.swing.JPanel {
     String s; 
+    IMatDataHandler dh; 
     
     /** Creates new form SearchPanel */
     public SearchPanel() {
+        dh = IMatDataHandler.getInstance();
         initComponents();
         s = searchField.getText();
     }
@@ -117,7 +121,8 @@ private void searchFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:ev
 }//GEN-LAST:event_searchFieldFocusLost
 
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    //TODO: search
+    List<Product> l = dh.findProducts(searchField.getText());
+    //Anropa CategoryCard med l
 }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
