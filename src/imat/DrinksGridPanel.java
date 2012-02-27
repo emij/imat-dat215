@@ -25,7 +25,7 @@ public class DrinksGridPanel extends Observable implements ActionListener {
         
         //Add actionlisteners to all buttons
         for(int i = 0; i < buttonArr.length; i++) {
-        buttonArr[i].addActionListener(this);
+            buttonArr[i].addActionListener(this);
         }
     }
     private void setButtonImages(){

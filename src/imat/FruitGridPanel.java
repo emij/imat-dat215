@@ -17,15 +17,15 @@ public class FruitGridPanel extends Observable implements ActionListener {
     private GridPanel g;
     
     public FruitGridPanel(Observer o) {
-        g = new GridPanel(10);
-        buttonArr = g.getButtonArr();
         this.addObserver(o);
+        g = new GridPanel(10);
+        buttonArr = g.getButtonArr();        
         
         setButtonImages();
         
         //Add actionlisteners to all buttons
         for(int i = 0; i < buttonArr.length; i++) {
-        buttonArr[i].addActionListener(this);
+            buttonArr[i].addActionListener(this);
         }
     }
     private void setButtonImages(){

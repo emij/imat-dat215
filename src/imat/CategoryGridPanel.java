@@ -31,16 +31,6 @@ public class CategoryGridPanel extends Observable implements ActionListener{
         buttonArr = g.getButtonArr();
         
         setButtonImages();
-        /*
-        String imageName;
-        ImageIcon icon;
-        Image img;
-        for(int i = 0; i < 12; i++) {
-            imageName = "/imat/resources/kategoribilder/cat_" + i + ".png";
-            icon = new ImageIcon(getClass().getResource(imageName));
-            img = icon.getImage();        
-            buttonArr[i].setIcon(new ImageIcon(img.getScaledInstance(160, 130, 0)));
-        }*/
         
         //Add actionlisteners to all buttons
         for(int i = 0; i < buttonArr.length; i++) {

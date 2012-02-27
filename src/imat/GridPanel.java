@@ -18,7 +18,6 @@ private JPanel[] panelArr = new JPanel[12];
 private JButton[] buttonArr;
 private JButton emptyButton;
 private JButton favoritesButton = new JButton(new ImageIcon(getClass().getResource("resources/kategoribilder/favoriter.png")));
-private Dimension buttonDimension = new Dimension(160,130);
 private IMatDataHandler data;
 
 /**
@@ -44,7 +43,6 @@ private IMatDataHandler data;
                     buttonArr[i] = new JButton("");
                     buttonArr[i].setLocation(10,15);
                     panelArr[i].setOpaque(false);
-                    //buttonArr[i].setPreferredSize(buttonDimension);
                     panelArr[i].add(buttonArr[i]);
                 }
                 
