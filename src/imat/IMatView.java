@@ -13,6 +13,7 @@ import org.jdesktop.application.FrameView;
 import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.LinkedList;
 import java.util.Observer;
 import javax.swing.Timer;
 import javax.swing.Icon;
@@ -35,7 +36,7 @@ public class IMatView extends FrameView implements Observer{
     SearchPanel sp;
     public IMatView(SingleFrameApplication app) {
         super(app);
-
+        prevList.add("category");
         this.getFrame().setVisible(true);
         this.getFrame().setSize(new Dimension(1000, 700));
         this.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,7 +65,16 @@ public class IMatView extends FrameView implements Observer{
     /* Send the string of the panel you want the cardlayout to show
      * and this method fixes it for you.
      */
-    public void changePanel(String panel) {
+    String tempCard = "category";
+    private void changePanel(String panel) {
+        if(!tempCard.equals(panel)){
+            prevList.addFirst(tempCard);
+            tempCard=panel;
+        }
+        changePanelHelp(panel);
+    }
+    
+    private void changePanelHelp(String panel) {
         CardLayout c = (CardLayout)(categorySmallPanel.getLayout());
         c.show(categorySmallPanel, panel);
     }
@@ -134,6 +144,11 @@ public class IMatView extends FrameView implements Observer{
 
         backButton.setText(resourceMap.getString("backButton.text")); // NOI18N
         backButton.setName("backButton"); // NOI18N
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
 
         categorySmallPanel.setBackground(null);
         categorySmallPanel.setForeground(resourceMap.getColor("categorySmallPanel.foreground")); // NOI18N
@@ -238,6 +253,14 @@ public class IMatView extends FrameView implements Observer{
         setComponent(mainPanel);
     }// </editor-fold>//GEN-END:initComponents
 
+private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+    String s = prevList.getFirst();
+    if(s!=null) {
+        changePanelHelp(s);
+    }
+    prevList.removeFirst();
+}//GEN-LAST:event_backButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JPanel categoryBigPanel;
@@ -254,11 +277,13 @@ public class IMatView extends FrameView implements Observer{
   
 
     private JDialog aboutBox;
-
+    private LinkedList<String> prevList = new LinkedList<String>();
     public void update(Observable o, Object o1) {
         if(o1 instanceof String){
             String tmp = (String)o1;
-            changePanel(tmp);
+            if(tmp != null) {
+                changePanel(tmp);
+            }
         }
     }
 }
