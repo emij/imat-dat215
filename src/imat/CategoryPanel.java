@@ -6,6 +6,7 @@ package imat;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -46,7 +47,7 @@ public class CategoryPanel extends JPanel {
         setLayout(new BorderLayout());
         setBorder(new EmptyBorder(12,20,12,12));
         setBackground(new Color(252, 251, 237));
-        setPreferredSize(new Dimension(220,300));
+        //setPreferredSize(new Dimension(220,300));
               
         northContainer.setPreferredSize(new Dimension(220,340));
         northContainer.setBackground(new Color(252, 251, 237));
@@ -65,8 +66,8 @@ public class CategoryPanel extends JPanel {
         
         labels[0] = new JLabel("・Bröd");
         labels[1] = new JLabel("・Drycker");
-        labels[2] = new JLabel("・Frukt & grönt");
-        labels[3] = new JLabel("・Fisk");
+        labels[2] = new JLabel("・Fisk");
+        labels[3] = new JLabel("・Frukt & grönt");
         labels[4] = new JLabel("・Kött");
         labels[5] = new JLabel("・Mejeriprodukter");
         labels[6] = new JLabel("・Mjöl, socker, salt");
@@ -75,20 +76,41 @@ public class CategoryPanel extends JPanel {
         labels[9] = new JLabel("・Potatis & ris");
         labels[10] = new JLabel("・Sötsaker");
         
+        
         tools[0] = new JLabel("Alla varor A-Ö");
         tools[1] = new JLabel("Favoriter");
         tools[2] = new JLabel("Tidigare inköp");
 
         for(JLabel l : labels){
-            categoryMenu.add(l);
+            JPanel p = new JPanel();
+            p.setLayout(new BorderLayout());
+            p.add(l,BorderLayout.WEST);
+            
+            p.setBackground(new Color(252, 251, 237));
+            categoryMenu.add(p);
             l.setForeground(Color.RED);
             l.setFont(new Font("Georgia", Font.PLAIN, 16));
+            l.setCursor(new Cursor(Cursor.HAND_CURSOR));
         }
         
         for(JLabel l : tools){
-            toolsMenu.add(l);
+            JPanel p = new JPanel();
+            p.setLayout(new BorderLayout());
+            p.add(l,BorderLayout.WEST);
+            
+            p.setBackground(new Color(252, 251, 237));
+            toolsMenu.add(p);
             l.setForeground(Color.RED);
             l.setFont(new Font("Georgia", Font.PLAIN, 16));
+            l.setCursor(new Cursor(Cursor.HAND_CURSOR));
         }
+    }
+    
+    public JLabel[] getLabels() {
+        return labels;
+    }
+    
+    public JLabel[] getTools() {
+        return tools;
     }
 }

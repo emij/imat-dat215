@@ -10,6 +10,7 @@
  */
 package imat;
 
+import java.awt.*;
 import javax.swing.*;
 
 /**
@@ -23,6 +24,9 @@ public class ValuePanel extends JPanel {
     /** Creates new form ValuePanel */
     public ValuePanel() {
         initComponents();
+        
+        toShoppingCartLabel1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        toShoppingCartLabel2.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
     public JLabel getLabel1() {

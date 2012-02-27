@@ -60,11 +60,11 @@ public class CategoryGridPanel extends Observable implements ActionListener{
         if(ae.getSource() == buttonArr[0]) {
 
         } else if(ae.getSource() == buttonArr[1]) {
-            this.notifyObservers("card2");
+            this.notifyObservers("drinks");
         } else if(ae.getSource() == buttonArr[2]) {
             
         } else if(ae.getSource() == buttonArr[3]) {
-            this.notifyObservers("card3");
+            this.notifyObservers("fruit");
         } else if(ae.getSource() == buttonArr[4]) {
             
         } else if(ae.getSource() == buttonArr[5]) {

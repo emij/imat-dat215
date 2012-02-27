@@ -32,9 +32,13 @@ public class IMatView extends FrameView implements Observer{
     ValueObserver v;
     CategoryCard cc;
     SidebarPanel s;
+    SearchPanel sp;
     public IMatView(SingleFrameApplication app) {
         super(app);
 
+        this.getFrame().setVisible(true);
+        this.getFrame().setSize(new Dimension(1000, 700));
+        this.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initComponents();
         
         c = new CategoryGridPanel(this);
@@ -43,12 +47,15 @@ public class IMatView extends FrameView implements Observer{
         v = new ValueObserver(this);
         cc = new CategoryCard();
         s = new SidebarPanel(this);
+        sp = new SearchPanel();
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
-        categorySmallPanel.add(c.getPanel(), "card1");
-        categorySmallPanel.add(d.getPanel(), "card2");
-        categorySmallPanel.add(f.getPanel(), "card3");
+        categorySmallPanel.add(c.getPanel(), "category");
+        categorySmallPanel.add(d.getPanel(), "drinks");
+        categorySmallPanel.add(f.getPanel(), "fruit");
         categorySmallPanel.add(cc, "card4");
-        categoryPanel.add(s.getPanel(), "card1");
+        categoryPanel.add(s.getPanel(), "sidepanel");
+        searchPanel.setLayout(new GridLayout(1, 1));
+        searchPanel.add(sp, "search");
 
         valuePanel.setLayout(new BorderLayout());
         valuePanel.add(v.getPanel(), BorderLayout.CENTER);
@@ -90,8 +97,6 @@ public class IMatView extends FrameView implements Observer{
         backButton = new javax.swing.JButton();
         categorySmallPanel = new javax.swing.JPanel();
         searchPanel = new javax.swing.JPanel();
-        searchLabel = new javax.swing.JLabel();
-        searchField = new javax.swing.JTextField();
         valuePanel = new javax.swing.JPanel();
 
         mainPanel.setName("mainPanel"); // NOI18N
@@ -139,40 +144,24 @@ public class IMatView extends FrameView implements Observer{
         searchPanel.setBackground(resourceMap.getColor("searchPanel.background")); // NOI18N
         searchPanel.setName("searchPanel"); // NOI18N
 
-        searchLabel.setFont(resourceMap.getFont("searchLabel.font")); // NOI18N
-        searchLabel.setText(resourceMap.getString("searchLabel.text")); // NOI18N
-        searchLabel.setName("searchLabel"); // NOI18N
-
-        searchField.setBackground(resourceMap.getColor("searchField.background")); // NOI18N
-        searchField.setFont(resourceMap.getFont("searchField.font")); // NOI18N
-        searchField.setText(resourceMap.getString("searchField.text")); // NOI18N
-        searchField.setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("searchField.border.lineColor"))); // NOI18N
-        searchField.setName("searchField"); // NOI18N
-        searchField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                searchFieldFocusGained(evt);
-            }
-        });
-
         org.jdesktop.layout.GroupLayout searchPanelLayout = new org.jdesktop.layout.GroupLayout(searchPanel);
         searchPanel.setLayout(searchPanelLayout);
         searchPanelLayout.setHorizontalGroup(
             searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, searchPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(searchLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                .add(1, 1, 1)
-                .add(searchField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 267, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .add(0, 357, Short.MAX_VALUE)
         );
         searchPanelLayout.setVerticalGroup(
             searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+<<<<<<< HEAD
             .add(searchPanelLayout.createSequentialGroup()
                 .add(8, 8, 8)
                 .add(searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(searchField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
                     .add(searchLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 38, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(10, 10, 10))
+=======
+            .add(0, 65, Short.MAX_VALUE)
+>>>>>>> Startframe fixad
         );
 
         org.jdesktop.layout.GroupLayout categoryBigPanelLayout = new org.jdesktop.layout.GroupLayout(categoryBigPanel);
@@ -196,9 +185,19 @@ public class IMatView extends FrameView implements Observer{
             .add(categoryBigPanelLayout.createSequentialGroup()
                 .add(34, 34, 34)
                 .add(categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+<<<<<<< HEAD
                     .add(backButton)
                     .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 56, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .add(27, 27, 27)
+=======
+                    .add(categoryBigPanelLayout.createSequentialGroup()
+                        .add(57, 57, 57)
+                        .add(backButton))
+                    .add(categoryBigPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .add(31, 31, 31)
+>>>>>>> Startframe fixad
                 .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -261,10 +260,6 @@ public class IMatView extends FrameView implements Observer{
         setComponent(mainPanel);
     }// </editor-fold>//GEN-END:initComponents
 
-private void searchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchFieldFocusGained
-    searchField.setText("");
-}//GEN-LAST:event_searchFieldFocusGained
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JPanel categoryBigPanel;
@@ -274,8 +269,6 @@ private void searchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel logPanel;
     private javax.swing.JPanel mainPanel;
-    private javax.swing.JTextField searchField;
-    private javax.swing.JLabel searchLabel;
     private javax.swing.JPanel searchPanel;
     private javax.swing.JPanel valuePanel;
     // End of variables declaration//GEN-END:variables

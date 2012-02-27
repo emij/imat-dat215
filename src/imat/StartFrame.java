@@ -10,17 +10,28 @@
  */
 package imat;
 
+import java.awt.*;
 import java.awt.event.*;
+import org.jdesktop.application.SingleFrameApplication;
 
 /**
  *
  * @author lisastenberg
  */
 public class StartFrame extends javax.swing.JFrame implements ActionListener {
+    private SingleFrameApplication app;
 
     /** Creates new form StartFrame */
-    public StartFrame() {
+    public StartFrame(SingleFrameApplication app) {
+        this.app = app;
         initComponents();
+        
+        
+        goDirectlyButton.addActionListener(this);
+        helpButton.addActionListener(this);
+        
+        goDirectlyButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        helpButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
     /** This method is called from within the constructor to
@@ -138,41 +149,7 @@ public class StartFrame extends javax.swing.JFrame implements ActionListener {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StartFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                new StartFrame().setVisible(true);
-            }
-        });
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel firstTimeLabel;
     private javax.swing.JButton goDirectlyButton;
@@ -187,7 +164,8 @@ public class StartFrame extends javax.swing.JFrame implements ActionListener {
         if(ae.getSource() == helpButton) {
             //TODO: Go to help
         } else if(ae.getSource() == goDirectlyButton) {
-            //TODO: Open iMatView
+            this.setVisible(false);
+            new IMatView(app);
         }
     }
 }

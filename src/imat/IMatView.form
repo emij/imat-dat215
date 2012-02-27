@@ -136,8 +136,19 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                                   <Component id="backButton" min="-2" max="-2" attributes="1"/>
                                   <Component id="searchPanel" min="-2" pref="56" max="-2" attributes="1"/>
+=======
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                                      <Component id="backButton" min="-2" max="-2" attributes="1"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="searchPanel" min="-2" max="-2" attributes="1"/>
+                                  </Group>
+>>>>>>> Startframe fixad
                               </Group>
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Component id="categorySmallPanel" pref="427" max="32767" attributes="0"/>
@@ -176,17 +187,12 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="searchLabel" pref="49" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                  <Component id="searchField" min="-2" pref="267" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="0" pref="357" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -195,36 +201,12 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                               </Group>
+=======
+                              <EmptySpace min="0" pref="65" max="32767" attributes="0"/>
+>>>>>>> Startframe fixad
                           </Group>
                         </DimensionLayout>
                       </Layout>
-                      <SubComponents>
-                        <Component class="javax.swing.JLabel" name="searchLabel">
-                          <Properties>
-                            <Property name="font" type="java.awt.Font" resourceKey="searchLabel.font"/>
-                            <Property name="text" type="java.lang.String" resourceKey="searchLabel.text"/>
-                            <Property name="name" type="java.lang.String" value="searchLabel" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="searchField">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" resourceKey="searchField.background"/>
-                            <Property name="font" type="java.awt.Font" resourceKey="searchField.font"/>
-                            <Property name="text" type="java.lang.String" resourceKey="searchField.text"/>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                                <LineBorder>
-                                  <Property name="color" resourceKey="searchField.border.lineColor"/>
-                                </LineBorder>
-                              </Border>
-                            </Property>
-                            <Property name="name" type="java.lang.String" value="searchField" noResource="true"/>
-                          </Properties>
-                          <Events>
-                            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="searchFieldFocusGained"/>
-                          </Events>
-                        </Component>
-                      </SubComponents>
                     </Container>
                   </SubComponents>
                 </Container>

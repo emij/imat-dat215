@@ -29,7 +29,7 @@ private IMatDataHandler data;
                 setOpaque(false);
                 data = IMatDataHandler.getInstance();
             
-		setLayout(new GridLayout(3, 4, 10, 10));
+		setLayout(new GridLayout(3, 4, 0, 0));
                 buttonArr = new JButton[grids];
                 
                 for(int i = 0; i < 12; i++) {
@@ -44,6 +44,7 @@ private IMatDataHandler data;
                     buttonArr[i].setLocation(10,15);
                     panelArr[i].setOpaque(false);
                     panelArr[i].add(buttonArr[i]);
+                    buttonArr[i].setCursor(new Cursor(Cursor.HAND_CURSOR));
                 }
                 
                 // Add empty buttons in the remaining grid spaces
