@@ -35,6 +35,7 @@ private IMatDataHandler data;
                 for(int i = 0; i < 12; i++) {
                     panelArr[i] = new JPanel();
                     add(panelArr[i]);
+                    panelArr[i].setOpaque(false);
                 }
                 
 		//Add all panels to the grid et.c
@@ -42,24 +43,14 @@ private IMatDataHandler data;
                     panelArr[i].setBackground(Color.WHITE);
                     buttonArr[i] = new JButton("");
                     buttonArr[i].setLocation(10,15);
-                    panelArr[i].setOpaque(false);
                     panelArr[i].add(buttonArr[i]);
                     buttonArr[i].setCursor(new Cursor(Cursor.HAND_CURSOR));
                 }
                 
-                // Add empty buttons in the remaining grid spaces
-                for(int i = grids; i < 11; i++) {
-                    panelArr[i].setBackground(Color.WHITE);
-                    panelArr[i].setOpaque(false);
-                    emptyButton = new JButton(new ImageIcon(getClass().getResource("resources/kategoribilder/tom.png")));
-                    panelArr[i].add(emptyButton);
-                    emptyButton.setBorder(null);
-                }
-                
                 // Add the favorite button last
                 panelArr[11].add(favoritesButton);
-                panelArr[11].setOpaque(false);
                 favoritesButton.setBorder(null);
+                favoritesButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
       	}
         
         public JPanel[] getPanelArr() {
