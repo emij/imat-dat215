@@ -21,7 +21,8 @@ import se.chalmers.ait.dat215.project.*;
 public class ProductPanel extends javax.swing.JPanel {
     
     private Dimension iconDimension = new Dimension(40,40);
-    
+    private boolean isFavorite;
+    public Product product;
     private IMatDataHandler data = IMatDataHandler.getInstance();
     private Color typBrun = new Color(164, 157, 157);
 
@@ -32,7 +33,9 @@ public class ProductPanel extends javax.swing.JPanel {
     
     public ProductPanel(Product product){
         initComponents();
-        initMyComponents(product);    
+        this.product = product;
+        isFavorite = data.isFavorite(product);
+        initMyComponents();    
     }
    
 
@@ -213,13 +216,18 @@ public class ProductPanel extends javax.swing.JPanel {
     private javax.swing.JButton valuePlus;
     // End of variables declaration//GEN-END:variables
 
-    private void initMyComponents(Product product) {
+    private void initMyComponents() {
         productPicture.setIcon(data.getImageIcon(product, iconDimension));
         productPicture.setBorder(BorderFactory.createLineBorder(typBrun, 1));
         productName.setText(product.getName());
         productName.setFont(new Font("Georgia", Font.PLAIN, 12));
         productPrice.setText("" + product.getPrice() + " " + product.getUnit());
         productPrice.setFont(new Font("Georgia", Font.PLAIN, 12));
+        if(!isFavorite){
+            addToFavorites.setText("Favoriter");
+        } else {
+            addToFavorites.setText("Ta bort");
+        }
         leftPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 1, typBrun));
         pricePanel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, typBrun));
         rightPanel.setBorder(BorderFactory.createMatteBorder(0, 1, 1, 0, typBrun));

@@ -9,7 +9,10 @@ import javax.swing.*;
 import se.chalmers.ait.dat215.project.*;
 
 /**
- *
+ * A class for creating pages that shows either
+ * products in category
+ * products in favorites
+ * products in shoppingcart
  * @author e
  */
 public class ProductListUpdater {
@@ -17,7 +20,7 @@ public class ProductListUpdater {
    
 //gissar extends Observable osv
     
-    public enum CategoryEnum { PRODUCTS, SHOPPINGCART, FAVORITES }
+    
     
     private IMatDataHandler data = IMatDataHandler.getInstance();
     
@@ -33,32 +36,32 @@ public class ProductListUpdater {
     private ProductList productList;
     private ShoppingCartList shoppingCartList;
     
-    public ProductListUpdater(ProductCategory productCategory, CategoryEnum type){
-        if(type == CategoryEnum.PRODUCTS){
-            products = data.getProducts(productCategory);
-            productList = new ProductList();
-            productList.setCategoryName(productCategory.toString());
-            updateProductList();
-            
-        } else if (type == CategoryEnum.SHOPPINGCART){
-            shoppingItems = data.getShoppingCart().getItems();
-            shoppingCartList = new ShoppingCartList();
-            shoppingCartList.setCategoryName("Favoriter");
-            for(int i = 0; i < shoppingItems.size(); i++){
-                products.add(i, shoppingItems.get(i).getProduct());
-                amount.add(i, shoppingItems.get(i).getAmount());
-                totalValue.add(i, shoppingItems.get(i).getTotal());
-            }
-            updateShoppingCartList();
-            
-        } else {
-            products = data.favorites();
-            productList = new ProductList();
-            productList.setCategoryName(productCategory.toString());
-            updateFavorites();
-        }
+    public ProductListUpdater(ProductCategory productCategory){
+        products = data.getProducts(productCategory);
+        productList = new ProductList();
+        productList.setCategoryName(productCategory.toString());
+        updateProductList();
     }
-        private void updateShoppingCartList() {
+    public ProductListUpdater(ShoppingCart shoppingCart){
+        shoppingItems = data.getShoppingCart().getItems();
+        shoppingCartList = new ShoppingCartList();
+        shoppingCartList.setCategoryName("Kundvagn");
+        for(int i = 0; i < shoppingItems.size(); i++){
+            products.add(i, shoppingItems.get(i).getProduct());
+            amount.add(i, shoppingItems.get(i).getAmount());
+            totalValue.add(i, shoppingItems.get(i).getTotal());
+        }
+        updateShoppingCartList();
+    }
+            
+    public ProductListUpdater(List<Product> products){
+        this.products = products;
+        productList = new ProductList();
+        productList.setCategoryName("Favoriter");
+        updateProductList();
+    }
+    
+    private void updateShoppingCartList() {
         shoppingCartPanels = new ShoppingCartPanel[products.size()];
         for(int i = 0; i < products.size(); i++){
             shoppingCartPanels[i] = new ShoppingCartPanel(products.get(i), amount.get(i), totalValue.get(i));
@@ -76,7 +79,7 @@ public class ProductListUpdater {
             productList.addToProductList(productPanels[i]);
         }
         
-    }
+    } // Används ej för tillfället
     private void updateFavorites() {
         favoritesPanels = new FavoritesPanel[products.size()];
         for(int i = 0; i < products.size(); i++){
@@ -86,8 +89,12 @@ public class ProductListUpdater {
             productList.addToProductList(favoritesPanels[i]);
         }
     }
-    public JPanel getPanel() {
+    public JPanel getProductPanel() {
         return productList;
+    }
+    
+    public JPanel getShoppingCartPanel(){
+        return shoppingCartList;
     }
 
     
