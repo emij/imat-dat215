@@ -37,6 +37,7 @@ public class IMatView extends FrameView implements Observer{
     CategoryCard cc;
     SidebarPanel s;
     SearchPanel sp;
+    ProductListUpdater productUpdateList;
 
     public IMatView(SingleFrameApplication app) {
         super(app);
@@ -54,11 +55,12 @@ public class IMatView extends FrameView implements Observer{
         cc = new CategoryCard();
         s = new SidebarPanel(this);
         sp = new SearchPanel();
+        productUpdateList = new ProductListUpdater(this, ProductCategory.COLD_DRINKS);
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
         categorySmallPanel.add(c.getPanel(), "category");
         categorySmallPanel.add(d.getPanel(), "drinks");
         categorySmallPanel.add(f.getPanel(), "fruit");
-        categorySmallPanel.add(cc, "card4");
+        categorySmallPanel.add(productUpdateList.getProductPanel(), "card4");
         categorySmallPanel.add(a.getPanel(), "adress");
         categorySmallPanel.add(p.getPanel(), "betala");
         

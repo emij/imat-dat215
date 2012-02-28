@@ -23,8 +23,8 @@ public class ValuePanel extends JPanel implements Observer {
 
     org.jdesktop.application.ResourceMap resourceMap;
             
-    int nbrOfProducts = 0;
-    int sum = 0;
+    double nbrOfProducts = 0;
+    double sum = 0;
     /** Creates new form ValuePanel */
     public ValuePanel() {
         initComponents();
@@ -44,6 +44,7 @@ public class ValuePanel extends JPanel implements Observer {
     public void setLabeltext() {
         toShoppingCartLabel1.setText("Till Kundvagnen (" + nbrOfProducts + 
          " varor, " + sum + " SEK )");
+
     }
     /** This method is called from within the constructor to
      * initialize the form.

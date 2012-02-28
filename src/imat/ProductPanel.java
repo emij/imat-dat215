@@ -245,17 +245,21 @@ public class ProductPanel extends javax.swing.JPanel {
     public JButton getPlusButton(){
         return valuePlus;
     }
-    public JTextField getValue(){
-        return value;
+    public String getValue(){
+        return value.toString();
     }
     public Product getProduct(){
         return product;
     }
     public void setFavoritesButton(){
-        if(!isFavorite){
+        if(isFavorite){
             addToFavorites.setText("Favoriter");
+            isFavorite = false;
+            data.removeFavorite(this.product);
         } else {
             addToFavorites.setText("Ta bort");
+            isFavorite = true;
+            data.addFavorite(this.product);
         }        
     }
     
