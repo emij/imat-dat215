@@ -43,7 +43,7 @@ public class ValuePanel extends JPanel implements Observer {
     
     public void setLabeltext() {
         toShoppingCartLabel1.setText("Till Kundvagnen (" + nbrOfProducts + 
-        + " varor, " + SUMMA + " SEK )");
+         " varor, " + sum + " SEK )");
     }
     /** This method is called from within the constructor to
      * initialize the form.
