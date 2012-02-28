@@ -55,7 +55,7 @@ public class IMatView extends FrameView implements Observer{
         cc = new CategoryCard();
         s = new SidebarPanel(this);
         sp = new SearchPanel();
-        productUpdateList = new ProductListUpdater(this, ProductCategory.COLD_DRINKS);
+        productUpdateList = new ProductListUpdater(v.getPanelObserver(), ProductCategory.COLD_DRINKS);
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
         categorySmallPanel.add(c.getPanel(), "category");
         categorySmallPanel.add(d.getPanel(), "drinks");

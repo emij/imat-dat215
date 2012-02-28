@@ -42,9 +42,10 @@ public class ProductListUpdater extends Observable implements ActionListener {
     private ProductList productList;
     private ShoppingCartList shoppingCartList;
     
-    public ProductListUpdater(Observer value, ProductCategory productCategory){
-        this.addObserver(value);
-        products = data.getProducts(productCategory); //TODO fixa kategorinamn
+
+    public ProductListUpdater(Observer o, ProductCategory productCategory){
+        this.addObserver(o);
+        products = data.getProducts(productCategory);
         productList = new ProductList();
         productList.setCategoryName(productCategory.toString());
         updateProductList();

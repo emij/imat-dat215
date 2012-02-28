@@ -20,12 +20,14 @@ import javax.swing.event.DocumentListener;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultStyledDocument;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
  *
  * @author lisastenberg
  */
 public class VisaCardPanel extends javax.swing.JPanel implements DocumentListener{
+    IMatDataHandler dh = IMatDataHandler.getInstance();
     /** Creates new form VisaCardPanel */
     public VisaCardPanel() {
         initComponents();
