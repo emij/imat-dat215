@@ -24,6 +24,7 @@ public class StartFrame extends javax.swing.JFrame implements ActionListener {
     /** Creates new form StartFrame */
     public StartFrame(SingleFrameApplication app) {
         this.app = app;
+       
         initComponents();
         
         this.setSize(new Dimension(1000, 700));
@@ -172,8 +173,8 @@ public class StartFrame extends javax.swing.JFrame implements ActionListener {
         if(ae.getSource() == helpButton) {
             //TODO: Go to help
         } else if(ae.getSource() == goDirectlyButton) {
-            this.setVisible(false);
             new IMatView(app);
+            
         }
     }
 }
