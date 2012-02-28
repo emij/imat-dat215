@@ -42,7 +42,7 @@ public class IMatView extends FrameView implements Observer{
     public IMatView(SingleFrameApplication app) {
         super(app);
         this.getFrame().setVisible(true);
-        this.getFrame().setSize(new Dimension(1000, 700));
+        this.getFrame().setSize(new Dimension(1100, 700));
         this.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initComponents();
         

@@ -97,6 +97,9 @@
         <Property name="text" type="java.lang.String" resourceKey="visaButton.text"/>
         <Property name="name" type="java.lang.String" value="visaButton" noResource="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="visaButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="fakturaButton">
       <Properties>
@@ -106,6 +109,9 @@
         <Property name="text" type="java.lang.String" resourceKey="fakturaButton.text"/>
         <Property name="name" type="java.lang.String" value="fakturaButton" noResource="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fakturaButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="kontantButton">
       <Properties>
@@ -115,6 +121,9 @@
         <Property name="text" type="java.lang.String" resourceKey="kontantButton.text"/>
         <Property name="name" type="java.lang.String" value="kontantButton" noResource="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kontantButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>

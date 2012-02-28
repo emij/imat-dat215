@@ -10,6 +10,8 @@
  */
 package imat;
 
+import java.awt.CardLayout;
+import java.awt.Color;
 import javax.swing.*;
 
 /**
@@ -18,12 +20,19 @@ import javax.swing.*;
  */
 public class PaymentPanel extends javax.swing.JPanel {
     private VisaCardPanel v;
+    private FakturaPanel f;
+    private JPanel j; 
     
     /** Creates new form PaymentPanel */
     public PaymentPanel() {
         initComponents();
         v = new VisaCardPanel();
+        f = new FakturaPanel();
+        j = new JPanel();
+        j.setBackground(new Color(252,251,237));
         cardPanel.add(v, "visa");
+        cardPanel.add(f, "faktura");
+        cardPanel.add(j, "kontant");
         
     }
     
@@ -31,6 +40,10 @@ public class PaymentPanel extends javax.swing.JPanel {
         return doneButton;
     }
     
+    public void changePanel(String s) {
+        CardLayout c = (CardLayout)(cardPanel.getLayout());
+        c.show(cardPanel, s);
+    }
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -64,14 +77,29 @@ public class PaymentPanel extends javax.swing.JPanel {
         visaButton.setSelected(true);
         visaButton.setText(resourceMap.getString("visaButton.text")); // NOI18N
         visaButton.setName("visaButton"); // NOI18N
+        visaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                visaButtonActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(fakturaButton);
         fakturaButton.setText(resourceMap.getString("fakturaButton.text")); // NOI18N
         fakturaButton.setName("fakturaButton"); // NOI18N
+        fakturaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fakturaButtonActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(kontantButton);
         kontantButton.setText(resourceMap.getString("kontantButton.text")); // NOI18N
         kontantButton.setName("kontantButton"); // NOI18N
+        kontantButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kontantButtonActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(resourceMap.getFont("jLabel1.font")); // NOI18N
         jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
@@ -122,6 +150,19 @@ public class PaymentPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+private void fakturaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fakturaButtonActionPerformed
+    changePanel("faktura");
+}//GEN-LAST:event_fakturaButtonActionPerformed
+
+private void visaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_visaButtonActionPerformed
+    changePanel("visa");
+}//GEN-LAST:event_visaButtonActionPerformed
+
+private void kontantButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kontantButtonActionPerformed
+    changePanel("kontant");
+}//GEN-LAST:event_kontantButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel cardPanel;
