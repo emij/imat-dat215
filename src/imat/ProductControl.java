@@ -10,7 +10,7 @@ package imat;
  */
 public class ProductControl {
     private double nbrOfProducts, sum;
-    private static ProductControl instance = new ProductControl(0, 0);
+    private static ProductControl instance;
     
     private ProductControl(double nbrOfProducts, double sum) {
         this.nbrOfProducts = nbrOfProducts;
@@ -18,6 +18,9 @@ public class ProductControl {
     }
     
     public static ProductControl getInstance() {
+        if(instance == null) {
+            instance = new ProductControl(0, 0);
+        }
         return instance;
     }
     
