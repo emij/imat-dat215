@@ -33,6 +33,8 @@
                       <Component id="leftLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
                       <Component id="middleLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="categoryLabel" alignment="0" min="-2" pref="650" max="-2" attributes="0"/>
               </Group>
@@ -49,6 +51,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="leftLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="middleLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="categoryScrollPane" pref="348" max="32767" attributes="0"/>
@@ -115,6 +118,13 @@
         <Property name="foreground" type="java.awt.Color" resourceKey="middleLabel.foreground"/>
         <Property name="text" type="java.lang.String" resourceKey="middleLabel.text"/>
         <Property name="name" type="java.lang.String" value="middleLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="jLabel1.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="jLabel1.text"/>
+        <Property name="name" type="java.lang.String" value="jLabel1" noResource="true"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -124,7 +124,15 @@
         </Component>
         <Component class="javax.swing.JButton" name="addToFavorites">
           <Properties>
+            <Property name="background" type="java.awt.Color" resourceKey="addToFavorites.background"/>
+            <Property name="foreground" type="java.awt.Color" resourceKey="addToFavorites.foreground"/>
+            <Property name="icon" type="javax.swing.Icon" resourceKey="addToFavorites.icon"/>
             <Property name="text" type="java.lang.String" resourceKey="addToFavorites.text"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder bottom="0" left="0" right="0" top="0"/>
+              </Border>
+            </Property>
             <Property name="name" type="java.lang.String" value="addToFavorites" noResource="true"/>
           </Properties>
         </Component>
@@ -247,6 +255,9 @@
             <Property name="font" type="java.awt.Font" resourceKey="value.font"/>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" resourceKey="value.text"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Default Cursor"/>
+            </Property>
             <Property name="disabledTextColor" type="java.awt.Color" resourceKey="value.disabledTextColor"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -294,16 +305,22 @@
         </Component>
         <Component class="javax.swing.JButton" name="addToChart">
           <Properties>
+            <Property name="background" type="java.awt.Color" resourceKey="addToChart.background"/>
+            <Property name="foreground" type="java.awt.Color" resourceKey="addToChart.foreground"/>
+            <Property name="icon" type="javax.swing.Icon" resourceKey="addToChart.icon"/>
             <Property name="text" type="java.lang.String" resourceKey="addToChart.text"/>
+            <Property name="alignmentX" type="float" value="0.5"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
                 <EmptyBorder bottom="0" left="0" right="0" top="0"/>
               </Border>
             </Property>
+            <Property name="iconTextGap" type="int" value="0"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[45, 35]"/>
+              <Dimension value="[161, 28]"/>
             </Property>
             <Property name="name" type="java.lang.String" value="addToChart" noResource="true"/>
+            <Property name="opaque" type="boolean" value="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.Box$Filler" name="filler6">
