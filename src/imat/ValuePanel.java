@@ -63,6 +63,7 @@ public class ValuePanel extends JPanel {
 
         toShoppingCartLabel1.setFont(resourceMap.getFont("toShoppingCartLabel1.font")); // NOI18N
         toShoppingCartLabel1.setForeground(resourceMap.getColor("toShoppingCartLabel1.foreground")); // NOI18N
+        toShoppingCartLabel1.setIcon(resourceMap.getIcon("toShoppingCartLabel1.icon")); // NOI18N
         toShoppingCartLabel1.setText(resourceMap.getString("toShoppingCartLabel1.text")); // NOI18N
         toShoppingCartLabel1.setName("toShoppingCartLabel1"); // NOI18N
 
@@ -86,7 +87,7 @@ public class ValuePanel extends JPanel {
             valuePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(valuePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .add(toShoppingCartLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(toShoppingCartLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 23, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(toShoppingCartLabel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(62, Short.MAX_VALUE))
