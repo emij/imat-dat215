@@ -42,9 +42,8 @@ public class ValuePanel extends JPanel implements Observer {
     }
     
     public void setLabeltext() {
-        /*TODO: toShoppingCartLabel1.setText("Till Kundvagnen (" + ANTALVAROR + 
+        toShoppingCartLabel1.setText("Till Kundvagnen (" + nbrOfProducts + 
         + " varor, " + SUMMA + " SEK )");
-         */
     }
     /** This method is called from within the constructor to
      * initialize the form.

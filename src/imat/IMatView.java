@@ -32,6 +32,7 @@ public class IMatView extends FrameView implements Observer{
     DrinksGridPanel d;
     FruitGridPanel f;
     ValueObserver v;
+    PaymentCard p;
 
     CategoryCard cc;
     SidebarPanel s;
@@ -49,6 +50,7 @@ public class IMatView extends FrameView implements Observer{
         d = new DrinksGridPanel(this);
         f = new FruitGridPanel(this);
         v = new ValueObserver(this);
+        p = new PaymentCard(this);
         cc = new CategoryCard();
         s = new SidebarPanel(this);
         sp = new SearchPanel();
@@ -58,6 +60,7 @@ public class IMatView extends FrameView implements Observer{
         categorySmallPanel.add(f.getPanel(), "fruit");
         categorySmallPanel.add(cc, "card4");
         categorySmallPanel.add(a.getPanel(), "adress");
+        categorySmallPanel.add(p.getPanel(), "betala");
         
         categoryPanel.add(s.getPanel(), "sidepanel");
         searchPanel.setLayout(new GridLayout(1, 1));
