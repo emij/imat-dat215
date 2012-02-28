@@ -171,10 +171,9 @@ public class StartFrame extends javax.swing.JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource() == helpButton) {
-            //TODO: Go to help
+            new HelpFrame(app);
         } else if(ae.getSource() == goDirectlyButton) {
             new IMatView(app);
-            
         }
     }
 }

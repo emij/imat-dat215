@@ -27,6 +27,7 @@ import javax.swing.*;
  */
 public class IMatView extends FrameView implements Observer{
 
+    AdressCard a;
     CategoryGridPanel c;
     DrinksGridPanel d;
     FruitGridPanel f;
@@ -43,6 +44,7 @@ public class IMatView extends FrameView implements Observer{
         this.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initComponents();
         
+        a = new AdressCard(this);
         c = new CategoryGridPanel(this);
         d = new DrinksGridPanel(this);
         f = new FruitGridPanel(this);
@@ -55,6 +57,8 @@ public class IMatView extends FrameView implements Observer{
         categorySmallPanel.add(d.getPanel(), "drinks");
         categorySmallPanel.add(f.getPanel(), "fruit");
         categorySmallPanel.add(cc, "card4");
+        categorySmallPanel.add(a.getPanel(), "adress");
+        
         categoryPanel.add(s.getPanel(), "sidepanel");
         searchPanel.setLayout(new GridLayout(1, 1));
         searchPanel.add(sp, "search");
