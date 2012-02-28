@@ -188,9 +188,6 @@
                           <Connection code="null" type="code"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" resourceKey="categorySmallPanel.foreground"/>
-                        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                          <Dimension value="[200, 200]"/>
-                        </Property>
                         <Property name="name" type="java.lang.String" value="categorySmallPanel" noResource="true"/>
                       </Properties>
 

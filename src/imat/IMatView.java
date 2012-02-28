@@ -31,9 +31,11 @@ public class IMatView extends FrameView implements Observer{
     DrinksGridPanel d;
     FruitGridPanel f;
     ValueObserver v;
+
     CategoryCard cc;
     SidebarPanel s;
     SearchPanel sp;
+
     public IMatView(SingleFrameApplication app) {
         super(app);
         this.getFrame().setVisible(true);
@@ -59,6 +61,8 @@ public class IMatView extends FrameView implements Observer{
         backButton.setEnabled(false);
         valuePanel.setLayout(new BorderLayout());
         valuePanel.add(v.getPanel(), BorderLayout.CENTER);
+        
+        
     }
     
     /* Send the string of the panel you want the cardlayout to show
@@ -164,7 +168,6 @@ public class IMatView extends FrameView implements Observer{
 
         categorySmallPanel.setBackground(null);
         categorySmallPanel.setForeground(resourceMap.getColor("categorySmallPanel.foreground")); // NOI18N
-        categorySmallPanel.setMaximumSize(new java.awt.Dimension(200, 200));
         categorySmallPanel.setName("categorySmallPanel"); // NOI18N
         categorySmallPanel.setLayout(new java.awt.CardLayout());
 
@@ -197,6 +200,7 @@ public class IMatView extends FrameView implements Observer{
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 109, Short.MAX_VALUE)
                         .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+
         );
         categoryBigPanelLayout.setVerticalGroup(
             categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)

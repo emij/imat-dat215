@@ -1,0 +1,144 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="categoryScrollPane" alignment="1" pref="650" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="leftLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
+                      <Component id="middleLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <Component id="rightLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="categoryLabel" alignment="0" min="-2" pref="650" max="-2" attributes="0"/>
+                  <Component id="totalAmountDue" alignment="1" min="-2" pref="83" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="categoryLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="leftLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="middleLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="rightLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="categoryScrollPane" min="-2" pref="241" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="totalAmountDue" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="categoryLabel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="categoryLabel.background"/>
+        <Property name="font" type="java.awt.Font" resourceKey="categoryLabel.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="categoryLabel.text"/>
+        <Property name="name" type="java.lang.String" value="categoryLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="categoryScrollPane">
+      <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="categoryScrollPane.background"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+            <EmptyBorder/>
+          </Border>
+        </Property>
+        <Property name="horizontalScrollBar" type="javax.swing.JScrollBar" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="null"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 0]"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="categoryScrollPane" noResource="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="scrollPanel">
+          <Properties>
+            <Property name="background" type="java.awt.Color" resourceKey="scrollPanel.background"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder/>
+              </Border>
+            </Property>
+            <Property name="name" type="java.lang.String" value="scrollPanel" noResource="true"/>
+          </Properties>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout">
+            <Property name="axis" type="int" value="3"/>
+          </Layout>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="leftLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="leftLabel.font"/>
+        <Property name="foreground" type="java.awt.Color" resourceKey="leftLabel.foreground"/>
+        <Property name="text" type="java.lang.String" resourceKey="leftLabel.text"/>
+        <Property name="name" type="java.lang.String" value="leftLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="rightLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="rightLabel.font"/>
+        <Property name="foreground" type="java.awt.Color" resourceKey="rightLabel.foreground"/>
+        <Property name="text" type="java.lang.String" resourceKey="rightLabel.text"/>
+        <Property name="name" type="java.lang.String" value="rightLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="middleLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="middleLabel.font"/>
+        <Property name="foreground" type="java.awt.Color" resourceKey="middleLabel.foreground"/>
+        <Property name="text" type="java.lang.String" resourceKey="middleLabel.text"/>
+        <Property name="name" type="java.lang.String" value="middleLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="totalAmountDue">
+      <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="totalAmountDue.background"/>
+        <Property name="font" type="java.awt.Font" resourceKey="totalAmountDue.font"/>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" resourceKey="totalAmountDue.text"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+            <EmptyBorder/>
+          </Border>
+        </Property>
+        <Property name="name" type="java.lang.String" value="totalAmountDue" noResource="true"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

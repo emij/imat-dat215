@@ -28,7 +28,8 @@ public class CategoryCard extends JPanel {
     private List<Product> products;
     
     private Dimension iconDimension = new Dimension(50,50);
-    private Dimension panelDimension = new Dimension(350,60);
+    private Dimension valueDimension = new Dimension(30,30);
+    private Dimension panelDimension = new Dimension(274,55);
     private Dimension windowDimension = new Dimension(1100,800);
     
     private ProductCategory productCategory;
@@ -83,7 +84,7 @@ public class CategoryCard extends JPanel {
             leftColumn[i].add(productName);
             leftColumn[i].add(Box.createRigidArea(new Dimension(widthRigid,0)));
             leftColumn[i].add(Box.createHorizontalGlue());
-            addToFavorites[i] = new JButton("Lägg till i favoriter"); // TODO , imageicon
+            addToFavorites[i] = new JButton("favoriter"); // TODO , imageicon
             leftColumn[i].add(addToFavorites[i]);
             leftColumn[i].add(Box.createRigidArea(new Dimension(5, 0)));
         }
@@ -97,14 +98,15 @@ public class CategoryCard extends JPanel {
         for(int i = 0; i < products.size(); i++){
             rightColumn[i] = new JPanel();
             rightColumn[i].setLayout(new BoxLayout(rightColumn[i], BoxLayout.LINE_AXIS));
-            valueMinus[i] = new JButton("minus");
+            valueMinus[i] = new JButton("-");
             rightColumn[i].add(valueMinus[i]);
             value[i] = new JTextField("0");
+            value[i].setMaximumSize(valueDimension);
             rightColumn[i].add(value[i]);
-            valuePlus[i] = new JButton("plus");
+            valuePlus[i] = new JButton("+");
             rightColumn[i].add(valuePlus[i]);
             rightColumn[i].add(Box.createHorizontalGlue());
-            addToChart[i] = new JButton("Lägg till i Kundvagn");
+            addToChart[i] = new JButton("Köp");
             rightColumn[i].add(addToChart[i]);
             
         }
@@ -116,18 +118,13 @@ public class CategoryCard extends JPanel {
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.anchor = GridBagConstraints.SOUTHWEST;
-        JLabel categoryName = new JLabel("" + productCategory.name());
-        card.add(categoryName, constraints);
-        JSeparator horizontalSeparator = new JSeparator(SwingConstants.HORIZONTAL);
-        horizontalSeparator.setSize(new Dimension(100, 20));
-        constraints.gridy = 1;
-        card.add(horizontalSeparator, constraints);
-        constraints.gridwidth = 3;
-        constraints.gridy = 1;
-        
-        
-        constraints.gridwidth = 3;
-        
+        JLabel categoryName = new JLabel("" + productCategory.toString()); //TODO metod som hämtar svenskt namn
+        JPanel upperPanel = new JPanel();
+        upperPanel.add(categoryName);
+        upperPanel.setBorder(BorderFactory.createCompoundBorder(
+                   BorderFactory.createLineBorder(Color.red),
+                   upperPanel.getBorder()));
+        card.add(upperPanel, constraints);
         
         for(int i = 0; i < products.size(); i++){
         //int i = 0;
@@ -136,17 +133,28 @@ public class CategoryCard extends JPanel {
             constraints.gridx = 0;
             card.add(Box.createRigidArea(new Dimension((widthRigid/2),0)));
             leftColumn[i].setBorder(BorderFactory.createCompoundBorder(
-                   BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK),
-                   leftColumn[i].getBorder()));
+                   BorderFactory.createLineBorder(Color.red),
+                   leftColumn[1].getBorder()));
             leftColumn[i].setMinimumSize(panelDimension);
             leftColumn[i].setPreferredSize(panelDimension);
-            leftColumn[i].setMaximumSize(new Dimension(500,60));
+            leftColumn[i].setMaximumSize(panelDimension);
             card.add(leftColumn[i], constraints);
             constraints.gridwidth = 1;
             constraints.gridx = 3;
-            card.add(new JLabel("" + products.get(i).getPrice() + " " + products.get(i).getUnit()), constraints);
+            JLabel priceLabel = new JLabel("" + products.get(i).getPrice() + " " + products.get(i).getUnit());
+            
+            priceLabel.setBorder(BorderFactory.createCompoundBorder(
+                   BorderFactory.createLineBorder(Color.red),
+                   priceLabel.getBorder()));
+            card.add(priceLabel, constraints);
             constraints.gridwidth = 3;
             constraints.gridx = 4;
+            rightColumn[i].setBorder(BorderFactory.createCompoundBorder(
+                   BorderFactory.createLineBorder(Color.red),
+                   rightColumn[1].getBorder()));
+            rightColumn[i].setMinimumSize(panelDimension);
+            rightColumn[i].setPreferredSize(panelDimension);
+            rightColumn[i].setMaximumSize(panelDimension);            
             card.add(rightColumn[i], constraints);           
         }
     }

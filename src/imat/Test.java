@@ -13,9 +13,11 @@ import se.chalmers.ait.dat215.project.*;
  *
  * @author e
  */
-public class Test extends JPanel {
+public class Test {
     private IMatDataHandler data = IMatDataHandler.getInstance();
     
+  
+
     private JPanel[] leftColumn;
     private JPanel[] rightColumn;
     
@@ -24,47 +26,44 @@ public class Test extends JPanel {
     private JButton[] valuePlus;
     private JButton[] addToChart;
     private JTextField[] value;
-    
     private List<Product> products;
     
     private Dimension iconDimension = new Dimension(50,50);
-    private Dimension panelDimension = new Dimension(60,60);
+    private Dimension valueDimension = new Dimension(30,30);
+    private Dimension panelDimension = new Dimension(274,55);
     private Dimension windowDimension = new Dimension(1100,800);
     
     private ProductCategory productCategory;
     GridBagConstraints constraints = new GridBagConstraints();
     
+    private int widthRigid = 10;
+    
     public Test(){
-        productCategory = productCategory.BERRY;
-        products = data.getProducts(productCategory);
-        fillPanels(this); 
-        // Add everything to this CategoryCard
-        addAll(this);
+        
         
     }
     
-    public Test(ProductCategory productCategory){
+    
+    public JPanel fillCategoryScrollPane(ProductCategory productCategory){
         products = data.getProducts(productCategory);
-        this.setLayout(new GridBagLayout());
-        fillPanels(this);
-        this.setPreferredSize(windowDimension);
-        // Add everything to this CategoryCard
-        addAll(this);
+        JPanel panel;
+        fillPanels();
+        panel = addAll();  
+        System.out.println("" + panel.getComponentCount());
+        return panel;
     }
     
-    public void fillPanels(Test card){
-        this.setLayout(new BoxLayout(card, BoxLayout.PAGE_AXIS));
-         this.setPreferredSize(windowDimension);
+    private void fillPanels(){
         
         // Create Panels in the left column
         leftColumn = new JPanel[products.size()];
-        fillLeftColumn();
+        fillLeftColumn(leftColumn);
          // Create Panels in the right column
         rightColumn = new JPanel[products.size()];
-        fillRightColumn();
+        fillRightColumn(rightColumn);
     }
 
-    private void fillLeftColumn() {
+    private void fillLeftColumn(JPanel[] leftColumn) {
         addToFavorites = new JButton[products.size()];
         JLabel productIcon;
         
@@ -73,17 +72,19 @@ public class Test extends JPanel {
             leftColumn[i].setLayout(new BoxLayout(leftColumn[i], BoxLayout.LINE_AXIS));
             productIcon = new JLabel(data.getImageIcon(products.get(i), iconDimension));
             productIcon.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+            leftColumn[i].add(Box.createRigidArea(new Dimension(widthRigid, 0)));
             leftColumn[i].add(productIcon);
             leftColumn[i].add(Box.createRigidArea(new Dimension(4,0)));
             JLabel productName = new JLabel(products.get(i).getName());
             leftColumn[i].add(productName);
-            leftColumn[i].add(Box.createRigidArea(new Dimension(5,0)));
+            leftColumn[i].add(Box.createRigidArea(new Dimension(widthRigid,0)));
             leftColumn[i].add(Box.createHorizontalGlue());
-            addToFavorites[i] = new JButton("Lägg till i favoriter"); // TODO , imageicon
+            addToFavorites[i] = new JButton("favoriter"); // TODO , imageicon
             leftColumn[i].add(addToFavorites[i]);
+            leftColumn[i].add(Box.createRigidArea(new Dimension(5, 0)));
         }
     }
-    private void fillRightColumn() {
+    private void fillRightColumn(JPanel[] rightColumn) {
         addToChart = new JButton[products.size()];
         valueMinus = new JButton[products.size()];
         valuePlus = new JButton[products.size()];
@@ -92,39 +93,39 @@ public class Test extends JPanel {
         for(int i = 0; i < products.size(); i++){
             rightColumn[i] = new JPanel();
             rightColumn[i].setLayout(new BoxLayout(rightColumn[i], BoxLayout.LINE_AXIS));
-            valueMinus[i] = new JButton("minus");
+            valueMinus[i] = new JButton("-");
             rightColumn[i].add(valueMinus[i]);
             value[i] = new JTextField("0");
+            value[i].setMaximumSize(valueDimension);
             rightColumn[i].add(value[i]);
-            valuePlus[i] = new JButton("plus");
+            valuePlus[i] = new JButton("+");
             rightColumn[i].add(valuePlus[i]);
             rightColumn[i].add(Box.createHorizontalGlue());
-            addToChart[i] = new JButton("Lägg till i Kundvagn");
+            addToChart[i] = new JButton("Köp");
             rightColumn[i].add(addToChart[i]);
-            rightColumn[i].setAlignmentX(Component.RIGHT_ALIGNMENT);
             
         }
     }
 
-    private void addAll(Test card) {
-        JLabel categoryName = new JLabel("" + productCategory.name());
-        card.add(categoryName);
-        JPanel[] innerPanel = new JPanel[products.size()];
+    private JPanel addAll() {
+        JPanel[] listPanel = new JPanel[products.size()];
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
         for(int i = 0; i < products.size(); i++){
         //int i = 0;
-            innerPanel[i] = new JPanel();
-            leftColumn[i].setAlignmentX(Component.LEFT_ALIGNMENT);
-            innerPanel[i].add(leftColumn[i]);
-            innerPanel[i].add(new JLabel("" + products.get(i).getPrice() + " " + products.get(i).getUnit()));
-            innerPanel[i].add(rightColumn[i]);
-            innerPanel[i].setAlignmentX(Component.LEFT_ALIGNMENT);
-            innerPanel[i].setBorder(BorderFactory.createCompoundBorder(
-                   BorderFactory.createLineBorder(Color.red),
-                   innerPanel[i].getBorder()));
-            card.setAlignmentX(Component.LEFT_ALIGNMENT);
-            card.add(innerPanel[i]);
+            listPanel[i] = new JPanel();
+            listPanel[i].setPreferredSize(panelDimension);
+            listPanel[i].setMaximumSize(panelDimension);
+            listPanel[i].add(leftColumn[i]);
+            JLabel priceLabel = new JLabel("" + products.get(i).getPrice() + " " + products.get(i).getUnit());
+            listPanel[i].add(priceLabel);
+            listPanel[i].add(rightColumn[i]);
+            panel.add(listPanel[i]);
         }
+        return panel;
     }
+    
+  
    
 }
     
