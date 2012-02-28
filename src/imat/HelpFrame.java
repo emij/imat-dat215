@@ -12,6 +12,8 @@ package imat;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 import org.jdesktop.application.SingleFrameApplication;
 
 /**
@@ -22,16 +24,19 @@ public class HelpFrame extends javax.swing.JFrame {
 
     private SingleFrameApplication app;
     private int currentStep = 1;
-    private javax.swing.JButton[] stepButtons;
+    private JButton[] stepButtons;
     private Icon[] helpButtons;
+    private String path = "resources/helpimages/";
 
     /** Creates new form HelpFrame */
     public HelpFrame(SingleFrameApplication app) {
         this.app = app;
         initComponents();
         
+        
+        
         //Hjälp för att hantera stegen.
-        stepButtons = new javax.swing.JButton[]{this.jButton1, this.jButton2, this.jButton3, this.jButton4, this.jButton5, this.jButton6, this.jButton7};
+        stepButtons = new JButton[]{this.jButton1, this.jButton2, this.jButton3, this.jButton4, this.jButton5, this.jButton6, this.jButton7};
         
         this.setVisible(true);
         
@@ -55,7 +60,7 @@ public class HelpFrame extends javax.swing.JFrame {
                 this.jButton10.setEnabled(true);//aktiverar nästaknappen
             }
             
-            this.jButton8.setIcon(null);
+            this.jButton8.setIcon(new ImageIcon(getClass().getResource(path + "step" + stepToLoad + "picture.png")));
 
             this.stepButtons[currentStep - 1].setEnabled(true);
             this.stepButtons[stepToLoad - 1].setEnabled(false);
@@ -87,8 +92,6 @@ public class HelpFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Form"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(HelpFrame.class);
-        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
         jButton1.setName("jButton1"); // NOI18N
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -96,7 +99,6 @@ public class HelpFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
         jButton2.setName("jButton2"); // NOI18N
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -104,7 +106,6 @@ public class HelpFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText(resourceMap.getString("jButton3.text")); // NOI18N
         jButton3.setName("jButton3"); // NOI18N
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -112,7 +113,6 @@ public class HelpFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText(resourceMap.getString("jButton4.text")); // NOI18N
         jButton4.setName("jButton4"); // NOI18N
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -120,7 +120,6 @@ public class HelpFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText(resourceMap.getString("jButton5.text")); // NOI18N
         jButton5.setName("jButton5"); // NOI18N
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -128,7 +127,6 @@ public class HelpFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText(resourceMap.getString("jButton6.text")); // NOI18N
         jButton6.setName("jButton6"); // NOI18N
         jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -136,7 +134,6 @@ public class HelpFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setText(resourceMap.getString("jButton7.text")); // NOI18N
         jButton7.setName("jButton7"); // NOI18N
         jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -144,8 +141,6 @@ public class HelpFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setIcon(resourceMap.getIcon("jButton8.icon")); // NOI18N
-        jButton8.setText(resourceMap.getString("jButton8.text")); // NOI18N
         jButton8.setName("jButton8"); // NOI18N
         jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -153,7 +148,6 @@ public class HelpFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setText(resourceMap.getString("jButton9.text")); // NOI18N
         jButton9.setName("jButton9"); // NOI18N
         jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -161,7 +155,6 @@ public class HelpFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton10.setText(resourceMap.getString("jButton10.text")); // NOI18N
         jButton10.setName("jButton10"); // NOI18N
         jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -169,7 +162,6 @@ public class HelpFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setText(resourceMap.getString("jButton11.text")); // NOI18N
         jButton11.setEnabled(false);
         jButton11.setName("jButton11"); // NOI18N
         jButton11.addMouseListener(new java.awt.event.MouseAdapter() {

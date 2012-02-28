@@ -2,6 +2,8 @@
 
 <Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
+    <Property name="background" type="java.awt.Color" resourceKey="Form.background"/>
+    <Property name="font" type="java.awt.Font" resourceKey="Form.font"/>
     <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[600, 400]"/>
@@ -48,13 +50,13 @@
                               <Component id="jTextField1" alignment="0" pref="307" max="32767" attributes="1"/>
                               <Component id="jTextField3" alignment="0" max="32767" attributes="1"/>
                           </Group>
-                          <EmptySpace pref="94" max="32767" attributes="0"/>
+                          <EmptySpace pref="21" max="32767" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="doneButton" min="-2" pref="301" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" pref="301" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -76,31 +78,31 @@
                       <Component id="jSeparator1" min="-2" pref="27" max="-2" attributes="0"/>
                       <EmptySpace min="17" pref="17" max="17" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel3" alignment="3" pref="38" max="32767" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" max="32767" attributes="0"/>
                           <Component id="jTextField1" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jTextField2" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="3" pref="39" max="32767" attributes="0"/>
+                          <Component id="jLabel4" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jTextField3" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                          <Component id="jLabel5" alignment="3" pref="38" max="32767" attributes="0"/>
+                          <Component id="jLabel5" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jTextField4" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="jTextField5" alignment="3" pref="35" max="32767" attributes="0"/>
-                          <Component id="jLabel6" alignment="3" pref="35" max="32767" attributes="0"/>
+                          <Component id="jLabel6" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-              <Component id="doneButton" min="-2" pref="36" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -109,31 +111,49 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="jTextField1">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="FirstNameTextField.font"/>
+        <Property name="foreground" type="java.awt.Color" resourceKey="FirstNameTextField.foreground"/>
+        <Property name="text" type="java.lang.String" resourceKey="FirstNameTextField.text"/>
         <Property name="name" type="java.lang.String" value="FirstNameTextField" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField2">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="LastNameTextField.font"/>
+        <Property name="foreground" type="java.awt.Color" resourceKey="LastNameTextField.foreground"/>
+        <Property name="text" type="java.lang.String" resourceKey="LastNameTextField.text"/>
         <Property name="name" type="java.lang.String" value="LastNameTextField" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField3">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="AdressTextField.font"/>
+        <Property name="foreground" type="java.awt.Color" resourceKey="AdressTextField.foreground"/>
+        <Property name="text" type="java.lang.String" resourceKey="AdressTextField.text"/>
         <Property name="name" type="java.lang.String" value="AdressTextField" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField4">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="PostAdressTextField.font"/>
+        <Property name="foreground" type="java.awt.Color" resourceKey="PostAdressTextField.foreground"/>
+        <Property name="text" type="java.lang.String" resourceKey="PostAdressTextField.text"/>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="PostAdressTextField.toolTipText"/>
         <Property name="name" type="java.lang.String" value="PostAdressTextField" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField5">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="CityTextField.font"/>
+        <Property name="foreground" type="java.awt.Color" resourceKey="CityTextField.foreground"/>
+        <Property name="text" type="java.lang.String" resourceKey="CityTextField.text"/>
         <Property name="name" type="java.lang.String" value="CityTextField" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="Header.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="Header.text"/>
         <Property name="name" type="java.lang.String" value="Header" noResource="true"/>
       </Properties>
     </Component>
@@ -144,41 +164,57 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="jLabel2.text"/>
         <Property name="name" type="java.lang.String" value="jLabel2" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="FirstNameLabel.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="FirstNameLabel.text"/>
         <Property name="name" type="java.lang.String" value="FirstNameLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="LastNameLabel.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="LastNameLabel.text"/>
         <Property name="name" type="java.lang.String" value="LastNameLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="AdressLabel.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="AdressLabel.text"/>
         <Property name="name" type="java.lang.String" value="AdressLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="PostadressLabel.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="PostadressLabel.text"/>
         <Property name="name" type="java.lang.String" value="PostadressLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBox1">
       <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="Save.background"/>
+        <Property name="font" type="java.awt.Font" resourceKey="Save.font"/>
+        <Property name="foreground" type="java.awt.Color" resourceKey="Save.foreground"/>
+        <Property name="text" type="java.lang.String" resourceKey="Save.text"/>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="Save.toolTipText"/>
         <Property name="name" type="java.lang.String" value="Save" noResource="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="doneButton">
+    <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="ToPaymentOptionsButton.icon"/>
+        <Property name="text" type="java.lang.String" resourceKey="ToPaymentOptionsButton.text"/>
         <Property name="name" type="java.lang.String" value="ToPaymentOptionsButton" noResource="true"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="doneButtonMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="doneButtonActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

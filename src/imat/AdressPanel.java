@@ -10,13 +10,9 @@
  */
 package imat;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import javax.swing.JOptionPane;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import javax.swing.JButton;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
@@ -53,46 +49,83 @@ public class AdressPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jCheckBox1 = new javax.swing.JCheckBox();
-        doneButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(AdressPanel.class);
+        setBackground(resourceMap.getColor("Form.background")); // NOI18N
+        setFont(resourceMap.getFont("Form.font")); // NOI18N
         setName("Form"); // NOI18N
         setPreferredSize(new java.awt.Dimension(600, 400));
 
+        jTextField1.setFont(resourceMap.getFont("FirstNameTextField.font")); // NOI18N
+        jTextField1.setForeground(resourceMap.getColor("FirstNameTextField.foreground")); // NOI18N
+        jTextField1.setText(resourceMap.getString("FirstNameTextField.text")); // NOI18N
         jTextField1.setName("FirstNameTextField"); // NOI18N
 
+        jTextField2.setFont(resourceMap.getFont("LastNameTextField.font")); // NOI18N
+        jTextField2.setForeground(resourceMap.getColor("LastNameTextField.foreground")); // NOI18N
+        jTextField2.setText(resourceMap.getString("LastNameTextField.text")); // NOI18N
         jTextField2.setName("LastNameTextField"); // NOI18N
 
+        jTextField3.setFont(resourceMap.getFont("AdressTextField.font")); // NOI18N
+        jTextField3.setForeground(resourceMap.getColor("AdressTextField.foreground")); // NOI18N
+        jTextField3.setText(resourceMap.getString("AdressTextField.text")); // NOI18N
         jTextField3.setName("AdressTextField"); // NOI18N
 
+        jTextField4.setFont(resourceMap.getFont("PostAdressTextField.font")); // NOI18N
+        jTextField4.setForeground(resourceMap.getColor("PostAdressTextField.foreground")); // NOI18N
+        jTextField4.setText(resourceMap.getString("PostAdressTextField.text")); // NOI18N
+        jTextField4.setToolTipText(resourceMap.getString("PostAdressTextField.toolTipText")); // NOI18N
         jTextField4.setName("PostAdressTextField"); // NOI18N
 
+        jTextField5.setFont(resourceMap.getFont("CityTextField.font")); // NOI18N
+        jTextField5.setForeground(resourceMap.getColor("CityTextField.foreground")); // NOI18N
+        jTextField5.setText(resourceMap.getString("CityTextField.text")); // NOI18N
         jTextField5.setName("CityTextField"); // NOI18N
 
+        jLabel1.setFont(resourceMap.getFont("Header.font")); // NOI18N
+        jLabel1.setText(resourceMap.getString("Header.text")); // NOI18N
         jLabel1.setName("Header"); // NOI18N
 
         jSeparator1.setName("jSeparator1"); // NOI18N
 
+        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
         jLabel2.setName("jLabel2"); // NOI18N
 
+        jLabel3.setFont(resourceMap.getFont("FirstNameLabel.font")); // NOI18N
+        jLabel3.setText(resourceMap.getString("FirstNameLabel.text")); // NOI18N
         jLabel3.setName("FirstNameLabel"); // NOI18N
 
+        jLabel4.setFont(resourceMap.getFont("LastNameLabel.font")); // NOI18N
+        jLabel4.setText(resourceMap.getString("LastNameLabel.text")); // NOI18N
         jLabel4.setName("LastNameLabel"); // NOI18N
 
+        jLabel5.setFont(resourceMap.getFont("AdressLabel.font")); // NOI18N
+        jLabel5.setText(resourceMap.getString("AdressLabel.text")); // NOI18N
         jLabel5.setName("AdressLabel"); // NOI18N
 
+        jLabel6.setFont(resourceMap.getFont("PostadressLabel.font")); // NOI18N
+        jLabel6.setText(resourceMap.getString("PostadressLabel.text")); // NOI18N
         jLabel6.setName("PostadressLabel"); // NOI18N
 
+        jCheckBox1.setBackground(resourceMap.getColor("Save.background")); // NOI18N
+        jCheckBox1.setFont(resourceMap.getFont("Save.font")); // NOI18N
+        jCheckBox1.setForeground(resourceMap.getColor("Save.foreground")); // NOI18N
+        jCheckBox1.setText(resourceMap.getString("Save.text")); // NOI18N
+        jCheckBox1.setToolTipText(resourceMap.getString("Save.toolTipText")); // NOI18N
         jCheckBox1.setName("Save"); // NOI18N
 
-        doneButton.setName("ToPaymentOptionsButton"); // NOI18N
-        doneButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton1.setIcon(resourceMap.getIcon("ToPaymentOptionsButton.icon")); // NOI18N
+        jButton1.setText(resourceMap.getString("ToPaymentOptionsButton.text")); // NOI18N
+        jButton1.setName("ToPaymentOptionsButton"); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                doneButtonMouseClicked(evt);
+                jButton1MouseClicked(evt);
             }
         });
-        doneButton.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                doneButtonActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -123,11 +156,11 @@ public class AdressPanel extends javax.swing.JPanel {
                                 .addComponent(jTextField2)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
                                 .addComponent(jTextField3))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                             .addComponent(jLabel2)
                             .addGap(155, 155, 155)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(doneButton, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -144,36 +177,36 @@ public class AdressPanel extends javax.swing.JPanel {
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(17, 17, 17)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jCheckBox1)))
                 .addGap(63, 63, 63)
-                .addComponent(doneButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-private void doneButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_doneButtonMouseClicked
+private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
     saveAdressInfo();
-}//GEN-LAST:event_doneButtonMouseClicked
+}//GEN-LAST:event_jButton1MouseClicked
 
-private void doneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneButtonActionPerformed
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 // TODO add your handling code here:
-}//GEN-LAST:event_doneButtonActionPerformed
+}//GEN-LAST:event_jButton1ActionPerformed
 
     private void loadAdressInfo() {
         this.jTextField5.setText(IMatDataHandler.getInstance().getCustomer().getPostAddress());
@@ -190,12 +223,8 @@ private void doneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             IMatDataHandler.getInstance().getCustomer().setPostCode(this.jTextField4.getText());
             IMatDataHandler.getInstance().getCustomer().setPostAddress(this.jTextField5.getText());
     }
-    
-    public JButton getDoneButton() {
-        return doneButton;
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton doneButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
