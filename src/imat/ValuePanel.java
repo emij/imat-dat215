@@ -11,16 +11,20 @@
 package imat;
 
 import java.awt.*;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.*;
 
 /**
  *
  * @author lisastenberg
  */
-public class ValuePanel extends JPanel {
+public class ValuePanel extends JPanel implements Observer {
 
     org.jdesktop.application.ResourceMap resourceMap;
             
+    int nbrOfProducts = 0;
+    int sum = 0;
     /** Creates new form ValuePanel */
     public ValuePanel() {
         initComponents();
@@ -109,4 +113,13 @@ public class ValuePanel extends JPanel {
     private javax.swing.JLabel toShoppingCartLabel2;
     private javax.swing.JPanel valuePanel;
     // End of variables declaration//GEN-END:variables
+
+    public void update(Observable o, Object arg) {
+        if(arg.getClass().equals(ProductControl.class)) {
+            ProductControl tmp = (ProductControl)arg;
+            nbrOfProducts = tmp.getNbrOfProducts();
+            sum = tmp.getSum();
+        }
+            
+    }
 }

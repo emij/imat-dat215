@@ -4,6 +4,7 @@
  */
 package imat;
 
+import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 import se.chalmers.ait.dat215.project.*;
@@ -15,7 +16,7 @@ import se.chalmers.ait.dat215.project.*;
  * products in shoppingcart
  * @author e
  */
-public class ProductListUpdater {
+public class ProductListUpdater extends Observable implements ActionListener {
 
    
 //gissar extends Observable osv
@@ -29,6 +30,11 @@ public class ProductListUpdater {
     private List<Double> amount;
     private List<Double> totalValue;
     
+    private List<JButton> favoriteButtons;
+    private List<JButton> chartButtons;
+    private List<JButton> valueMinusButtons;
+    private List<JButton> valuePlusButtons;
+    
     private ProductPanel[] productPanels;
     private FavoritesPanel[] favoritesPanels;
     private ShoppingCartPanel[] shoppingCartPanels;
@@ -36,13 +42,17 @@ public class ProductListUpdater {
     private ProductList productList;
     private ShoppingCartList shoppingCartList;
     
-    public ProductListUpdater(ProductCategory productCategory){
+    public ProductListUpdater(Observer imat, Observer value, ProductCategory productCategory){
+        this.addObserver(imat);
+        this.addObserver(value);
         products = data.getProducts(productCategory);
         productList = new ProductList();
         productList.setCategoryName(productCategory.toString());
         updateProductList();
     }
-    public ProductListUpdater(ShoppingCart shoppingCart){
+    public ProductListUpdater(Observer imat, Observer value, ShoppingCart shoppingCart){
+        this.addObserver(imat);
+        this.addObserver(value);
         shoppingItems = data.getShoppingCart().getItems();
         shoppingCartList = new ShoppingCartList();
         shoppingCartList.setCategoryName("Kundvagn");
@@ -54,7 +64,9 @@ public class ProductListUpdater {
         updateShoppingCartList();
     }
             
-    public ProductListUpdater(List<Product> products){
+    public ProductListUpdater(Observer imat, Observer value, List<Product> products){
+        this.addObserver(imat);
+        this.addObserver(value);
         this.products = products;
         productList = new ProductList();
         productList.setCategoryName("Favoriter");
@@ -65,6 +77,14 @@ public class ProductListUpdater {
         shoppingCartPanels = new ShoppingCartPanel[products.size()];
         for(int i = 0; i < products.size(); i++){
             shoppingCartPanels[i] = new ShoppingCartPanel(products.get(i), amount.get(i), totalValue.get(i));
+            favoriteButtons.add(i, shoppingCartPanels[i].getFavoritesButton());
+            favoriteButtons.get(i).addActionListener(this);
+            chartButtons.add(i, shoppingCartPanels[i].getChartButton());
+            chartButtons.get(i).addActionListener(this);
+            valueMinusButtons.add(i, shoppingCartPanels[i].getMinusButton());
+            valueMinusButtons.get(i).addActionListener(this);
+            valuePlusButtons.add(i, shoppingCartPanels[i].getPlusButton());
+            valuePlusButtons.get(i).addActionListener(this);
             shoppingCartPanels[i].setBorder(null);
             shoppingCartList.addToProductList(shoppingCartPanels[i]);
         }
@@ -75,6 +95,14 @@ public class ProductListUpdater {
         for(int i = 0; i < products.size(); i++){
         
             productPanels[i] = new ProductPanel(products.get(i));
+            favoriteButtons.add(i, productPanels[i].getFavoritesButton());
+            favoriteButtons.get(i).addActionListener(this);
+            chartButtons.add(i, productPanels[i].getChartButton());
+            chartButtons.get(i).addActionListener(this);
+            valueMinusButtons.add(i, productPanels[i].getMinusButton());
+            valueMinusButtons.get(i).addActionListener(this);
+            valuePlusButtons.add(i, productPanels[i].getPlusButton());
+            valuePlusButtons.get(i).addActionListener(this);
             productPanels[i].setBorder(null);
             productList.addToProductList(productPanels[i]);
         }
@@ -95,6 +123,10 @@ public class ProductListUpdater {
     
     public JPanel getShoppingCartPanel(){
         return shoppingCartList;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     
