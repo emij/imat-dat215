@@ -140,7 +140,7 @@ public class ProductListUpdater extends Observable implements ActionListener {
             if(e.getSource().equals(favoriteButtons.get(i))){
                 productPanels[i].setFavoritesButton();
             } else if(e.getSource().equals(chartButtons.get(i))){
-                Double value = Double.parseDouble(productPanels[i].getValue());
+                Double value = productPanels[i].getValue();
                 shoppingCart.addProduct(products.get(i), value);
                 Double totalCost = products.get(i).getPrice() * value;
                 productControl.add(value, totalCost);

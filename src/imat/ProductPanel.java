@@ -245,8 +245,8 @@ public class ProductPanel extends javax.swing.JPanel {
     public JButton getPlusButton(){
         return valuePlus;
     }
-    public String getValue(){
-        return value.toString();
+    public Double getValue(){
+        return Double.parseDouble(value.getText());
     }
     public Product getProduct(){
         return product;
