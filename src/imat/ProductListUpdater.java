@@ -44,7 +44,7 @@ public class ProductListUpdater extends Observable implements ActionListener {
     
     public ProductListUpdater(Observer value, ProductCategory productCategory){
         this.addObserver(value);
-        products = data.getProducts(productCategory);
+        products = data.getProducts(productCategory); //TODO fixa kategorinamn
         productList = new ProductList();
         productList.setCategoryName(productCategory.toString());
         updateProductList();
@@ -144,8 +144,13 @@ public class ProductListUpdater extends Observable implements ActionListener {
                 shoppingCart.addProduct(products.get(i), value);
                 Double totalCost = products.get(i).getPrice() * value;
                 productControl.add(value, totalCost);
+                productPanels[i].zeroValue();
                 this.notifyObservers(productControl);
-            }  
+            } else if(e.getSource().equals(valuePlusButtons.get(i))){
+                productPanels[i].addValue();
+            } else if(e.getSource().equals(valueMinusButtons.get(i))){
+                productPanels[i].negValue();
+            }
         }
     }
 

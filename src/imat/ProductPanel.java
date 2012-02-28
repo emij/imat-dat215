@@ -25,7 +25,7 @@ public class ProductPanel extends javax.swing.JPanel {
     public Product product;
     private IMatDataHandler data = IMatDataHandler.getInstance();
     private Color typBrun = new Color(164, 157, 157);
-
+    private int amount;
     /** Creates new form ProductPanel */
     public ProductPanel() {
         initComponents();
@@ -125,7 +125,7 @@ public class ProductPanel extends javax.swing.JPanel {
         pricePanel.setLayout(pricePanelLayout);
         pricePanelLayout.setHorizontalGroup(
             pricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(productPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+            .addComponent(productPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
         );
         pricePanelLayout.setVerticalGroup(
             pricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,8 +148,11 @@ public class ProductPanel extends javax.swing.JPanel {
         filler7.setName("filler7"); // NOI18N
         rightPanel.add(filler7);
 
+        value.setFont(resourceMap.getFont("value.font")); // NOI18N
         value.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         value.setText(resourceMap.getString("value.text")); // NOI18N
+        value.setDisabledTextColor(resourceMap.getColor("value.disabledTextColor")); // NOI18N
+        value.setFocusable(false);
         value.setMaximumSize(new java.awt.Dimension(25, 25));
         value.setName("value"); // NOI18N
         value.setPreferredSize(new java.awt.Dimension(20, 20));
@@ -183,13 +186,13 @@ public class ProductPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pricePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE))
+                .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(leftPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
             .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
             .addComponent(pricePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(leftPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -217,6 +220,8 @@ public class ProductPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void initMyComponents() {
+        amount = 0;
+        value.setText("" + amount);
         productPicture.setIcon(data.getImageIcon(product, iconDimension));
         productPicture.setBorder(BorderFactory.createLineBorder(typBrun, 1));
         productName.setText(product.getName());
@@ -246,7 +251,7 @@ public class ProductPanel extends javax.swing.JPanel {
         return valuePlus;
     }
     public Double getValue(){
-        return Double.parseDouble(value.getText());
+        return (double)amount;
     }
     public Product getProduct(){
         return product;
@@ -262,6 +267,21 @@ public class ProductPanel extends javax.swing.JPanel {
             data.addFavorite(this.product);
         }        
     }
-    
-    
+    public void addValue(){
+        amount = amount + 1;
+        value.setText("" + amount);
+    }
+    public void negValue(){
+        if (amount != 0){
+            amount = amount -1;
+            value.setText("" + amount);
+        }
+    }
+    public void zeroValue(){
+        amount = 0;
+        value.setText("" + amount);
+    }
 }
+    
+    
+
