@@ -140,7 +140,11 @@
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="backButton" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                                       <EmptySpace pref="89" max="32767" attributes="0"/>
+=======
+                                      <EmptySpace pref="117" max="32767" attributes="0"/>
+>>>>>>> Fixat vy
                                       <Component id="searchPanel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="categorySmallPanel" alignment="0" pref="647" max="32767" attributes="0"/>

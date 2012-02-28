@@ -32,15 +32,17 @@ public class IMatView extends FrameView implements Observer{
     DrinksGridPanel d;
     FruitGridPanel f;
     ValueObserver v;
+    PaymentCard p;
 
     CategoryCard cc;
     SidebarPanel s;
     SearchPanel sp;
+    ProductListUpdater productUpdateList;
 
     public IMatView(SingleFrameApplication app) {
         super(app);
         this.getFrame().setVisible(true);
-        this.getFrame().setSize(new Dimension(1000, 700));
+        this.getFrame().setSize(new Dimension(1100, 700));
         this.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initComponents();
         
@@ -49,15 +51,18 @@ public class IMatView extends FrameView implements Observer{
         d = new DrinksGridPanel(this);
         f = new FruitGridPanel(this);
         v = new ValueObserver(this);
+        p = new PaymentCard(this);
         cc = new CategoryCard();
         s = new SidebarPanel(this);
         sp = new SearchPanel();
+        productUpdateList = new ProductListUpdater(this, ProductCategory.COLD_DRINKS);
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
         categorySmallPanel.add(c.getPanel(), "category");
         categorySmallPanel.add(d.getPanel(), "drinks");
         categorySmallPanel.add(f.getPanel(), "fruit");
-        categorySmallPanel.add(cc, "card4");
+        categorySmallPanel.add(productUpdateList.getProductPanel(), "card4");
         categorySmallPanel.add(a.getPanel(), "adress");
+        categorySmallPanel.add(p.getPanel(), "betala");
         
         categoryPanel.add(s.getPanel(), "sidepanel");
         searchPanel.setLayout(new GridLayout(1, 1));
