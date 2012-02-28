@@ -267,10 +267,10 @@
             <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.RigidArea"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="totalAmount">
+        <Component class="javax.swing.JLabel" name="totalCost">
           <Properties>
-            <Property name="text" type="java.lang.String" resourceKey="totalAmount.text"/>
-            <Property name="name" type="java.lang.String" value="totalAmount" noResource="true"/>
+            <Property name="text" type="java.lang.String" resourceKey="totalCost.text"/>
+            <Property name="name" type="java.lang.String" value="totalCost" noResource="true"/>
           </Properties>
         </Component>
         <Component class="javax.swing.Box$Filler" name="filler4">

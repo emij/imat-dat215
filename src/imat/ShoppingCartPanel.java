@@ -21,6 +21,10 @@ import se.chalmers.ait.dat215.project.*;
 public class ShoppingCartPanel extends javax.swing.JPanel {
 
     private Dimension iconDimension = new Dimension(40,40);
+    private Product product;
+    private Double amount;
+    private Double totalValue;
+    private boolean isFavorite;
     
     private IMatDataHandler data = IMatDataHandler.getInstance();
     private Color typBrun = new Color(164, 157, 157);
@@ -30,6 +34,10 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     }
     public ShoppingCartPanel(Product product, Double amount, Double totalValue){
         initComponents();
+        this.product = product;
+        this.amount = amount;
+        this.totalValue = totalValue;
+        isFavorite = data.isFavorite(product);
         initMyComponents(product, amount, totalValue);
     }
 
@@ -59,7 +67,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(3, 0), new java.awt.Dimension(3, 0), new java.awt.Dimension(3, 0));
         valuePlus = new javax.swing.JButton();
         filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 0), new java.awt.Dimension(30, 0));
-        totalAmount = new javax.swing.JLabel();
+        totalCost = new javax.swing.JLabel();
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         removeFromChart = new javax.swing.JButton();
         filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0));
@@ -149,9 +157,9 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         filler9.setName("filler9"); // NOI18N
         rightPanel.add(filler9);
 
-        totalAmount.setText(resourceMap.getString("totalAmount.text")); // NOI18N
-        totalAmount.setName("totalAmount"); // NOI18N
-        rightPanel.add(totalAmount);
+        totalCost.setText(resourceMap.getString("totalCost.text")); // NOI18N
+        totalCost.setName("totalCost"); // NOI18N
+        rightPanel.add(totalCost);
 
         filler4.setName("filler4"); // NOI18N
         rightPanel.add(filler4);
@@ -169,7 +177,6 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(leftPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -179,7 +186,6 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 55, Short.MAX_VALUE)
             .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
             .addComponent(pricePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(leftPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
@@ -203,7 +209,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     private javax.swing.JLabel productPrice;
     private javax.swing.JButton removeFromChart;
     private javax.swing.JPanel rightPanel;
-    private javax.swing.JLabel totalAmount;
+    private javax.swing.JLabel totalCost;
     private javax.swing.JTextField value;
     private javax.swing.JButton valueMinus;
     private javax.swing.JButton valuePlus;
@@ -223,6 +229,45 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         
         value.setText("" + amount);
         
-        totalAmount.setText("" + totalValue);
+        totalCost.setText("" + totalValue + " kr");
+    }
+    public JButton getFavoritesButton(){
+        return addToFavorites;
+    }
+    public JButton getChartButton(){
+        return removeFromChart;
+    }
+    public JButton getMinusButton(){
+        return valueMinus;
+    }
+    public JButton getPlusButton(){
+        return valuePlus;
+    }
+    public JTextField getValue(){
+        return value;
+    }
+    public Product getProduct(){
+        return product;
+    }
+    public void setFavoritesButton(){
+        if(!isFavorite){
+            addToFavorites.setText("Favoriter");
+        } else {
+            addToFavorites.setText("Ta bort");
+        }
+    }
+    public Double getAmount(){
+        return amount;
+    }
+    public Double getTotalValue(){
+        return totalValue;
+    }
+    public void setAmount(Double amount){
+        this.amount = amount;
+        value.setText("" + this.amount);       
+    }
+    public void setTotalValue(Double totalValue){
+        this.totalValue = totalValue;
+        totalCost.setText("" + totalValue + " kr");
     }
 }

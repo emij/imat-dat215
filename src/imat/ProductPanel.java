@@ -233,5 +233,31 @@ public class ProductPanel extends javax.swing.JPanel {
         rightPanel.setBorder(BorderFactory.createMatteBorder(0, 1, 1, 0, typBrun));
     }
     
+    public JButton getFavoritesButton(){
+        return addToFavorites;
+    }
+    public JButton getChartButton(){
+        return addToChart;
+    }
+    public JButton getMinusButton(){
+        return valueMinus;
+    }
+    public JButton getPlusButton(){
+        return valuePlus;
+    }
+    public JTextField getValue(){
+        return value;
+    }
+    public Product getProduct(){
+        return product;
+    }
+    public void setFavoritesButton(){
+        if(!isFavorite){
+            addToFavorites.setText("Favoriter");
+        } else {
+            addToFavorites.setText("Ta bort");
+        }        
+    }
+    
     
 }
