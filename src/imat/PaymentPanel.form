@@ -142,6 +142,9 @@
         <Property name="text" type="java.lang.String" resourceKey="doneButton.text"/>
         <Property name="name" type="java.lang.String" value="doneButton" noResource="true"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="doneButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

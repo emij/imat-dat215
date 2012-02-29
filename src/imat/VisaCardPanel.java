@@ -20,6 +20,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultStyledDocument;
+import se.chalmers.ait.dat215.project.CreditCard;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
@@ -28,14 +29,17 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
  */
 public class VisaCardPanel extends javax.swing.JPanel implements DocumentListener{
     IMatDataHandler dh = IMatDataHandler.getInstance();
+    CreditCard creditCard;
     /** Creates new form VisaCardPanel */
     public VisaCardPanel() {
         initComponents();
-        jTextField1.getDocument().addDocumentListener(this);
-        jTextField2.getDocument().addDocumentListener(this);
-        jTextField5.getDocument().addDocumentListener(this);
-        jTextField6.getDocument().addDocumentListener(this);
-        jTextField3.getDocument().addDocumentListener(this);
+        cardNumberTextField1.getDocument().addDocumentListener(this);
+        cardNumberTextField2.getDocument().addDocumentListener(this);
+        cardNumberTextField3.getDocument().addDocumentListener(this);
+        cardNumberTextField4.getDocument().addDocumentListener(this);
+        verificationTextField.getDocument().addDocumentListener(this);
+        
+        creditCard = dh.getCreditCard();
         
     }
 
@@ -49,20 +53,23 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
     private void initComponents() {
 
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField(new PromptDocument(3),"",3);
-        jTextField4 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox();
-        jComboBox2 = new javax.swing.JComboBox();
-        jTextField1 = new javax.swing.JTextField(new PromptDocument(4),"",4);
-        jTextField2 = new javax.swing.JTextField(new PromptDocument(4),"",4);
-        jTextField5 = new javax.swing.JTextField(new PromptDocument(4),"",4);
-        jTextField6 = new javax.swing.JTextField(new PromptDocument(4),"",4);
-        jLabel5 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox();
+        cardNumberLabel = new javax.swing.JLabel();
+        validLabel = new javax.swing.JLabel();
+        vertificationLabel = new javax.swing.JLabel();
+        holdersLabel = new javax.swing.JLabel();
+        verificationTextField = new javax.swing.JTextField(new PromptDocument(3),"",3);
+        holdersTextField = new javax.swing.JTextField();
+        validMonthCombo = new javax.swing.JComboBox();
+        validYearCombo = new javax.swing.JComboBox();
+        cardNumberTextField1 = new javax.swing.JTextField(new PromptDocument(4),"",4);
+        cardNumberTextField2 = new javax.swing.JTextField(new PromptDocument(4),"",4);
+        cardNumberTextField3 = new javax.swing.JTextField(new PromptDocument(4),"",4);
+        cardNumberTextField4 = new javax.swing.JTextField(new PromptDocument(4),"",4);
+        cardTypeLabel = new javax.swing.JLabel();
+        cardTypeComboBox = new javax.swing.JComboBox();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        errorArea = new javax.swing.JTextArea();
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(VisaCardPanel.class);
         jFormattedTextField1.setText(resourceMap.getString("jFormattedTextField1.text")); // NOI18N
@@ -72,141 +79,177 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
         setName("Form"); // NOI18N
         setPreferredSize(new java.awt.Dimension(431, 338));
 
-        jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
-        jLabel1.setName("jLabel1"); // NOI18N
+        cardNumberLabel.setText(resourceMap.getString("cardNumberLabel.text")); // NOI18N
+        cardNumberLabel.setName("cardNumberLabel"); // NOI18N
 
-        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
-        jLabel2.setName("jLabel2"); // NOI18N
+        validLabel.setText(resourceMap.getString("validLabel.text")); // NOI18N
+        validLabel.setName("validLabel"); // NOI18N
 
-        jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
-        jLabel3.setName("jLabel3"); // NOI18N
+        vertificationLabel.setText(resourceMap.getString("vertificationLabel.text")); // NOI18N
+        vertificationLabel.setName("vertificationLabel"); // NOI18N
 
-        jLabel4.setText(resourceMap.getString("jLabel4.text")); // NOI18N
-        jLabel4.setName("jLabel4"); // NOI18N
+        holdersLabel.setText(resourceMap.getString("holdersLabel.text")); // NOI18N
+        holdersLabel.setName("holdersLabel"); // NOI18N
 
-        jTextField3.setText(resourceMap.getString("jTextField3.text")); // NOI18N
-        jTextField3.setName("jTextField3"); // NOI18N
+        verificationTextField.setText(resourceMap.getString("verificationTextField.text")); // NOI18N
+        verificationTextField.setName("verificationTextField"); // NOI18N
 
-        jTextField4.setText(resourceMap.getString("jTextField4.text")); // NOI18N
-        jTextField4.setName("jTextField4"); // NOI18N
+        holdersTextField.setText(resourceMap.getString("holdersTextField.text")); // NOI18N
+        holdersTextField.setName("holdersTextField"); // NOI18N
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mm", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
-        jComboBox1.setToolTipText(resourceMap.getString("jComboBox1.toolTipText")); // NOI18N
-        jComboBox1.setName("jComboBox1"); // NOI18N
-        jComboBox1.setSize(new java.awt.Dimension(100, 27));
+        validMonthCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mm", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        validMonthCombo.setToolTipText(resourceMap.getString("validMonthCombo.toolTipText")); // NOI18N
+        validMonthCombo.setName("validMonthCombo"); // NOI18N
+        validMonthCombo.setSize(new java.awt.Dimension(100, 27));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "åå", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
-        jComboBox2.setToolTipText(resourceMap.getString("jComboBox2.toolTipText")); // NOI18N
-        jComboBox2.setName("jComboBox2"); // NOI18N
-        jComboBox2.setSize(new java.awt.Dimension(100, 27));
+        validYearCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "åå", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
+        validYearCombo.setToolTipText(resourceMap.getString("validYearCombo.toolTipText")); // NOI18N
+        validYearCombo.setName("validYearCombo"); // NOI18N
+        validYearCombo.setSize(new java.awt.Dimension(100, 27));
 
-        jTextField1.setColumns(4);
-        jTextField1.setText(resourceMap.getString("jTextField1.text")); // NOI18N
-        jTextField1.setMinimumSize(new java.awt.Dimension(100, 28));
-        jTextField1.setName("jTextField1"); // NOI18N
-        jTextField1.setSize(new java.awt.Dimension(100, 28));
+        cardNumberTextField1.setColumns(4);
+        cardNumberTextField1.setText(resourceMap.getString("cardNumberTextField1.text")); // NOI18N
+        cardNumberTextField1.setMinimumSize(new java.awt.Dimension(100, 28));
+        cardNumberTextField1.setName("cardNumberTextField1"); // NOI18N
+        cardNumberTextField1.setSize(new java.awt.Dimension(100, 28));
 
-        jTextField2.setColumns(50);
-        jTextField2.setText(resourceMap.getString("jTextField2.text")); // NOI18N
-        jTextField2.setName("jTextField2"); // NOI18N
-        jTextField2.setSize(new java.awt.Dimension(100, 28));
+        cardNumberTextField2.setColumns(50);
+        cardNumberTextField2.setText(resourceMap.getString("cardNumberTextField2.text")); // NOI18N
+        cardNumberTextField2.setName("cardNumberTextField2"); // NOI18N
+        cardNumberTextField2.setSize(new java.awt.Dimension(100, 28));
 
-        jTextField5.setText(resourceMap.getString("jTextField5.text")); // NOI18N
-        jTextField5.setName("jTextField5"); // NOI18N
-        jTextField5.setSize(new java.awt.Dimension(100, 28));
+        cardNumberTextField3.setText(resourceMap.getString("cardNumberTextField3.text")); // NOI18N
+        cardNumberTextField3.setName("cardNumberTextField3"); // NOI18N
+        cardNumberTextField3.setSize(new java.awt.Dimension(100, 28));
 
-        jTextField6.setText(resourceMap.getString("jTextField6.text")); // NOI18N
-        jTextField6.setName("jTextField6"); // NOI18N
-        jTextField6.setSize(new java.awt.Dimension(100, 28));
+        cardNumberTextField4.setText(resourceMap.getString("cardNumberTextField4.text")); // NOI18N
+        cardNumberTextField4.setName("cardNumberTextField4"); // NOI18N
+        cardNumberTextField4.setSize(new java.awt.Dimension(100, 28));
 
-        jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
-        jLabel5.setName("jLabel5"); // NOI18N
+        cardTypeLabel.setText(resourceMap.getString("cardTypeLabel.text")); // NOI18N
+        cardTypeLabel.setName("cardTypeLabel"); // NOI18N
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Visa", "Mastercard" }));
-        jComboBox3.setName("jComboBox3"); // NOI18N
+        cardTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Visa", "Mastercard" }));
+        cardTypeComboBox.setName("cardTypeComboBox"); // NOI18N
+
+        jPanel1.setBackground(resourceMap.getColor("jPanel1.background")); // NOI18N
+        jPanel1.setName("jPanel1"); // NOI18N
+
+        jScrollPane1.setBackground(resourceMap.getColor("jScrollPane1.background")); // NOI18N
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setName("jScrollPane1"); // NOI18N
+
+        errorArea.setBackground(resourceMap.getColor("errorArea.background")); // NOI18N
+        errorArea.setColumns(20);
+        errorArea.setFont(resourceMap.getFont("errorArea.font")); // NOI18N
+        errorArea.setForeground(resourceMap.getColor("errorArea.foreground")); // NOI18N
+        errorArea.setRows(5);
+        errorArea.setName("errorArea"); // NOI18N
+        jScrollPane1.setViewportView(errorArea);
+
+        org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+        );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(40, 40, 40)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jLabel3)
-                    .add(jLabel5)
-                    .add(jLabel4)
-                    .add(jLabel2)
-                    .add(jLabel1))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(layout.createSequentialGroup()
-                        .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jComboBox2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(layout.createSequentialGroup()
+                        .add(40, 40, 40)
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, layout.createSequentialGroup()
-                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                    .add(layout.createSequentialGroup()
-                                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, jComboBox3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(jTextField5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 194, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(18, 18, 18)
-                        .add(jTextField6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .add(131, 131, 131))
+                            .add(vertificationLabel)
+                            .add(cardTypeLabel)
+                            .add(holdersLabel)
+                            .add(validLabel)
+                            .add(cardNumberLabel))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(layout.createSequentialGroup()
+                                .add(validMonthCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(validYearCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(verificationTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(layout.createSequentialGroup()
+                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, layout.createSequentialGroup()
+                                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                            .add(layout.createSequentialGroup()
+                                                .add(cardNumberTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .add(cardNumberTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                            .add(org.jdesktop.layout.GroupLayout.LEADING, cardTypeComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                        .add(cardNumberTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, holdersTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 194, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(18, 18, 18)
+                                .add(cardNumberTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                    .add(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .addContainerGap()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jComboBox3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel5))
+                    .add(cardTypeComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(cardTypeLabel))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextField5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel1)
-                    .add(jTextField6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(cardNumberTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(cardNumberTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(cardNumberTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(cardNumberLabel)
+                    .add(cardNumberTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jComboBox2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel2))
+                    .add(validMonthCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(validYearCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(validLabel))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel3))
+                    .add(verificationTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(vertificationLabel))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel4))
-                .addContainerGap(156, Short.MAX_VALUE))
+                    .add(holdersTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(holdersLabel))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 32, Short.MAX_VALUE)
+                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JLabel cardNumberLabel;
+    private javax.swing.JTextField cardNumberTextField1;
+    private javax.swing.JTextField cardNumberTextField2;
+    private javax.swing.JTextField cardNumberTextField3;
+    private javax.swing.JTextField cardNumberTextField4;
+    private javax.swing.JComboBox cardTypeComboBox;
+    private javax.swing.JLabel cardTypeLabel;
+    private javax.swing.JTextArea errorArea;
+    private javax.swing.JLabel holdersLabel;
+    private javax.swing.JTextField holdersTextField;
     private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel validLabel;
+    private javax.swing.JComboBox validMonthCombo;
+    private javax.swing.JComboBox validYearCombo;
+    private javax.swing.JTextField verificationTextField;
+    private javax.swing.JLabel vertificationLabel;
     // End of variables declaration//GEN-END:variables
 
  
@@ -221,36 +264,119 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
         }
         return temp;
     }
+    
+    //returns true if everything was set okay. otherwise not
+    public boolean setInfo() {
+        String cnMess = "", vmMess = "", vyMess = "", verMess ="", hMess ="";
+        boolean cnError, vmError, vyError, verError, hError;
+        //Set cardType
+        if(cardTypeComboBox.getSelectedItem().getClass().equals(String.class)) {
+            String tmp = (String)cardTypeComboBox.getSelectedItem();
+            creditCard.setCardType(tmp);
+        }
+        //Set cardNumber
+        if(cardNumberTextField4.getText().length() != 4) {
+            cnError = true;
+            cnMess = "Du måste skriva in kortnummer med 16 siffror";
+        } else {
+            cnError = false;
+            String cardNumber = cardNumberTextField1.getText() + 
+                    cardNumberTextField2.getText() +
+                    cardNumberTextField3.getText() +
+                    cardNumberTextField4.getText();
+            creditCard.setCardNumber(cardNumber);
+        }
+        //Set valid month
+        if(!validMonthCombo.getSelectedItem().getClass().equals(Integer.class)) {
+            vmError = true;
+            vmMess = "Du måste välja giltlig månad";
+        } else {
+            vmError = false;
+            Integer tmp = (Integer)validMonthCombo.getSelectedItem();
+            creditCard.setValidMonth(tmp);
+        }
+        //Set valid year
+        if(!validYearCombo.getSelectedItem().getClass().equals(Integer.class)) {
+            vyError = true;
+            vyMess = "Du måste välja giltligt år";
+        } else {
+            vyError = false;
+            Integer tmp = (Integer)validYearCombo.getSelectedItem();
+            creditCard.setValidYear(tmp);
+        }
+        //Set vertification Code
+        if(verificationTextField.getText().length() != 3 || !verificationTextField.
+                getText().getClass().equals(Integer.class)){
+            verError = true;
+            verMess = "Du måste skriva cvc";
+        } else {
+            verError = false;
+            Integer tmp = Integer.parseInt(verificationTextField.getText());
+            creditCard.setVerificationCode(tmp);
+        }
+        //Set Holders name
+        if(holdersTextField.getText().length() == 0) {
+            hError = true;
+            hMess = "Du måste skriva in namn på kontoinnehavare";
+        } else {
+            hError = false;
+            creditCard.setHoldersName(holdersTextField.getText());
+        }
+        
+        String errorMessages = "";
+        if(cnError) {
+            errorMessages += cnMess;
+        }
+        if(vmError) {
+            errorMessages += vmMess;
+        }
+        if(vyError) {
+            errorMessages += vyMess;
+        }
+        if(verError) {
+            errorMessages += verMess;
+        }
+        if(hError) {
+            errorMessages += hMess;
+        }
+        
+        if(cnError || vmError || vyError || verError || hError) {
+            errorArea.setText(errorMessages);
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     public void insertUpdate(DocumentEvent de) {
-        if(jTextField1.hasFocus()){
-            if(jTextField1.getText().length()==4){
-                jTextField2.requestFocus();
+        if(cardNumberTextField1.hasFocus()){
+            if(cardNumberTextField1.getText().length()==4){
+                cardNumberTextField2.requestFocus();
             }
-        } else if(jTextField2.hasFocus()){
-            if(jTextField2.getText().length()==4){
-                jTextField5.requestFocus();
+        } else if(cardNumberTextField2.hasFocus()){
+            if(cardNumberTextField2.getText().length()==4){
+                cardNumberTextField3.requestFocus();
             }
-        }else if(jTextField5.hasFocus()){
-            if(jTextField5.getText().length()==4){
-                jTextField6.requestFocus();
+        }else if(cardNumberTextField3.hasFocus()){
+            if(cardNumberTextField3.getText().length()==4){
+                cardNumberTextField4.requestFocus();
             }
         }
         
     }
 
     public void removeUpdate(DocumentEvent de) {
-        if(jTextField6.hasFocus()){
-            if(jTextField6.getText().length()==0){
-                jTextField5.requestFocus();
+        if(cardNumberTextField4.hasFocus()){
+            if(cardNumberTextField4.getText().length()==0){
+                cardNumberTextField3.requestFocus();
             }
-        } else if(jTextField5.hasFocus()){
-            if(jTextField5.getText().length()==0){
-                jTextField2.requestFocus();
+        } else if(cardNumberTextField3.hasFocus()){
+            if(cardNumberTextField3.getText().length()==0){
+                cardNumberTextField2.requestFocus();
             }
-        }else if(jTextField2.hasFocus()){
-            if(jTextField2.getText().length()==0){
-                jTextField1.requestFocus();
+        }else if(cardNumberTextField2.hasFocus()){
+            if(cardNumberTextField2.getText().length()==0){
+                cardNumberTextField1.requestFocus();
             }
         }
     }

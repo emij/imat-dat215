@@ -22,6 +22,8 @@ public class PaymentPanel extends javax.swing.JPanel {
     private VisaCardPanel v;
     private FakturaPanel f;
     private JPanel j; 
+    private String currentPanel = "visa";
+    private boolean infoOk;
     
     /** Creates new form PaymentPanel */
     public PaymentPanel() {
@@ -41,8 +43,13 @@ public class PaymentPanel extends javax.swing.JPanel {
     }
     
     public void changePanel(String s) {
+        currentPanel = s;
         CardLayout c = (CardLayout)(cardPanel.getLayout());
         c.show(cardPanel, s);
+    }
+    
+    public boolean infoOk() {
+        return infoOk;
     }
 
     /** This method is called from within the constructor to
@@ -109,6 +116,11 @@ public class PaymentPanel extends javax.swing.JPanel {
 
         doneButton.setText(resourceMap.getString("doneButton.text")); // NOI18N
         doneButton.setName("doneButton"); // NOI18N
+        doneButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doneButtonActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
         this.setLayout(layout);
@@ -162,6 +174,18 @@ private void visaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 private void kontantButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kontantButtonActionPerformed
     changePanel("kontant");
 }//GEN-LAST:event_kontantButtonActionPerformed
+
+private void doneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneButtonActionPerformed
+    if(currentPanel.equals("visa")) {
+        if(v.setInfo()) {
+            infoOk = true;
+        }
+    } else if(currentPanel.equals("faktura")) {
+        
+    } else if(currentPanel.equals("kontant")) {
+        
+    }
+}//GEN-LAST:event_doneButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
