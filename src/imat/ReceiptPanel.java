@@ -10,6 +10,7 @@
  */
 package imat;
 
+import javax.swing.ImageIcon;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
@@ -25,6 +26,8 @@ public class ReceiptPanel extends javax.swing.JPanel {
         
         thanksLabel.setText("Tack för ditt köp" + dh.getCustomer().getFirstName()
                 + ". Välkommen åter!");
+        
+        printButton.setIcon(new ImageIcon(getClass().getResource("resources/bilder/skrivut.png")));
     }
 
     /** This method is called from within the constructor to
@@ -39,7 +42,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         thanksLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        printButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
 
@@ -57,8 +60,9 @@ public class ReceiptPanel extends javax.swing.JPanel {
         thanksLabel.setText(resourceMap.getString("thanksLabel.text")); // NOI18N
         thanksLabel.setName("thanksLabel"); // NOI18N
 
-        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
-        jButton1.setName("jButton1"); // NOI18N
+        printButton.setText(resourceMap.getString("printButton.text")); // NOI18N
+        printButton.setName("printButton"); // NOI18N
+        printButton.setSize(new java.awt.Dimension(0, 0));
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
 
@@ -72,7 +76,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 261, Short.MAX_VALUE)
+            .add(0, 273, Short.MAX_VALUE)
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -88,7 +92,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
                     .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, jLabel1)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, thanksLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
-                    .add(jButton1))
+                    .add(printButton))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -101,18 +105,18 @@ public class ReceiptPanel extends javax.swing.JPanel {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(thanksLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton1)
+                .add(printButton)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton printButton;
     private javax.swing.JLabel thanksLabel;
     // End of variables declaration//GEN-END:variables
 }

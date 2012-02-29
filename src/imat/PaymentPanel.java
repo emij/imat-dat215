@@ -43,6 +43,7 @@ public class PaymentPanel extends javax.swing.JPanel {
     }
     
     public void changePanel(String s) {
+        setInfoOk(false);
         if(currentPanel.equals("visa")) {
             v.clearErrorArea();
         } else if(currentPanel.equals("faktura")) {
@@ -54,10 +55,40 @@ public class PaymentPanel extends javax.swing.JPanel {
         c.show(cardPanel, s);
     }
     
-    public boolean infoOk() {
+    public boolean getInfoOk() {
         return infoOk;
     }
+    
+    public void setInfoOk(boolean b) {
+        infoOk = b;
+    }
 
+    public VisaCardPanel getV() {
+        return v;
+    }
+
+    public FakturaPanel getF() {
+        return f;
+    }
+
+    public JRadioButton getVisaButton() {
+        return visaButton;
+    }
+
+    public JRadioButton getKontantButton() {
+        return kontantButton;
+    }
+
+    public JRadioButton getFakturaButton() {
+        return fakturaButton;
+    }
+
+    
+    
+    
+    
+    
+    
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -187,17 +218,7 @@ private void kontantButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN
 }//GEN-LAST:event_kontantButtonActionPerformed
 
 private void doneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneButtonActionPerformed
-    if(currentPanel.equals("visa")) {
-        if(v.setInfo()) {
-            infoOk = true;
-        }
-    } else if(currentPanel.equals("faktura")) {
-        if(f.setInfo()) {
-            infoOk = true;
-        }
-    } else if(currentPanel.equals("kontant")) {
-        infoOk = true;
-    }
+
 }//GEN-LAST:event_doneButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

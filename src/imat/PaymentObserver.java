@@ -19,11 +19,21 @@ public class PaymentObserver extends Observable implements ActionListener {
     public PaymentObserver(Observer o) {
         p = new PaymentPanel();
         this.addObserver(o);
+        p.getDoneButton().addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource().equals(p.getDoneButton())) {
-            if(p.infoOk()) {
+            if(p.getVisaButton().isSelected()) {
+                p.setInfoOk(p.getV().setInfo());
+            } else if(p.getFakturaButton().isSelected()) {
+                p.setInfoOk(p.getF().setInfo());
+            } else if(p.getKontantButton().isSelected()) {
+                p.setInfoOk(true);
+            }
+            
+            if(p.getInfoOk()) {
+                setChanged();
                 this.notifyObservers("kvitto");
             }
         }
