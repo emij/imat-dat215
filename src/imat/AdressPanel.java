@@ -63,23 +63,23 @@ public class AdressPanel extends javax.swing.JPanel {
         jTextField1.setText(resourceMap.getString("FirstNameTextField.text")); // NOI18N
         jTextField1.setName("FirstNameTextField"); // NOI18N
 
-        jTextField2.setFont(resourceMap.getFont("LastNameTextField.font")); // NOI18N
+        jTextField2.setFont(resourceMap.getFont("FirstNameTextField.font")); // NOI18N
         jTextField2.setForeground(resourceMap.getColor("LastNameTextField.foreground")); // NOI18N
         jTextField2.setText(resourceMap.getString("LastNameTextField.text")); // NOI18N
         jTextField2.setName("LastNameTextField"); // NOI18N
 
-        jTextField3.setFont(resourceMap.getFont("AdressTextField.font")); // NOI18N
+        jTextField3.setFont(resourceMap.getFont("FirstNameTextField.font")); // NOI18N
         jTextField3.setForeground(resourceMap.getColor("AdressTextField.foreground")); // NOI18N
         jTextField3.setText(resourceMap.getString("AdressTextField.text")); // NOI18N
         jTextField3.setName("AdressTextField"); // NOI18N
 
-        jTextField4.setFont(resourceMap.getFont("PostAdressTextField.font")); // NOI18N
+        jTextField4.setFont(resourceMap.getFont("FirstNameTextField.font")); // NOI18N
         jTextField4.setForeground(resourceMap.getColor("PostAdressTextField.foreground")); // NOI18N
         jTextField4.setText(resourceMap.getString("PostAdressTextField.text")); // NOI18N
         jTextField4.setToolTipText(resourceMap.getString("PostAdressTextField.toolTipText")); // NOI18N
         jTextField4.setName("PostAdressTextField"); // NOI18N
 
-        jTextField5.setFont(resourceMap.getFont("CityTextField.font")); // NOI18N
+        jTextField5.setFont(resourceMap.getFont("FirstNameTextField.font")); // NOI18N
         jTextField5.setForeground(resourceMap.getColor("CityTextField.foreground")); // NOI18N
         jTextField5.setText(resourceMap.getString("CityTextField.text")); // NOI18N
         jTextField5.setName("CityTextField"); // NOI18N
@@ -93,11 +93,11 @@ public class AdressPanel extends javax.swing.JPanel {
         jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
         jLabel2.setName("jLabel2"); // NOI18N
 
-        jLabel3.setFont(resourceMap.getFont("FirstNameLabel.font")); // NOI18N
+        jLabel3.setFont(resourceMap.getFont("AdressLabel.font")); // NOI18N
         jLabel3.setText(resourceMap.getString("FirstNameLabel.text")); // NOI18N
         jLabel3.setName("FirstNameLabel"); // NOI18N
 
-        jLabel4.setFont(resourceMap.getFont("LastNameLabel.font")); // NOI18N
+        jLabel4.setFont(resourceMap.getFont("AdressLabel.font")); // NOI18N
         jLabel4.setText(resourceMap.getString("LastNameLabel.text")); // NOI18N
         jLabel4.setName("LastNameLabel"); // NOI18N
 
@@ -105,7 +105,7 @@ public class AdressPanel extends javax.swing.JPanel {
         jLabel5.setText(resourceMap.getString("AdressLabel.text")); // NOI18N
         jLabel5.setName("AdressLabel"); // NOI18N
 
-        jLabel6.setFont(resourceMap.getFont("PostadressLabel.font")); // NOI18N
+        jLabel6.setFont(resourceMap.getFont("AdressLabel.font")); // NOI18N
         jLabel6.setText(resourceMap.getString("PostadressLabel.text")); // NOI18N
         jLabel6.setName("PostadressLabel"); // NOI18N
 
@@ -157,7 +157,7 @@ public class AdressPanel extends javax.swing.JPanel {
                                 .addComponent(jTextField2)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
                                 .addComponent(jTextField3))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                             .addComponent(jLabel2)
                             .addGap(155, 155, 155)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()

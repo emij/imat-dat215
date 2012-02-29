@@ -109,15 +109,19 @@ public class FakturaPanel extends javax.swing.JPanel {
         setName("Form"); // NOI18N
         setPreferredSize(new java.awt.Dimension(429, 301));
 
+        firstNameLabel.setFont(resourceMap.getFont("postAdressLabel.font")); // NOI18N
         firstNameLabel.setText(resourceMap.getString("firstNameLabel.text")); // NOI18N
         firstNameLabel.setName("firstNameLabel"); // NOI18N
 
+        lastNameLabel.setFont(resourceMap.getFont("postAdressLabel.font")); // NOI18N
         lastNameLabel.setText(resourceMap.getString("lastNameLabel.text")); // NOI18N
         lastNameLabel.setName("lastNameLabel"); // NOI18N
 
+        adressLabel.setFont(resourceMap.getFont("postAdressLabel.font")); // NOI18N
         adressLabel.setText(resourceMap.getString("adressLabel.text")); // NOI18N
         adressLabel.setName("adressLabel"); // NOI18N
 
+        postAdressLabel.setFont(resourceMap.getFont("postAdressLabel.font")); // NOI18N
         postAdressLabel.setText(resourceMap.getString("postAdressLabel.text")); // NOI18N
         postAdressLabel.setName("postAdressLabel"); // NOI18N
 
@@ -127,6 +131,7 @@ public class FakturaPanel extends javax.swing.JPanel {
         lastNameField.setText(resourceMap.getString("lastNameField.text")); // NOI18N
         lastNameField.setName("lastNameField"); // NOI18N
 
+        adressField.setFont(resourceMap.getFont("adressField.font")); // NOI18N
         adressField.setText(resourceMap.getString("adressField.text")); // NOI18N
         adressField.setName("adressField"); // NOI18N
 
@@ -159,7 +164,7 @@ public class FakturaPanel extends javax.swing.JPanel {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 313, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -184,13 +189,13 @@ public class FakturaPanel extends javax.swing.JPanel {
                         .addContainerGap())
                     .add(layout.createSequentialGroup()
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(firstNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                            .add(lastNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                            .add(adressField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                            .add(firstNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                            .add(lastNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                            .add(adressField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
                             .add(layout.createSequentialGroup()
                                 .add(postCodeField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(cityField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 134, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(cityField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))
                         .add(125, 125, 125))))
         );
         layout.setVerticalGroup(

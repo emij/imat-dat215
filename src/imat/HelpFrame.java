@@ -41,6 +41,18 @@ public class HelpFrame extends javax.swing.JFrame {
         this.setVisible(true);
         
         loadStep(1);
+    }    
+    public HelpFrame() {
+        initComponents();
+        
+        
+        
+        //Hjälp för att hantera stegen.
+        stepButtons = new JButton[]{this.jButton1, this.jButton2, this.jButton3, this.jButton4, this.jButton5, this.jButton6, this.jButton7};
+        
+        this.setVisible(true);
+        
+        loadStep(1);
     }
 
     private void loadStep(int stepToLoad) {
@@ -48,7 +60,9 @@ public class HelpFrame extends javax.swing.JFrame {
             app.show(new StartFrame(app));
             this.setVisible(false);
         } else if (stepToLoad > stepButtons.length) {
-            new IMatView(app);
+            if(this.app != null) {
+                new IMatView(app);
+            }
             this.setVisible(false);
         } else {
             if (stepToLoad == stepButtons.length) {

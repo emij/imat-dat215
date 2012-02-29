@@ -79,56 +79,70 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
         setName("Form"); // NOI18N
         setPreferredSize(new java.awt.Dimension(431, 338));
 
+        cardNumberLabel.setFont(resourceMap.getFont("holdersLabel.font")); // NOI18N
         cardNumberLabel.setText(resourceMap.getString("cardNumberLabel.text")); // NOI18N
         cardNumberLabel.setName("cardNumberLabel"); // NOI18N
 
+        validLabel.setFont(resourceMap.getFont("holdersLabel.font")); // NOI18N
         validLabel.setText(resourceMap.getString("validLabel.text")); // NOI18N
         validLabel.setName("validLabel"); // NOI18N
 
+        vertificationLabel.setFont(resourceMap.getFont("holdersLabel.font")); // NOI18N
         vertificationLabel.setText(resourceMap.getString("vertificationLabel.text")); // NOI18N
         vertificationLabel.setName("vertificationLabel"); // NOI18N
 
+        holdersLabel.setFont(resourceMap.getFont("holdersLabel.font")); // NOI18N
         holdersLabel.setText(resourceMap.getString("holdersLabel.text")); // NOI18N
         holdersLabel.setName("holdersLabel"); // NOI18N
 
+        verificationTextField.setFont(resourceMap.getFont("cardNumberTextField2.font")); // NOI18N
         verificationTextField.setText(resourceMap.getString("verificationTextField.text")); // NOI18N
         verificationTextField.setName("verificationTextField"); // NOI18N
 
+        holdersTextField.setFont(resourceMap.getFont("cardNumberTextField2.font")); // NOI18N
         holdersTextField.setText(resourceMap.getString("holdersTextField.text")); // NOI18N
         holdersTextField.setName("holdersTextField"); // NOI18N
 
+        validMonthCombo.setFont(resourceMap.getFont("cardNumberTextField2.font")); // NOI18N
         validMonthCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mm", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
         validMonthCombo.setToolTipText(resourceMap.getString("validMonthCombo.toolTipText")); // NOI18N
         validMonthCombo.setName("validMonthCombo"); // NOI18N
         validMonthCombo.setSize(new java.awt.Dimension(100, 27));
 
+        validYearCombo.setFont(resourceMap.getFont("cardNumberTextField2.font")); // NOI18N
         validYearCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "åå", "12", "13", "14", "15", "16", "17", "18", "19", "20" }));
         validYearCombo.setToolTipText(resourceMap.getString("validYearCombo.toolTipText")); // NOI18N
         validYearCombo.setName("validYearCombo"); // NOI18N
         validYearCombo.setSize(new java.awt.Dimension(100, 27));
 
         cardNumberTextField1.setColumns(4);
+        cardNumberTextField1.setFont(resourceMap.getFont("cardNumberTextField2.font")); // NOI18N
         cardNumberTextField1.setText(resourceMap.getString("cardNumberTextField1.text")); // NOI18N
         cardNumberTextField1.setMinimumSize(new java.awt.Dimension(100, 28));
         cardNumberTextField1.setName("cardNumberTextField1"); // NOI18N
         cardNumberTextField1.setSize(new java.awt.Dimension(100, 28));
 
         cardNumberTextField2.setColumns(50);
+        cardNumberTextField2.setFont(resourceMap.getFont("cardNumberTextField2.font")); // NOI18N
         cardNumberTextField2.setText(resourceMap.getString("cardNumberTextField2.text")); // NOI18N
         cardNumberTextField2.setName("cardNumberTextField2"); // NOI18N
         cardNumberTextField2.setSize(new java.awt.Dimension(100, 28));
 
+        cardNumberTextField3.setFont(resourceMap.getFont("cardNumberTextField2.font")); // NOI18N
         cardNumberTextField3.setText(resourceMap.getString("cardNumberTextField3.text")); // NOI18N
         cardNumberTextField3.setName("cardNumberTextField3"); // NOI18N
         cardNumberTextField3.setSize(new java.awt.Dimension(100, 28));
 
+        cardNumberTextField4.setFont(resourceMap.getFont("cardNumberTextField2.font")); // NOI18N
         cardNumberTextField4.setText(resourceMap.getString("cardNumberTextField4.text")); // NOI18N
         cardNumberTextField4.setName("cardNumberTextField4"); // NOI18N
         cardNumberTextField4.setSize(new java.awt.Dimension(100, 28));
 
+        cardTypeLabel.setFont(resourceMap.getFont("holdersLabel.font")); // NOI18N
         cardTypeLabel.setText(resourceMap.getString("cardTypeLabel.text")); // NOI18N
         cardTypeLabel.setName("cardTypeLabel"); // NOI18N
 
+        cardTypeComboBox.setFont(resourceMap.getFont("cardNumberTextField2.font")); // NOI18N
         cardTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Visa", "Mastercard" }));
         cardTypeComboBox.setName("cardTypeComboBox"); // NOI18N
 
@@ -153,7 +167,7 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 302, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -225,7 +239,7 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(holdersTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(holdersLabel))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 15, Short.MAX_VALUE)
                 .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

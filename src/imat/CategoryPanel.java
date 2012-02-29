@@ -122,4 +122,8 @@ public class CategoryPanel extends JPanel {
     public JLabel getHeader() {
         return header;
     }
+    
+    public JButton getHelpButton() {
+        return helpButton;
+    }
 }

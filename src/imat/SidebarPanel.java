@@ -24,8 +24,12 @@ public class SidebarPanel extends Observable implements MouseListener{
     private JLabel[] tools;
     private Color foreground;
     private final Color mainBackground = new Color(152, 204, 204);
+    private HelpFrame h;
     
     public SidebarPanel(Observer o) {
+        h = new HelpFrame();
+        h.setVisible(false);
+        
         this.addObserver(o);
         c = new CategoryPanel();
         dh = IMatDataHandler.getInstance();
@@ -42,6 +46,7 @@ public class SidebarPanel extends Observable implements MouseListener{
          
         c.getHeader().addMouseListener(this);
         foreground = labels[0].getForeground();
+        c.getHelpButton().addMouseListener(this);
     }
 
     public JPanel getPanel(){
@@ -92,6 +97,8 @@ public class SidebarPanel extends Observable implements MouseListener{
             //Anropa CategoryCard med orderList
         } else if(me.getSource().equals(c.getHeader())) {
             this.notifyObservers("category");
+        } else if(me.getSource().equals(c.getHelpButton())) {
+            h.setVisible(true);
         }
     }
 

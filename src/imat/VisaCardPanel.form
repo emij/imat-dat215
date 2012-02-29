@@ -105,7 +105,7 @@
                   <Component id="holdersTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="holdersLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -115,30 +115,35 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="cardNumberLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="holdersLabel.font"/>
         <Property name="text" type="java.lang.String" resourceKey="cardNumberLabel.text"/>
         <Property name="name" type="java.lang.String" value="cardNumberLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="validLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="holdersLabel.font"/>
         <Property name="text" type="java.lang.String" resourceKey="validLabel.text"/>
         <Property name="name" type="java.lang.String" value="validLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="vertificationLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="holdersLabel.font"/>
         <Property name="text" type="java.lang.String" resourceKey="vertificationLabel.text"/>
         <Property name="name" type="java.lang.String" value="vertificationLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="holdersLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="holdersLabel.font"/>
         <Property name="text" type="java.lang.String" resourceKey="holdersLabel.text"/>
         <Property name="name" type="java.lang.String" value="holdersLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="verificationTextField">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
         <Property name="text" type="java.lang.String" resourceKey="verificationTextField.text"/>
         <Property name="name" type="java.lang.String" value="verificationTextField" noResource="true"/>
       </Properties>
@@ -148,12 +153,14 @@
     </Component>
     <Component class="javax.swing.JTextField" name="holdersTextField">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
         <Property name="text" type="java.lang.String" resourceKey="holdersTextField.text"/>
         <Property name="name" type="java.lang.String" value="holdersTextField" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="validMonthCombo">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="13">
             <StringItem index="0" value="mm"/>
@@ -180,6 +187,7 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="validYearCombo">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="10">
             <StringItem index="0" value="&#xe5;&#xe5;"/>
@@ -204,6 +212,7 @@
     <Component class="javax.swing.JTextField" name="cardNumberTextField1">
       <Properties>
         <Property name="columns" type="int" value="4"/>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
         <Property name="text" type="java.lang.String" resourceKey="cardNumberTextField1.text"/>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[100, 28]"/>
@@ -220,6 +229,7 @@
     <Component class="javax.swing.JTextField" name="cardNumberTextField2">
       <Properties>
         <Property name="columns" type="int" value="50"/>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
         <Property name="text" type="java.lang.String" resourceKey="cardNumberTextField2.text"/>
         <Property name="name" type="java.lang.String" value="cardNumberTextField2" noResource="true"/>
         <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -232,6 +242,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cardNumberTextField3">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
         <Property name="text" type="java.lang.String" resourceKey="cardNumberTextField3.text"/>
         <Property name="name" type="java.lang.String" value="cardNumberTextField3" noResource="true"/>
         <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -244,6 +255,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="cardNumberTextField4">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
         <Property name="text" type="java.lang.String" resourceKey="cardNumberTextField4.text"/>
         <Property name="name" type="java.lang.String" value="cardNumberTextField4" noResource="true"/>
         <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -256,12 +268,14 @@
     </Component>
     <Component class="javax.swing.JLabel" name="cardTypeLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="holdersLabel.font"/>
         <Property name="text" type="java.lang.String" resourceKey="cardTypeLabel.text"/>
         <Property name="name" type="java.lang.String" value="cardTypeLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cardTypeComboBox">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
             <StringItem index="0" value="Visa"/>
@@ -282,7 +296,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jScrollPane1" min="-2" pref="302" max="-2" attributes="0"/>
-                  <EmptySpace pref="40" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

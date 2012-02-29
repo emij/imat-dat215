@@ -46,7 +46,7 @@
                           <Component id="kontantButton" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="cardPanel" pref="429" max="32767" attributes="0"/>
+                      <Component id="cardPanel" pref="434" max="32767" attributes="0"/>
                   </Group>
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="doneButton" alignment="1" min="-2" pref="176" max="-2" attributes="0"/>
@@ -93,6 +93,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
         </Property>
+        <Property name="font" type="java.awt.Font" resourceKey="visaButton.font"/>
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" resourceKey="visaButton.text"/>
         <Property name="name" type="java.lang.String" value="visaButton" noResource="true"/>
@@ -106,6 +107,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
         </Property>
+        <Property name="font" type="java.awt.Font" resourceKey="fakturaButton.font"/>
         <Property name="text" type="java.lang.String" resourceKey="fakturaButton.text"/>
         <Property name="name" type="java.lang.String" value="fakturaButton" noResource="true"/>
       </Properties>
@@ -118,6 +120,7 @@
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="buttonGroup1"/>
         </Property>
+        <Property name="font" type="java.awt.Font" resourceKey="fakturaButton.font"/>
         <Property name="text" type="java.lang.String" resourceKey="kontantButton.text"/>
         <Property name="name" type="java.lang.String" value="kontantButton" noResource="true"/>
       </Properties>
@@ -139,7 +142,11 @@
     </Component>
     <Component class="javax.swing.JButton" name="doneButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="doneButton.font"/>
         <Property name="text" type="java.lang.String" resourceKey="doneButton.text"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Handmark&#xf6;r"/>
+        </Property>
         <Property name="name" type="java.lang.String" value="doneButton" noResource="true"/>
       </Properties>
       <Events>

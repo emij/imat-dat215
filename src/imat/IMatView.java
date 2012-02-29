@@ -28,6 +28,7 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
  */
 public class IMatView extends FrameView implements Observer{
     IMatDataHandler data = IMatDataHandler.getInstance();
+    private static SingleFrameApplication app;
     AdressCard a;
     CategoryGridPanel c;
     DrinksGridPanel d;
@@ -44,6 +45,8 @@ public class IMatView extends FrameView implements Observer{
     ProductListUpdater shoppingCart;
     public IMatView(SingleFrameApplication app) {
         super(app);
+        this.app = app;
+        
         this.getFrame().setVisible(true);
         this.getFrame().setSize(new Dimension(1100, 700));
         this.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -97,6 +100,10 @@ public class IMatView extends FrameView implements Observer{
             tempCard=panel;
         CardLayout c = (CardLayout)(categorySmallPanel.getLayout());
         c.show(categorySmallPanel, panel);
+    }
+    
+    public static SingleFrameApplication getApp() {
+        return app;
     }
 
     @Action

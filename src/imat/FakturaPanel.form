@@ -39,13 +39,13 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="firstNameField" alignment="0" pref="202" max="32767" attributes="1"/>
-                          <Component id="lastNameField" alignment="0" pref="202" max="32767" attributes="1"/>
-                          <Component id="adressField" alignment="0" pref="202" max="32767" attributes="1"/>
+                          <Component id="firstNameField" alignment="0" pref="208" max="32767" attributes="1"/>
+                          <Component id="lastNameField" alignment="0" pref="208" max="32767" attributes="1"/>
+                          <Component id="adressField" alignment="0" pref="208" max="32767" attributes="1"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="postCodeField" min="-2" pref="58" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cityField" min="-2" pref="134" max="-2" attributes="0"/>
+                              <Component id="cityField" pref="140" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
@@ -88,24 +88,28 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="firstNameLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="postAdressLabel.font"/>
         <Property name="text" type="java.lang.String" resourceKey="firstNameLabel.text"/>
         <Property name="name" type="java.lang.String" value="firstNameLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lastNameLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="postAdressLabel.font"/>
         <Property name="text" type="java.lang.String" resourceKey="lastNameLabel.text"/>
         <Property name="name" type="java.lang.String" value="lastNameLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="adressLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="postAdressLabel.font"/>
         <Property name="text" type="java.lang.String" resourceKey="adressLabel.text"/>
         <Property name="name" type="java.lang.String" value="adressLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="postAdressLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="postAdressLabel.font"/>
         <Property name="text" type="java.lang.String" resourceKey="postAdressLabel.text"/>
         <Property name="name" type="java.lang.String" value="postAdressLabel" noResource="true"/>
       </Properties>
@@ -124,6 +128,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="adressField">
       <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="adressField.font"/>
         <Property name="text" type="java.lang.String" resourceKey="adressField.text"/>
         <Property name="name" type="java.lang.String" value="adressField" noResource="true"/>
       </Properties>
@@ -151,7 +156,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jScrollPane1" alignment="1" pref="307" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" alignment="1" pref="313" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">

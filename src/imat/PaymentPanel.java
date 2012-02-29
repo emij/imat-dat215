@@ -87,6 +87,7 @@ public class PaymentPanel extends javax.swing.JPanel {
         cardPanel.setLayout(new java.awt.CardLayout());
 
         buttonGroup1.add(visaButton);
+        visaButton.setFont(resourceMap.getFont("visaButton.font")); // NOI18N
         visaButton.setSelected(true);
         visaButton.setText(resourceMap.getString("visaButton.text")); // NOI18N
         visaButton.setName("visaButton"); // NOI18N
@@ -97,6 +98,7 @@ public class PaymentPanel extends javax.swing.JPanel {
         });
 
         buttonGroup1.add(fakturaButton);
+        fakturaButton.setFont(resourceMap.getFont("fakturaButton.font")); // NOI18N
         fakturaButton.setText(resourceMap.getString("fakturaButton.text")); // NOI18N
         fakturaButton.setName("fakturaButton"); // NOI18N
         fakturaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +108,7 @@ public class PaymentPanel extends javax.swing.JPanel {
         });
 
         buttonGroup1.add(kontantButton);
+        kontantButton.setFont(resourceMap.getFont("fakturaButton.font")); // NOI18N
         kontantButton.setText(resourceMap.getString("kontantButton.text")); // NOI18N
         kontantButton.setName("kontantButton"); // NOI18N
         kontantButton.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +123,9 @@ public class PaymentPanel extends javax.swing.JPanel {
 
         jSeparator1.setName("jSeparator1"); // NOI18N
 
+        doneButton.setFont(resourceMap.getFont("doneButton.font")); // NOI18N
         doneButton.setText(resourceMap.getString("doneButton.text")); // NOI18N
+        doneButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         doneButton.setName("doneButton"); // NOI18N
         doneButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -142,7 +147,7 @@ public class PaymentPanel extends javax.swing.JPanel {
                             .add(fakturaButton)
                             .add(kontantButton))
                         .add(18, 18, 18)
-                        .add(cardPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE))
+                        .add(cardPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE))
                     .add(org.jdesktop.layout.GroupLayout.LEADING, jLabel1)
                     .add(doneButton, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 176, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
