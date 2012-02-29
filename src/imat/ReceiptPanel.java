@@ -21,6 +21,7 @@ import se.chalmers.ait.dat215.project.*;
 public class ReceiptPanel extends javax.swing.JPanel {
     IMatDataHandler dh = IMatDataHandler.getInstance();
     List<ShoppingItem> l;
+    int sum = 0;
     
     /** Creates new form ReceiptPanel */
     public ReceiptPanel() {
@@ -31,11 +32,14 @@ public class ReceiptPanel extends javax.swing.JPanel {
         
         printButton.setIcon(new ImageIcon(getClass().getResource("resources/bilder/skrivut.png")));
         
+        //insertPanel.setLayout(new BoxLayout());
+        
         if(!dh.getOrders().isEmpty()) {
             l = dh.getOrders().get(0).getItems();
             presentOrder();
         }
-        //Present the list l in the scrollbar
+        
+        sumLabel1.setText("Summa: " + sum);
         
         
     }
@@ -56,6 +60,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
             
             insertPanel.add(p);
             
+            sum += s.getTotal();
         }
     }
 
@@ -106,7 +111,10 @@ public class ReceiptPanel extends javax.swing.JPanel {
 
         jPanel1.setName("jPanel1"); // NOI18N
 
-        headerPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(0, 0, 0)));
+
+        headerPanel.setBackground(resourceMap.getColor("headerPanel.background")); // NOI18N
+        headerPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
         headerPanel.setName("headerPanel"); // NOI18N
         headerPanel.setPreferredSize(new java.awt.Dimension(579, 100));
 
@@ -133,7 +141,8 @@ public class ReceiptPanel extends javax.swing.JPanel {
                 .add(amountLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 51, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(134, 134, 134)
                 .add(totalLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(166, Short.MAX_VALUE))
+
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         headerPanelLayout.setVerticalGroup(
             headerPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -143,6 +152,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
                 .add(totalLabel))
         );
 
+        insertPanel.setBackground(resourceMap.getColor("insertPanel.background")); // NOI18N
         insertPanel.setName("insertPanel"); // NOI18N
 
         org.jdesktop.layout.GroupLayout insertPanelLayout = new org.jdesktop.layout.GroupLayout(insertPanel);
@@ -156,7 +166,8 @@ public class ReceiptPanel extends javax.swing.JPanel {
             .add(0, 183, Short.MAX_VALUE)
         );
 
-        sumPanel.setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("sumPanel.border.lineColor"))); // NOI18N
+        sumPanel.setBackground(resourceMap.getColor("sumPanel.background")); // NOI18N
+        sumPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 0, 0)));
         sumPanel.setName("sumPanel"); // NOI18N
         sumPanel.setPreferredSize(new java.awt.Dimension(579, 100));
 
@@ -169,7 +180,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
         sumPanelLayout.setHorizontalGroup(
             sumPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, sumPanelLayout.createSequentialGroup()
-                .addContainerGap(352, Short.MAX_VALUE)
+                .addContainerGap(354, Short.MAX_VALUE)
                 .add(sumLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(143, 143, 143))
         );

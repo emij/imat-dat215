@@ -23,7 +23,7 @@ public class PaymentPanel extends javax.swing.JPanel {
     private FakturaPanel f;
     private JPanel j; 
     private String currentPanel = "visa";
-    private boolean infoOk;
+    private boolean infoOk;;
     
     /** Creates new form PaymentPanel */
     public PaymentPanel() {

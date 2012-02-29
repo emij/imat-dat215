@@ -41,8 +41,9 @@ public class IMatView extends FrameView implements Observer{
     CategoryCard cc;
     SidebarPanel s;
     SearchPanel sp;
+    ProductListUpdater2 bread2;
     ProductListUpdater berry;
-    ProductListUpdater bread;
+    //ProductListUpdater bread;
     ProductListUpdater cabbage;
     ProductListUpdater citrus_fruit;
     ProductListUpdater cold_drinks;
@@ -65,6 +66,8 @@ public class IMatView extends FrameView implements Observer{
             
     ProductListUpdater favorites;
     ProductListUpdater shoppingCartView;
+    
+    ShoppingCartObservable s2;
     public IMatView(SingleFrameApplication app) {
         super(app);
         this.app = app;
@@ -85,9 +88,12 @@ public class IMatView extends FrameView implements Observer{
         s = new SidebarPanel(this);
         sp = new SearchPanel();
         r = new ReceiptPanel();
+        s2 = new ShoppingCartObservable(this);
 
+        bread2 = new ProductListUpdater2(v.getPanelObserver(), ProductCategory.BREAD);
+        
         berry = new ProductListUpdater(v.getPanelObserver(), ProductCategory.BERRY);
-        bread = new ProductListUpdater(v.getPanelObserver(), ProductCategory.BREAD);
+        //bread = new ProductListUpdater(v.getPanelObserver(), ProductCategory.BREAD);
         cabbage = new ProductListUpdater(v.getPanelObserver(), ProductCategory.CABBAGE);
         citrus_fruit = new ProductListUpdater(v.getPanelObserver(), ProductCategory.CITRUS_FRUIT);
         cold_drinks = new ProductListUpdater(v.getPanelObserver(), ProductCategory.COLD_DRINKS);
@@ -119,7 +125,7 @@ public class IMatView extends FrameView implements Observer{
         categorySmallPanel.add(shoppingCartView.getShoppingCartPanel(), "kundvagn");
         
         categorySmallPanel.add(berry.getProductPanel(), "berry");
-        categorySmallPanel.add(bread.getProductPanel(), "bread");
+        categorySmallPanel.add(bread2.getProductPanel(), "bread");
         categorySmallPanel.add(cabbage.getProductPanel(), "cabbage");
         categorySmallPanel.add(citrus_fruit.getProductPanel(), "citrus_fruit");
         categorySmallPanel.add(cold_drinks.getProductPanel(), "cold_drinks");
@@ -141,6 +147,7 @@ public class IMatView extends FrameView implements Observer{
         categorySmallPanel.add(vegetable_fruit.getProductPanel(), "vegetable_fruit");
 
         categorySmallPanel.add(r, "kvitto");
+        categorySmallPanel.add(s2.getPanel(), "kundvagn2");
         
         categoryPanel.add(s.getPanel(), "sidepanel");
         searchPanel.setLayout(new GridLayout(1, 1));
@@ -158,6 +165,9 @@ public class IMatView extends FrameView implements Observer{
      */
     String tempCard = "category";
     private void changePanel(String panel) {
+        if(panel.equals("kundvagn2")){
+            s2.getSCList().updateView();
+        }
         if(!tempCard.equals(panel)){
             prevList.addFirst(tempCard);
             backButton.setEnabled(true);

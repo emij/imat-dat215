@@ -245,7 +245,7 @@
               </Border>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Standardmark&#xf6;r"/>
             </Property>
             <Property name="disabledTextColor" type="java.awt.Color" resourceKey="value.disabledTextColor"/>
             <Property name="focusable" type="boolean" value="false"/>

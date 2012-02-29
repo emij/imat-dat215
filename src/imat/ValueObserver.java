@@ -38,7 +38,7 @@ public class ValueObserver extends Observable implements MouseListener {
     public void mouseClicked(MouseEvent me) {
         setChanged();
         if(me.getSource() == p.getLabel1() || me.getSource() == p.getLabel2()) {
-            this.notifyObservers("kundvagn");
+            this.notifyObservers("kundvagn2");
         }
     }
 

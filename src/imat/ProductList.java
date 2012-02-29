@@ -127,7 +127,7 @@ public class ProductList extends javax.swing.JPanel {
     private javax.swing.JPanel scrollPanel;
     // End of variables declaration//GEN-END:variables
 
-    public void addToProductList(ProductPanel productPanel){
+    public void addToProductList(ProductPanel productPanel) {
         scrollPanel.add(productPanel);
         categoryLabel.setFont(new Font("sans serif", Font.BOLD, 20));
         rightLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
@@ -142,7 +142,7 @@ public class ProductList extends javax.swing.JPanel {
         scrollPanel.revalidate();
         categoryScrollPane.revalidate();
     }    
-    public void addToProductList(FavoritesPanel favoritePanel){
+    public void addToProductList(FavoritesPanel favoritePanel) {
         scrollPanel.add(favoritePanel);
         scrollPanel.repaint();
         categoryScrollPane.repaint();

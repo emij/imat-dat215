@@ -125,9 +125,11 @@
           <SubComponents>
             <Container class="javax.swing.JPanel" name="headerPanel">
               <Properties>
+                <Property name="background" type="java.awt.Color" resourceKey="headerPanel.background"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                    <MatteColorBorder bottom="0" left="0" right="1" top="0"/>
+
+                    <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
                   </Border>
                 </Property>
                 <Property name="name" type="java.lang.String" value="headerPanel" noResource="true"/>
@@ -146,7 +148,7 @@
                           <Component id="amountLabel" min="-2" pref="51" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                           <Component id="totalLabel" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace pref="166" max="32767" attributes="0"/>
+                          <EmptySpace pref="167" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -186,6 +188,7 @@
             </Container>
             <Container class="javax.swing.JPanel" name="insertPanel">
               <Properties>
+                <Property name="background" type="java.awt.Color" resourceKey="insertPanel.background"/>
                 <Property name="name" type="java.lang.String" value="insertPanel" noResource="true"/>
               </Properties>
 
@@ -204,11 +207,10 @@
             </Container>
             <Container class="javax.swing.JPanel" name="sumPanel">
               <Properties>
+                <Property name="background" type="java.awt.Color" resourceKey="sumPanel.background"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Property name="color" resourceKey="sumPanel.border.lineColor"/>
-                    </LineBorder>
+                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                    <MatteColorBorder bottom="0" left="0" right="0" top="1"/>
                   </Border>
                 </Property>
                 <Property name="name" type="java.lang.String" value="sumPanel" noResource="true"/>
@@ -221,7 +223,7 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="352" max="32767" attributes="0"/>
+                          <EmptySpace pref="354" max="32767" attributes="0"/>
                           <Component id="sumLabel1" min="-2" pref="71" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                       </Group>
