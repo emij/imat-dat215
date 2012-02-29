@@ -54,7 +54,6 @@ public class StartFrame extends javax.swing.JFrame implements ActionListener {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Form"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(800, 800));
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(StartFrame.class);
         jPanel1.setBackground(resourceMap.getColor("jPanel1.background")); // NOI18N
@@ -91,11 +90,13 @@ public class StartFrame extends javax.swing.JFrame implements ActionListener {
 
         helpButton.setIcon(resourceMap.getIcon("helpButton.icon")); // NOI18N
         helpButton.setText(resourceMap.getString("helpButton.text")); // NOI18N
+        helpButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         helpButton.setBorderPainted(false);
         helpButton.setName("helpButton"); // NOI18N
 
         goDirectlyButton.setIcon(resourceMap.getIcon("goDirectlyButton.icon")); // NOI18N
         goDirectlyButton.setText(resourceMap.getString("goDirectlyButton.text")); // NOI18N
+        goDirectlyButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         goDirectlyButton.setBorderPainted(false);
         goDirectlyButton.setName("goDirectlyButton"); // NOI18N
 
@@ -141,7 +142,7 @@ public class StartFrame extends javax.swing.JFrame implements ActionListener {
                 .add(welcomePanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());

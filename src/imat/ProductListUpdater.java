@@ -22,9 +22,9 @@ public class ProductListUpdater extends Observable implements ActionListener {
 //gissar extends Observable osv
     
     
-    
     private IMatDataHandler data = IMatDataHandler.getInstance();
-    
+    private ShoppingCart shoppingCart = data.getShoppingCart();
+    private ProductControl productControl = ProductControl.getInstance();
     private List<Product> products;
     private List<ShoppingItem> shoppingItems;
     private List<Double> amount;
@@ -42,17 +42,20 @@ public class ProductListUpdater extends Observable implements ActionListener {
     private ProductList productList;
     private ShoppingCartList shoppingCartList;
     
-    public ProductListUpdater(Observer imat, Observer value, ProductCategory productCategory){
-        this.addObserver(imat);
+    private CategoryNameConverter categoryNameConverter = CategoryNameConverter.getInstance();
+
+    public ProductListUpdater(Observer value, ProductCategory productCategory){
         this.addObserver(value);
         products = data.getProducts(productCategory);
         productList = new ProductList();
-        productList.setCategoryName(productCategory.toString());
+        productList.setCategoryName(categoryNameConverter.convertCategoryName(productCategory));
         updateProductList();
     }
-    public ProductListUpdater(Observer imat, Observer value, ShoppingCart shoppingCart){
-        this.addObserver(imat);
+    public ProductListUpdater(Observer value, ShoppingCart shoppingCart){
         this.addObserver(value);
+        amount = new ArrayList<Double>();
+        totalValue = new ArrayList<Double>();
+        products = new ArrayList<Product>();
         shoppingItems = data.getShoppingCart().getItems();
         shoppingCartList = new ShoppingCartList();
         shoppingCartList.setCategoryName("Kundvagn");
@@ -64,17 +67,29 @@ public class ProductListUpdater extends Observable implements ActionListener {
         updateShoppingCartList();
     }
             
-    public ProductListUpdater(Observer imat, Observer value, List<Product> products){
-        this.addObserver(imat);
+    public ProductListUpdater(Observer value, List<Product> products){
         this.addObserver(value);
         this.products = products;
         productList = new ProductList();
         productList.setCategoryName("Favoriter");
         updateProductList();
     }
+    public ProductListUpdater(Observer value, List<Product> products, String search){
+        this.addObserver(value);
+        this.products = products;
+        productList = new ProductList();
+        productList.setCategoryName("Sökresultat: " + search);
+        updateProductList();
+    }
     
     private void updateShoppingCartList() {
         shoppingCartPanels = new ShoppingCartPanel[products.size()];
+        favoriteButtons = new ArrayList<JButton>();
+        chartButtons = new ArrayList<JButton>();
+        valueMinusButtons = new ArrayList<JButton>();
+        valuePlusButtons = new ArrayList<JButton>();
+        
+        
         for(int i = 0; i < products.size(); i++){
             shoppingCartPanels[i] = new ShoppingCartPanel(products.get(i), amount.get(i), totalValue.get(i));
             favoriteButtons.add(i, shoppingCartPanels[i].getFavoritesButton());
@@ -92,6 +107,12 @@ public class ProductListUpdater extends Observable implements ActionListener {
  
     private void updateProductList() {
         productPanels = new ProductPanel[products.size()];
+        favoriteButtons = new ArrayList<JButton>();
+        chartButtons = new ArrayList<JButton>();
+        valueMinusButtons = new ArrayList<JButton>();
+        valuePlusButtons = new ArrayList<JButton>();
+
+
         for(int i = 0; i < products.size(); i++){
         
             productPanels[i] = new ProductPanel(products.get(i));
@@ -126,7 +147,23 @@ public class ProductListUpdater extends Observable implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        setChanged();
+        for(int i = 0; i < products.size(); i++){
+            if(e.getSource().equals(favoriteButtons.get(i))){
+                productPanels[i].setFavoritesButton();
+            } else if(e.getSource().equals(chartButtons.get(i))){
+                Double value = productPanels[i].getValue();
+                shoppingCart.addProduct(products.get(i), value);
+                Double totalCost = products.get(i).getPrice() * value;
+                productControl.add(value, totalCost);
+                productPanels[i].zeroValue();
+                this.notifyObservers(productControl);
+            } else if(e.getSource().equals(valuePlusButtons.get(i))){
+                productPanels[i].addValue();
+            } else if(e.getSource().equals(valueMinusButtons.get(i))){
+                productPanels[i].negValue();
+            }
+        }
     }
 
     

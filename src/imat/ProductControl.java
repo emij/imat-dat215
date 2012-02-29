@@ -9,18 +9,32 @@ package imat;
  * @author e
  */
 public class ProductControl {
-    private int nbrOfProducts, sum;
-    public ProductControl(int nbrOfProducts, int sum) {
+    private double nbrOfProducts, sum;
+    private static ProductControl instance;
+    
+    private ProductControl(double nbrOfProducts, double sum) {
         this.nbrOfProducts = nbrOfProducts;
         this.sum = sum;
     }
     
-    public int getNbrOfProducts() {
+    public static ProductControl getInstance() {
+        if(instance == null) {
+            instance = new ProductControl(0, 0);
+        }
+        return instance;
+    }
+    
+    public double getNbrOfProducts() {
         return nbrOfProducts;
     }
     
-    public int getSum() {
+    public double getSum() {
         return sum;
+    }
+    
+    public void add(double nr, double s) {
+        nbrOfProducts = nbrOfProducts + nr;
+        sum = sum + s;
     }
     
 }

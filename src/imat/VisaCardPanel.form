@@ -1,0 +1,342 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="jFormattedTextField1.text"/>
+        <Property name="name" type="java.lang.String" value="jFormattedTextField1" noResource="true"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="background" type="java.awt.Color" resourceKey="Form.background"/>
+    <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[431, 338]"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="vertificationLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="cardTypeLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="holdersLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="validLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="cardNumberLabel" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="validMonthCombo" min="-2" max="-2" attributes="1"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="validYearCombo" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="verificationTextField" min="-2" pref="44" max="-2" attributes="1"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" attributes="1">
+                                      <Component id="cardNumberTextField1" min="-2" pref="60" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="cardNumberTextField2" min="-2" pref="60" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="cardTypeComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="cardNumberTextField3" min="-2" pref="58" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="holdersTextField" alignment="0" min="-2" pref="194" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="cardNumberTextField4" min="-2" pref="60" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cardTypeComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cardTypeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cardNumberTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cardNumberTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cardNumberTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cardNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cardNumberTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="validMonthCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="validYearCombo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="validLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="verificationTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="vertificationLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="holdersTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="holdersLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="cardNumberLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="holdersLabel.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="cardNumberLabel.text"/>
+        <Property name="name" type="java.lang.String" value="cardNumberLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="validLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="holdersLabel.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="validLabel.text"/>
+        <Property name="name" type="java.lang.String" value="validLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="vertificationLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="holdersLabel.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="vertificationLabel.text"/>
+        <Property name="name" type="java.lang.String" value="vertificationLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="holdersLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="holdersLabel.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="holdersLabel.text"/>
+        <Property name="name" type="java.lang.String" value="holdersLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="verificationTextField">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="verificationTextField.text"/>
+        <Property name="name" type="java.lang.String" value="verificationTextField" noResource="true"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField(new PromptDocument(3),&quot;&quot;,3)"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="holdersTextField">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="holdersTextField.text"/>
+        <Property name="name" type="java.lang.String" value="holdersTextField" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="validMonthCombo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="13">
+            <StringItem index="0" value="mm"/>
+            <StringItem index="1" value="01"/>
+            <StringItem index="2" value="02"/>
+            <StringItem index="3" value="03"/>
+            <StringItem index="4" value="04"/>
+            <StringItem index="5" value="05"/>
+            <StringItem index="6" value="06"/>
+            <StringItem index="7" value="07"/>
+            <StringItem index="8" value="08"/>
+            <StringItem index="9" value="09"/>
+            <StringItem index="10" value="10"/>
+            <StringItem index="11" value="11"/>
+            <StringItem index="12" value="12"/>
+          </StringArray>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="validMonthCombo.toolTipText"/>
+        <Property name="name" type="java.lang.String" value="validMonthCombo" noResource="true"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[100, 27]"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="validYearCombo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="10">
+            <StringItem index="0" value="&#xe5;&#xe5;"/>
+            <StringItem index="1" value="12"/>
+            <StringItem index="2" value="13"/>
+            <StringItem index="3" value="14"/>
+            <StringItem index="4" value="15"/>
+            <StringItem index="5" value="16"/>
+            <StringItem index="6" value="17"/>
+            <StringItem index="7" value="18"/>
+            <StringItem index="8" value="19"/>
+            <StringItem index="9" value="20"/>
+          </StringArray>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" resourceKey="validYearCombo.toolTipText"/>
+        <Property name="name" type="java.lang.String" value="validYearCombo" noResource="true"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[100, 27]"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="cardNumberTextField1">
+      <Properties>
+        <Property name="columns" type="int" value="4"/>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="cardNumberTextField1.text"/>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[100, 28]"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="cardNumberTextField1" noResource="true"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[100, 28]"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField(new PromptDocument(4),&quot;&quot;,4)"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="cardNumberTextField2">
+      <Properties>
+        <Property name="columns" type="int" value="50"/>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="cardNumberTextField2.text"/>
+        <Property name="name" type="java.lang.String" value="cardNumberTextField2" noResource="true"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[100, 28]"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField(new PromptDocument(4),&quot;&quot;,4)"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="cardNumberTextField3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="cardNumberTextField3.text"/>
+        <Property name="name" type="java.lang.String" value="cardNumberTextField3" noResource="true"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[100, 28]"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField(new PromptDocument(4),&quot;&quot;,4)"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="cardNumberTextField4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="cardNumberTextField4.text"/>
+        <Property name="name" type="java.lang.String" value="cardNumberTextField4" noResource="true"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[100, 28]"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField(new PromptDocument(4),&quot;&quot;,4)"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="cardTypeLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="holdersLabel.font"/>
+        <Property name="text" type="java.lang.String" resourceKey="cardTypeLabel.text"/>
+        <Property name="name" type="java.lang.String" value="cardTypeLabel" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cardTypeComboBox">
+      <Properties>
+        <Property name="font" type="java.awt.Font" resourceKey="cardNumberTextField2.font"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="Visa"/>
+            <StringItem index="1" value="Mastercard"/>
+          </StringArray>
+        </Property>
+        <Property name="name" type="java.lang.String" value="cardTypeComboBox" noResource="true"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="jPanel1.background"/>
+        <Property name="name" type="java.lang.String" value="jPanel1" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jScrollPane1" min="-2" pref="302" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="104" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" resourceKey="jScrollPane1.background"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+            <Property name="name" type="java.lang.String" value="jScrollPane1" noResource="true"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="errorArea">
+              <Properties>
+                <Property name="background" type="java.awt.Color" resourceKey="errorArea.background"/>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="font" type="java.awt.Font" resourceKey="errorArea.font"/>
+                <Property name="foreground" type="java.awt.Color" resourceKey="errorArea.foreground"/>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="name" type="java.lang.String" value="errorArea" noResource="true"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

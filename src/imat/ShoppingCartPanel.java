@@ -26,6 +26,13 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     private Double totalValue;
     private boolean isFavorite;
     
+    String path;
+    private ImageIcon addFavoritesIcon;
+    private ImageIcon remChartIcon;
+    private ImageIcon remFavoritesIcon;
+    private ImageIcon plusIcon;
+    private ImageIcon minusIcon;
+    
     private IMatDataHandler data = IMatDataHandler.getInstance();
     private Color typBrun = new Color(164, 157, 157);
     /** Creates new form ShoppingCartPanel */
@@ -96,7 +103,9 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         filler3.setName("filler3"); // NOI18N
         leftPanel.add(filler3);
 
+        addToFavorites.setIcon(resourceMap.getIcon("addToFavorites.icon")); // NOI18N
         addToFavorites.setText(resourceMap.getString("addToFavorites.text")); // NOI18N
+        addToFavorites.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         addToFavorites.setName("addToFavorites"); // NOI18N
         leftPanel.add(addToFavorites);
 
@@ -133,7 +142,9 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         filler5.setName("filler5"); // NOI18N
         rightPanel.add(filler5);
 
+        valueMinus.setIcon(resourceMap.getIcon("valueMinus.icon")); // NOI18N
         valueMinus.setText(resourceMap.getString("valueMinus.text")); // NOI18N
+        valueMinus.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         valueMinus.setName("valueMinus"); // NOI18N
         rightPanel.add(valueMinus);
 
@@ -150,7 +161,9 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         filler8.setName("filler8"); // NOI18N
         rightPanel.add(filler8);
 
+        valuePlus.setIcon(resourceMap.getIcon("valuePlus.icon")); // NOI18N
         valuePlus.setText(resourceMap.getString("valuePlus.text")); // NOI18N
+        valuePlus.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         valuePlus.setName("valuePlus"); // NOI18N
         rightPanel.add(valuePlus);
 
@@ -164,9 +177,10 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         filler4.setName("filler4"); // NOI18N
         rightPanel.add(filler4);
 
+        removeFromChart.setIcon(resourceMap.getIcon("removeFromChart.icon")); // NOI18N
         removeFromChart.setText(resourceMap.getString("removeFromChart.text")); // NOI18N
         removeFromChart.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        removeFromChart.setMaximumSize(new java.awt.Dimension(45, 35));
+        removeFromChart.setMaximumSize(new java.awt.Dimension(145, 23));
         removeFromChart.setName("removeFromChart"); // NOI18N
         rightPanel.add(removeFromChart);
 
@@ -216,12 +230,27 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void initMyComponents(Product product, Double amount, Double totalValue) {
+        path = "resources/bilder/";
+        addFavoritesIcon = new ImageIcon(getClass().getResource(path + "laggtill_favoriter.png"));
+        remFavoritesIcon = new ImageIcon(getClass().getResource(path + "tabort_favoriter.png"));
+        remChartIcon = new ImageIcon(getClass().getResource(path + "tabort_kundvagn.png"));
+        minusIcon = new ImageIcon(getClass().getResource(path + "minus.png"));
+        plusIcon = new ImageIcon(getClass().getResource(path + "plus.png"));
+        
         productPicture.setIcon(data.getImageIcon(product, iconDimension));
         productPicture.setBorder(BorderFactory.createLineBorder(typBrun, 1));
         productName.setText(product.getName());
         productName.setFont(new Font("Georgia", Font.PLAIN, 12));
         productPrice.setText("" + product.getPrice() + " " + product.getUnit());
         productPrice.setFont(new Font("Georgia", Font.PLAIN, 12));
+        removeFromChart.setIcon(remChartIcon);
+        valuePlus.setIcon(plusIcon);
+        valueMinus.setIcon(minusIcon);
+        if(!isFavorite){
+            addToFavorites.setIcon(addFavoritesIcon);
+        } else {
+            addToFavorites.setIcon(remFavoritesIcon);
+        }
         
         leftPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 1, typBrun));
         pricePanel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, typBrun));
@@ -250,11 +279,19 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         return product;
     }
     public void setFavoritesButton(){
-        if(!isFavorite){
-            addToFavorites.setText("Favoriter");
+         if(isFavorite){
+            addToFavorites.setIcon(addFavoritesIcon);
+            isFavorite = false;
+            data.removeFavorite(this.product);
+            addToFavorites.repaint();
+            addToFavorites.revalidate();
         } else {
-            addToFavorites.setText("Ta bort");
-        }
+            addToFavorites.setIcon(remFavoritesIcon);
+            isFavorite = true;
+            data.addFavorite(this.product);
+            addToFavorites.repaint();
+            addToFavorites.revalidate();
+        }        
     }
     public Double getAmount(){
         return amount;
@@ -269,5 +306,19 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     public void setTotalValue(Double totalValue){
         this.totalValue = totalValue;
         totalCost.setText("" + totalValue + " kr");
+    }
+    public void addValue(){
+        amount = amount + 1;
+        value.setText("" + amount);
+    }
+    public void negValue(){
+        if (amount != 0){
+            amount = amount -1;
+            value.setText("" + amount);
+        }
+    }
+    public void zeroValue(){
+        amount = (double)0;
+        value.setText("" + amount);
     }
 }

@@ -23,9 +23,9 @@ public class AdressCard extends Observable implements ActionListener {
     
 
     public void actionPerformed(ActionEvent ae) {
-        if(ae.getSource().equals(ap.getDoneButton())) {
-            this.notifyObservers("");
-        }
+        //if(ae.getSource().equals(ap.getDoneButton())) {
+          //  this.notifyObservers("");
+        //}
     }
 
     public JPanel getPanel() {

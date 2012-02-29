@@ -24,7 +24,7 @@ public class ValuePanel extends JPanel implements Observer {
     org.jdesktop.application.ResourceMap resourceMap;
             
     int nbrOfProducts = 0;
-    int sum = 0;
+    double sum = 0;
     /** Creates new form ValuePanel */
     public ValuePanel() {
         initComponents();
@@ -42,9 +42,13 @@ public class ValuePanel extends JPanel implements Observer {
     }
     
     public void setLabeltext() {
-        /*TODO: toShoppingCartLabel1.setText("Till Kundvagnen (" + ANTALVAROR + 
-        + " varor, " + SUMMA + " SEK )");
-         */
+        String v = "varor";
+        if(nbrOfProducts == 1) {
+            v = "vara";
+        }
+        toShoppingCartLabel1.setText("<html>Till Kundvagnen (<b>" + nbrOfProducts + 
+         "</b> " + v + ", <b>" + sum + "0</b> SEK )</html>");
+
     }
     /** This method is called from within the constructor to
      * initialize the form.
@@ -115,10 +119,14 @@ public class ValuePanel extends JPanel implements Observer {
     // End of variables declaration//GEN-END:variables
 
     public void update(Observable o, Object arg) {
+        
         if(arg.getClass().equals(ProductControl.class)) {
+            
             ProductControl tmp = (ProductControl)arg;
-            nbrOfProducts = tmp.getNbrOfProducts();
+            Double nrOP = tmp.getNbrOfProducts();
+            nbrOfProducts = nrOP.intValue();
             sum = tmp.getSum();
+            setLabeltext();
         }
             
     }
