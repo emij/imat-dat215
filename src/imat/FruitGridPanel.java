@@ -48,27 +48,25 @@ public class FruitGridPanel extends Observable implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         setChanged();
         if(ae.getSource() == buttonArr[0]) {
-
+            this.notifyObservers("pod");
         } else if(ae.getSource() == buttonArr[1]) {
-            
+            this.notifyObservers("berry");            
         } else if(ae.getSource() == buttonArr[2]) {
-            
+            this.notifyObservers("citrus_fruit");            
         } else if(ae.getSource() == buttonArr[3]) {
-            
+            this.notifyObservers("exotic_fruit");
         } else if(ae.getSource() == buttonArr[4]) {
-            
+            this.notifyObservers("vegetable_fruit");
         } else if(ae.getSource() == buttonArr[5]) {
-            
+            this.notifyObservers("cabbage");
         } else if(ae.getSource() == buttonArr[6]) {
-            
+            this.notifyObservers("melons");
         } else if(ae.getSource() == buttonArr[7]) {
-            
+            this.notifyObservers("herb");
         } else if(ae.getSource() == buttonArr[8]) {
-            
+            this.notifyObservers("root_vegetable");
         } else if(ae.getSource() == buttonArr[9]) {
-            
-        } else if(ae.getSource() == buttonArr[10]) {
-            
+            this.notifyObservers("nuts_and_seeds");
         }    
     }
 }

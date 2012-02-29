@@ -47,10 +47,12 @@ public class ShoppingCartList extends javax.swing.JPanel {
         rightLabel = new javax.swing.JLabel();
         middleLabel = new javax.swing.JLabel();
         totalAmountDue = new javax.swing.JLabel();
-
-        setName("Form"); // NOI18N
+        jButton1 = new javax.swing.JButton();
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(ShoppingCartList.class);
+        setBackground(resourceMap.getColor("Form.background")); // NOI18N
+        setName("Form"); // NOI18N
+
         categoryLabel.setBackground(resourceMap.getColor("categoryLabel.background")); // NOI18N
         categoryLabel.setFont(resourceMap.getFont("categoryLabel.font")); // NOI18N
         categoryLabel.setText(resourceMap.getString("categoryLabel.text")); // NOI18N
@@ -90,6 +92,9 @@ public class ShoppingCartList extends javax.swing.JPanel {
         totalAmountDue.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         totalAmountDue.setName("totalAmountDue"); // NOI18N
 
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setName("jButton1"); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,7 +102,7 @@ public class ShoppingCartList extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(categoryScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+                    .addComponent(categoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(leftLabel)
                         .addGap(298, 298, 298)
@@ -105,7 +110,11 @@ public class ShoppingCartList extends javax.swing.JPanel {
                         .addGap(56, 56, 56)
                         .addComponent(rightLabel))
                     .addComponent(categoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(totalAmountDue, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(293, 293, 293)
+                        .addComponent(totalAmountDue, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -119,15 +128,19 @@ public class ShoppingCartList extends javax.swing.JPanel {
                     .addComponent(middleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(categoryScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(categoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(totalAmountDue)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(totalAmountDue, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                        .addGap(12, 12, 12))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel categoryLabel;
     private javax.swing.JScrollPane categoryScrollPane;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel leftLabel;
     private javax.swing.JLabel middleLabel;
     private javax.swing.JLabel rightLabel;
@@ -137,7 +150,8 @@ public class ShoppingCartList extends javax.swing.JPanel {
     
     public void addToProductList(ShoppingCartPanel shoppingCartPanel){
         scrollPanel.add(shoppingCartPanel);
-        totalAmountDue.setText("" + data.getShoppingCart().getTotal());
+        totalAmountDue.setFont(new Font("Georgia", Font.PLAIN, 16));
+        totalAmountDue.setText("Totalt: " + data.getShoppingCart().getTotal() + "0 kr");
         scrollPanel.repaint();
         categoryScrollPane.repaint();
         scrollPanel.revalidate();
@@ -145,5 +159,8 @@ public class ShoppingCartList extends javax.swing.JPanel {
     } 
     public void setCategoryName(String name){
         categoryLabel.setText(name);
+    }
+    public JPanel getInnerPanel(){
+        return scrollPanel;
     }
 }

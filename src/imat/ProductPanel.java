@@ -163,15 +163,18 @@ public class ProductPanel extends javax.swing.JPanel {
         filler7.setName("filler7"); // NOI18N
         rightPanel.add(filler7);
 
+        value.setBackground(resourceMap.getColor("value.background")); // NOI18N
         value.setFont(resourceMap.getFont("value.font")); // NOI18N
         value.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         value.setText(resourceMap.getString("value.text")); // NOI18N
+        value.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         value.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         value.setDisabledTextColor(resourceMap.getColor("value.disabledTextColor")); // NOI18N
         value.setFocusable(false);
-        value.setMaximumSize(new java.awt.Dimension(25, 25));
+        value.setMaximumSize(new java.awt.Dimension(19, 20));
+        value.setMinimumSize(new java.awt.Dimension(19, 20));
         value.setName("value"); // NOI18N
-        value.setPreferredSize(new java.awt.Dimension(20, 20));
+        value.setPreferredSize(new java.awt.Dimension(19, 20));
         rightPanel.add(value);
 
         filler8.setName("filler8"); // NOI18N

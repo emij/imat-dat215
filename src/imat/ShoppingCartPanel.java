@@ -79,9 +79,12 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         removeFromChart = new javax.swing.JButton();
         filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0));
 
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(ShoppingCartPanel.class);
+        setBackground(resourceMap.getColor("Form.background")); // NOI18N
+        setMaximumSize(new java.awt.Dimension(32767, 55));
+        setMinimumSize(new java.awt.Dimension(0, 55));
         setName("Form"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(ShoppingCartPanel.class);
         leftPanel.setBackground(resourceMap.getColor("leftPanel.background")); // NOI18N
         leftPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         leftPanel.setMinimumSize(new java.awt.Dimension(0, 30));
@@ -126,7 +129,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         pricePanel.setLayout(pricePanelLayout);
         pricePanelLayout.setHorizontalGroup(
             pricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(productPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+            .addComponent(productPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
         );
         pricePanelLayout.setVerticalGroup(
             pricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -151,9 +154,16 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         filler7.setName("filler7"); // NOI18N
         rightPanel.add(filler7);
 
+        value.setBackground(resourceMap.getColor("value.background")); // NOI18N
+        value.setFont(resourceMap.getFont("value.font")); // NOI18N
         value.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         value.setText(resourceMap.getString("value.text")); // NOI18N
-        value.setMaximumSize(new java.awt.Dimension(25, 25));
+        value.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        value.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        value.setDisabledTextColor(resourceMap.getColor("value.disabledTextColor")); // NOI18N
+        value.setFocusable(false);
+        value.setMaximumSize(new java.awt.Dimension(35, 25));
+        value.setMinimumSize(new java.awt.Dimension(25, 25));
         value.setName("value"); // NOI18N
         value.setPreferredSize(new java.awt.Dimension(20, 20));
         rightPanel.add(value);
@@ -180,7 +190,6 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         removeFromChart.setIcon(resourceMap.getIcon("removeFromChart.icon")); // NOI18N
         removeFromChart.setText(resourceMap.getString("removeFromChart.text")); // NOI18N
         removeFromChart.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
-        removeFromChart.setMaximumSize(new java.awt.Dimension(145, 23));
         removeFromChart.setName("removeFromChart"); // NOI18N
         rightPanel.add(removeFromChart);
 
@@ -196,7 +205,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pricePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE))
+                .addComponent(rightPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,9 +261,9 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
             addToFavorites.setIcon(remFavoritesIcon);
         }
         
-        leftPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 1, typBrun));
-        pricePanel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, typBrun));
-        rightPanel.setBorder(BorderFactory.createMatteBorder(0, 1, 1, 0, typBrun));
+        leftPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, typBrun));
+        pricePanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, typBrun));
+        rightPanel.setBorder(BorderFactory.createMatteBorder(0, 1, 0, 0, typBrun));
         
         value.setText("" + amount);
         

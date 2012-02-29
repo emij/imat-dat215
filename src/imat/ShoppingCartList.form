@@ -2,6 +2,7 @@
 
 <Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
+    <Property name="background" type="java.awt.Color" resourceKey="Form.background"/>
     <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
   </Properties>
   <AuxValues>
@@ -22,7 +23,7 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="categoryScrollPane" alignment="1" pref="650" max="32767" attributes="0"/>
+                  <Component id="categoryScrollPane" alignment="0" pref="680" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="leftLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
@@ -31,7 +32,12 @@
                       <Component id="rightLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="categoryLabel" alignment="0" min="-2" pref="650" max="-2" attributes="0"/>
-                  <Component id="totalAmountDue" alignment="1" min="-2" pref="83" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="293" max="-2" attributes="0"/>
+                      <Component id="totalAmountDue" min="-2" pref="118" max="-2" attributes="0"/>
+                      <EmptySpace pref="159" max="32767" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -49,10 +55,15 @@
                   <Component id="rightLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="categoryScrollPane" min="-2" pref="241" max="-2" attributes="0"/>
+              <Component id="categoryScrollPane" pref="311" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="totalAmountDue" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="totalAmountDue" pref="30" max="32767" attributes="0"/>
+                      <EmptySpace min="12" pref="12" max="12" attributes="0"/>
+                  </Group>
+                  <Component id="jButton1" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -138,6 +149,12 @@
           </Border>
         </Property>
         <Property name="name" type="java.lang.String" value="totalAmountDue" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="jButton1.text"/>
+        <Property name="name" type="java.lang.String" value="jButton1" noResource="true"/>
       </Properties>
     </Component>
   </SubComponents>

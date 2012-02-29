@@ -16,7 +16,7 @@ import se.chalmers.ait.dat215.project.*;
  * products in shoppingcart
  * @author e
  */
-public class ProductListUpdater extends Observable implements ActionListener {
+public class ProductListUpdater extends Observable implements ActionListener, ShoppingCartListener {
 
    
 //gissar extends Observable osv
@@ -49,22 +49,18 @@ public class ProductListUpdater extends Observable implements ActionListener {
         products = data.getProducts(productCategory);
         productList = new ProductList();
         productList.setCategoryName(categoryNameConverter.convertCategoryName(productCategory));
-        updateProductList();
+        updateProductList(products);
     }
     public ProductListUpdater(Observer value, ShoppingCart shoppingCart){
         this.addObserver(value);
+        shoppingCart.addShoppingCartListener(this);
         amount = new ArrayList<Double>();
         totalValue = new ArrayList<Double>();
         products = new ArrayList<Product>();
         shoppingItems = data.getShoppingCart().getItems();
         shoppingCartList = new ShoppingCartList();
-        shoppingCartList.setCategoryName("Kundvagn");
-        for(int i = 0; i < shoppingItems.size(); i++){
-            products.add(i, shoppingItems.get(i).getProduct());
-            amount.add(i, shoppingItems.get(i).getAmount());
-            totalValue.add(i, shoppingItems.get(i).getTotal());
-        }
-        updateShoppingCartList();
+        CreateNewCart();
+        
     }
             
     public ProductListUpdater(Observer value, List<Product> products){
@@ -72,14 +68,14 @@ public class ProductListUpdater extends Observable implements ActionListener {
         this.products = products;
         productList = new ProductList();
         productList.setCategoryName("Favoriter");
-        updateProductList();
+        updateProductList(products);
     }
     public ProductListUpdater(Observer value, List<Product> products, String search){
         this.addObserver(value);
         this.products = products;
         productList = new ProductList();
         productList.setCategoryName("Sökresultat: " + search);
-        updateProductList();
+        updateProductList(products);
     }
     
     private void updateShoppingCartList() {
@@ -105,7 +101,7 @@ public class ProductListUpdater extends Observable implements ActionListener {
         }
     }
  
-    private void updateProductList() {
+    private void updateProductList(List<Product> products) {
         productPanels = new ProductPanel[products.size()];
         favoriteButtons = new ArrayList<JButton>();
         chartButtons = new ArrayList<JButton>();
@@ -145,6 +141,13 @@ public class ProductListUpdater extends Observable implements ActionListener {
     public JPanel getShoppingCartPanel(){
         return shoppingCartList;
     }
+    
+    public void testUpdate(List<Product> products){
+        productList.getTestUpdate().removeAll();
+        updateProductList(products);
+        
+    }
+    
 
     public void actionPerformed(ActionEvent e) {
         setChanged();
@@ -164,6 +167,25 @@ public class ProductListUpdater extends Observable implements ActionListener {
                 productPanels[i].negValue();
             }
         }
+    }
+
+    public void shoppingCartChanged() {
+        JPanel tmp = shoppingCartList.getInnerPanel();
+        //tmp.removeAll();
+        //tmp.setLayout(new BoxLayout(tmp, BoxLayout.PAGE_AXIS));
+        CreateNewCart();
+    }
+
+    private void CreateNewCart() {
+        
+        System.out.println("" + data.getShoppingCart().getTotal());
+        shoppingCartList.setCategoryName("Kundvagn");
+        for(int i = 0; i < shoppingItems.size(); i++){
+            products.add(i, shoppingItems.get(i).getProduct());
+            amount.add(i, shoppingItems.get(i).getAmount());
+            totalValue.add(i, shoppingItems.get(i).getTotal());
+        }
+        updateShoppingCartList();
     }
 
     

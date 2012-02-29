@@ -48,8 +48,9 @@ public class DrinksGridPanel extends Observable implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         setChanged();
         if(ae.getSource() == buttonArr[0]) {
-            this.notifyObservers("Produkter_Kalladrycker");
+            this.notifyObservers("cold_drinks");
         } else if(ae.getSource() == buttonArr[1]) {
+            this.notifyObservers("hot_drinks");
             //this.notifyObservers("The card you want to show");
         }
     }

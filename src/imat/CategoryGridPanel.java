@@ -58,32 +58,30 @@ public class CategoryGridPanel extends Observable implements ActionListener{
         
         setChanged();
         if(ae.getSource() == buttonArr[0]) {
-            this.notifyObservers("betala");
+            this.notifyObservers("bread");
         } else if(ae.getSource() == buttonArr[1]) {
             this.notifyObservers("drinks");
         } else if(ae.getSource() == buttonArr[2]) {
-            this.notifyObservers("adress");
+            this.notifyObservers("fish");
         } else if(ae.getSource() == buttonArr[3]) {
-            this.notifyObservers("fruit");
+            this.notifyObservers("fr");
         } else if(ae.getSource() == buttonArr[4]) {
-            
+            this.notifyObservers("meat");
         } else if(ae.getSource() == buttonArr[5]) {
-            
+            this.notifyObservers("dairies");
         } else if(ae.getSource() == buttonArr[6]) {
-            
+            this.notifyObservers("flour_sugar_salt");
         } else if(ae.getSource() == buttonArr[7]) {
-            
+            this.notifyObservers("nuts_and_seeds");
         } else if(ae.getSource() == buttonArr[8]) {
-            
+            this.notifyObservers("pasta");
         } else if(ae.getSource() == buttonArr[9]) {
-            
+            this.notifyObservers("potato_rice");
         } else if(ae.getSource() == buttonArr[10]) {
-            
+            this.notifyObservers("sweet");
         } else if(ae.getSource() == buttonArr[11]) {
-            
-        } else if(ae.getSource() == buttonArr[12]) {
-            
-        }
+            this.notifyObservers("favorites");
+        } 
     }
 
 
