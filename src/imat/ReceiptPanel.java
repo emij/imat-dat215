@@ -26,8 +26,6 @@ public class ReceiptPanel extends javax.swing.JPanel {
         
         thanksLabel.setText("Tack för ditt köp" + dh.getCustomer().getFirstName()
                 + ". Välkommen åter!");
-        
-        printButton.setIcon(new ImageIcon(getClass().getResource("resources/bilder/skrivut.png")));
     }
 
     /** This method is called from within the constructor to
