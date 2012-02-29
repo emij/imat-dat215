@@ -25,7 +25,7 @@ public class ProductPanel extends javax.swing.JPanel {
     private boolean isFavorite;
     public Product product;
     private IMatDataHandler data = IMatDataHandler.getInstance();
-    private Color typBrun = new Color(164, 157, 157);
+    private Color typBrun = new Color(195, 182, 154);
     private int amount;
     private ImageIcon addFavoritesIcon;
     private ImageIcon addChartIcon;
@@ -258,9 +258,9 @@ public class ProductPanel extends javax.swing.JPanel {
         value.setFont(new Font("Georgia", Font.PLAIN, 14));
         productPicture.setIcon(data.getImageIcon(product, iconDimension));
         productPicture.setBorder(BorderFactory.createLineBorder(typBrun, 1));
-        productName.setFont(new Font("Georgia", Font.PLAIN, 16));
+        productName.setFont(new Font("fans serif", Font.BOLD, 14));
         productName.setText(product.getName());
-        productPrice.setFont(new Font("Georgia", Font.PLAIN, 16));
+        productPrice.setFont(new Font("Georgia", Font.PLAIN, 14));
         productPrice.setText("" + product.getPrice() + " " + product.getUnit());
         addToChart.setIcon(addChartIcon);
         valuePlus.setIcon(plusIcon);
