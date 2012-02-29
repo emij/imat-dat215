@@ -3,6 +3,7 @@
 <Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="background" type="java.awt.Color" resourceKey="Form.background"/>
     <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
   </Properties>
   <SyntheticProperties>
@@ -24,51 +25,57 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Component id="jButton1" min="-2" pref="88" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="88" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jButton1" min="-2" pref="115" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton2" min="-2" pref="116" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton3" min="-2" pref="111" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton4" min="-2" pref="115" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton5" min="-2" pref="117" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton6" min="-2" pref="115" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton7" min="-2" pref="118" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jButton8" alignment="1" pref="950" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jButton9" min="-2" pref="198" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton10" min="-2" pref="284" max="-2" attributes="0"/>
+                      <EmptySpace pref="174" max="32767" attributes="0"/>
+                      <Component id="jButton11" min="-2" pref="288" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton3" min="-2" pref="88" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton4" min="-2" pref="88" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton5" min="-2" pref="88" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton6" min="-2" pref="88" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton7" min="-2" pref="88" max="-2" attributes="0"/>
-              <EmptySpace pref="321" max="32767" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jButton9" min="-2" pref="210" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton10" min="-2" pref="212" max="-2" attributes="0"/>
-              <EmptySpace pref="187" max="32767" attributes="0"/>
-              <Component id="jButton11" min="-2" pref="358" max="-2" attributes="0"/>
-          </Group>
-          <Component id="jButton8" alignment="1" pref="973" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton7" min="-2" pref="59" max="-2" attributes="1"/>
-                  <Component id="jButton6" min="-2" pref="59" max="-2" attributes="1"/>
-                  <Component id="jButton5" min="-2" pref="59" max="-2" attributes="1"/>
-                  <Component id="jButton4" min="-2" pref="59" max="-2" attributes="1"/>
-                  <Component id="jButton3" min="-2" pref="59" max="-2" attributes="1"/>
-                  <Component id="jButton2" min="-2" pref="59" max="-2" attributes="1"/>
-                  <Component id="jButton1" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
+                  <Component id="jButton2" alignment="1" min="0" pref="0" max="32767" attributes="1"/>
+                  <Component id="jButton1" alignment="1" min="-2" pref="35" max="-2" attributes="1"/>
+                  <Component id="jButton3" min="0" pref="0" max="32767" attributes="1"/>
+                  <Component id="jButton4" min="-2" pref="35" max="-2" attributes="1"/>
+                  <Component id="jButton5" min="-2" pref="35" max="-2" attributes="1"/>
+                  <Component id="jButton6" min="-2" pref="35" max="-2" attributes="1"/>
+                  <Component id="jButton7" min="-2" pref="35" max="-2" attributes="1"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton8" pref="454" max="32767" attributes="0"/>
+              <Component id="jButton8" pref="441" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="jButton10" alignment="0" max="32767" attributes="1"/>
-                  <Component id="jButton9" alignment="1" min="-2" pref="69" max="-2" attributes="1"/>
-                  <Component id="jButton11" alignment="1" max="32767" attributes="1"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jButton9" alignment="1" pref="63" max="32767" attributes="1"/>
+                  <Component id="jButton11" alignment="1" pref="63" max="32767" attributes="1"/>
+                  <Component id="jButton10" min="0" pref="0" max="32767" attributes="1"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -76,6 +83,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="jButton1.icon"/>
         <Property name="name" type="java.lang.String" value="jButton1" noResource="true"/>
       </Properties>
       <Events>
@@ -84,6 +92,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="jButton2.icon"/>
         <Property name="name" type="java.lang.String" value="jButton2" noResource="true"/>
       </Properties>
       <Events>
@@ -92,6 +101,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="jButton3.icon"/>
         <Property name="name" type="java.lang.String" value="jButton3" noResource="true"/>
       </Properties>
       <Events>
@@ -100,6 +110,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton4">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="jButton4.icon"/>
         <Property name="name" type="java.lang.String" value="jButton4" noResource="true"/>
       </Properties>
       <Events>
@@ -108,6 +119,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton5">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="jButton5.icon"/>
         <Property name="name" type="java.lang.String" value="jButton5" noResource="true"/>
       </Properties>
       <Events>
@@ -116,6 +128,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton6">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="jButton6.icon"/>
         <Property name="name" type="java.lang.String" value="jButton6" noResource="true"/>
       </Properties>
       <Events>
@@ -124,6 +137,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton7">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="jButton7.icon"/>
         <Property name="name" type="java.lang.String" value="jButton7" noResource="true"/>
       </Properties>
       <Events>
@@ -132,6 +146,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton8">
       <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="jButton8.background"/>
         <Property name="name" type="java.lang.String" value="jButton8" noResource="true"/>
       </Properties>
       <Events>
@@ -140,6 +155,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton9">
       <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="jButton9.background"/>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="jButton9.icon"/>
         <Property name="name" type="java.lang.String" value="jButton9" noResource="true"/>
       </Properties>
       <Events>
@@ -148,6 +165,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton10">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="jButton10.icon"/>
+        <Property name="disabledIcon" type="javax.swing.Icon" resourceKey="jButton10.disabledIcon"/>
         <Property name="name" type="java.lang.String" value="jButton10" noResource="true"/>
       </Properties>
       <Events>
@@ -156,6 +175,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButton11">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="jButton11.icon"/>
+        <Property name="disabledIcon" type="javax.swing.Icon" resourceKey="jButton11.disabledIcon"/>
         <Property name="enabled" type="boolean" value="false"/>
         <Property name="name" type="java.lang.String" value="jButton11" noResource="true"/>
       </Properties>
