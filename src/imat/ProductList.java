@@ -128,7 +128,10 @@ public class ProductList extends javax.swing.JPanel {
 
     public void addToProductList(ProductPanel productPanel){
         scrollPanel.add(productPanel);
-        rightLabel.setFont(new Font("Georgia", Font.PLAIN, 12));
+        categoryLabel.setFont(new Font("sans serif", Font.BOLD, 20));
+        rightLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
+        middleLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
+        leftLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
         rightLabel.setForeground(new Color(164, 157, 157));
         rightLabel.setText("Mängd");
         scrollPanel.repaint();
