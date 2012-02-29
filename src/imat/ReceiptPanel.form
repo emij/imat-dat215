@@ -46,7 +46,11 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="thanksLabel" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
               <Component id="jScrollPane1" pref="259" max="32767" attributes="0"/>
+=======
+              <Component id="jScrollPane1" pref="294" max="32767" attributes="0"/>
+>>>>>>> Tror jag fixat ReceiptPanel helt så att kvittot fungerar som det ska och visar varorna man köpt. Kan inte testa den här dock, innan varukorgen och alla de andra stegen innan fungerar
               <EmptySpace max="-2" attributes="0"/>
               <Component id="printButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -75,9 +79,17 @@
     </Component>
     <Component class="javax.swing.JButton" name="printButton">
       <Properties>
+<<<<<<< HEAD
         <Property name="icon" type="javax.swing.Icon" resourceKey="printButton.icon"/>
         <Property name="text" type="java.lang.String" resourceKey="printButton.text"/>
         <Property name="borderPainted" type="boolean" value="false"/>
+=======
+        <Property name="background" type="java.awt.Color" resourceKey="printButton.background"/>
+        <Property name="text" type="java.lang.String" resourceKey="printButton.text"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="null"/>
+        </Property>
+>>>>>>> Tror jag fixat ReceiptPanel helt så att kvittot fungerar som det ska och visar varorna man köpt. Kan inte testa den här dock, innan varukorgen och alla de andra stegen innan fungerar
         <Property name="name" type="java.lang.String" value="printButton" noResource="true"/>
       </Properties>
     </Component>
@@ -96,15 +108,157 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="579" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="headerPanel" alignment="0" pref="568" max="32767" attributes="1"/>
+                          <Component id="sumPanel" alignment="0" pref="568" max="32767" attributes="1"/>
+                          <Component id="insertPanel" alignment="0" max="32767" attributes="1"/>
+                      </Group>
+                      <EmptySpace pref="51" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="273" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="headerPanel" min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="insertPanel" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="sumPanel" min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="headerPanel">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder>
+                      <Property name="color" resourceKey="headerPanel.border.lineColor"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+                <Property name="name" type="java.lang.String" value="headerPanel" noResource="true"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[579, 100]"/>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="productLabel" min="-2" pref="44" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                          <Component id="amountLabel" min="-2" pref="51" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                          <Component id="totalLabel" min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace pref="165" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="productLabel" alignment="3" pref="29" max="32767" attributes="0"/>
+                          <Component id="amountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="totalLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="productLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="productLabel.font"/>
+                    <Property name="text" type="java.lang.String" resourceKey="productLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="productLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="amountLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="amountLabel.font"/>
+                    <Property name="text" type="java.lang.String" resourceKey="amountLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="amountLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="totalLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="totalLabel.font"/>
+                    <Property name="text" type="java.lang.String" resourceKey="totalLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="totalLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="sumPanel">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder>
+                      <Property name="color" resourceKey="sumPanel.border.lineColor"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+                <Property name="name" type="java.lang.String" value="sumPanel" noResource="true"/>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[579, 100]"/>
+                </Property>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="352" max="32767" attributes="0"/>
+                          <Component id="sumLabel" min="-2" pref="71" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                          <Component id="sumLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="sumLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" resourceKey="sumLabel.font"/>
+                    <Property name="text" type="java.lang.String" resourceKey="sumLabel.text"/>
+                    <Property name="name" type="java.lang.String" value="sumLabel" noResource="true"/>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="insertPanel">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="insertPanel" noResource="true"/>
+              </Properties>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="568" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="218" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+            </Container>
+          </SubComponents>
         </Container>
       </SubComponents>
     </Container>
