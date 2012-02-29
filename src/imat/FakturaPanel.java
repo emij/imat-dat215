@@ -23,8 +23,31 @@ public class FakturaPanel extends javax.swing.JPanel {
     
     
     public boolean setInfo() {
+        boolean fErr, lErr, aErr, pErr;
+        String fMess ="", lMess = "", aMess = "", pMess ="";
+        
         if(firstNameField.getText().length() == 0) {
-            //TODO:wrong
+            fErr = true;
+            lMess = "Du måste fylla i förnamn!";
+        } 
+        
+        if(lastNameField.getText().length() == 0) {
+            lErr = true;
+            lMess = "Du måste fylla i efternamn!";
+        }
+        
+        if(adressField.getText().length() == 0) {
+            aErr = true;
+            aMess = "Du måste fylla i din adress";
+        }
+        
+        if(postCodeField.getText().length() == 0) {
+            pErr = true;
+            pMess = "Du måste fylla i postnummer";
+        }
+        
+        if(cityField.getText().length() == 0) {
+            
         }
         return true;
     }
