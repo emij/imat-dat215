@@ -22,12 +22,15 @@ import javax.swing.*;
 public class ValuePanel extends JPanel implements Observer {
 
     org.jdesktop.application.ResourceMap resourceMap;
+    private ProductControl pc = ProductControl.getInstance();
             
     int nbrOfProducts = 0;
     double sum = 0;
     /** Creates new form ValuePanel */
     public ValuePanel() {
         initComponents();
+        
+        pc.addOb(this);
         
         toShoppingCartLabel1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         toShoppingCartLabel2.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -118,6 +121,7 @@ public class ValuePanel extends JPanel implements Observer {
     private javax.swing.JPanel valuePanel;
     // End of variables declaration//GEN-END:variables
 
+    
     public void update(Observable o, Object arg) {
         
         if(arg.getClass().equals(ProductControl.class)) {

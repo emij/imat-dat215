@@ -31,7 +31,9 @@ public class ShoppingCartObservable extends Observable implements ActionListener
     }
 
     public void actionPerformed(ActionEvent ae) {
-        
+        if(ae.getSource().equals(p.getNextButton())) {
+            this.notifyObservers("adress");
+        }
     }
     
 }

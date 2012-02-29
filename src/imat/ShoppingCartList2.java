@@ -24,6 +24,7 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
     
     private IMatDataHandler data = IMatDataHandler.getInstance();
     private ShoppingCart sc = data.getShoppingCart();
+    private ProductControl pc = ProductControl.getInstance();
     private List<ShoppingItem> shoppingItems;
     private List<JButton> deleteButtons = new ArrayList();
     
@@ -194,6 +195,7 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
     public void actionPerformed(ActionEvent ae) {
         for(int i = 0; i < deleteButtons.size(); i++) {
             if(ae.getSource().equals(deleteButtons.get(i))) {
+                pc.delete(shoppingItems.get(i).getAmount(), shoppingItems.get(i).getTotal());
                 sc.removeItem(shoppingItems.get(i));
                 updateView();
             }

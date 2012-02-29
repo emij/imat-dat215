@@ -4,11 +4,14 @@
  */
 package imat;
 
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  *
  * @author e
  */
-public class ProductControl {
+public class ProductControl extends Observable {
     private double nbrOfProducts, sum;
     private static ProductControl instance;
     
@@ -24,6 +27,10 @@ public class ProductControl {
         return instance;
     }
     
+    public void addOb(Observer o) {
+        this.addObserver(o);
+    }
+    
     public double getNbrOfProducts() {
         return nbrOfProducts;
     }
@@ -35,6 +42,15 @@ public class ProductControl {
     public void add(double nr, double s) {
         nbrOfProducts = nbrOfProducts + nr;
         sum = sum + s;
+        setChanged();
+        this.notifyObservers(this);
+    }
+    
+    public void delete(double nr, double s) {
+        nbrOfProducts = nbrOfProducts - nr;
+        sum = sum - s;
+        setChanged();
+        this.notifyObservers(this);
     }
     
 }
