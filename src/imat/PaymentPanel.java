@@ -181,7 +181,9 @@ private void doneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             infoOk = true;
         }
     } else if(currentPanel.equals("faktura")) {
-        
+        if(f.setInfo()) {
+            
+        }
     } else if(currentPanel.equals("kontant")) {
         
     }
