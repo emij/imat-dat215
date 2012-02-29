@@ -33,10 +33,11 @@ public class ReceiptPanel extends javax.swing.JPanel {
         
         if(!dh.getOrders().isEmpty()) {
             l = dh.getOrders().get(0).getItems();
+            presentOrder();
         }
         //Present the list l in the scrollbar
         
-        presentOrder();
+        
     }
     
     private void presentOrder() {
@@ -77,9 +78,9 @@ public class ReceiptPanel extends javax.swing.JPanel {
         productLabel = new javax.swing.JLabel();
         amountLabel = new javax.swing.JLabel();
         totalLabel = new javax.swing.JLabel();
-        sumPanel = new javax.swing.JPanel();
-        sumLabel = new javax.swing.JLabel();
         insertPanel = new javax.swing.JPanel();
+        sumPanel = new javax.swing.JPanel();
+        sumLabel1 = new javax.swing.JLabel();
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(ReceiptPanel.class);
         setBackground(resourceMap.getColor("Form.background")); // NOI18N
@@ -98,7 +99,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
         printButton.setIcon(resourceMap.getIcon("printButton.icon")); // NOI18N
         printButton.setText(resourceMap.getString("printButton.text")); // NOI18N
         printButton.setBorderPainted(false);
-
+        printButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         printButton.setName("printButton"); // NOI18N
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
@@ -142,31 +143,6 @@ public class ReceiptPanel extends javax.swing.JPanel {
                 .add(totalLabel))
         );
 
-        sumPanel.setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("sumPanel.border.lineColor"))); // NOI18N
-        sumPanel.setName("sumPanel"); // NOI18N
-        sumPanel.setPreferredSize(new java.awt.Dimension(579, 100));
-
-        sumLabel.setFont(resourceMap.getFont("sumLabel.font")); // NOI18N
-        sumLabel.setText(resourceMap.getString("sumLabel.text")); // NOI18N
-        sumLabel.setName("sumLabel"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout sumPanelLayout = new org.jdesktop.layout.GroupLayout(sumPanel);
-        sumPanel.setLayout(sumPanelLayout);
-        sumPanelLayout.setHorizontalGroup(
-            sumPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, sumPanelLayout.createSequentialGroup()
-                .addContainerGap(352, Short.MAX_VALUE)
-                .add(sumLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(143, 143, 143))
-        );
-        sumPanelLayout.setVerticalGroup(
-            sumPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(sumPanelLayout.createSequentialGroup()
-                .add(8, 8, 8)
-                .add(sumLabel)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         insertPanel.setName("insertPanel"); // NOI18N
 
         org.jdesktop.layout.GroupLayout insertPanelLayout = new org.jdesktop.layout.GroupLayout(insertPanel);
@@ -177,7 +153,32 @@ public class ReceiptPanel extends javax.swing.JPanel {
         );
         insertPanelLayout.setVerticalGroup(
             insertPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 218, Short.MAX_VALUE)
+            .add(0, 183, Short.MAX_VALUE)
+        );
+
+        sumPanel.setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("sumPanel.border.lineColor"))); // NOI18N
+        sumPanel.setName("sumPanel"); // NOI18N
+        sumPanel.setPreferredSize(new java.awt.Dimension(579, 100));
+
+        sumLabel1.setFont(resourceMap.getFont("sumLabel1.font")); // NOI18N
+        sumLabel1.setText(resourceMap.getString("sumLabel1.text")); // NOI18N
+        sumLabel1.setName("sumLabel1"); // NOI18N
+
+        org.jdesktop.layout.GroupLayout sumPanelLayout = new org.jdesktop.layout.GroupLayout(sumPanel);
+        sumPanel.setLayout(sumPanelLayout);
+        sumPanelLayout.setHorizontalGroup(
+            sumPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, sumPanelLayout.createSequentialGroup()
+                .addContainerGap(352, Short.MAX_VALUE)
+                .add(sumLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 71, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(143, 143, 143))
+        );
+        sumPanelLayout.setVerticalGroup(
+            sumPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(sumPanelLayout.createSequentialGroup()
+                .add(8, 8, 8)
+                .add(sumLabel1)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
@@ -187,19 +188,19 @@ public class ReceiptPanel extends javax.swing.JPanel {
             .add(jPanel1Layout.createSequentialGroup()
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, headerPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, sumPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, insertPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(51, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, insertPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, sumPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE))
+                .add(60, 60, 60))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
                 .add(headerPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(insertPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(insertPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(sumPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(178, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -228,8 +229,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(thanksLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(printButton)
                 .addContainerGap())
@@ -245,7 +245,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton printButton;
     private javax.swing.JLabel productLabel;
-    private javax.swing.JLabel sumLabel;
+    private javax.swing.JLabel sumLabel1;
     private javax.swing.JPanel sumPanel;
     private javax.swing.JLabel thanksLabel;
     private javax.swing.JLabel totalLabel;
