@@ -154,7 +154,9 @@ public class ProductPanel extends javax.swing.JPanel {
         filler5.setName("filler5"); // NOI18N
         rightPanel.add(filler5);
 
+        valueMinus.setIcon(resourceMap.getIcon("valueMinus.icon")); // NOI18N
         valueMinus.setText(resourceMap.getString("valueMinus.text")); // NOI18N
+        valueMinus.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         valueMinus.setName("valueMinus"); // NOI18N
         rightPanel.add(valueMinus);
 
@@ -175,7 +177,9 @@ public class ProductPanel extends javax.swing.JPanel {
         filler8.setName("filler8"); // NOI18N
         rightPanel.add(filler8);
 
+        valuePlus.setIcon(resourceMap.getIcon("valuePlus.icon")); // NOI18N
         valuePlus.setText(resourceMap.getString("valuePlus.text")); // NOI18N
+        valuePlus.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         valuePlus.setName("valuePlus"); // NOI18N
         rightPanel.add(valuePlus);
 
@@ -189,7 +193,6 @@ public class ProductPanel extends javax.swing.JPanel {
         addToChart.setAlignmentX(0.5F);
         addToChart.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         addToChart.setIconTextGap(0);
-        addToChart.setMaximumSize(new java.awt.Dimension(161, 28));
         addToChart.setName("addToChart"); // NOI18N
         addToChart.setOpaque(true);
         rightPanel.add(addToChart);
@@ -245,6 +248,8 @@ public class ProductPanel extends javax.swing.JPanel {
         addFavoritesIcon = new ImageIcon(getClass().getResource(path + "laggtill_favoriter.png"));
         remFavoritesIcon = new ImageIcon(getClass().getResource(path + "tabort_favoriter.png"));
         addChartIcon = new ImageIcon(getClass().getResource(path + "laggtill_kundvagn.png"));
+        minusIcon = new ImageIcon(getClass().getResource(path + "minus.png"));
+        plusIcon = new ImageIcon(getClass().getResource(path + "plus.png"));
         value.setText("" + amount);
         
         productPicture.setIcon(data.getImageIcon(product, iconDimension));
@@ -254,6 +259,8 @@ public class ProductPanel extends javax.swing.JPanel {
         productPrice.setFont(new Font("Georgia", Font.PLAIN, 12));
         productPrice.setText("" + product.getPrice() + " " + product.getUnit());
         addToChart.setIcon(addChartIcon);
+        valuePlus.setIcon(plusIcon);
+        valueMinus.setIcon(minusIcon);
         if(!isFavorite){
             addToFavorites.setIcon(addFavoritesIcon);
         } else {

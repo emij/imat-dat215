@@ -46,7 +46,7 @@ public class ProductList extends javax.swing.JPanel {
         scrollPanel = new javax.swing.JPanel();
         leftLabel = new javax.swing.JLabel();
         middleLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        rightLabel = new javax.swing.JLabel();
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(ProductList.class);
         setBackground(resourceMap.getColor("Form.background")); // NOI18N
@@ -80,9 +80,11 @@ public class ProductList extends javax.swing.JPanel {
         middleLabel.setText(resourceMap.getString("middleLabel.text")); // NOI18N
         middleLabel.setName("middleLabel"); // NOI18N
 
-        jLabel1.setFont(resourceMap.getFont("jLabel1.font")); // NOI18N
-        jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
-        jLabel1.setName("jLabel1"); // NOI18N
+        rightLabel.setBackground(resourceMap.getColor("rightLabel.background")); // NOI18N
+        rightLabel.setFont(resourceMap.getFont("rightLabel.font")); // NOI18N
+        rightLabel.setForeground(resourceMap.getColor("rightLabel.foreground")); // NOI18N
+        rightLabel.setText(resourceMap.getString("rightLabel.text")); // NOI18N
+        rightLabel.setName("rightLabel"); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,10 +96,10 @@ public class ProductList extends javax.swing.JPanel {
                     .addComponent(categoryScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 678, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(leftLabel)
-                        .addGap(298, 298, 298)
+                        .addGap(313, 313, 313)
                         .addComponent(middleLabel)
-                        .addGap(68, 68, 68)
-                        .addComponent(jLabel1))
+                        .addGap(64, 64, 64)
+                        .addComponent(rightLabel))
                     .addComponent(categoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -110,7 +112,7 @@ public class ProductList extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(leftLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(middleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(rightLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(categoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE))
         );
@@ -118,14 +120,17 @@ public class ProductList extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel categoryLabel;
     private javax.swing.JScrollPane categoryScrollPane;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel leftLabel;
     private javax.swing.JLabel middleLabel;
+    private javax.swing.JLabel rightLabel;
     private javax.swing.JPanel scrollPanel;
     // End of variables declaration//GEN-END:variables
 
     public void addToProductList(ProductPanel productPanel){
         scrollPanel.add(productPanel);
+        rightLabel.setFont(new Font("Georgia", Font.PLAIN, 12));
+        rightLabel.setForeground(new Color(164, 157, 157));
+        rightLabel.setText("Mängd");
         scrollPanel.repaint();
         categoryScrollPane.repaint();
         scrollPanel.revalidate();

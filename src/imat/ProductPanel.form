@@ -229,7 +229,13 @@
         </Component>
         <Component class="javax.swing.JButton" name="valueMinus">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" resourceKey="valueMinus.icon"/>
             <Property name="text" type="java.lang.String" resourceKey="valueMinus.text"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder bottom="0" left="0" right="0" top="0"/>
+              </Border>
+            </Property>
             <Property name="name" type="java.lang.String" value="valueMinus" noResource="true"/>
           </Properties>
         </Component>
@@ -288,7 +294,13 @@
         </Component>
         <Component class="javax.swing.JButton" name="valuePlus">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" resourceKey="valuePlus.icon"/>
             <Property name="text" type="java.lang.String" resourceKey="valuePlus.text"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder bottom="0" left="0" right="0" top="0"/>
+              </Border>
+            </Property>
             <Property name="name" type="java.lang.String" value="valuePlus" noResource="true"/>
           </Properties>
         </Component>
@@ -316,9 +328,6 @@
               </Border>
             </Property>
             <Property name="iconTextGap" type="int" value="0"/>
-            <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[161, 28]"/>
-            </Property>
             <Property name="name" type="java.lang.String" value="addToChart" noResource="true"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>

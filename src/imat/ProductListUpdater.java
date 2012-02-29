@@ -42,12 +42,13 @@ public class ProductListUpdater extends Observable implements ActionListener {
     private ProductList productList;
     private ShoppingCartList shoppingCartList;
     
+    private CategoryNameConverter categoryNameConverter = CategoryNameConverter.getInstance();
 
     public ProductListUpdater(Observer value, ProductCategory productCategory){
         this.addObserver(value);
         products = data.getProducts(productCategory);
         productList = new ProductList();
-        productList.setCategoryName(productCategory.toString());
+        productList.setCategoryName(categoryNameConverter.convertCategoryName(productCategory));
         updateProductList();
     }
     public ProductListUpdater(Observer value, ShoppingCart shoppingCart){
@@ -71,6 +72,13 @@ public class ProductListUpdater extends Observable implements ActionListener {
         this.products = products;
         productList = new ProductList();
         productList.setCategoryName("Favoriter");
+        updateProductList();
+    }
+    public ProductListUpdater(Observer value, List<Product> products, String search){
+        this.addObserver(value);
+        this.products = products;
+        productList = new ProductList();
+        productList.setCategoryName("Sökresultat: " + search);
         updateProductList();
     }
     
