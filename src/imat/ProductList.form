@@ -5,7 +5,7 @@
     <Property name="background" type="java.awt.Color" resourceKey="Form.background"/>
     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
       <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-        <EmptyBorder/>
+        <EmptyBorder bottom="10" left="10" right="10" top="10"/>
       </Border>
     </Property>
     <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
@@ -28,12 +28,12 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="categoryScrollPane" alignment="1" pref="678" max="32767" attributes="0"/>
+                  <Component id="categoryScrollPane" alignment="1" pref="660" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="leftLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="313" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
                       <Component id="middleLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Component id="rightLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="categoryLabel" alignment="0" min="-2" pref="650" max="-2" attributes="0"/>
@@ -54,7 +54,7 @@
                   <Component id="rightLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="categoryScrollPane" pref="342" max="32767" attributes="0"/>
+              <Component id="categoryScrollPane" pref="324" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -106,6 +106,7 @@
     </Container>
     <Component class="javax.swing.JLabel" name="leftLabel">
       <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="leftLabel.background"/>
         <Property name="font" type="java.awt.Font" resourceKey="leftLabel.font"/>
         <Property name="foreground" type="java.awt.Color" resourceKey="leftLabel.foreground"/>
         <Property name="text" type="java.lang.String" resourceKey="leftLabel.text"/>

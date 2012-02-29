@@ -99,14 +99,14 @@ public class ReceiptPanel extends javax.swing.JPanel {
         printButton.setIcon(resourceMap.getIcon("printButton.icon")); // NOI18N
         printButton.setText(resourceMap.getString("printButton.text")); // NOI18N
         printButton.setBorderPainted(false);
-        printButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        printButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         printButton.setName("printButton"); // NOI18N
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
 
         jPanel1.setName("jPanel1"); // NOI18N
 
-        headerPanel.setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("headerPanel.border.lineColor"))); // NOI18N
+        headerPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(0, 0, 0)));
         headerPanel.setName("headerPanel"); // NOI18N
         headerPanel.setPreferredSize(new java.awt.Dimension(579, 100));
 
@@ -133,7 +133,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
                 .add(amountLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 51, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(134, 134, 134)
                 .add(totalLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(165, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
         headerPanelLayout.setVerticalGroup(
             headerPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)

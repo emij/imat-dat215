@@ -79,7 +79,7 @@
         <Property name="text" type="java.lang.String" resourceKey="printButton.text"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Handmark&#xf6;r"/>
+          <Color id="Default Cursor"/>
         </Property>
         <Property name="name" type="java.lang.String" value="printButton" noResource="true"/>
       </Properties>
@@ -126,10 +126,8 @@
             <Container class="javax.swing.JPanel" name="headerPanel">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder>
-                      <Property name="color" resourceKey="headerPanel.border.lineColor"/>
-                    </LineBorder>
+                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                    <MatteColorBorder bottom="0" left="0" right="1" top="0"/>
                   </Border>
                 </Property>
                 <Property name="name" type="java.lang.String" value="headerPanel" noResource="true"/>
@@ -148,7 +146,7 @@
                           <Component id="amountLabel" min="-2" pref="51" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                           <Component id="totalLabel" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace pref="165" max="32767" attributes="0"/>
+                          <EmptySpace pref="166" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
