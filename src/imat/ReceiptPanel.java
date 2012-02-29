@@ -95,15 +95,10 @@ public class ReceiptPanel extends javax.swing.JPanel {
         thanksLabel.setText(resourceMap.getString("thanksLabel.text")); // NOI18N
         thanksLabel.setName("thanksLabel"); // NOI18N
 
-<<<<<<< HEAD
         printButton.setIcon(resourceMap.getIcon("printButton.icon")); // NOI18N
         printButton.setText(resourceMap.getString("printButton.text")); // NOI18N
         printButton.setBorderPainted(false);
-=======
-        printButton.setBackground(resourceMap.getColor("printButton.background")); // NOI18N
-        printButton.setText(resourceMap.getString("printButton.text")); // NOI18N
-        printButton.setBorder(null);
->>>>>>> Tror jag fixat ReceiptPanel helt så att kvittot fungerar som det ska och visar varorna man köpt. Kan inte testa den här dock, innan varukorgen och alla de andra stegen innan fungerar
+
         printButton.setName("printButton"); // NOI18N
 
         jScrollPane1.setName("jScrollPane1"); // NOI18N
@@ -233,11 +228,8 @@ public class ReceiptPanel extends javax.swing.JPanel {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(thanksLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-<<<<<<< HEAD
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
-=======
+
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE)
->>>>>>> Tror jag fixat ReceiptPanel helt så att kvittot fungerar som det ska och visar varorna man köpt. Kan inte testa den här dock, innan varukorgen och alla de andra stegen innan fungerar
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(printButton)
                 .addContainerGap())
