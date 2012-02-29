@@ -57,27 +57,27 @@ public class SidebarPanel extends Observable implements MouseListener{
         setChanged();
         List<Product> l;
         if(me.getSource() == labels[0]) {
-            //this.notifyObserver("bread");
+            this.notifyObservers("bread");
         } else if(me.getSource() == labels[1]) {
             this.notifyObservers("drinks");
         } else if(me.getSource() == labels[2]) {
-            //this.notifyObservers("fisk");
+            this.notifyObservers("fish");
         } else if(me.getSource() == labels[3]) {
-            this.notifyObservers("fruit");
+            this.notifyObservers("fr");
         } else if(me.getSource() == labels[4]) {
-            //this.notifyObservers("");
+            this.notifyObservers("meat");
         } else if(me.getSource() == labels[5]) {
-            //this.notifyObservers("");
+            this.notifyObservers("dairies");
         } else if(me.getSource() == labels[6]) {
-            //this.notifyObservers("");
+            this.notifyObservers("flour_sugar_salt");
         } else if(me.getSource() == labels[7]) {
-            //this.notifyObservers("");
+            this.notifyObservers("nuts_and_seeds");
         } else if(me.getSource() == labels[8]) {
-            //this.notifyObservers("");
+            this.notifyObservers("pasta");
         } else if(me.getSource() == labels[9]) {
-            //this.notifyObservers("");
+            this.notifyObservers("potato_rice");
         } else if(me.getSource() == labels[10]) {
-            //this.notifyObservers("");
+            this.notifyObservers("sweet");
         } else if(me.getSource() == tools[0]) {
             l = dh.getProducts();
             Comparator<Product> a = new Comparator<Product>() {
