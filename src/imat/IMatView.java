@@ -73,6 +73,7 @@ public class IMatView extends FrameView implements Observer{
         searchPanel.setLayout(new GridLayout(1, 1));
         searchPanel.add(sp, "search");
         backButton.setEnabled(false);
+        backButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
         valuePanel.setLayout(new BorderLayout());
         valuePanel.add(v.getPanel(), BorderLayout.CENTER);
         

@@ -151,11 +151,15 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
+            .add(jPanel1Layout.createSequentialGroup()
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 302, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
         );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
@@ -163,39 +167,35 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
+                .add(40, 40, 40)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(vertificationLabel)
+                    .add(cardTypeLabel)
+                    .add(holdersLabel)
+                    .add(validLabel)
+                    .add(cardNumberLabel))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(layout.createSequentialGroup()
-                        .add(40, 40, 40)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(vertificationLabel)
-                            .add(cardTypeLabel)
-                            .add(holdersLabel)
-                            .add(validLabel)
-                            .add(cardNumberLabel))
+                        .add(validMonthCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(layout.createSequentialGroup()
-                                .add(validMonthCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(validYearCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(verificationTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(layout.createSequentialGroup()
-                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, layout.createSequentialGroup()
-                                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                            .add(layout.createSequentialGroup()
-                                                .add(cardNumberTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .add(cardNumberTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                            .add(org.jdesktop.layout.GroupLayout.LEADING, cardTypeComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                        .add(cardNumberTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, holdersTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 194, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                .add(18, 18, 18)
-                                .add(cardNumberTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                        .add(validYearCombo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(verificationTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, layout.createSequentialGroup()
+                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                    .add(layout.createSequentialGroup()
+                                        .add(cardNumberTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .add(cardNumberTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, cardTypeComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(cardNumberTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, holdersTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 194, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(18, 18, 18)
+                        .add(cardNumberTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 60, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -225,7 +225,7 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(holdersTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(holdersLabel))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 12, Short.MAX_VALUE)
                 .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -267,6 +267,8 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
     
     //returns true if everything was set okay. otherwise not
     public boolean setInfo() {
+        clearErrorArea();
+        
         String cnMess = "", vmMess = "", vyMess = "", verMess ="", hMess ="";
         boolean cnError, vmError, vyError, verError, hError;
         //Set cardType
@@ -287,31 +289,29 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
             creditCard.setCardNumber(cardNumber);
         }
         //Set valid month
-        if(!validMonthCombo.getSelectedItem().getClass().equals(Integer.class)) {
+        if(validMonthCombo.getSelectedIndex() == 0) {
             vmError = true;
             vmMess = "Du måste välja giltlig månad";
         } else {
             vmError = false;
-            Integer tmp = (Integer)validMonthCombo.getSelectedItem();
-            creditCard.setValidMonth(tmp);
+            creditCard.setValidMonth(validMonthCombo.getSelectedIndex());
         }
         //Set valid year
-        if(!validYearCombo.getSelectedItem().getClass().equals(Integer.class)) {
+        if(validYearCombo.getSelectedIndex() == 0) {
             vyError = true;
             vyMess = "Du måste välja giltligt år";
         } else {
             vyError = false;
-            Integer tmp = (Integer)validYearCombo.getSelectedItem();
+            int tmp = Integer.parseInt((validYearCombo.getSelectedItem().toString()));
             creditCard.setValidYear(tmp);
         }
         //Set vertification Code
-        if(verificationTextField.getText().length() != 3 || !verificationTextField.
-                getText().getClass().equals(Integer.class)){
+        if(verificationTextField.getText().length() != 3){
             verError = true;
             verMess = "Du måste skriva cvc";
         } else {
             verError = false;
-            Integer tmp = Integer.parseInt(verificationTextField.getText());
+            int tmp = Integer.parseInt(verificationTextField.getText());
             creditCard.setVerificationCode(tmp);
         }
         //Set Holders name
@@ -325,19 +325,19 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
         
         String errorMessages = "";
         if(cnError) {
-            errorMessages += cnMess;
+            errorMessages += cnMess + "\n";
         }
         if(vmError) {
-            errorMessages += vmMess;
+            errorMessages += vmMess + "\n";
         }
         if(vyError) {
-            errorMessages += vyMess;
+            errorMessages += vyMess + "\n";
         }
         if(verError) {
-            errorMessages += verMess;
+            errorMessages += verMess + "\n";
         }
         if(hError) {
-            errorMessages += hMess;
+            errorMessages += hMess + "\n";
         }
         
         if(cnError || vmError || vyError || verError || hError) {
@@ -346,6 +346,10 @@ public class VisaCardPanel extends javax.swing.JPanel implements DocumentListene
         } else {
             return true;
         }
+    }
+    
+    public void clearErrorArea() {
+        errorArea.setText("");
     }
 
     public void insertUpdate(DocumentEvent de) {

@@ -23,17 +23,19 @@ public class FakturaPanel extends javax.swing.JPanel {
     
     
     public boolean setInfo() {
-        boolean fErr, lErr, aErr, pErr;
-        String fMess ="", lMess = "", aMess = "", pMess ="";
+        clearErrorArea();
+        
+        boolean fErr = false, lErr = false, aErr = false, pErr = false, cErr = false;
+        String fMess ="", lMess = "", aMess = "", pMess ="", cMess = "";
         
         if(firstNameField.getText().length() == 0) {
             fErr = true;
-            lMess = "Du måste fylla i förnamn!";
+            fMess = "Du måste fylla i förnamn";
         } 
         
         if(lastNameField.getText().length() == 0) {
             lErr = true;
-            lMess = "Du måste fylla i efternamn!";
+            lMess = "Du måste fylla i efternamn";
         }
         
         if(adressField.getText().length() == 0) {
@@ -47,9 +49,37 @@ public class FakturaPanel extends javax.swing.JPanel {
         }
         
         if(cityField.getText().length() == 0) {
-            
+            cErr = true;
+            cMess = "Du måste fylla i stad";
         }
-        return true;
+        String errorMessages = "";
+        
+        if(fErr) {
+            errorMessages += fMess + "\n";
+        }
+        if(lErr) {
+            errorMessages += lMess + "\n";
+        }
+        if(aErr) {
+            errorMessages += aMess + "\n";
+        }
+        if(pErr) {
+            errorMessages += pMess + "\n";
+        }
+        if(cErr) {
+            errorMessages += cMess + "\n";
+        }
+        
+        if(fErr || lErr || aErr || pErr || cErr) {
+            errorArea.setText(errorMessages);
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
+    public void clearErrorArea() {
+        errorArea.setText("");
     }
 
     /** This method is called from within the constructor to
@@ -70,6 +100,9 @@ public class FakturaPanel extends javax.swing.JPanel {
         adressField = new javax.swing.JTextField();
         postCodeField = new javax.swing.JTextField();
         cityField = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        errorArea = new javax.swing.JTextArea();
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(FakturaPanel.class);
         setBackground(resourceMap.getColor("Form.background")); // NOI18N
@@ -108,6 +141,31 @@ public class FakturaPanel extends javax.swing.JPanel {
             }
         });
 
+        jPanel1.setName("jPanel1"); // NOI18N
+
+        jScrollPane1.setBackground(resourceMap.getColor("jScrollPane1.background")); // NOI18N
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setName("jScrollPane1"); // NOI18N
+
+        errorArea.setBackground(resourceMap.getColor("errorArea.background")); // NOI18N
+        errorArea.setColumns(20);
+        errorArea.setFont(resourceMap.getFont("errorArea.font")); // NOI18N
+        errorArea.setForeground(resourceMap.getColor("errorArea.foreground")); // NOI18N
+        errorArea.setRows(5);
+        errorArea.setName("errorArea"); // NOI18N
+        jScrollPane1.setViewportView(errorArea);
+
+        org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+        );
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -121,14 +179,19 @@ public class FakturaPanel extends javax.swing.JPanel {
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, postAdressLabel))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(firstNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                    .add(lastNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
-                    .add(adressField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                        .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
                     .add(layout.createSequentialGroup()
-                        .add(postCodeField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(cityField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 134, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .add(125, 125, 125))
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(firstNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                            .add(lastNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                            .add(adressField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                            .add(layout.createSequentialGroup()
+                                .add(postCodeField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(cityField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 134, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(125, 125, 125))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -150,7 +213,9 @@ public class FakturaPanel extends javax.swing.JPanel {
                     .add(postAdressLabel)
                     .add(postCodeField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(cityField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 21, Short.MAX_VALUE)
+                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -162,8 +227,11 @@ private void cityFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     private javax.swing.JTextField adressField;
     private javax.swing.JLabel adressLabel;
     private javax.swing.JTextField cityField;
+    private javax.swing.JTextArea errorArea;
     private javax.swing.JTextField firstNameField;
     private javax.swing.JLabel firstNameLabel;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField lastNameField;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JLabel postAdressLabel;

@@ -43,6 +43,12 @@ public class PaymentPanel extends javax.swing.JPanel {
     }
     
     public void changePanel(String s) {
+        if(currentPanel.equals("visa")) {
+            v.clearErrorArea();
+        } else if(currentPanel.equals("faktura")) {
+            f.clearErrorArea();
+        }
+        
         currentPanel = s;
         CardLayout c = (CardLayout)(cardPanel.getLayout());
         c.show(cardPanel, s);
@@ -185,7 +191,7 @@ private void doneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             infoOk = true;
         }
     } else if(currentPanel.equals("kontant")) {
-        
+        infoOk = true;
     }
 }//GEN-LAST:event_doneButtonActionPerformed
 
