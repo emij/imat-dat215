@@ -46,7 +46,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="thanksLabel" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="265" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="259" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="printButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -75,7 +75,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="printButton">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="printButton.icon"/>
         <Property name="text" type="java.lang.String" resourceKey="printButton.text"/>
+        <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="name" type="java.lang.String" value="printButton" noResource="true"/>
       </Properties>
     </Component>
