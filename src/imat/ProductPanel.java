@@ -255,11 +255,12 @@ public class ProductPanel extends javax.swing.JPanel {
         plusIcon = new ImageIcon(getClass().getResource(path + "plus.png"));
         value.setText("" + amount);
         
+        value.setFont(new Font("Georgia", Font.PLAIN, 14));
         productPicture.setIcon(data.getImageIcon(product, iconDimension));
         productPicture.setBorder(BorderFactory.createLineBorder(typBrun, 1));
-        productName.setFont(new Font("Georgia", Font.PLAIN, 12));
+        productName.setFont(new Font("Georgia", Font.PLAIN, 16));
         productName.setText(product.getName());
-        productPrice.setFont(new Font("Georgia", Font.PLAIN, 12));
+        productPrice.setFont(new Font("Georgia", Font.PLAIN, 16));
         productPrice.setText("" + product.getPrice() + " " + product.getUnit());
         addToChart.setIcon(addChartIcon);
         valuePlus.setIcon(plusIcon);
