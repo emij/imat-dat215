@@ -21,24 +21,27 @@ import javax.swing.JDialog;
 import javax.swing.JFrame;
 import se.chalmers.ait.dat215.project.ProductCategory;
 import javax.swing.*;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 /**
  * The application's main frame.
  */
 public class IMatView extends FrameView implements Observer{
-
+    IMatDataHandler data = IMatDataHandler.getInstance();
     AdressCard a;
     CategoryGridPanel c;
     DrinksGridPanel d;
     FruitGridPanel f;
     ValueObserver v;
     PaymentObserver p;
+    
 
     CategoryCard cc;
     SidebarPanel s;
     SearchPanel sp;
-    ProductListUpdater productUpdateList;
-
+    ProductListUpdater cold_drinks;
+    ProductListUpdater favorites;
+    ProductListUpdater shoppingCart;
     public IMatView(SingleFrameApplication app) {
         super(app);
         this.getFrame().setVisible(true);
@@ -55,14 +58,16 @@ public class IMatView extends FrameView implements Observer{
         cc = new CategoryCard();
         s = new SidebarPanel(this);
         sp = new SearchPanel();
-        productUpdateList = new ProductListUpdater(v.getPanelObserver(), ProductCategory.COLD_DRINKS);
+        cold_drinks = new ProductListUpdater(v.getPanelObserver(), ProductCategory.COLD_DRINKS);
+        shoppingCart = new ProductListUpdater(v.getPanelObserver(), data.getShoppingCart());
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
         categorySmallPanel.add(c.getPanel(), "category");
         categorySmallPanel.add(d.getPanel(), "drinks");
         categorySmallPanel.add(f.getPanel(), "fruit");
-        categorySmallPanel.add(productUpdateList.getProductPanel(), "card4");
+        categorySmallPanel.add(cold_drinks.getProductPanel(), "Produkter_Kalladrycker");
         categorySmallPanel.add(a.getPanel(), "adress");
         categorySmallPanel.add(p.getPanel(), "betala");
+        categorySmallPanel.add(shoppingCart.getShoppingCartPanel(), "kundvagn");
         
         categoryPanel.add(s.getPanel(), "sidepanel");
         searchPanel.setLayout(new GridLayout(1, 1));

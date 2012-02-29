@@ -112,6 +112,7 @@ public class ProductListUpdater extends Observable implements ActionListener {
         valueMinusButtons = new ArrayList<JButton>();
         valuePlusButtons = new ArrayList<JButton>();
 
+
         for(int i = 0; i < products.size(); i++){
         
             productPanels[i] = new ProductPanel(products.get(i));
