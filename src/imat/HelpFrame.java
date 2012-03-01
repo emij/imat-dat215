@@ -13,6 +13,7 @@ package imat;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import org.jdesktop.application.SingleFrameApplication;
 
@@ -23,6 +24,7 @@ import org.jdesktop.application.SingleFrameApplication;
  */
 public class HelpFrame extends javax.swing.JFrame {
 
+    private JFrame f;
     private SingleFrameApplication app;
     private int currentStep = 1;
     private JButton[] stepButtons;
@@ -30,8 +32,9 @@ public class HelpFrame extends javax.swing.JFrame {
     private String path = "resources/helpimages/";
 
     /** Creates new form HelpFrame */
-    public HelpFrame(SingleFrameApplication app) {
+    public HelpFrame(SingleFrameApplication app, JFrame f) {
         this.app = app;
+        this.f = f;
         initComponents();
         
         
@@ -62,6 +65,7 @@ public class HelpFrame extends javax.swing.JFrame {
             this.setVisible(false);
         } else if (stepToLoad > stepButtons.length) {
             if(this.app != null) {
+                f.setVisible(false);
                 new IMatView(app);
             }
             this.setVisible(false);

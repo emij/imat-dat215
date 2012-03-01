@@ -363,10 +363,7 @@ private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
                     }
                 }
                 categorypanel.setView(l, c.getCategoryName());
-            }
-            
-            
-            
+            }  
         }
         changePanelHelp(s.getCard());
     }

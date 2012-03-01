@@ -10,17 +10,36 @@
  */
 package imat;
 
+import se.chalmers.ait.dat215.project.Customer;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+
 /**
  *
  * @author lisastenberg
  */
 public class FakturaPanel extends javax.swing.JPanel {
-
+    IMatDataHandler dh = IMatDataHandler.getInstance();
+    Customer customer = dh.getCustomer();
+    
     /** Creates new form FakturaPanel */
     public FakturaPanel() {
         initComponents();
+        
+        firstNameField.setText(customer.getFirstName());
+        lastNameField.setText(customer.getLastName());
+        adressField.setText(customer.getAddress());
+        postCodeField.setText(customer.getPostCode());
+        cityField.setText(customer.getPostAddress());
+        setFields(false);
     }
     
+    public void setFields(boolean b) {
+        firstNameField.setEnabled(b);
+        lastNameField.setEnabled(b);
+        adressField.setEnabled(b);
+        postCodeField.setEnabled(b);
+        cityField.setEnabled(b);
+    }
     
     public boolean setInfo() {
         clearErrorArea();
@@ -103,6 +122,7 @@ public class FakturaPanel extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         errorArea = new javax.swing.JTextArea();
+        checkBox = new javax.swing.JCheckBox();
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(FakturaPanel.class);
         setBackground(resourceMap.getColor("Form.background")); // NOI18N
@@ -168,8 +188,18 @@ public class FakturaPanel extends javax.swing.JPanel {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
         );
+
+        checkBox.setFont(resourceMap.getFont("checkBox.font")); // NOI18N
+        checkBox.setSelected(true);
+        checkBox.setText(resourceMap.getString("checkBox.text")); // NOI18N
+        checkBox.setName("checkBox"); // NOI18N
+        checkBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkBoxActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
         this.setLayout(layout);
@@ -184,19 +214,23 @@ public class FakturaPanel extends javax.swing.JPanel {
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, postAdressLabel))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
                     .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(firstNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                            .add(lastNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                            .add(adressField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                            .add(layout.createSequentialGroup()
-                                .add(postCodeField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(cityField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))
-                        .add(125, 125, 125))))
+                        .add(checkBox)
+                        .addContainerGap())
+                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .add(layout.createSequentialGroup()
+                            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addContainerGap())
+                        .add(layout.createSequentialGroup()
+                            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                .add(firstNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                                .add(lastNameField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                                .add(adressField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+                                .add(layout.createSequentialGroup()
+                                    .add(postCodeField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                    .add(cityField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))
+                            .add(125, 125, 125)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -218,7 +252,9 @@ public class FakturaPanel extends javax.swing.JPanel {
                     .add(postAdressLabel)
                     .add(postCodeField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(cityField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(checkBox)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 11, Short.MAX_VALUE)
                 .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -228,9 +264,18 @@ private void cityFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
 // TODO add your handling code here:
 }//GEN-LAST:event_cityFieldActionPerformed
 
+private void checkBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkBoxActionPerformed
+    if(checkBox.isSelected()) {
+        setFields(false);
+    } else {
+        setFields(true);
+    }
+}//GEN-LAST:event_checkBoxActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adressField;
     private javax.swing.JLabel adressLabel;
+    private javax.swing.JCheckBox checkBox;
     private javax.swing.JTextField cityField;
     private javax.swing.JTextArea errorArea;
     private javax.swing.JTextField firstNameField;
