@@ -7,6 +7,7 @@ package imat;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
+import se.chalmers.ait.dat215.project.ProductCategory;
 
 /**
  *
@@ -15,11 +16,14 @@ import javax.swing.*;
 public class FruitGridPanel extends Observable implements ActionListener {
     private JButton[] buttonArr;
     private GridPanel g;
+    private JButton favoritesButton;
     
     public FruitGridPanel(Observer o) {
         this.addObserver(o);
         g = new GridPanel(10);
         buttonArr = g.getButtonArr();        
+        favoritesButton = g.getFavoritesButton();
+        favoritesButton.addActionListener(this);
         
         setButtonImages();
         
@@ -48,25 +52,27 @@ public class FruitGridPanel extends Observable implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         setChanged();
         if(ae.getSource() == buttonArr[0]) {
-            this.notifyObservers("pod");
+            this.notifyObservers(new Category(ProductCategory.POD));
         } else if(ae.getSource() == buttonArr[1]) {
-            this.notifyObservers("berry");            
+            this.notifyObservers(new Category(ProductCategory.BERRY));            
         } else if(ae.getSource() == buttonArr[2]) {
-            this.notifyObservers("citrus_fruit");            
+            this.notifyObservers(new Category(ProductCategory.CITRUS_FRUIT));
         } else if(ae.getSource() == buttonArr[3]) {
-            this.notifyObservers("exotic_fruit");
+            this.notifyObservers(new Category(ProductCategory.EXOTIC_FRUIT));
         } else if(ae.getSource() == buttonArr[4]) {
-            this.notifyObservers("vegetable_fruit");
+            this.notifyObservers(new Category(ProductCategory.VEGETABLE_FRUIT));
         } else if(ae.getSource() == buttonArr[5]) {
-            this.notifyObservers("cabbage");
+            this.notifyObservers(new Category(ProductCategory.CABBAGE));
         } else if(ae.getSource() == buttonArr[6]) {
-            this.notifyObservers("melons");
+            this.notifyObservers(new Category(ProductCategory.MELONS));
         } else if(ae.getSource() == buttonArr[7]) {
-            this.notifyObservers("herb");
+            this.notifyObservers(new Category(ProductCategory.HERB));
         } else if(ae.getSource() == buttonArr[8]) {
-            this.notifyObservers("root_vegetable");
+            this.notifyObservers(new Category(ProductCategory.ROOT_VEGETABLE));
         } else if(ae.getSource() == buttonArr[9]) {
-            this.notifyObservers("nuts_and_seeds");
+            this.notifyObservers(new Category(ProductCategory.VEGETABLE_FRUIT));
+        } else if(ae.getSource() == favoritesButton) {
+            this.notifyObservers(new Category("Favoriter", Category.PANELTYPE.FAVORITES));
         }    
     }
 }

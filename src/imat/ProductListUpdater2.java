@@ -37,40 +37,40 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
     private ShoppingCartPanel[] shoppingCartPanels;
     
     private ProductList productList;
-    private ShoppingCartList2 shoppingCartList;
-    
+   
     private CategoryNameConverter categoryNameConverter = CategoryNameConverter.getInstance();
 
-    public ProductListUpdater2(Observer value, ProductCategory productCategory){
-        this.addObserver(value);
-        products = data.getProducts(productCategory);
+    public ProductListUpdater2() {
         productList = new ProductList();
-        productList.setCategoryName(categoryNameConverter.convertCategoryName(productCategory));
-        updateProductList(products);
-    }
-            
-    public ProductListUpdater2(Observer value, List<Product> products){
-        this.addObserver(value);
-        this.products = products;
-        productList = new ProductList();
-        productList.setCategoryName("Favoriter");
-        updateProductList(products);
-    }
-    
-    public ProductListUpdater2(Observer value, List<Product> products, String search){
-        this.addObserver(value);
-        this.products = products;
-        productList = new ProductList();
-        productList.setCategoryName("Sökresultat: " + search);
-        updateProductList(products);
     }
     
     public void setView(ProductCategory pc) {
-        
+        products = data.getProducts(pc);
+        newProductList(categoryNameConverter.convertCategoryName(pc));
     }
     
-    public void setView(List<Product> pr) {
+    //Tar hand om A-Ö, search och favoriter, 
+    public void setView(List<Product> pr, String header, String header2) {
+        products = pr;
+        newProductList(header + header2);
+    }
+    
+    //Måste sätta value (amount) också.. Hanterar äldre ordrar
+    public void setView(List<ShoppingItem> si, String header) {
+        products.clear();
+        for(ShoppingItem s : si) {
+            products.add(s.getProduct());
+        }
+        newProductList(header);
+    }
+    
+    public void newProductList(String categoryName) {
         
+        productList.getTestUpdate().removeAll();
+        productList.getTestUpdate().revalidate();
+        productList.getTestUpdate().repaint();
+        productList.setCategoryName(categoryName);
+        updateProductList(products);
     }
  
     private void updateProductList(List<Product> products) {
@@ -84,34 +84,25 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
         for(int i = 0; i < products.size(); i++){
         
             productPanels[i] = new ProductPanel(products.get(i));
+            
             favoriteButtons.add(i, productPanels[i].getFavoritesButton());
-            favoriteButtons.get(i).addActionListener(this);
             chartButtons.add(i, productPanels[i].getChartButton());
-            chartButtons.get(i).addActionListener(this);
             valueMinusButtons.add(i, productPanels[i].getMinusButton());
-            valueMinusButtons.get(i).addActionListener(this);
             valuePlusButtons.add(i, productPanels[i].getPlusButton());
+            
+            //Add actionlisteners to all buttons
+            favoriteButtons.get(i).addActionListener(this);
+            chartButtons.get(i).addActionListener(this);
+            valueMinusButtons.get(i).addActionListener(this);
             valuePlusButtons.get(i).addActionListener(this);
+            
             productPanels[i].setBorder(null);
             productList.addToProductList(productPanels[i]);
         }
+    } 
         
-    } // Används ej för tillfället
-    private void updateFavorites() {
-        favoritesPanels = new FavoritesPanel[products.size()];
-        for(int i = 0; i < products.size(); i++){
-            
-            favoritesPanels[i] = new FavoritesPanel(products.get(i));
-            favoritesPanels[i].setBorder(null);
-            productList.addToProductList(favoritesPanels[i]);
-        }
-    }
     public JPanel getProductPanel() {
         return productList;
-    }
-    
-    public JPanel getShoppingCartPanel(){
-        return shoppingCartList;
     }
     
     public void testUpdate(List<Product> products){
@@ -121,7 +112,6 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
     
 
     public void actionPerformed(ActionEvent e) {
-        setChanged();
         for(int i = 0; i < products.size(); i++){
             if(e.getSource().equals(favoriteButtons.get(i))) {
                 productPanels[i].setFavoritesButton();
@@ -129,7 +119,7 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
                 
             } else if(e.getSource().equals(chartButtons.get(i))) {
                 Double value = productPanels[i].getValue();
-                boolean alreadyExcists = false;
+                boolean alreadyExists = false;
                 int index;
                 if(shoppingItems != null) {
 
@@ -137,12 +127,12 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
                     for(int j = 0; j < shoppingItems.size(); j++) {
                         if(shoppingItems.get(j).getProduct().equals(products.get(i))) {
                             System.out.println("b");
-                         alreadyExcists = true;
+                         alreadyExists = true;
                             index = j;
                        }
                     }
                 }
-                if(!alreadyExcists) {
+                if(!alreadyExists) {
                     shoppingCart.addProduct(products.get(i), value);
                 } else {
                     double oldAmount = shoppingItems.get(i).getAmount();
@@ -154,7 +144,6 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
                 
                 productControl.add(value, totalCost);
                 productPanels[i].zeroValue();
-                this.notifyObservers(productControl);
                 
             } else if(e.getSource().equals(valuePlusButtons.get(i))){
                 productPanels[i].addValue();

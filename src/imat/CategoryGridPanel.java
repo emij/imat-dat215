@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.swing.*;
+import se.chalmers.ait.dat215.project.ProductCategory;
 
 /**
  *
@@ -24,6 +25,7 @@ import javax.swing.*;
 public class CategoryGridPanel extends Observable implements ActionListener{
     private JButton[] buttonArr;
     private GridPanel g; 
+    private JButton favoritesButton;
     
     public CategoryGridPanel(Observer o) {
         this.addObserver(o);
@@ -44,6 +46,9 @@ public class CategoryGridPanel extends Observable implements ActionListener{
             buttonArr[i].setIcon(new ImageIcon(getClass().getResource(path + "cat_" + i + ".png")));
             buttonArr[i].setBorder(null);
         }
+        
+        favoritesButton = g.getFavoritesButton();
+        favoritesButton.addActionListener(this);
     }
     
     public JButton[] getButtons(){
@@ -58,29 +63,29 @@ public class CategoryGridPanel extends Observable implements ActionListener{
         
         setChanged();
         if(ae.getSource() == buttonArr[0]) {
-            this.notifyObservers("bread");
+            this.notifyObservers(new Category(ProductCategory.BREAD));
         } else if(ae.getSource() == buttonArr[1]) {
-            this.notifyObservers("kvitto");
+            this.notifyObservers("drinks");
         } else if(ae.getSource() == buttonArr[2]) {
-            this.notifyObservers("fish");
+            this.notifyObservers(new Category(ProductCategory.FISH));
         } else if(ae.getSource() == buttonArr[3]) {
             this.notifyObservers("fr");
         } else if(ae.getSource() == buttonArr[4]) {
-            this.notifyObservers("meat");
+            this.notifyObservers(new Category(ProductCategory.MEAT));
         } else if(ae.getSource() == buttonArr[5]) {
-            this.notifyObservers("dairies");
+            this.notifyObservers(new Category(ProductCategory.DAIRIES));
         } else if(ae.getSource() == buttonArr[6]) {
-            this.notifyObservers("flour_sugar_salt");
+            this.notifyObservers(new Category(ProductCategory.FLOUR_SUGAR_SALT));
         } else if(ae.getSource() == buttonArr[7]) {
-            this.notifyObservers("nuts_and_seeds");
+            this.notifyObservers(new Category(ProductCategory.NUTS_AND_SEEDS));
         } else if(ae.getSource() == buttonArr[8]) {
-            this.notifyObservers("pasta");
+            this.notifyObservers(new Category(ProductCategory.PASTA));
         } else if(ae.getSource() == buttonArr[9]) {
-            this.notifyObservers("potato_rice");
+            this.notifyObservers(new Category(ProductCategory.POTATO_RICE));
         } else if(ae.getSource() == buttonArr[10]) {
-            this.notifyObservers("sweet");
-        } else if(ae.getSource() == buttonArr[11]) {
-            this.notifyObservers("favorites");
+            this.notifyObservers(new Category(ProductCategory.SWEET));
+        } else if(ae.getSource() == favoritesButton) {
+            this.notifyObservers(new Category("Favoriter", Category.PANELTYPE.FAVORITES));
         } 
     }
 

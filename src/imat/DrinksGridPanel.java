@@ -7,6 +7,7 @@ package imat;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
+import se.chalmers.ait.dat215.project.ProductCategory;
 
 /**
  *
@@ -15,12 +16,15 @@ import javax.swing.*;
 public class DrinksGridPanel extends Observable implements ActionListener {
     private GridPanel g;
     private JButton[] buttonArr;
+    private JButton favoritesButton;
     
     public DrinksGridPanel(Observer o) {
         g = new GridPanel(2);
         buttonArr = g.getButtonArr();
         this.addObserver(o);
-
+        favoritesButton = g.getFavoritesButton();
+        favoritesButton.addActionListener(this);
+        
         setButtonImages();
         
         //Add actionlisteners to all buttons
@@ -48,10 +52,12 @@ public class DrinksGridPanel extends Observable implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         setChanged();
         if(ae.getSource() == buttonArr[0]) {
-            this.notifyObservers("cold_drinks");
+            this.notifyObservers(new Category(ProductCategory.COLD_DRINKS));
         } else if(ae.getSource() == buttonArr[1]) {
-            this.notifyObservers("hot_drinks");
+            this.notifyObservers(new Category(ProductCategory.HOT_DRINKS));
             //this.notifyObservers("The card you want to show");
-        }
+        } else if(ae.getSource() == favoritesButton) {
+            this.notifyObservers(new Category("Favoriter", Category.PANELTYPE.FAVORITES));
+        } 
     }
 }

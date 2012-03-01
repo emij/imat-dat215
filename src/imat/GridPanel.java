@@ -60,4 +60,10 @@ private IMatDataHandler data;
         public JButton[] getButtonArr() {
             return buttonArr;
         }
+
+        public JButton getFavoritesButton() {
+          return favoritesButton;
+         }
+        
+        
 }

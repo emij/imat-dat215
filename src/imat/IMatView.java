@@ -2,9 +2,19 @@
  * IMatView.java
  */
 
+/*
+ * List<String> with categories?...
+ */
+
+
+
 package imat;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.util.Observable;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
@@ -13,7 +23,10 @@ import org.jdesktop.application.FrameView;
 import org.jdesktop.application.TaskMonitor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Observer;
 import javax.swing.Timer;
 import javax.swing.Icon;
@@ -22,6 +35,7 @@ import javax.swing.JFrame;
 import se.chalmers.ait.dat215.project.ProductCategory;
 import javax.swing.*;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 
 /**
  * The application's main frame.
@@ -36,36 +50,10 @@ public class IMatView extends FrameView implements Observer{
     ValueObserver v;
     PaymentObserver p;
     ReceiptPanel r;
-    
 
-    CategoryCard cc;
     SidebarPanel s;
-    SearchPanel sp;
-    ProductListUpdater2 bread2;
-    ProductListUpdater berry;
-    //ProductListUpdater bread;
-    ProductListUpdater cabbage;
-    ProductListUpdater citrus_fruit;
-    ProductListUpdater cold_drinks;
-    ProductListUpdater dairies;
-    ProductListUpdater exotic_fruit;
-    ProductListUpdater fish;
-    ProductListUpdater flour_sugar_salt;
-    ProductListUpdater fruit;
-    ProductListUpdater herb;
-    ProductListUpdater hot_drinks;
-    ProductListUpdater meat;
-    ProductListUpdater melons;
-    ProductListUpdater nuts_and_seeds;
-    ProductListUpdater pasta;
-    ProductListUpdater pod;
-    ProductListUpdater potato_rice;
-    ProductListUpdater root_vegetable;
-    ProductListUpdater sweet;
-    ProductListUpdater vegetable_fruit;
-            
-    ProductListUpdater favorites;
-    ProductListUpdater shoppingCartView;
+    SearchObserver sp;
+    ProductListUpdater2 categorypanel;
     
     ShoppingCartObservable s2;
     public IMatView(SingleFrameApplication app) {
@@ -77,87 +65,36 @@ public class IMatView extends FrameView implements Observer{
         this.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initComponents();
         
-        
         a = new AdressCard(this);
         c = new CategoryGridPanel(this);
         d = new DrinksGridPanel(this);
         f = new FruitGridPanel(this);
         v = new ValueObserver(this);
         p = new PaymentObserver(this);
-        cc = new CategoryCard();
         s = new SidebarPanel(this);
-        sp = new SearchPanel();
+        sp = new SearchObserver(this);
         r = new ReceiptPanel();
         s2 = new ShoppingCartObservable(this);
 
-        bread2 = new ProductListUpdater2(v.getPanelObserver(), ProductCategory.BREAD);
+        categorypanel = new ProductListUpdater2();
         
-        berry = new ProductListUpdater(v.getPanelObserver(), ProductCategory.BERRY);
-        //bread = new ProductListUpdater(v.getPanelObserver(), ProductCategory.BREAD);
-        cabbage = new ProductListUpdater(v.getPanelObserver(), ProductCategory.CABBAGE);
-        citrus_fruit = new ProductListUpdater(v.getPanelObserver(), ProductCategory.CITRUS_FRUIT);
-        cold_drinks = new ProductListUpdater(v.getPanelObserver(), ProductCategory.COLD_DRINKS);
-        dairies = new ProductListUpdater(v.getPanelObserver(), ProductCategory.DAIRIES);
-        exotic_fruit = new ProductListUpdater(v.getPanelObserver(), ProductCategory.EXOTIC_FRUIT);
-        fish = new ProductListUpdater(v.getPanelObserver(), ProductCategory.FISH);
-        flour_sugar_salt = new ProductListUpdater(v.getPanelObserver(), ProductCategory.FLOUR_SUGAR_SALT);
-        fruit = new ProductListUpdater(v.getPanelObserver(), ProductCategory.FRUIT);
-        herb = new ProductListUpdater(v.getPanelObserver(), ProductCategory.HERB);
-        hot_drinks = new ProductListUpdater(v.getPanelObserver(), ProductCategory.HOT_DRINKS);
-        meat = new ProductListUpdater(v.getPanelObserver(), ProductCategory.MEAT);
-        melons = new ProductListUpdater(v.getPanelObserver(), ProductCategory.MELONS);
-        nuts_and_seeds = new ProductListUpdater(v.getPanelObserver(), ProductCategory.NUTS_AND_SEEDS);
-        pasta = new ProductListUpdater(v.getPanelObserver(), ProductCategory.PASTA);
-        pod = new ProductListUpdater(v.getPanelObserver(), ProductCategory.POD);
-        potato_rice = new ProductListUpdater(v.getPanelObserver(), ProductCategory.POTATO_RICE);
-        root_vegetable = new ProductListUpdater(v.getPanelObserver(), ProductCategory.ROOT_VEGETABLE);
-        sweet = new ProductListUpdater(v.getPanelObserver(), ProductCategory.SWEET);
-        vegetable_fruit = new ProductListUpdater(v.getPanelObserver(), ProductCategory.VEGETABLE_FRUIT);
-        
-        shoppingCartView = new ProductListUpdater(v.getPanelObserver(), data.getShoppingCart());
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
         categorySmallPanel.add(c.getPanel(), "category");
         categorySmallPanel.add(d.getPanel(), "drinks");
         categorySmallPanel.add(f.getPanel(), "fr");
         categorySmallPanel.add(a.getPanel(), "adress");
         categorySmallPanel.add(p.getPanel(), "betala");
-
-        categorySmallPanel.add(shoppingCartView.getShoppingCartPanel(), "kundvagn");
-        
-        categorySmallPanel.add(berry.getProductPanel(), "berry");
-        categorySmallPanel.add(bread2.getProductPanel(), "bread");
-        categorySmallPanel.add(cabbage.getProductPanel(), "cabbage");
-        categorySmallPanel.add(citrus_fruit.getProductPanel(), "citrus_fruit");
-        categorySmallPanel.add(cold_drinks.getProductPanel(), "cold_drinks");
-        categorySmallPanel.add(dairies.getProductPanel(), "dairies");
-        categorySmallPanel.add(exotic_fruit.getProductPanel(), "exotic_fruit");
-        categorySmallPanel.add(fish.getProductPanel(), "fish");
-        categorySmallPanel.add(flour_sugar_salt.getProductPanel(), "flour_sugar_salt");
-        categorySmallPanel.add(fruit.getProductPanel(), "fruit");
-        categorySmallPanel.add(herb.getProductPanel(), "herb");
-        categorySmallPanel.add(hot_drinks.getProductPanel(), "hot_drinks");
-        categorySmallPanel.add(meat.getProductPanel(), "meat");
-        categorySmallPanel.add(melons.getProductPanel(), "melons");
-        categorySmallPanel.add(nuts_and_seeds.getProductPanel(), "nuts_and_seeds");
-        categorySmallPanel.add(pasta.getProductPanel(), "pasta");
-        categorySmallPanel.add(pod.getProductPanel(), "pod");
-        categorySmallPanel.add(potato_rice.getProductPanel(), "potato_rice");
-        categorySmallPanel.add(root_vegetable.getProductPanel(), "root_vegetable");
-        categorySmallPanel.add(sweet.getProductPanel(), "sweet");
-        categorySmallPanel.add(vegetable_fruit.getProductPanel(), "vegetable_fruit");
-
         categorySmallPanel.add(r, "kvitto");
-        categorySmallPanel.add(s2.getPanel(), "kundvagn2");
+        categorySmallPanel.add(s2.getPanel(), "kundvagn");
+        categorySmallPanel.add(categorypanel.getProductPanel(), "categorypanel");
         
         categoryPanel.add(s.getPanel(), "sidepanel");
         searchPanel.setLayout(new GridLayout(1, 1));
-        searchPanel.add(sp, "search");
+        searchPanel.add(sp.getPanel(), "search");
         backButton.setEnabled(false);
         backButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
         valuePanel.setLayout(new BorderLayout());
         valuePanel.add(v.getPanel(), BorderLayout.CENTER);
-        
-        
     }
     
     /* Send the string of the panel you want the cardlayout to show
@@ -408,12 +345,42 @@ private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 
     private JDialog aboutBox;
     private LinkedList<String> prevList = new LinkedList<String>();
+    
     public void update(Observable o, Object o1) {
         if(o1 instanceof String){
             String tmp = (String)o1;
             if(tmp != null) {
                 changePanel(tmp);
             }
+        } else if(o1 instanceof Category){
+            Category c = (Category)o1;
+            if(c.getPanelType() == Category.PANELTYPE.CATEGORY){
+                categorypanel.setView(c.getCategory());                
+            } else if(c.getPanelType() == Category.PANELTYPE.ALFA) {
+                List<Product> l = new LinkedList<Product>();
+                            l = data.getProducts();
+                Comparator<Product> a = new Comparator<Product>() {
+                    public int compare(Product t, Product t1) {
+                        String s = t.getName();
+                        String s2 = t1.getName();
+                        return s.compareTo(s2);
+                    }
+                };
+                Collections.sort(l, a);
+                categorypanel.setView(l,"A till Ö", "");
+                
+            } else if(c.getPanelType() == Category.PANELTYPE.FAVORITES) {
+                List<Product> l = new LinkedList<Product>();
+                l = data.favorites();
+                categorypanel.setView(l, "Dina Favoriter", "");
+            } else if(c.getPanelType() == Category.PANELTYPE.SEARCH) {
+                List<Product> l = new LinkedList<Product>();
+                l = data.findProducts(c.getCategoryName());
+                System.out.println(c.getCategoryName());
+                categorypanel.setView(l, "Sökresultat: ", c.getCategoryName());
+            }
+            changePanel("categorypanel");
+            
         }
     }
 }

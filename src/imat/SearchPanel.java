@@ -12,6 +12,8 @@ package imat;
 
 import java.awt.event.*;
 import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JTextField;
 import se.chalmers.ait.dat215.project.*;
 
 /**
@@ -20,11 +22,9 @@ import se.chalmers.ait.dat215.project.*;
  */
 public class SearchPanel extends javax.swing.JPanel {
     String s; 
-    IMatDataHandler dh; 
     
     /** Creates new form SearchPanel */
     public SearchPanel() {
-        dh = IMatDataHandler.getInstance();
         initComponents();
         s = searchField.getText();
     }
@@ -59,14 +59,6 @@ public class SearchPanel extends javax.swing.JPanel {
         searchField.setAutoscrolls(false);
         searchField.setBorder(new javax.swing.border.LineBorder(resourceMap.getColor("searchField.border.lineColor"), 1, true)); // NOI18N
         searchField.setName("searchField"); // NOI18N
-        searchField.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                searchFieldFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                searchFieldFocusLost(evt);
-            }
-        });
 
         jButton1.setBackground(resourceMap.getColor("jButton1.background")); // NOI18N
         jButton1.setFont(resourceMap.getFont("jButton1.font")); // NOI18N
@@ -113,21 +105,21 @@ public class SearchPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-private void searchFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchFieldFocusGained
-    searchField.setText("");
-}//GEN-LAST:event_searchFieldFocusGained
+public JButton getSearchButton() {
+    return jButton1;
+}
 
-private void searchFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchFieldFocusLost
-    searchField.setText(s);
-    /*
-    if(searchField.getText() == "") {
-        searchField.setText(s);
-    }*/
-}//GEN-LAST:event_searchFieldFocusLost
+public JTextField getSearchField() {
+    return searchField;
+}
+
+
+
+public String getSearch() {
+    return searchField.getText();
+}
 
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    List<Product> l = dh.findProducts(searchField.getText());
-    //Anropa CategoryCard med l
 }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

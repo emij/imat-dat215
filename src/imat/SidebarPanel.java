@@ -57,40 +57,32 @@ public class SidebarPanel extends Observable implements MouseListener{
         setChanged();
         List<Product> l;
         if(me.getSource() == labels[0]) {
-            this.notifyObservers("bread");
+            this.notifyObservers(new Category(ProductCategory.BREAD));
         } else if(me.getSource() == labels[1]) {
             this.notifyObservers("drinks");
         } else if(me.getSource() == labels[2]) {
-            this.notifyObservers("fish");
+            this.notifyObservers(new Category(ProductCategory.FISH));
         } else if(me.getSource() == labels[3]) {
             this.notifyObservers("fr");
         } else if(me.getSource() == labels[4]) {
-            this.notifyObservers("meat");
+            this.notifyObservers(new Category(ProductCategory.MEAT));
         } else if(me.getSource() == labels[5]) {
-            this.notifyObservers("dairies");
+            this.notifyObservers(new Category(ProductCategory.DAIRIES));
         } else if(me.getSource() == labels[6]) {
-            this.notifyObservers("flour_sugar_salt");
+            this.notifyObservers(new Category(ProductCategory.FLOUR_SUGAR_SALT));
         } else if(me.getSource() == labels[7]) {
-            this.notifyObservers("nuts_and_seeds");
+            this.notifyObservers(new Category(ProductCategory.NUTS_AND_SEEDS));
         } else if(me.getSource() == labels[8]) {
-            this.notifyObservers("pasta");
+            this.notifyObservers(new Category(ProductCategory.PASTA));
         } else if(me.getSource() == labels[9]) {
-            this.notifyObservers("potato_rice");
+            this.notifyObservers(new Category(ProductCategory.POTATO_RICE));
         } else if(me.getSource() == labels[10]) {
-            this.notifyObservers("sweet");
+            this.notifyObservers(new Category(ProductCategory.SWEET));
         } else if(me.getSource() == tools[0]) {
-            l = dh.getProducts();
-            Comparator<Product> a = new Comparator<Product>() {
-                public int compare(Product t, Product t1) {
-                    String s = t.getName();
-                    String s2 = t1.getName();
-                    return s.compareTo(s2);
-                }
-            };
-            Collections.sort(l, a);
-            //Anropa CategoryCard med l;
+
+            this.notifyObservers(new Category("Varor A-Ö", Category.PANELTYPE.ALFA));
         } else if(me.getSource() == tools[1]) {
-            l = dh.favorites();
+            this.notifyObservers(new Category("Favoriter", Category.PANELTYPE.FAVORITES));
             //Anropa CategoryCard med l;
         } else if(me.getSource() == tools[2]) {
             List<Order> orderList = dh.getOrders();
