@@ -39,29 +39,34 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
     private ProductList productList;
    
     private CategoryNameConverter categoryNameConverter = CategoryNameConverter.getInstance();
+    
+    String categoryName;
 
     public ProductListUpdater2() {
         productList = new ProductList();
     }
     
     public void setView(ProductCategory pc) {
+        categoryName = categoryNameConverter.convertCategoryName(pc);
         products = data.getProducts(pc);
-        newProductList(categoryNameConverter.convertCategoryName(pc));
+        newProductList(categoryName);
     }
     
     //Tar hand om A-Ö, search och favoriter, 
     public void setView(List<Product> pr, String header, String header2) {
         products = pr;
-        newProductList(header + header2);
+        categoryName = header + header2;
+        newProductList(categoryName);
     }
     
     //Måste sätta value (amount) också.. Hanterar äldre ordrar
     public void setView(List<ShoppingItem> si, String header) {
+        categoryName = header;
         products.clear();
         for(ShoppingItem s : si) {
             products.add(s.getProduct());
         }
-        newProductList(header);
+        newProductList(categoryName);
     }
     
     public void newProductList(String categoryName) {
@@ -116,7 +121,7 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
         for(int i = 0; i < products.size(); i++){
             if(e.getSource().equals(favoriteButtons.get(i))) {
                 productPanels[i].setFavoritesButton();
-                setView(products, "Dina favoriter", "");
+                setView(products, categoryName, "");
             } else if(e.getSource().equals(chartButtons.get(i))) {
                 Double value = productPanels[i].getValue();
                 boolean alreadyExists = false;
