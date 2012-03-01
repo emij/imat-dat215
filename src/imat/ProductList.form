@@ -27,16 +27,16 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="categoryScrollPane" alignment="1" pref="660" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="categoryScrollPane" alignment="0" pref="699" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="leftLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="302" max="-2" attributes="0"/>
                       <Component id="middleLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="rightLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="categoryLabel" alignment="0" min="-2" pref="650" max="-2" attributes="0"/>
+                  <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -45,29 +45,21 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="categoryLabel" min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="1"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="leftLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="middleLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="rightLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="categoryScrollPane" pref="317" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="categoryScrollPane" min="-2" pref="312" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="categoryLabel">
-      <Properties>
-        <Property name="background" type="java.awt.Color" resourceKey="categoryLabel.background"/>
-        <Property name="font" type="java.awt.Font" resourceKey="categoryLabel.font"/>
-        <Property name="text" type="java.lang.String" resourceKey="categoryLabel.text"/>
-        <Property name="name" type="java.lang.String" value="categoryLabel" noResource="true"/>
-      </Properties>
-    </Component>
     <Container class="javax.swing.JScrollPane" name="categoryScrollPane">
       <Properties>
         <Property name="background" type="java.awt.Color" resourceKey="categoryScrollPane.background"/>
@@ -130,5 +122,51 @@
         <Property name="name" type="java.lang.String" value="rightLabel" noResource="true"/>
       </Properties>
     </Component>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="jPanel1.background"/>
+        <Property name="name" type="java.lang.String" value="jPanel1" noResource="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="categoryLabel" min="-2" pref="305" max="-2" attributes="0"/>
+                  <EmptySpace pref="186" max="32767" attributes="0"/>
+                  <Component id="allProductsButton" min="-2" pref="191" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="categoryLabel" alignment="3" min="-2" max="-2" attributes="1"/>
+                      <Component id="allProductsButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="categoryLabel">
+          <Properties>
+            <Property name="background" type="java.awt.Color" resourceKey="categoryLabel.background"/>
+            <Property name="font" type="java.awt.Font" resourceKey="categoryLabel.font"/>
+            <Property name="text" type="java.lang.String" resourceKey="categoryLabel.text"/>
+            <Property name="name" type="java.lang.String" value="categoryLabel" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="allProductsButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" resourceKey="allProductsButton.text"/>
+            <Property name="name" type="java.lang.String" value="allProductsButton" noResource="true"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>

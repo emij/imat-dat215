@@ -22,6 +22,7 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
     private ShoppingCart shoppingCart = data.getShoppingCart();
     private ProductControl productControl = ProductControl.getInstance();
     private List<ShoppingItem> shoppingItems = data.getShoppingCart().getItems();
+    private List<ShoppingItem> orderItems;
     
     private List<Product> products;
     private List<Double> amount;
@@ -61,15 +62,16 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
     
     //Måste sätta value (amount) också.. Hanterar äldre ordrar
     public void setView(List<ShoppingItem> si, String header) {
+        orderItems = si;
         categoryName = "Ordernummer: " + header;
         productList.setCategoryName(categoryName);
 
-
         orderList(si, header);
-        newProductList(categoryName);
     }
     
     public void orderList(List<ShoppingItem> si, String header) {
+        productList.getAllButton().setVisible(true);
+        productList.getAllButton().addActionListener(this);
         productList.getTestUpdate().removeAll();
         productList.getTestUpdate().revalidate();
         productList.getTestUpdate().repaint();
@@ -103,7 +105,7 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
     }
     
     public void newProductList(String categoryName) {
-        
+        productList.getAllButton().setVisible(false);
         productList.getTestUpdate().removeAll();
         productList.getTestUpdate().revalidate();
         productList.getTestUpdate().repaint();
@@ -139,7 +141,7 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
             productList.addToProductList(productPanels[i]);
         }
     } 
-        
+    
     public JPanel getProductPanel() {
         return productList;
     }
@@ -149,38 +151,44 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
         updateProductList(products);
     }
     
+    private void addToChart(Product product, double amount) {
+        boolean alreadyExists = false;
+        int index = 0;
+        if(shoppingItems != null) {
+            for(int j = 0; j < shoppingItems.size(); j++) {
+                if(shoppingItems.get(j).getProduct().equals(product)) {
+                    alreadyExists = true;
+                    index = j;
+                    break;
+                }
+            }
+        }
+        if (!alreadyExists) {
+            shoppingCart.addProduct(product, amount);
+        } else {
+            double oldAmount = shoppingItems.get(index).getAmount();
+            shoppingItems.get(index).setAmount(oldAmount + amount);
+        }
+
+        double totalCost = product.getPrice() * amount;
+        productControl.add(amount, totalCost);
+    }
 
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource().equals(productList.getAllButton())) {
+            for(int i = 0; i < productPanels.length; i++) {
+                Product pr = productPanels[i].getProduct();
+                double am = productPanels[i].getValue();
+                addToChart(pr, am);
+            }
+        }
         for(int i = 0; i < products.size(); i++){
             if(e.getSource().equals(favoriteButtons.get(i))) {
                 productPanels[i].setFavoritesButton();
                 setView(products, categoryName, "");
             } else if(e.getSource().equals(chartButtons.get(i))) {
                 Double value = productPanels[i].getValue();
-                boolean alreadyExists = false;
-                int index = 0;
-                if(shoppingItems != null) {
-
-                    System.out.println("a");
-                    for(int j = 0; j < shoppingItems.size(); j++) {
-                        if(shoppingItems.get(j).getProduct().equals(products.get(i))) {
-                            System.out.println("b");
-                         alreadyExists = true;
-                            index = j;
-                       }
-                    }
-                }
-                if(!alreadyExists) {
-                    shoppingCart.addProduct(products.get(i), value);
-                } else {
-                    double oldAmount = shoppingItems.get(index).getAmount();
-                    System.out.println("" + oldAmount);
-                    shoppingItems.get(index).setAmount(oldAmount + value);
-                }
-                
-                Double totalCost = products.get(i).getPrice() * value;
-                
-                productControl.add(value, totalCost);
+                addToChart(productPanels[i].getProduct(), value);
                 productPanels[i].zeroValue();
                 
             } else if(e.getSource().equals(valuePlusButtons.get(i))){
