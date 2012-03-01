@@ -28,6 +28,8 @@ public class ProductList extends javax.swing.JPanel {
         categoryLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, (new Color(164,157,157))));
         categoryScrollPane.setBorder(null);
 	categoryScrollPane.setViewportBorder(null);
+        
+        categoryScrollPane.getVerticalScrollBar().setUnitIncrement(20);
         //categoryScrollPane.repaint();
         //categoryScrollPane.revalidate();
     }

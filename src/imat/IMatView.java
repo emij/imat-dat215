@@ -350,6 +350,9 @@ private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         if(o1 instanceof String){
             String tmp = (String)o1;
             if(tmp != null) {
+                if(tmp.equals("kundvagn")) {
+                    s2.getSCList().updateView();
+                }
                 changePanel(tmp);
             }
         } else if(o1 instanceof Category){

@@ -247,7 +247,7 @@ public class ProductPanel extends javax.swing.JPanel {
 
     private void initMyComponents() {
         path = "resources/bilder/";
-        amount = 0;
+        amount = 1;
         addFavoritesIcon = new ImageIcon(getClass().getResource(path + "laggtill_favoriter.png"));
         remFavoritesIcon = new ImageIcon(getClass().getResource(path + "tabort_favoriter.png"));
         addChartIcon = new ImageIcon(getClass().getResource(path + "laggtill_kundvagn.png"));

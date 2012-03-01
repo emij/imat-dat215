@@ -70,6 +70,7 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
         productList.getTestUpdate().revalidate();
         productList.getTestUpdate().repaint();
         productList.setCategoryName(categoryName);
+        
         updateProductList(products);
     }
  
