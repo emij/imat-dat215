@@ -64,7 +64,7 @@ public class IMatView extends FrameView implements Observer{
         this.getFrame().setSize(new Dimension(1100, 700));
         this.getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initComponents();
-        
+        Runtime.getRuntime().addShutdownHook(new Save());
         a = new AdressCard(this);
         c = new CategoryGridPanel(this);
         d = new DrinksGridPanel(this);
