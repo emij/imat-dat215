@@ -34,123 +34,103 @@ public class ReceiptRowPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(10, 0));
         productLabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(15, 0), new java.awt.Dimension(15, 0), new java.awt.Dimension(15, 0));
         priceAmountLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(40, 0), new java.awt.Dimension(40, 0), new java.awt.Dimension(40, 0));
         totalCostLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(ReceiptRowPanel.class);
         setBackground(resourceMap.getColor("Form.background")); // NOI18N
-        setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("Form.border.lineColor"))); // NOI18N
+        setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, resourceMap.getColor("Form.border.matteColor"))); // NOI18N
         setMaximumSize(new java.awt.Dimension(32767, 55));
         setMinimumSize(new java.awt.Dimension(0, 55));
         setName("Form"); // NOI18N
         setPreferredSize(new java.awt.Dimension(579, 55));
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
         jPanel1.setBackground(resourceMap.getColor("jPanel1.background")); // NOI18N
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("jPanel1.border.lineColor"))); // NOI18N
+        jPanel1.setBorder(null);
         jPanel1.setMaximumSize(new java.awt.Dimension(32767, 55));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 55));
         jPanel1.setName("jPanel1"); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(144, 55));
+        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
+
+        filler1.setName("filler1"); // NOI18N
+        jPanel1.add(filler1);
 
         productLabel.setBackground(resourceMap.getColor("productLabel.background")); // NOI18N
         productLabel.setFont(resourceMap.getFont("productLabel.font")); // NOI18N
         productLabel.setText(resourceMap.getString("productLabel.text")); // NOI18N
         productLabel.setAlignmentX(0.5F);
+        productLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        productLabel.setMaximumSize(new java.awt.Dimension(200, 55));
+        productLabel.setMinimumSize(new java.awt.Dimension(0, 55));
         productLabel.setName("productLabel"); // NOI18N
+        jPanel1.add(productLabel);
 
-        org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(productLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, productLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-        );
+        add(jPanel1);
 
         jPanel2.setBackground(resourceMap.getColor("jPanel2.background")); // NOI18N
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("jPanel1.border.lineColor"))); // NOI18N
+        jPanel2.setBorder(null);
         jPanel2.setMaximumSize(new java.awt.Dimension(32767, 55));
         jPanel2.setMinimumSize(new java.awt.Dimension(0, 55));
         jPanel2.setName("jPanel2"); // NOI18N
         jPanel2.setPreferredSize(new java.awt.Dimension(181, 55));
+        jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.LINE_AXIS));
 
+        filler2.setName("filler2"); // NOI18N
+        jPanel2.add(filler2);
+
+        priceAmountLabel.setBackground(resourceMap.getColor("priceAmountLabel.background")); // NOI18N
         priceAmountLabel.setFont(resourceMap.getFont("priceAmountLabel.font")); // NOI18N
         priceAmountLabel.setText(resourceMap.getString("priceAmountLabel.text")); // NOI18N
         priceAmountLabel.setAlignmentX(0.5F);
+        priceAmountLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        priceAmountLabel.setMaximumSize(new java.awt.Dimension(144, 55));
+        priceAmountLabel.setMinimumSize(new java.awt.Dimension(0, 55));
         priceAmountLabel.setName("priceAmountLabel"); // NOI18N
+        jPanel2.add(priceAmountLabel);
 
-        org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(priceAmountLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, priceAmountLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
-        );
+        add(jPanel2);
 
         jPanel3.setBackground(resourceMap.getColor("jPanel3.background")); // NOI18N
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(resourceMap.getColor("jPanel1.border.lineColor"))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         jPanel3.setMaximumSize(new java.awt.Dimension(32767, 55));
         jPanel3.setMinimumSize(new java.awt.Dimension(0, 55));
         jPanel3.setName("jPanel3"); // NOI18N
         jPanel3.setPreferredSize(new java.awt.Dimension(240, 55));
+        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
+
+        filler3.setName("filler3"); // NOI18N
+        jPanel3.add(filler3);
 
         totalCostLabel.setBackground(resourceMap.getColor("totalCostLabel.background")); // NOI18N
         totalCostLabel.setFont(resourceMap.getFont("totalCostLabel.font")); // NOI18N
+        totalCostLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         totalCostLabel.setText(resourceMap.getString("totalCostLabel.text")); // NOI18N
         totalCostLabel.setAlignmentX(0.5F);
+        totalCostLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        totalCostLabel.setMaximumSize(new java.awt.Dimension(30000, 55));
+        totalCostLabel.setMinimumSize(new java.awt.Dimension(0, 55));
         totalCostLabel.setName("totalCostLabel"); // NOI18N
+        jPanel3.add(totalCostLabel);
 
-        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
-        jButton1.setName("jButton1"); // NOI18N
+        add(jPanel3);
 
-        org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel3Layout.createSequentialGroup()
-                .add(totalCostLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 130, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
-                .add(jButton1)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(totalCostLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-            .add(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jButton1)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .add(jPanel3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        filler4.setName("filler4"); // NOI18N
+        add(filler4);
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
+    private javax.swing.Box.Filler filler3;
+    private javax.swing.Box.Filler filler4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

@@ -20,7 +20,6 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
 
     private IMatDataHandler data = IMatDataHandler.getInstance();
     private ShoppingCart shoppingCart = data.getShoppingCart();
-    private ProductControl productControl = ProductControl.getInstance();
     private List<ShoppingItem> shoppingItems = data.getShoppingCart().getItems();
     private List<ShoppingItem> orderItems;
     
@@ -167,11 +166,12 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
             shoppingCart.addProduct(product, amount);
         } else {
             double oldAmount = shoppingItems.get(index).getAmount();
-            shoppingItems.get(index).setAmount(oldAmount + amount);
+            shoppingCart.removeProduct(product);
+            shoppingCart.addProduct(product, oldAmount + amount);
         }
 
         double totalCost = product.getPrice() * amount;
-        productControl.add(amount, totalCost);
+       // productControl.add(amount, totalCost);
     }
 
     public void actionPerformed(ActionEvent e) {

@@ -31,9 +31,10 @@ public class ValueObserver extends Observable implements MouseListener {
         return p;
     }
     
+    /*
     public Observer getPanelObserver() {
         return p;
-    }
+    }*/
 
     public void mouseClicked(MouseEvent me) {
         setChanged();

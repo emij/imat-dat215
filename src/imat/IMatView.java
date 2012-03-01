@@ -15,28 +15,15 @@ import java.awt.CardLayout;
 import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.util.Observable;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
 import org.jdesktop.application.FrameView;
 import org.jdesktop.application.TaskMonitor;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Observer;
-import javax.swing.Timer;
-import javax.swing.Icon;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import se.chalmers.ait.dat215.project.ProductCategory;
+import java.awt.event.*;
+import java.util.*;
 import javax.swing.*;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.ShoppingItem;
+import se.chalmers.ait.dat215.project.*;
 
 /**
  * The application's main frame.
@@ -44,6 +31,8 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 public class IMatView extends FrameView implements Observer{
     IMatDataHandler data = IMatDataHandler.getInstance();
     private static SingleFrameApplication app;
+    
+    
     AdressCard a;
     CategoryGridPanel c;
     DrinksGridPanel d;
@@ -78,7 +67,8 @@ public class IMatView extends FrameView implements Observer{
         r = new ReceiptPanel();
         s2 = new ShoppingCartObservable(this);
         h = new HistoryObservable(this);
-
+        
+        
         categorypanel = new ProductListUpdater2();
         jLabel1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         
@@ -105,21 +95,25 @@ public class IMatView extends FrameView implements Observer{
     /* Send the string of the panel you want the cardlayout to show
      * and this method fixes it for you.
      */
-    String tempCard = "category";
-    private void changePanel(String panel) {
-        if(panel.equals("kundvagn2")){
+    PrevItem tempPrevItem = new PrevItem("category", null);
+    private void changePanel(String panel, Category c) {
+        if(panel.equals("kundvagn")){
             s2.getSCList().updateView();
-        }
-        if(!tempCard.equals(panel)){
-            prevList.addFirst(tempCard);
+        } 
+        if(tempPrevItem.getCard().equals("categorypanel")){
+            prevList.addFirst(tempPrevItem);
+            backButton.setEnabled(true);
+        }else if(!tempPrevItem.getCard().equals(panel)){
+            prevList.addFirst(tempPrevItem);
+            
             backButton.setEnabled(true);
         }
+        tmpCategory=c;
         changePanelHelp(panel);
     }
     
     private void changePanelHelp(String panel) {
-        
-            tempCard=panel;
+        tempPrevItem=new PrevItem(panel, tmpCategory);
         CardLayout c = (CardLayout)(categorySmallPanel.getLayout());
         c.show(categorySmallPanel, panel);
     }
@@ -327,50 +321,15 @@ public class IMatView extends FrameView implements Observer{
     }// </editor-fold>//GEN-END:initComponents
 
 private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-    String s = prevList.getFirst();
+    PrevItem s = prevList.getFirst();
     if(s!=null) {
         prevList.removeFirst();
         if(prevList.isEmpty()){
             backButton.setEnabled(false);
         }
-        changePanelHelp(s);
-    }
-}//GEN-LAST:event_backButtonActionPerformed
-
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        changePanel("category");
-    }//GEN-LAST:event_jLabel1MouseClicked
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backButton;
-    private javax.swing.JPanel categoryBigPanel;
-    private javax.swing.JPanel categoryPanel;
-    private javax.swing.JPanel categorySmallPanel;
-    private javax.swing.JPanel featurePanel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel logPanel;
-    private javax.swing.JPanel mainPanel;
-    private javax.swing.JPanel searchPanel;
-    private javax.swing.JPanel valuePanel;
-    // End of variables declaration//GEN-END:variables
-
-  
-
-    private JDialog aboutBox;
-    private LinkedList<String> prevList = new LinkedList<String>();
-    
-    public void update(Observable o, Object o1) {
-        if(o1 instanceof String){
-            String tmp = (String)o1;
-            if(tmp != null) {
-                if(tmp.equals("kundvagn")) {
-                    s2.getSCList().updateView();
-                }
-                changePanel(tmp);
-            }
-        } else if(o1 instanceof Category){
-            Category c = (Category)o1;
+        
+        if(s.getCategory()!=null){
+            Category c = s.getCategory();
             if(c.getPanelType() == Category.PANELTYPE.CATEGORY){
                 categorypanel.setView(c.getCategory());                
             } else if(c.getPanelType() == Category.PANELTYPE.ALFA) {
@@ -396,11 +355,100 @@ private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
                 categorypanel.setView(l, "Sökresultat: ", c.getCategoryName());
             } else if(c.getPanelType() == Category.PANELTYPE.ORDER) {
                 List<ShoppingItem> l = new LinkedList();
-                List<Product> p = new LinkedList();
+                List<Order> orders = data.getOrders();
+                Integer orderNumber = Integer.parseInt(c.getCategoryName());
+                for(int i = 0; i < orders.size(); i++) {
+                    if(orderNumber.equals(orders.get(i).getOrderNumber())) {
+                        l = orders.get(i).getItems();
+                    }
+                }
                 categorypanel.setView(l, c.getCategoryName());
             }
-            changePanel("categorypanel");
             
+            
+            
+        }
+        changePanelHelp(s.getCard());
+    }
+}//GEN-LAST:event_backButtonActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        changePanel("category",null);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
+    private javax.swing.JPanel categoryBigPanel;
+    private javax.swing.JPanel categoryPanel;
+    private javax.swing.JPanel categorySmallPanel;
+    private javax.swing.JPanel featurePanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel logPanel;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JPanel searchPanel;
+    private javax.swing.JPanel valuePanel;
+    // End of variables declaration//GEN-END:variables
+
+  
+
+    private JDialog aboutBox;
+    private LinkedList<PrevItem> prevList = new LinkedList<PrevItem>();
+    private Category tmpCategory = null;
+    
+    public void update(Observable o, Object o1) {
+        if(o1 instanceof String){
+            String tmp = (String)o1;
+            if(tmp != null) {
+                if(tmp.equals("kundvagn")) {
+                    s2.getSCList().updateView();
+                } else if(tmp.equals("kvitto")){
+                    r.updateView();
+                } else if(tmp.equals("historik")) {
+                    h.updateView();
+                }
+
+                changePanel(tmp,null);
+            }
+        } else if(o1 instanceof Category){
+            Category c = (Category)o1;
+            
+            if(c.getPanelType() == Category.PANELTYPE.CATEGORY){
+                categorypanel.setView(c.getCategory());                
+            } else if(c.getPanelType() == Category.PANELTYPE.ALFA) {
+                List<Product> l = new LinkedList<Product>();
+                            l = data.getProducts();
+                Comparator<Product> a = new Comparator<Product>() {
+                    public int compare(Product t, Product t1) {
+                        String s = t.getName();
+                        String s2 = t1.getName();
+                        return s.compareTo(s2);
+                    }
+                };
+                Collections.sort(l, a);
+                categorypanel.setView(l,"A till Ö", "");
+                
+            } else if(c.getPanelType() == Category.PANELTYPE.FAVORITES) {
+                List<Product> l = new LinkedList<Product>();
+                l = data.favorites();
+                categorypanel.setView(l, "Dina Favoriter", "");
+            } else if(c.getPanelType() == Category.PANELTYPE.SEARCH) {
+                List<Product> l = new LinkedList<Product>();
+                l = data.findProducts(c.getCategoryName());
+                categorypanel.setView(l, "Sökresultat: ", c.getCategoryName());
+            } else if(c.getPanelType() == Category.PANELTYPE.ORDER) {
+                List<ShoppingItem> l = new LinkedList();
+                List<Order> orders = data.getOrders();
+                Integer orderNumber = Integer.parseInt(c.getCategoryName());
+                for(int i = 0; i < orders.size(); i++) {
+                    if(orderNumber.equals(orders.get(i).getOrderNumber())) {
+                        l = orders.get(i).getItems();
+                    }
+                }
+                categorypanel.setView(l, c.getCategoryName());
+            }
+            
+            changePanel("categorypanel",c);
         }
     }
 }

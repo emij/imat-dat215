@@ -12,6 +12,7 @@ package imat;
 
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.JFrame;
 import org.jdesktop.application.SingleFrameApplication;
 
 /**
@@ -20,11 +21,11 @@ import org.jdesktop.application.SingleFrameApplication;
  */
 public class StartFrame extends javax.swing.JFrame implements ActionListener {
     private SingleFrameApplication app;
+    JFrame f; 
 
     /** Creates new form StartFrame */
     public StartFrame(SingleFrameApplication app) {
         this.app = app;
-       
         initComponents();
         
         this.setSize(new Dimension(1000, 700));
@@ -172,9 +173,11 @@ public class StartFrame extends javax.swing.JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource() == helpButton) {
-            new HelpFrame(app);
+            new HelpFrame(app,this);
         } else if(ae.getSource() == goDirectlyButton) {
+            //setVisible(false);
             new IMatView(app);
+            
         }
     }
 }
