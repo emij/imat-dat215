@@ -23,6 +23,7 @@ public class HistoryObservable extends Observable implements ActionListener {
         this.addObserver(o);
         p = new HistoryPanel();
         buttons = p.getButtons();
+        p.getAddAll().addActionListener(this);
     }
     
     public JPanel getPanel() {

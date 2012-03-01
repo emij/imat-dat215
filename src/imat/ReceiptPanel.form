@@ -26,10 +26,10 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="583" max="32767" attributes="0"/>
-                  <Component id="jSeparator1" alignment="0" pref="583" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="599" max="32767" attributes="0"/>
+                  <Component id="jSeparator1" alignment="0" pref="599" max="32767" attributes="0"/>
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="thanksLabel" alignment="0" pref="583" max="32767" attributes="0"/>
+                  <Component id="thanksLabel" alignment="0" pref="599" max="32767" attributes="0"/>
                   <Component id="printButton" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -46,7 +46,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="thanksLabel" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="259" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="269" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="printButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -93,17 +93,20 @@
       <SubComponents>
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Properties>
+            <Property name="background" type="java.awt.Color" resourceKey="jPanel1.background"/>
             <Property name="name" type="java.lang.String" value="jPanel1" noResource="true"/>
           </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="headerPanel" alignment="0" pref="568" max="32767" attributes="1"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="insertPanel" alignment="0" max="32767" attributes="1"/>
-                          <Component id="sumPanel" alignment="0" pref="568" max="32767" attributes="1"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="headerPanel" alignment="0" pref="568" max="32767" attributes="1"/>
+                              <Component id="sumPanel" alignment="0" pref="568" max="32767" attributes="1"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
@@ -117,7 +120,7 @@
                       <Component id="insertPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="sumPanel" min="-2" pref="31" max="-2" attributes="0"/>
-                      <EmptySpace pref="178" max="32767" attributes="0"/>
+                      <EmptySpace pref="213" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -128,7 +131,6 @@
                 <Property name="background" type="java.awt.Color" resourceKey="headerPanel.background"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-
                     <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
                   </Border>
                 </Property>
@@ -148,7 +150,7 @@
                           <Component id="amountLabel" min="-2" pref="51" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
                           <Component id="totalLabel" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace pref="167" max="32767" attributes="0"/>
+                          <EmptySpace pref="175" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -200,7 +202,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="183" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="162" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -223,18 +225,17 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="354" max="32767" attributes="0"/>
-                          <Component id="sumLabel1" min="-2" pref="71" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                          <EmptySpace pref="346" max="32767" attributes="0"/>
+                          <Component id="sumLabel1" min="-2" pref="129" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                          <Component id="sumLabel1" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="sumLabel1" min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

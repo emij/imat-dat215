@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 import javax.swing.JPanel;
+import se.chalmers.ait.dat215.project.*;
 
 /**
  *
@@ -15,7 +16,8 @@ import javax.swing.JPanel;
  */
 public class PaymentObserver extends Observable implements ActionListener {
     PaymentPanel p;
-    
+    IMatDataHandler data = IMatDataHandler.getInstance();
+    Order order;
     public PaymentObserver(Observer o) {
         p = new PaymentPanel();
         this.addObserver(o);
@@ -34,6 +36,7 @@ public class PaymentObserver extends Observable implements ActionListener {
             
             if(p.getInfoOk()) {
                 setChanged();
+                order = data.placeOrder();
                 this.notifyObservers("kvitto");
             }
         }
@@ -42,5 +45,7 @@ public class PaymentObserver extends Observable implements ActionListener {
     public JPanel getPanel() {
         return p;
     }
-    
+    public Order getThisOrder(){
+        return order;
+    }
 }
