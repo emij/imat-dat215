@@ -30,13 +30,13 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
     
     /** Creates new form ShoppingCartList */
     public ShoppingCartList2() {
-        shoppingItems = sc.getItems();
         
         initComponents();
         categoryScrollPane.setBorder(null);
 	categoryScrollPane.setViewportBorder(null);
         categoryLabel.setText("Din Kundvagn");
         
+        emptyChartButton.addActionListener(this);
     }
 
     /** This method is called from within the constructor to
@@ -56,6 +56,7 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
         middleLabel = new javax.swing.JLabel();
         totalAmountDue = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        emptyChartButton = new javax.swing.JButton();
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(ShoppingCartList2.class);
         setBackground(resourceMap.getColor("Form.background")); // NOI18N
@@ -104,6 +105,9 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
         jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
         jButton1.setName("jButton1"); // NOI18N
 
+        emptyChartButton.setText(resourceMap.getString("emptyChartButton.text")); // NOI18N
+        emptyChartButton.setName("emptyChartButton"); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -120,9 +124,11 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
                         .addComponent(rightLabel))
                     .addComponent(categoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(293, 293, 293)
+                        .addGap(21, 21, 21)
+                        .addComponent(emptyChartButton)
+                        .addGap(175, 175, 175)
                         .addComponent(totalAmountDue, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                         .addComponent(jButton1)))
                 .addContainerGap())
         );
@@ -141,7 +147,9 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(totalAmountDue, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(totalAmountDue, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                            .addComponent(emptyChartButton))
                         .addGap(12, 12, 12))
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
@@ -149,6 +157,7 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel categoryLabel;
     private javax.swing.JScrollPane categoryScrollPane;
+    private javax.swing.JButton emptyChartButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel leftLabel;
     private javax.swing.JLabel middleLabel;
@@ -158,6 +167,7 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
     // End of variables declaration//GEN-END:variables
     
     public void updateView() {
+        shoppingItems = sc.getItems();
         scrollPanel.removeAll();
         scrollPanel.revalidate();
         scrollPanel.repaint();
@@ -199,6 +209,10 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
                 sc.removeItem(shoppingItems.get(i));
                 updateView();
             }
+        }
+        if(ae.getSource().equals(emptyChartButton)) {
+            sc.clear();
+            updateView();
         }
     }
 }

@@ -33,9 +33,11 @@
                   </Group>
                   <Component id="categoryLabel" alignment="0" min="-2" pref="650" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="293" max="-2" attributes="0"/>
+                      <EmptySpace min="21" pref="21" max="21" attributes="0"/>
+                      <Component id="emptyChartButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
                       <Component id="totalAmountDue" min="-2" pref="118" max="-2" attributes="0"/>
-                      <EmptySpace pref="159" max="32767" attributes="0"/>
+                      <EmptySpace pref="109" max="32767" attributes="0"/>
                       <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -59,7 +61,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="totalAmountDue" pref="31" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="totalAmountDue" alignment="3" pref="31" max="32767" attributes="0"/>
+                          <Component id="emptyChartButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="12" pref="12" max="12" attributes="0"/>
                   </Group>
                   <Component id="jButton1" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
@@ -162,6 +167,12 @@
       <Properties>
         <Property name="text" type="java.lang.String" resourceKey="jButton1.text"/>
         <Property name="name" type="java.lang.String" value="jButton1" noResource="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="emptyChartButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" resourceKey="emptyChartButton.text"/>
+        <Property name="name" type="java.lang.String" value="emptyChartButton" noResource="true"/>
       </Properties>
     </Component>
   </SubComponents>
