@@ -22,7 +22,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
 
     private Dimension iconDimension = new Dimension(40,40);
     private Product product;
-    private double amount;
+    private int amount;
     private Double totalValue;
     private boolean isFavorite;
     
@@ -37,7 +37,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     private Color typBrun = new Color(195, 182, 154);
     /** Creates new form ShoppingCartPanel */
     
-    public ShoppingCartPanel(Product product, Double amount, Double totalValue){
+    public ShoppingCartPanel(Product product, int amount, Double totalValue){
         initComponents();
         this.product = product;
         this.amount = amount;
@@ -238,7 +238,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     private javax.swing.JButton valuePlus;
     // End of variables declaration//GEN-END:variables
 
-    private void initMyComponents(Product product, Double amount, Double totalValue) {
+    private void initMyComponents(Product product, int amount, Double totalValue) {
         addIcons();
         changeMouseCursor();
         
@@ -252,10 +252,8 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         leftPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, typBrun));
         pricePanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, typBrun));
         rightPanel.setBorder(BorderFactory.createMatteBorder(0, 1, 0, 0, typBrun));
-        
-        double toInt = amount;
-        value.setText("" + (int)toInt);
-        //value.setText("" + amount);
+
+        value.setText("" + amount);
         
         totalCost.setText("" + totalValue + " kr");
     }
@@ -292,13 +290,13 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
             addToFavorites.revalidate();
         }        
     }
-    public Double getAmount(){
+    public int getAmount(){
         return amount;
     }
     public Double getTotalValue(){
         return totalValue;
     }
-    public void setAmount(Double amount){
+    public void setAmount(int amount){
         this.amount = amount;
         value.setText("" + this.amount);       
     }
@@ -317,7 +315,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         }
     }
     public void zeroValue(){
-        amount = (double)1;
+        amount = 1;
         value.setText("" + amount);
     }
     public void changeMouseCursor(){

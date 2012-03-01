@@ -27,9 +27,6 @@ public class ReceiptPanel extends javax.swing.JPanel {
     public ReceiptPanel() {
         initComponents();
         
-        
-        
-        
     }
     
     private void presentOrder() {
