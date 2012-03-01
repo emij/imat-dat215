@@ -28,6 +28,8 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
     private List<JButton> deleteButtons = new ArrayList();
     private List<JButton> favoriteButtons = new ArrayList();
     private List<ShoppingCartPanel> cartPanels = new ArrayList();
+    private List<JButton> plusButtons = new ArrayList();
+    private List<JButton> minusButtons = new ArrayList();
     
     /** Creates new form ShoppingCartList */
     public ShoppingCartList2() {
@@ -187,22 +189,29 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
     public void addToProductList(){
         ShoppingCartPanel p;
         Product product;
-        double amount;
+        int amount;
         double totalValue;
         deleteButtons.clear();
+        favoriteButtons.clear();
+        plusButtons.clear();
+        minusButtons.clear();
         
         for(int i = 0; i < shoppingItems.size(); i++) {
             product = shoppingItems.get(i).getProduct();
-            amount = shoppingItems.get(i).getAmount();
+            amount = (int)shoppingItems.get(i).getAmount();
             totalValue = shoppingItems.get(i).getTotal();
             p = new ShoppingCartPanel(product, amount, totalValue);
             cartPanels.add(p);
             
             deleteButtons.add(p.getChartButton());
             favoriteButtons.add(p.getFavoritesButton());
+            plusButtons.add(p.getPlusButton());
+            minusButtons.add(p.getMinusButton());
             
             deleteButtons.get(i).addActionListener(this);
             favoriteButtons.get(i).addActionListener(this);
+            plusButtons.get(i).addActionListener(this);
+            minusButtons.get(i).addActionListener(this);
             scrollPanel.add(p);
         }
         
@@ -217,19 +226,24 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
     }
 
     public void actionPerformed(ActionEvent ae) {
-        for(int i = 0; i < deleteButtons.size(); i++) {
-            if(ae.getSource().equals(deleteButtons.get(i))) {
-                sc.removeItem(shoppingItems.get(i));
-                updateView();
-            }
-            if(ae.getSource().equals(favoriteButtons.get(i))) {
-                cartPanels.get(i).setFavoritesButton();
-                updateView();
-            }
-        }
         if(ae.getSource().equals(emptyChartButton)) {
             sc.clear();
-            updateView();
+            updateView(); 
+        } else {
+            for(int i = 0; i < deleteButtons.size(); i++) {
+                if(ae.getSource().equals(deleteButtons.get(i))) {
+                    sc.removeItem(shoppingItems.get(i));
+                    updateView();
+
+                } else if(ae.getSource().equals(favoriteButtons.get(i))) {
+                    cartPanels.get(i).setFavoritesButton();
+                } else if(ae.getSource().equals(plusButtons.get(i))) {
+                    cartPanels.get(i).addValue();
+                } else if(ae.getSource().equals(minusButtons.get(i))) {
+                    cartPanels.get(i).negValue();
+                }
+        }
+        
         }
     }
 }
