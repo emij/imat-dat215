@@ -10,32 +10,46 @@
  */
 package imat;
 
-import java.awt.*;
+import java.awt.Cursor;
+import java.io.Serializable;
+import java.util.List;
 import java.util.Observable;
-import java.util.Observer;
 import javax.swing.*;
+import se.chalmers.ait.dat215.project.*;
 
 /**
  *
  * @author lisastenberg
  */
-public class ValuePanel extends JPanel implements Observer {
+public class ValuePanel extends JPanel implements ShoppingCartListener, Serializable {
 
     org.jdesktop.application.ResourceMap resourceMap;
-    private ProductControl pc = ProductControl.getInstance();
-            
-    int nbrOfProducts = 0;
-    double sum = 0;
+    private IMatDataHandler dh = IMatDataHandler.getInstance();
+    private ShoppingCart sc = dh.getShoppingCart();
+    private List<ShoppingItem> shoppingItems = sc.getItems();
+    
+    double nbrOfProducts = getAmount();
+    double sum = sc.getTotal();
     /** Creates new form ValuePanel */
     public ValuePanel() {
         initComponents();
-        
-        pc.addOb(this);
+        sc.addShoppingCartListener(this);
+
+        setLabeltext();
         
         toShoppingCartLabel1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         toShoppingCartLabel2.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 
+    public int getAmount() {
+        double tmp = 0;
+        for(ShoppingItem s : shoppingItems) {
+            tmp += s.getAmount();
+        }
+        System.out.println("" +tmp);
+        return (int)tmp;
+    }
+    
     public JLabel getLabel1() {
         return toShoppingCartLabel1;
     }
@@ -45,12 +59,13 @@ public class ValuePanel extends JPanel implements Observer {
     }
     
     public void setLabeltext() {
+        shoppingItems = sc.getItems();
         String v = "varor";
         if(nbrOfProducts == 1) {
             v = "vara";
         }
-        toShoppingCartLabel1.setText("<html>Till Kundvagnen (<b>" + nbrOfProducts + 
-         "</b> " + v + ", <b>" + sum + "0</b> SEK )</html>");
+        toShoppingCartLabel1.setText("<html>Till Kundvagnen (<b>" + getAmount() + 
+         "</b> " + v + ", <b>" + sc.getTotal() + "</b> SEK )</html>");
 
     }
     /** This method is called from within the constructor to
@@ -121,17 +136,10 @@ public class ValuePanel extends JPanel implements Observer {
     private javax.swing.JPanel valuePanel;
     // End of variables declaration//GEN-END:variables
 
-    
-    public void update(Observable o, Object arg) {
-        
-        if(arg.getClass().equals(ProductControl.class)) {
-            
-            ProductControl tmp = (ProductControl)arg;
-            Double nrOP = tmp.getNbrOfProducts();
-            nbrOfProducts = nrOP.intValue();
-            sum = tmp.getSum();
-            setLabeltext();
-        }
-            
+
+    public void shoppingCartChanged() {
+        setLabeltext();
+        repaint();
+        revalidate();
     }
 }
