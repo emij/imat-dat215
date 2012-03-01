@@ -1,7 +1,5 @@
 TODO iMat:
 
-När man trycker på "Ta bort från favoriter" ska varan tas bort från favoriter-vyn. 
-
 Kunna visa historik
 Vy till historik, kunna lägga till alla varor
 
