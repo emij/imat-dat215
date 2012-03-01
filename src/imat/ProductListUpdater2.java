@@ -64,11 +64,7 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
         categoryName = "Ordernummer: " + header;
         productList.setCategoryName(categoryName);
 
-        /*
-        products.clear();
-        for(ShoppingItem s : si) {
-            products.add(s.getProduct());
-        }*/
+
         orderList(si, header);
         newProductList(categoryName);
     }
