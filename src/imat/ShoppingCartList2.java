@@ -37,7 +37,6 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
         categoryScrollPane.setBorder(null);
 	categoryScrollPane.setViewportBorder(null);
         categoryLabel.setText("Din Kundvagn");
-        
         emptyChartButton.addActionListener(this);
     }
 
@@ -57,7 +56,7 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
         rightLabel = new javax.swing.JLabel();
         middleLabel = new javax.swing.JLabel();
         totalAmountDue = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        nextButton = new javax.swing.JButton();
         emptyChartButton = new javax.swing.JButton();
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(ShoppingCartList2.class);
@@ -104,8 +103,8 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
         totalAmountDue.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         totalAmountDue.setName("totalAmountDue"); // NOI18N
 
-        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
-        jButton1.setName("jButton1"); // NOI18N
+        nextButton.setText(resourceMap.getString("nextButton.text")); // NOI18N
+        nextButton.setName("nextButton"); // NOI18N
 
         emptyChartButton.setText(resourceMap.getString("emptyChartButton.text")); // NOI18N
         emptyChartButton.setName("emptyChartButton"); // NOI18N
@@ -130,8 +129,8 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
                         .addComponent(emptyChartButton)
                         .addGap(175, 175, 175)
                         .addComponent(totalAmountDue, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                        .addComponent(nextButton)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -153,16 +152,16 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
                             .addComponent(totalAmountDue, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                             .addComponent(emptyChartButton))
                         .addGap(12, 12, 12))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel categoryLabel;
     private javax.swing.JScrollPane categoryScrollPane;
     private javax.swing.JButton emptyChartButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel leftLabel;
     private javax.swing.JLabel middleLabel;
+    private javax.swing.JButton nextButton;
     private javax.swing.JLabel rightLabel;
     private javax.swing.JPanel scrollPanel;
     private javax.swing.JLabel totalAmountDue;
@@ -205,7 +204,7 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
         return scrollPanel;
     }
     public JButton getNextButton() {
-        return jButton1;
+        return nextButton;
     }
 
     public void actionPerformed(ActionEvent ae) {

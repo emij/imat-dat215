@@ -20,6 +20,7 @@ public class ShoppingCartObservable extends Observable implements ActionListener
     public ShoppingCartObservable(Observer o) {
         this.addObserver(o);
         p = new ShoppingCartList2();
+        p.getNextButton().addActionListener(this);
     }
     
     public JPanel getPanel() {
@@ -31,8 +32,10 @@ public class ShoppingCartObservable extends Observable implements ActionListener
     }
 
     public void actionPerformed(ActionEvent ae) {
+        setChanged();
         if(ae.getSource().equals(p.getNextButton())) {
             this.notifyObservers("adress");
+            System.out.println("HHHHAHAHHAAHHAHHA");
         }
     }
     
