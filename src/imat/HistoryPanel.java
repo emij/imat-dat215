@@ -31,11 +31,14 @@ public class HistoryPanel extends javax.swing.JPanel {
     /** Creates new form ProductList */
     public HistoryPanel() {
         initComponents();
-        categoryLabel.setFont(new Font("Georgia", Font.PLAIN, 24));
         categoryLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, (new Color(164,157,157))));
         categoryScrollPane.setBorder(null);
 	categoryScrollPane.setViewportBorder(null);
         categoryScrollPane.getVerticalScrollBar().setUnitIncrement(20);
+        leftLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
+        leftLabel.setForeground(new Color(195, 182, 154));
+        middleLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
+        middleLabel.setForeground(new Color(195, 182, 154));
         //categoryScrollPane.repaint();
         //categoryScrollPane.revalidate();
         updateView();
@@ -115,7 +118,7 @@ public class HistoryPanel extends javax.swing.JPanel {
                     .addComponent(leftLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(middleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(categoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE))
+                .addComponent(categoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
