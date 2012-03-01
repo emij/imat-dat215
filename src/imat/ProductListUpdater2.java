@@ -125,7 +125,7 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
             } else if(e.getSource().equals(chartButtons.get(i))) {
                 Double value = productPanels[i].getValue();
                 boolean alreadyExists = false;
-                int index;
+                int index = 0;
                 if(shoppingItems != null) {
 
                     System.out.println("a");
@@ -140,9 +140,9 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
                 if(!alreadyExists) {
                     shoppingCart.addProduct(products.get(i), value);
                 } else {
-                    double oldAmount = shoppingItems.get(i).getAmount();
+                    double oldAmount = shoppingItems.get(index).getAmount();
                     System.out.println("" + oldAmount);
-                    shoppingItems.get(i).setAmount(oldAmount + value);
+                    shoppingItems.get(index).setAmount(oldAmount + value);
                 }
                 
                 Double totalCost = products.get(i).getPrice() * value;
