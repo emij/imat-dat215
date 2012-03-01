@@ -116,8 +116,7 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
         for(int i = 0; i < products.size(); i++){
             if(e.getSource().equals(favoriteButtons.get(i))) {
                 productPanels[i].setFavoritesButton();
-                data.addFavorite(products.get(i));
-                
+                setView(products, "Dina favoriter", "");
             } else if(e.getSource().equals(chartButtons.get(i))) {
                 Double value = productPanels[i].getValue();
                 boolean alreadyExists = false;
