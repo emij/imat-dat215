@@ -77,6 +77,7 @@ public class IMatView extends FrameView implements Observer{
         s2 = new ShoppingCartObservable(this);
 
         categorypanel = new ProductListUpdater2();
+        jLabel1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         
         categorySmallPanel.setMaximumSize(new Dimension(500,500));
         categorySmallPanel.add(c.getPanel(), "category");
@@ -166,6 +167,11 @@ public class IMatView extends FrameView implements Observer{
         jLabel1.setIcon(resourceMap.getIcon("jLabel1.icon")); // NOI18N
         jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
         jLabel1.setName("jLabel1"); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout logPanelLayout = new org.jdesktop.layout.GroupLayout(logPanel);
         logPanel.setLayout(logPanelLayout);
@@ -326,6 +332,10 @@ private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
         changePanelHelp(s);
     }
 }//GEN-LAST:event_backButtonActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        changePanel("category");
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
