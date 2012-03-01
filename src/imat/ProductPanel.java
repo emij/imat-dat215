@@ -255,7 +255,7 @@ public class ProductPanel extends javax.swing.JPanel {
         minusIcon = new ImageIcon(getClass().getResource(path + "minus.png"));
         plusIcon = new ImageIcon(getClass().getResource(path + "plus.png"));
         value.setText("" + amount);
-        
+        changeMouseCursor();
         value.setFont(new Font("Georgia", Font.PLAIN, 14));
         productPicture.setIcon(data.getImageIcon(product, iconDimension));
         productPicture.setBorder(BorderFactory.createLineBorder(typBrun, 1));
@@ -325,6 +325,12 @@ public class ProductPanel extends javax.swing.JPanel {
     public void zeroValue(){
         amount = 1;
         value.setText("" + amount);
+    }
+    public void changeMouseCursor(){
+        addToFavorites.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        addToChart.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        valuePlus.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        valueMinus.setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 }
     

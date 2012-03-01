@@ -4,3 +4,6 @@ Kunna visa historik
 Vy till historik, kunna lägga till alla varor
 
 lägga in bilder till kundvagnen, "töm varukorgen" samt "gå vidare".
+
+fixa lägg till alla varor från historik
+

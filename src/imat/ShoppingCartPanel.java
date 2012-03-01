@@ -239,27 +239,15 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void initMyComponents(Product product, Double amount, Double totalValue) {
-        path = "resources/bilder/";
-        addFavoritesIcon = new ImageIcon(getClass().getResource(path + "laggtill_favoriter.png"));
-        remFavoritesIcon = new ImageIcon(getClass().getResource(path + "tabort_favoriter.png"));
-        remChartIcon = new ImageIcon(getClass().getResource(path + "tabort_kundvagn.png"));
-        minusIcon = new ImageIcon(getClass().getResource(path + "minus.png"));
-        plusIcon = new ImageIcon(getClass().getResource(path + "plus.png"));
+        addIcons();
+        changeMouseCursor();
         
-        productPicture.setIcon(data.getImageIcon(product, iconDimension));
         productPicture.setBorder(BorderFactory.createLineBorder(typBrun, 1));
         productName.setText(product.getName());
         productName.setFont(new Font("Georgia", Font.PLAIN, 12));
         productPrice.setText("" + product.getPrice() + " " + product.getUnit());
         productPrice.setFont(new Font("Georgia", Font.PLAIN, 12));
-        removeFromChart.setIcon(remChartIcon);
-        valuePlus.setIcon(plusIcon);
-        valueMinus.setIcon(minusIcon);
-        if(!isFavorite){
-            addToFavorites.setIcon(addFavoritesIcon);
-        } else {
-            addToFavorites.setIcon(remFavoritesIcon);
-        }
+        
         
         leftPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, typBrun));
         pricePanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, typBrun));
@@ -329,5 +317,29 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     public void zeroValue(){
         amount = (double)1;
         value.setText("" + amount);
+    }
+    public void changeMouseCursor(){
+        addToFavorites.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        removeFromChart.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        valuePlus.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        valueMinus.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }
+
+    private void addIcons() {
+        path = "resources/bilder/";
+        addFavoritesIcon = new ImageIcon(getClass().getResource(path + "laggtill_favoriter.png"));
+        remFavoritesIcon = new ImageIcon(getClass().getResource(path + "tabort_favoriter.png"));
+        remChartIcon = new ImageIcon(getClass().getResource(path + "tabort_kundvagn.png"));
+        minusIcon = new ImageIcon(getClass().getResource(path + "minus.png"));
+        plusIcon = new ImageIcon(getClass().getResource(path + "plus.png"));
+        productPicture.setIcon(data.getImageIcon(product, iconDimension));
+        removeFromChart.setIcon(remChartIcon);
+        valuePlus.setIcon(plusIcon);
+        valueMinus.setIcon(minusIcon);
+        if(!isFavorite){
+            addToFavorites.setIcon(addFavoritesIcon);
+        } else {
+            addToFavorites.setIcon(remFavoritesIcon);
+        }
     }
 }

@@ -10,6 +10,7 @@
  */
 package imat;
 
+import java.awt.Cursor;
 import javax.swing.JOptionPane;
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -25,6 +26,7 @@ public class AdressPanel extends javax.swing.JPanel {
     /** Creates new form AdressPanel */
     public AdressPanel() {
         initComponents();
+        jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         loadAdressInfo();
     }
 
