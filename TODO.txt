@@ -5,6 +5,6 @@ När man trycker på "Ta bort från favoriter" ska sen tas bort från favoriter-
 Kunna visa historik
 Vy till historik, kunna lägga till alla varor
 
-När man lagt till en vara i kundvagnen ska det stå mängd "1" inte "0".
-
 Om man inte har någon vara i kundvagnen ska man inte kunna gå vidare.
+
+Töm varukorg

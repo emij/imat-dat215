@@ -313,13 +313,13 @@ public class ProductPanel extends javax.swing.JPanel {
         value.setText("" + amount);
     }
     public void negValue(){
-        if (amount != 0){
+        if (amount != 1){
             amount = amount -1;
             value.setText("" + amount);
         }
     }
     public void zeroValue(){
-        amount = 0;
+        amount = 1;
         value.setText("" + amount);
     }
 }
