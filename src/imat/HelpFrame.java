@@ -13,6 +13,7 @@ package imat;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import org.jdesktop.application.SingleFrameApplication;
 
@@ -22,7 +23,7 @@ import org.jdesktop.application.SingleFrameApplication;
  * @author Gustav
  */
 public class HelpFrame extends javax.swing.JFrame {
-
+    private JFrame f;
     private SingleFrameApplication app;
     private int currentStep = 1;
     private JButton[] stepButtons;
@@ -30,8 +31,9 @@ public class HelpFrame extends javax.swing.JFrame {
     private String path = "resources/helpimages/";
 
     /** Creates new form HelpFrame */
-    public HelpFrame(SingleFrameApplication app) {
+    public HelpFrame(SingleFrameApplication app, JFrame f) {
         this.app = app;
+        this.f = f;
         initComponents();
         
         
@@ -58,11 +60,12 @@ public class HelpFrame extends javax.swing.JFrame {
 
     private void loadStep(int stepToLoad) {
         if (stepToLoad <= 0) {
-            app.show(new StartFrame(app));
+            //app.show(new StartFrame(app));
             this.setVisible(false);
         } else if (stepToLoad > stepButtons.length) {
             if(this.app != null) {
                 new IMatView(app);
+                f.setVisible(false);
             }
             this.setVisible(false);
         } else {
@@ -104,7 +107,6 @@ public class HelpFrame extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(HelpFrame.class);
         setBackground(resourceMap.getColor("Form.background")); // NOI18N
         setName("Form"); // NOI18N
