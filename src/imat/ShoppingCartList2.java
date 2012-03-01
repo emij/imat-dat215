@@ -10,6 +10,8 @@
  */
 package imat;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
@@ -37,6 +39,14 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
 	categoryScrollPane.setViewportBorder(null);
         categoryLabel.setText("Din Kundvagn");
         emptyChartButton.addActionListener(this);
+        
+        categoryLabel.setFont(new Font("sans serif", Font.BOLD, 24));
+        rightLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
+        middleLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
+        leftLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
+        rightLabel.setForeground(new Color(195, 182, 154));
+        middleLabel.setForeground(new Color(195, 182, 154));
+        leftLabel.setForeground(new Color(195, 182, 154));
     }
 
     /** This method is called from within the constructor to
@@ -60,6 +70,7 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(ShoppingCartList2.class);
         setBackground(resourceMap.getColor("Form.background")); // NOI18N
+        setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         setName("Form"); // NOI18N
 
         categoryLabel.setBackground(resourceMap.getColor("categoryLabel.background")); // NOI18N
@@ -121,7 +132,7 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(categoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
+                    .addComponent(categoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(leftLabel)
                         .addGap(298, 298, 298)
@@ -131,9 +142,9 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
                     .addComponent(categoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(emptyChartButton)
-                        .addGap(196, 196, 196)
-                        .addComponent(totalAmountDue, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                        .addGap(88, 88, 88)
+                        .addComponent(totalAmountDue, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -149,12 +160,13 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
                     .addComponent(rightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(categoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(emptyChartButton)
-                    .addComponent(totalAmountDue, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                    .addComponent(nextButton, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE))
-                .addGap(12, 12, 12))
+                    .addComponent(totalAmountDue, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(emptyChartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nextButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(20, 20, 20))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables

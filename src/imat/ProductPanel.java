@@ -259,7 +259,7 @@ public class ProductPanel extends javax.swing.JPanel {
         value.setFont(new Font("Georgia", Font.PLAIN, 14));
         productPicture.setIcon(data.getImageIcon(product, iconDimension));
         productPicture.setBorder(BorderFactory.createLineBorder(typBrun, 1));
-        productName.setFont(new Font("fans serif", Font.BOLD, 14));
+        productName.setFont(new Font("sans serif", Font.BOLD, 14));
         productName.setText(product.getName());
         productPrice.setFont(new Font("Georgia", Font.PLAIN, 14));
         productPrice.setText("" + product.getPrice() + " " + product.getUnit());

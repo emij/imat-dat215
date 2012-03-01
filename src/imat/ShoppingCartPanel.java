@@ -34,7 +34,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     private ImageIcon minusIcon;
     
     private IMatDataHandler data = IMatDataHandler.getInstance();
-    private Color typBrun = new Color(164, 157, 157);
+    private Color typBrun = new Color(195, 182, 154);
     /** Creates new form ShoppingCartPanel */
     
     public ShoppingCartPanel(Product product, Double amount, Double totalValue){
@@ -244,10 +244,10 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         
         productPicture.setBorder(BorderFactory.createLineBorder(typBrun, 1));
         productName.setText(product.getName());
-        productName.setFont(new Font("Georgia", Font.PLAIN, 12));
+        productName.setFont(new Font("Georgia", Font.PLAIN, 14));
         productPrice.setText("" + product.getPrice() + " " + product.getUnit());
-        productPrice.setFont(new Font("Georgia", Font.PLAIN, 12));
-        
+        productPrice.setFont(new Font("Georgia", Font.PLAIN, 14));
+        productName.setFont(new Font("sans serif", Font.BOLD, 14));
         
         leftPanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, typBrun));
         pricePanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, typBrun));
