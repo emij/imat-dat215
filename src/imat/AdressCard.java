@@ -25,7 +25,7 @@ public class AdressCard extends Observable implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         setChanged();
-        if(ae.getSource().equals(ap.getDoneButton())) {
+        if(ae.getSource().equals(ap.getDoneButton()) && ap.noErrors()) {
             this.notifyObservers("betala");
         }
     }
