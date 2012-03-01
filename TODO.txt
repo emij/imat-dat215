@@ -3,4 +3,4 @@ TODO iMat:
 Kunna visa historik
 Vy till historik, kunna lägga till alla varor
 
-Om man inte har någon vara i kundvagnen ska man inte kunna gå vidare.
+lägga in bilder till kundvagnen, "töm varukorgen" samt "gå vidare".

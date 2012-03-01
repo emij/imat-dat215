@@ -169,6 +169,13 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
     
     public void updateView() {
         shoppingItems = sc.getItems();
+        if(shoppingItems.isEmpty()){
+            nextButton.setEnabled(false);
+            emptyChartButton.setEnabled(false);
+        } else {
+            nextButton.setEnabled(true);
+            emptyChartButton.setEnabled(true);
+        }
         scrollPanel.removeAll();
         scrollPanel.revalidate();
         scrollPanel.repaint();
