@@ -57,6 +57,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="jLabel1.background"/>
         <Property name="font" type="java.awt.Font" resourceKey="jLabel1.font"/>
         <Property name="text" type="java.lang.String" resourceKey="jLabel1.text"/>
         <Property name="name" type="java.lang.String" value="jLabel1" noResource="true"/>
@@ -64,11 +65,13 @@
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
       <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="jSeparator1.background"/>
         <Property name="name" type="java.lang.String" value="jSeparator1" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="thanksLabel">
       <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="thanksLabel.background"/>
         <Property name="text" type="java.lang.String" resourceKey="thanksLabel.text"/>
         <Property name="name" type="java.lang.String" value="thanksLabel" noResource="true"/>
       </Properties>
@@ -86,6 +89,7 @@
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <Properties>
+        <Property name="background" type="java.awt.Color" resourceKey="jScrollPane1.background"/>
         <Property name="name" type="java.lang.String" value="jScrollPane1" noResource="true"/>
       </Properties>
 
@@ -94,15 +98,20 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Properties>
             <Property name="background" type="java.awt.Color" resourceKey="jPanel1.background"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder bottom="0" left="0" right="0" top="0"/>
+              </Border>
+            </Property>
             <Property name="name" type="java.lang.String" value="jPanel1" noResource="true"/>
           </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="insertPanel" alignment="0" max="32767" attributes="1"/>
+                          <Component id="insertPanel" alignment="0" pref="568" max="32767" attributes="1"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Component id="headerPanel" alignment="0" pref="568" max="32767" attributes="1"/>
                               <Component id="sumPanel" alignment="0" pref="568" max="32767" attributes="1"/>
@@ -120,7 +129,7 @@
                       <Component id="insertPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="sumPanel" min="-2" pref="31" max="-2" attributes="0"/>
-                      <EmptySpace pref="213" max="32767" attributes="0"/>
+                      <EmptySpace pref="224" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -131,7 +140,9 @@
                 <Property name="background" type="java.awt.Color" resourceKey="headerPanel.background"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                    <MatteColorBorder bottom="1" left="0" right="0" top="0"/>
+                    <MatteColorBorder bottom="1" left="0" right="0" top="0">
+                      <Property name="color" resourceKey="headerPanel.border.matteColor"/>
+                    </MatteColorBorder>
                   </Border>
                 </Property>
                 <Property name="name" type="java.lang.String" value="headerPanel" noResource="true"/>
@@ -146,11 +157,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="productLabel" min="-2" pref="44" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
                           <Component id="amountLabel" min="-2" pref="51" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
-                          <Component id="totalLabel" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace pref="175" max="32767" attributes="0"/>
+                          <Component id="totalLabel" min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -167,6 +178,7 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="productLabel">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" resourceKey="productLabel.background"/>
                     <Property name="font" type="java.awt.Font" resourceKey="productLabel.font"/>
                     <Property name="text" type="java.lang.String" resourceKey="productLabel.text"/>
                     <Property name="name" type="java.lang.String" value="productLabel" noResource="true"/>
@@ -174,6 +186,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="amountLabel">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" resourceKey="amountLabel.background"/>
                     <Property name="font" type="java.awt.Font" resourceKey="amountLabel.font"/>
                     <Property name="text" type="java.lang.String" resourceKey="amountLabel.text"/>
                     <Property name="name" type="java.lang.String" value="amountLabel" noResource="true"/>
@@ -181,6 +194,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="totalLabel">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" resourceKey="totalLabel.background"/>
                     <Property name="font" type="java.awt.Font" resourceKey="totalLabel.font"/>
                     <Property name="text" type="java.lang.String" resourceKey="totalLabel.text"/>
                     <Property name="name" type="java.lang.String" value="totalLabel" noResource="true"/>
@@ -194,17 +208,8 @@
                 <Property name="name" type="java.lang.String" value="insertPanel" noResource="true"/>
               </Properties>
 
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="568" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="162" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout">
+                <Property name="axis" type="int" value="3"/>
               </Layout>
             </Container>
             <Container class="javax.swing.JPanel" name="sumPanel">
@@ -212,7 +217,9 @@
                 <Property name="background" type="java.awt.Color" resourceKey="sumPanel.background"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                    <MatteColorBorder bottom="0" left="0" right="0" top="1"/>
+                    <MatteColorBorder bottom="0" left="0" right="0" top="1">
+                      <Property name="color" resourceKey="sumPanel.border.matteColor"/>
+                    </MatteColorBorder>
                   </Border>
                 </Property>
                 <Property name="name" type="java.lang.String" value="sumPanel" noResource="true"/>
@@ -225,17 +232,17 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="346" max="32767" attributes="0"/>
-                          <Component id="sumLabel1" min="-2" pref="129" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                          <EmptySpace pref="320" max="32767" attributes="0"/>
+                          <Component id="sumLabel1" min="-2" pref="248" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="sumLabel1" min="-2" pref="25" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -243,7 +250,9 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="sumLabel1">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" resourceKey="sumLabel1.background"/>
                     <Property name="font" type="java.awt.Font" resourceKey="sumLabel1.font"/>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
                     <Property name="text" type="java.lang.String" resourceKey="sumLabel1.text"/>
                     <Property name="name" type="java.lang.String" value="sumLabel1" noResource="true"/>
                   </Properties>

@@ -366,7 +366,10 @@ private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             if(tmp != null) {
                 if(tmp.equals("kundvagn")) {
                     s2.getSCList().updateView();
+                } else if(tmp.equals("kvitto")){
+                    r.updateView();
                 }
+                
                 changePanel(tmp);
             }
         } else if(o1 instanceof Category){

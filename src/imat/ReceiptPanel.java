@@ -27,19 +27,6 @@ public class ReceiptPanel extends javax.swing.JPanel {
     public ReceiptPanel() {
         initComponents();
         
-        thanksLabel.setText("Tack för ditt köp " + dh.getCustomer().getFirstName()
-                + ". Välkommen åter!");
-        
-        printButton.setIcon(new ImageIcon(getClass().getResource("resources/bilder/skrivut.png")));
-        
-        //insertPanel.setLayout(new BoxLayout());
-        
-        if(!dh.getOrders().isEmpty()) {
-            l = dh.getOrders().get(0).getItems();
-            presentOrder();
-        }
-        
-        sumLabel1.setText("Summa: " + sum);
         
         
     }
@@ -95,12 +82,15 @@ public class ReceiptPanel extends javax.swing.JPanel {
         setName("Form"); // NOI18N
         setPreferredSize(new java.awt.Dimension(623, 429));
 
+        jLabel1.setBackground(resourceMap.getColor("jLabel1.background")); // NOI18N
         jLabel1.setFont(resourceMap.getFont("jLabel1.font")); // NOI18N
         jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
         jLabel1.setName("jLabel1"); // NOI18N
 
+        jSeparator1.setBackground(resourceMap.getColor("jSeparator1.background")); // NOI18N
         jSeparator1.setName("jSeparator1"); // NOI18N
 
+        thanksLabel.setBackground(resourceMap.getColor("thanksLabel.background")); // NOI18N
         thanksLabel.setText(resourceMap.getString("thanksLabel.text")); // NOI18N
         thanksLabel.setName("thanksLabel"); // NOI18N
 
@@ -110,24 +100,29 @@ public class ReceiptPanel extends javax.swing.JPanel {
         printButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         printButton.setName("printButton"); // NOI18N
 
+        jScrollPane1.setBackground(resourceMap.getColor("jScrollPane1.background")); // NOI18N
         jScrollPane1.setName("jScrollPane1"); // NOI18N
 
         jPanel1.setBackground(resourceMap.getColor("jPanel1.background")); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         jPanel1.setName("jPanel1"); // NOI18N
 
         headerPanel.setBackground(resourceMap.getColor("headerPanel.background")); // NOI18N
-        headerPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        headerPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, resourceMap.getColor("headerPanel.border.matteColor"))); // NOI18N
         headerPanel.setName("headerPanel"); // NOI18N
         headerPanel.setPreferredSize(new java.awt.Dimension(579, 100));
 
+        productLabel.setBackground(resourceMap.getColor("productLabel.background")); // NOI18N
         productLabel.setFont(resourceMap.getFont("productLabel.font")); // NOI18N
         productLabel.setText(resourceMap.getString("productLabel.text")); // NOI18N
         productLabel.setName("productLabel"); // NOI18N
 
+        amountLabel.setBackground(resourceMap.getColor("amountLabel.background")); // NOI18N
         amountLabel.setFont(resourceMap.getFont("amountLabel.font")); // NOI18N
         amountLabel.setText(resourceMap.getString("amountLabel.text")); // NOI18N
         amountLabel.setName("amountLabel"); // NOI18N
 
+        totalLabel.setBackground(resourceMap.getColor("totalLabel.background")); // NOI18N
         totalLabel.setFont(resourceMap.getFont("totalLabel.font")); // NOI18N
         totalLabel.setText(resourceMap.getString("totalLabel.text")); // NOI18N
         totalLabel.setName("totalLabel"); // NOI18N
@@ -139,11 +134,11 @@ public class ReceiptPanel extends javax.swing.JPanel {
             .add(headerPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(productLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(107, 107, 107)
+                .add(177, 177, 177)
                 .add(amountLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 51, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(134, 134, 134)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 175, Short.MAX_VALUE)
                 .add(totalLabel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .add(64, 64, 64))
         );
         headerPanelLayout.setVerticalGroup(
             headerPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -155,24 +150,16 @@ public class ReceiptPanel extends javax.swing.JPanel {
 
         insertPanel.setBackground(resourceMap.getColor("insertPanel.background")); // NOI18N
         insertPanel.setName("insertPanel"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout insertPanelLayout = new org.jdesktop.layout.GroupLayout(insertPanel);
-        insertPanel.setLayout(insertPanelLayout);
-        insertPanelLayout.setHorizontalGroup(
-            insertPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 568, Short.MAX_VALUE)
-        );
-        insertPanelLayout.setVerticalGroup(
-            insertPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 162, Short.MAX_VALUE)
-        );
+        insertPanel.setLayout(new javax.swing.BoxLayout(insertPanel, javax.swing.BoxLayout.PAGE_AXIS));
 
         sumPanel.setBackground(resourceMap.getColor("sumPanel.background")); // NOI18N
-        sumPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 0, 0)));
+        sumPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, resourceMap.getColor("sumPanel.border.matteColor"))); // NOI18N
         sumPanel.setName("sumPanel"); // NOI18N
         sumPanel.setPreferredSize(new java.awt.Dimension(579, 100));
 
+        sumLabel1.setBackground(resourceMap.getColor("sumLabel1.background")); // NOI18N
         sumLabel1.setFont(resourceMap.getFont("sumLabel1.font")); // NOI18N
+        sumLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         sumLabel1.setText(resourceMap.getString("sumLabel1.text")); // NOI18N
         sumLabel1.setName("sumLabel1"); // NOI18N
 
@@ -181,24 +168,24 @@ public class ReceiptPanel extends javax.swing.JPanel {
         sumPanelLayout.setHorizontalGroup(
             sumPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, sumPanelLayout.createSequentialGroup()
-                .addContainerGap(346, Short.MAX_VALUE)
-                .add(sumLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 129, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(93, 93, 93))
+                .addContainerGap(320, Short.MAX_VALUE)
+                .add(sumLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 248, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
         );
         sumPanelLayout.setVerticalGroup(
             sumPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, sumPanelLayout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(sumLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+            .add(sumPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(sumLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 25, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel1Layout.createSequentialGroup()
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, insertPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, insertPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                         .add(org.jdesktop.layout.GroupLayout.LEADING, headerPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
                         .add(org.jdesktop.layout.GroupLayout.LEADING, sumPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)))
@@ -212,7 +199,7 @@ public class ReceiptPanel extends javax.swing.JPanel {
                 .add(insertPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(sumPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -262,4 +249,21 @@ public class ReceiptPanel extends javax.swing.JPanel {
     private javax.swing.JLabel thanksLabel;
     private javax.swing.JLabel totalLabel;
     // End of variables declaration//GEN-END:variables
+
+    public void updateView() {
+        thanksLabel.setText("Tack för ditt köp " + dh.getCustomer().getFirstName()
+                + ". Välkommen åter!");
+        
+        printButton.setIcon(new ImageIcon(getClass().getResource("resources/bilder/skrivut.png")));
+        
+        //insertPanel.setLayout(new BoxLayout());
+        
+        if(!dh.getOrders().isEmpty()) {
+            int tmp = dh.getOrders().size();
+            l = dh.getOrders().get(tmp-1).getItems();
+            presentOrder();
+        }
+        
+        sumLabel1.setText("Summa: " + sum + " SEK");
+    }
 }
