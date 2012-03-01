@@ -181,6 +181,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="productPrice">
           <Properties>
+            <Property name="background" type="java.awt.Color" resourceKey="productPrice.background"/>
             <Property name="font" type="java.awt.Font" resourceKey="productPrice.font"/>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" resourceKey="productPrice.text"/>

@@ -128,6 +128,7 @@ public class ProductPanel extends javax.swing.JPanel {
         pricePanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         pricePanel.setName("pricePanel"); // NOI18N
 
+        productPrice.setBackground(resourceMap.getColor("productPrice.background")); // NOI18N
         productPrice.setFont(resourceMap.getFont("productPrice.font")); // NOI18N
         productPrice.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         productPrice.setText(resourceMap.getString("productPrice.text")); // NOI18N
