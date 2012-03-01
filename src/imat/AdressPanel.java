@@ -136,6 +136,11 @@ public class AdressPanel extends javax.swing.JPanel {
         jTextField6.setForeground(resourceMap.getColor("jTextField6.foreground")); // NOI18N
         jTextField6.setText(resourceMap.getString("jTextField6.text")); // NOI18N
         jTextField6.setName("jTextField6"); // NOI18N
+        jTextField6.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextField6FocusGained(evt);
+            }
+        });
 
         jLabel7.setFont(resourceMap.getFont("jLabel7.font")); // NOI18N
         jLabel7.setText(resourceMap.getString("jLabel7.text")); // NOI18N
@@ -169,7 +174,7 @@ public class AdressPanel extends javax.swing.JPanel {
                                     .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
                                     .addComponent(jTextField3)
                                     .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                                 .addComponent(jLabel2)
                                 .addGap(155, 155, 155))
                             .addGroup(layout.createSequentialGroup()
@@ -226,6 +231,10 @@ private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:ev
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 // TODO add your handling code here:
 }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField6FocusGained
+        jTextField6.setText("");
+    }//GEN-LAST:event_jTextField6FocusGained
 
 public JButton getDoneButton() {
     return jButton1;

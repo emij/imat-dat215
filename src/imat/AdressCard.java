@@ -18,14 +18,16 @@ public class AdressCard extends Observable implements ActionListener {
     public AdressCard(Observer o) {
         this.addObserver(o);
         ap = new AdressPanel();
+        ap.getDoneButton().addActionListener(this);
     }
     
     
 
     public void actionPerformed(ActionEvent ae) {
-        //if(ae.getSource().equals(ap.getDoneButton())) {
-          //  this.notifyObservers("");
-        //}
+        setChanged();
+        if(ae.getSource().equals(ap.getDoneButton())) {
+            this.notifyObservers("betala");
+        }
     }
 
     public JPanel getPanel() {
