@@ -22,11 +22,25 @@ public class HistoryObservable extends Observable implements ActionListener {
     public HistoryObservable(Observer o) {
         this.addObserver(o);
         p = new HistoryPanel();
+        
+        addActionButton();
+        
+    }
+    
+    public void addActionButton() {
         buttons = p.getButtons();
+        for(JButton b : buttons) {
+            b.addActionListener(this);
+        }
     }
     
     public JPanel getPanel() {
         return p;
+    }
+    
+    public void updateView() {
+        p.updateView();
+        addActionButton();
     }
     
     public void actionPerformed(ActionEvent ae) {

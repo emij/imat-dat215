@@ -127,12 +127,14 @@ public class HistoryPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     public void updateView() {
+        scrollPanel.removeAll();
         List<Order> l = dh.getOrders();
         OrderPanel p;
         detailButtons = new ArrayList();
         for(int i = 0; i < l.size(); i++) {
             p = new OrderPanel(l.get(i));
             detailButtons.add(p.getDetailButton());
+            scrollPanel.add(p);
         }
         scrollPanel.repaint();
         categoryScrollPane.repaint();

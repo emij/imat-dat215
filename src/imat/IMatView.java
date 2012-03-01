@@ -99,7 +99,7 @@ public class IMatView extends FrameView implements Observer{
     private void changePanel(String panel, Category c) {
         if(panel.equals("kundvagn2")){
             s2.getSCList().updateView();
-        }
+        } 
         if(tempPrevItem.getCard().equals("categorypanel")){
             prevList.addFirst(tempPrevItem);
             backButton.setEnabled(true);
@@ -398,6 +398,8 @@ private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
                     s2.getSCList().updateView();
                 } else if(tmp.equals("kvitto")){
                     r.updateView();
+                } else if(tmp.equals("historik")) {
+                    h.updateView();
                 }
 
                 changePanel(tmp,null);
@@ -430,7 +432,13 @@ private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
                 categorypanel.setView(l, "Sökresultat: ", c.getCategoryName());
             } else if(c.getPanelType() == Category.PANELTYPE.ORDER) {
                 List<ShoppingItem> l = new LinkedList();
-                List<Product> p = new LinkedList();
+                List<Order> orders = data.getOrders();
+                Integer orderNumber = Integer.parseInt(c.getCategoryName());
+                for(int i = 0; i < orders.size(); i++) {
+                    if(orderNumber.equals(orders.get(i).getOrderNumber())) {
+                        l = orders.get(i).getItems();
+                    }
+                }
                 categorypanel.setView(l, c.getCategoryName());
             }
             
