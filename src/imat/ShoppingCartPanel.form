@@ -140,6 +140,7 @@
             <EmptyBorder bottom="0" left="0" right="0" top="0"/>
           </Border>
         </Property>
+        <Property name="font" type="java.awt.Font" resourceKey="pricePanel.font"/>
         <Property name="name" type="java.lang.String" value="pricePanel" noResource="true"/>
       </Properties>
 
@@ -158,6 +159,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="productPrice">
           <Properties>
+            <Property name="background" type="java.awt.Color" resourceKey="productPrice.background"/>
             <Property name="font" type="java.awt.Font" resourceKey="productPrice.font"/>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" resourceKey="productPrice.text"/>

@@ -36,9 +36,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     private IMatDataHandler data = IMatDataHandler.getInstance();
     private Color typBrun = new Color(164, 157, 157);
     /** Creates new form ShoppingCartPanel */
-    public ShoppingCartPanel() {
-        initComponents();
-    }
+    
     public ShoppingCartPanel(Product product, Double amount, Double totalValue){
         initComponents();
         this.product = product;
@@ -117,8 +115,10 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
 
         pricePanel.setBackground(resourceMap.getColor("pricePanel.background")); // NOI18N
         pricePanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        pricePanel.setFont(resourceMap.getFont("pricePanel.font")); // NOI18N
         pricePanel.setName("pricePanel"); // NOI18N
 
+        productPrice.setBackground(resourceMap.getColor("productPrice.background")); // NOI18N
         productPrice.setFont(resourceMap.getFont("productPrice.font")); // NOI18N
         productPrice.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         productPrice.setText(resourceMap.getString("productPrice.text")); // NOI18N
@@ -321,13 +321,13 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         value.setText("" + amount);
     }
     public void negValue(){
-        if (amount != 0){
+        if (amount != 1){
             amount = amount -1;
             value.setText("" + amount);
         }
     }
     public void zeroValue(){
-        amount = (double)0;
+        amount = (double)1;
         value.setText("" + amount);
     }
 }

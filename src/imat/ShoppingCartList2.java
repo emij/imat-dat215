@@ -27,6 +27,8 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
     private ProductControl pc = ProductControl.getInstance();
     private List<ShoppingItem> shoppingItems;
     private List<JButton> deleteButtons = new ArrayList();
+    private List<JButton> favoriteButtons = new ArrayList();
+    private List<ShoppingCartPanel> cartPanels = new ArrayList();
     
     /** Creates new form ShoppingCartList */
     public ShoppingCartList2() {
@@ -182,17 +184,21 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
         deleteButtons.clear();
         
         for(int i = 0; i < shoppingItems.size(); i++) {
-            
             product = shoppingItems.get(i).getProduct();
             amount = shoppingItems.get(i).getAmount();
             totalValue = shoppingItems.get(i).getTotal();
             p = new ShoppingCartPanel(product, amount, totalValue);
+            cartPanels.add(p);
+            
             deleteButtons.add(p.getChartButton());
+            favoriteButtons.add(p.getFavoritesButton());
+            
             deleteButtons.get(i).addActionListener(this);
+            favoriteButtons.get(i).addActionListener(this);
             scrollPanel.add(p);
         }
         
-        totalAmountDue.setText("Totalt: " + sc.getTotal() + "0 kr");        
+        totalAmountDue.setText("Totalt: " + sc.getTotal() + " kr");        
     } 
 
     public JPanel getInnerPanel(){
@@ -209,9 +215,14 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
                 sc.removeItem(shoppingItems.get(i));
                 updateView();
             }
+            if(ae.getSource().equals(favoriteButtons.get(i))) {
+                cartPanels.get(i).setFavoritesButton();
+                updateView();
+            }
         }
         if(ae.getSource().equals(emptyChartButton)) {
             sc.clear();
+            pc.clear();
             updateView();
         }
     }

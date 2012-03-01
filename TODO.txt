@@ -1,10 +1,8 @@
 TODO iMat:
 
-När man trycker på "Ta bort från favoriter" ska sen tas bort från favoriter-vyn. 
+När man trycker på "Ta bort från favoriter" ska varan tas bort från favoriter-vyn. 
 
 Kunna visa historik
 Vy till historik, kunna lägga till alla varor
 
 Om man inte har någon vara i kundvagnen ska man inte kunna gå vidare.
-
-Töm varukorg

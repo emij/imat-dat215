@@ -53,4 +53,11 @@ public class ProductControl extends Observable {
         this.notifyObservers(this);
     }
     
+    public void clear() {
+        nbrOfProducts = 0; 
+        sum = 0;
+        setChanged();
+        this.notifyObservers(this);
+    }
+    
 }
