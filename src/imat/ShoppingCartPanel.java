@@ -22,7 +22,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
 
     private Dimension iconDimension = new Dimension(40,40);
     private Product product;
-    private Double amount;
+    private double amount;
     private Double totalValue;
     private boolean isFavorite;
     
@@ -253,7 +253,9 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         pricePanel.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, typBrun));
         rightPanel.setBorder(BorderFactory.createMatteBorder(0, 1, 0, 0, typBrun));
         
-        value.setText("" + amount);
+        double toInt = amount;
+        value.setText("" + (int)toInt);
+        //value.setText("" + amount);
         
         totalCost.setText("" + totalValue + " kr");
     }

@@ -23,7 +23,7 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="categoryScrollPane" alignment="0" pref="700" max="32767" attributes="0"/>
+                  <Component id="categoryScrollPane" alignment="0" pref="760" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="leftLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
@@ -32,13 +32,12 @@
                       <Component id="rightLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="categoryLabel" alignment="0" min="-2" pref="650" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="21" pref="21" max="21" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="emptyChartButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
                       <Component id="totalAmountDue" min="-2" pref="118" max="-2" attributes="0"/>
-                      <EmptySpace pref="150" max="32767" attributes="0"/>
-                      <Component id="nextButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="61" max="32767" attributes="0"/>
+                      <Component id="nextButton" min="-2" pref="169" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -57,18 +56,14 @@
                   <Component id="rightLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="categoryScrollPane" pref="286" max="32767" attributes="0"/>
+              <Component id="categoryScrollPane" pref="270" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="totalAmountDue" alignment="3" pref="31" max="32767" attributes="0"/>
-                          <Component id="emptyChartButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="12" pref="12" max="12" attributes="0"/>
-                  </Group>
-                  <Component id="nextButton" alignment="0" min="-2" pref="42" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="emptyChartButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="totalAmountDue" alignment="1" pref="52" max="32767" attributes="0"/>
+                  <Component id="nextButton" pref="52" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace min="12" pref="12" max="12" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -165,13 +160,19 @@
     </Component>
     <Component class="javax.swing.JButton" name="nextButton">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="nextButton.icon"/>
         <Property name="text" type="java.lang.String" resourceKey="nextButton.text"/>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="disabledIcon" type="javax.swing.Icon" resourceKey="nextButton.disabledIcon"/>
         <Property name="name" type="java.lang.String" value="nextButton" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="emptyChartButton">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="emptyChartButton.icon"/>
         <Property name="text" type="java.lang.String" resourceKey="emptyChartButton.text"/>
+        <Property name="borderPainted" type="boolean" value="false"/>
+        <Property name="disabledIcon" type="javax.swing.Icon" resourceKey="emptyChartButton.disabledIcon"/>
         <Property name="name" type="java.lang.String" value="emptyChartButton" noResource="true"/>
       </Properties>
     </Component>
