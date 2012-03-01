@@ -26,10 +26,10 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="599" max="32767" attributes="0"/>
-                  <Component id="jSeparator1" alignment="0" pref="599" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" pref="583" max="32767" attributes="0"/>
+                  <Component id="jSeparator1" alignment="0" pref="583" max="32767" attributes="0"/>
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="thanksLabel" alignment="0" pref="599" max="32767" attributes="0"/>
+                  <Component id="thanksLabel" alignment="0" pref="583" max="32767" attributes="0"/>
                   <Component id="printButton" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -46,7 +46,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="thanksLabel" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="269" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="259" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="printButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -82,7 +82,7 @@
         <Property name="text" type="java.lang.String" resourceKey="printButton.text"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Default Cursor"/>
+          <Color id="Standardmark&#xf6;r"/>
         </Property>
         <Property name="name" type="java.lang.String" value="printButton" noResource="true"/>
       </Properties>
@@ -159,9 +159,15 @@
                           <Component id="productLabel" min="-2" pref="44" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
                           <Component id="amountLabel" min="-2" pref="51" max="-2" attributes="0"/>
+<<<<<<< HEAD
                           <EmptySpace pref="175" max="32767" attributes="0"/>
                           <Component id="totalLabel" min="-2" pref="45" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+=======
+                          <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                          <Component id="totalLabel" min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace pref="167" max="32767" attributes="0"/>
+>>>>>>> Search fixad!!!!
                       </Group>
                   </Group>
                 </DimensionLayout>

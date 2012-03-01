@@ -27,6 +27,19 @@ public class ReceiptPanel extends javax.swing.JPanel {
     public ReceiptPanel() {
         initComponents();
         
+        thanksLabel.setText("Tack för ditt köp " + dh.getCustomer().getFirstName()
+                + ". Välkommen åter!");
+        
+        printButton.setIcon(new ImageIcon(getClass().getResource("resources/bilder/skrivut.png")));
+        
+        //insertPanel.setLayout(new BoxLayout());
+        
+        if(!dh.getOrders().isEmpty()) {
+            l = dh.getOrders().get(dh.getOrders().size()-1).getItems();
+            presentOrder();
+        }
+        
+        sumLabel1.setText("Summa: " + sum);
         
         
     }
