@@ -36,6 +36,7 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 import javax.swing.*;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 /**
  * The application's main frame.
@@ -50,7 +51,8 @@ public class IMatView extends FrameView implements Observer{
     ValueObserver v;
     PaymentObserver p;
     ReceiptPanel r;
-
+    HistoryObservable h;
+    
     SidebarPanel s;
     SearchObserver sp;
     ProductListUpdater2 categorypanel;
@@ -75,6 +77,7 @@ public class IMatView extends FrameView implements Observer{
         sp = new SearchObserver(this);
         r = new ReceiptPanel();
         s2 = new ShoppingCartObservable(this);
+        h = new HistoryObservable(this);
 
         categorypanel = new ProductListUpdater2();
         jLabel1.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -88,6 +91,7 @@ public class IMatView extends FrameView implements Observer{
         categorySmallPanel.add(r, "kvitto");
         categorySmallPanel.add(s2.getPanel(), "kundvagn");
         categorySmallPanel.add(categorypanel.getProductPanel(), "categorypanel");
+        categorySmallPanel.add(h.getPanel(), "historik");
         
         categoryPanel.add(s.getPanel(), "sidepanel");
         searchPanel.setLayout(new GridLayout(1, 1));
@@ -389,8 +393,11 @@ private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
             } else if(c.getPanelType() == Category.PANELTYPE.SEARCH) {
                 List<Product> l = new LinkedList<Product>();
                 l = data.findProducts(c.getCategoryName());
-                System.out.println(c.getCategoryName());
                 categorypanel.setView(l, "Sökresultat: ", c.getCategoryName());
+            } else if(c.getPanelType() == Category.PANELTYPE.ORDER) {
+                List<ShoppingItem> l = new LinkedList();
+                List<Product> p = new LinkedList();
+                categorypanel.setView(l, c.getCategoryName());
             }
             changePanel("categorypanel");
             

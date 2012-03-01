@@ -294,6 +294,9 @@ public class ProductPanel extends javax.swing.JPanel {
     public Product getProduct(){
         return product;
     }
+    public void setAmount(int x) {
+        amount = x;
+    }
     public void setFavoritesButton(){
         if(isFavorite){
             addToFavorites.setIcon(addFavoritesIcon);

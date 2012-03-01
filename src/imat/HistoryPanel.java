@@ -10,28 +10,35 @@
  */
 package imat;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.*;
-import se.chalmers.ait.dat215.project.ProductCategory;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Order;
 
 /**
  *
  * @author e
  */
-public class ProductList extends javax.swing.JPanel {
-    
+public class HistoryPanel extends javax.swing.JPanel {
+    IMatDataHandler dh = IMatDataHandler.getInstance();
+    List<JButton> detailButtons;
 
     /** Creates new form ProductList */
-    public ProductList() {
+    public HistoryPanel() {
         initComponents();
         categoryLabel.setFont(new Font("Georgia", Font.PLAIN, 24));
         categoryLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, (new Color(164,157,157))));
         categoryScrollPane.setBorder(null);
 	categoryScrollPane.setViewportBorder(null);
-        
         categoryScrollPane.getVerticalScrollBar().setUnitIncrement(20);
         //categoryScrollPane.repaint();
         //categoryScrollPane.revalidate();
+        updateView();
     }
 
     /** This method is called from within the constructor to
@@ -48,9 +55,8 @@ public class ProductList extends javax.swing.JPanel {
         scrollPanel = new javax.swing.JPanel();
         leftLabel = new javax.swing.JLabel();
         middleLabel = new javax.swing.JLabel();
-        rightLabel = new javax.swing.JLabel();
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(ProductList.class);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(imat.IMatApp.class).getContext().getResourceMap(HistoryPanel.class);
         setBackground(resourceMap.getColor("Form.background")); // NOI18N
         setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         setName("Form"); // NOI18N
@@ -83,12 +89,6 @@ public class ProductList extends javax.swing.JPanel {
         middleLabel.setText(resourceMap.getString("middleLabel.text")); // NOI18N
         middleLabel.setName("middleLabel"); // NOI18N
 
-        rightLabel.setBackground(resourceMap.getColor("rightLabel.background")); // NOI18N
-        rightLabel.setFont(resourceMap.getFont("rightLabel.font")); // NOI18N
-        rightLabel.setForeground(resourceMap.getColor("rightLabel.foreground")); // NOI18N
-        rightLabel.setText(resourceMap.getString("rightLabel.text")); // NOI18N
-        rightLabel.setName("rightLabel"); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -100,9 +100,7 @@ public class ProductList extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(leftLabel)
                         .addGap(306, 306, 306)
-                        .addComponent(middleLabel)
-                        .addGap(53, 53, 53)
-                        .addComponent(rightLabel))
+                        .addComponent(middleLabel))
                     .addComponent(categoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -114,8 +112,7 @@ public class ProductList extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(leftLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(middleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rightLabel))
+                    .addComponent(middleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(categoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE))
         );
@@ -125,37 +122,28 @@ public class ProductList extends javax.swing.JPanel {
     private javax.swing.JScrollPane categoryScrollPane;
     private javax.swing.JLabel leftLabel;
     private javax.swing.JLabel middleLabel;
-    private javax.swing.JLabel rightLabel;
     private javax.swing.JPanel scrollPanel;
     // End of variables declaration//GEN-END:variables
 
-    public void addToProductList(ProductPanel productPanel) {
-        scrollPanel.add(productPanel);
-        categoryLabel.setFont(new Font("sans serif", Font.BOLD, 20));
-        rightLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
-        middleLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
-        leftLabel.setFont(new Font("Georgia", Font.PLAIN, 16));
-        rightLabel.setForeground(new Color(195, 182, 154));
-        middleLabel.setForeground(new Color(195, 182, 154));
-        leftLabel.setForeground(new Color(195, 182, 154));
-        rightLabel.setText("Mängd");
-        scrollPanel.repaint();
-        categoryScrollPane.repaint();
-        scrollPanel.revalidate();
-        categoryScrollPane.revalidate();
-    }    
-    public void addToProductList(FavoritesPanel favoritePanel) {
-        scrollPanel.add(favoritePanel);
+    public void updateView() {
+        List<Order> l = dh.getOrders();
+        OrderPanel p;
+        detailButtons = new ArrayList();
+        for(int i = 0; i < l.size(); i++) {
+            p = new OrderPanel(l.get(i));
+            detailButtons.add(p.getDetailButton());
+        }
         scrollPanel.repaint();
         categoryScrollPane.repaint();
         scrollPanel.revalidate();
         categoryScrollPane.revalidate();
     } 
     
-    public void setCategoryName(String name){
-        categoryLabel.setText(name);
-    }
     public JPanel getTestUpdate(){
         return scrollPanel;
+    }
+    
+    public List<JButton> getButtons() {
+        return detailButtons;
     }
 }

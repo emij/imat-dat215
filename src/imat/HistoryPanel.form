@@ -33,8 +33,6 @@
                       <Component id="leftLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
                       <Component id="middleLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      <Component id="rightLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="categoryLabel" alignment="0" min="-2" pref="650" max="-2" attributes="0"/>
               </Group>
@@ -51,7 +49,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="leftLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="middleLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                  <Component id="rightLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="categoryScrollPane" pref="317" max="32767" attributes="0"/>
@@ -119,15 +116,6 @@
         <Property name="foreground" type="java.awt.Color" resourceKey="middleLabel.foreground"/>
         <Property name="text" type="java.lang.String" resourceKey="middleLabel.text"/>
         <Property name="name" type="java.lang.String" value="middleLabel" noResource="true"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="rightLabel">
-      <Properties>
-        <Property name="background" type="java.awt.Color" resourceKey="rightLabel.background"/>
-        <Property name="font" type="java.awt.Font" resourceKey="rightLabel.font"/>
-        <Property name="foreground" type="java.awt.Color" resourceKey="rightLabel.foreground"/>
-        <Property name="text" type="java.lang.String" resourceKey="rightLabel.text"/>
-        <Property name="name" type="java.lang.String" value="rightLabel" noResource="true"/>
       </Properties>
     </Component>
   </SubComponents>

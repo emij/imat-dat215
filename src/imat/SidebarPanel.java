@@ -79,14 +79,11 @@ public class SidebarPanel extends Observable implements MouseListener{
         } else if(me.getSource() == labels[10]) {
             this.notifyObservers(new Category(ProductCategory.SWEET));
         } else if(me.getSource() == tools[0]) {
-
             this.notifyObservers(new Category("Varor A-Ö", Category.PANELTYPE.ALFA));
         } else if(me.getSource() == tools[1]) {
             this.notifyObservers(new Category("Favoriter", Category.PANELTYPE.FAVORITES));
-            //Anropa CategoryCard med l;
         } else if(me.getSource() == tools[2]) {
-            List<Order> orderList = dh.getOrders();
-            //Anropa CategoryCard med orderList
+            this.notifyObservers("historik");
         } else if(me.getSource().equals(c.getHeader())) {
             this.notifyObservers("category");
         } else if(me.getSource().equals(c.getHelpButton())) {

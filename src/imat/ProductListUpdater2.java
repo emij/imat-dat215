@@ -61,12 +61,49 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
     
     //Måste sätta value (amount) också.. Hanterar äldre ordrar
     public void setView(List<ShoppingItem> si, String header) {
-        categoryName = header;
+        categoryName = "Ordernummer: " + header;
+        productList.setCategoryName(categoryName);
+
+        /*
         products.clear();
         for(ShoppingItem s : si) {
             products.add(s.getProduct());
-        }
+        }*/
+        orderList(si, header);
         newProductList(categoryName);
+    }
+    
+    public void orderList(List<ShoppingItem> si, String header) {
+        productList.getTestUpdate().removeAll();
+        productList.getTestUpdate().revalidate();
+        productList.getTestUpdate().repaint();
+        
+        productPanels = new ProductPanel[si.size()];
+        favoriteButtons = new ArrayList<JButton>();
+        chartButtons = new ArrayList<JButton>();
+        valueMinusButtons = new ArrayList<JButton>();
+        valuePlusButtons = new ArrayList<JButton>();
+        
+        for(int i = 0; i < si.size(); i++){
+        
+            productPanels[i] = new ProductPanel(si.get(i).getProduct());
+            
+            favoriteButtons.add(i, productPanels[i].getFavoritesButton());
+            chartButtons.add(i, productPanels[i].getChartButton());
+            valueMinusButtons.add(i, productPanels[i].getMinusButton());
+            valuePlusButtons.add(i, productPanels[i].getPlusButton());
+            
+            //Add actionlisteners to all buttons
+            favoriteButtons.get(i).addActionListener(this);
+            chartButtons.get(i).addActionListener(this);
+            valueMinusButtons.get(i).addActionListener(this);
+            valuePlusButtons.get(i).addActionListener(this);
+            int value = (int)si.get(i).getAmount();
+            productPanels[i].setAmount(value);
+            
+            productPanels[i].setBorder(null);
+            productList.addToProductList(productPanels[i]);
+        }
     }
     
     public void newProductList(String categoryName) {
