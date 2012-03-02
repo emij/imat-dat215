@@ -69,10 +69,11 @@ public class IMatView extends FrameView implements Observer{
         h = new HistoryObservable(this);
         
         
+        
         categorypanel = new ProductListUpdater2();
         jLabel1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         
-        categorySmallPanel.setMaximumSize(new Dimension(500,500));
+        categorySmallPanel.setMaximumSize(new Dimension(623,429));
         categorySmallPanel.add(c.getPanel(), "category");
         categorySmallPanel.add(d.getPanel(), "drinks");
         categorySmallPanel.add(f.getPanel(), "fr");

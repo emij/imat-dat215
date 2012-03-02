@@ -41,6 +41,17 @@ public class ProductPanel extends javax.swing.JPanel {
         initComponents();
         this.product = product;
         isFavorite = data.isFavorite(product);
+        amount = 1;
+        initMyComponents();  
+        this.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, typBrun));
+        this.repaint();
+        this.revalidate();
+    }
+    public ProductPanel(Product product, int amount){
+        initComponents();
+        this.product = product;
+        isFavorite = data.isFavorite(product);
+        this.amount = amount;
         initMyComponents();  
         this.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, typBrun));
         this.repaint();
@@ -248,7 +259,6 @@ public class ProductPanel extends javax.swing.JPanel {
 
     private void initMyComponents() {
         path = "resources/bilder/";
-        amount = 1;
         addFavoritesIcon = new ImageIcon(getClass().getResource(path + "laggtill_favoriter.png"));
         remFavoritesIcon = new ImageIcon(getClass().getResource(path + "tabort_favoriter.png"));
         addChartIcon = new ImageIcon(getClass().getResource(path + "laggtill_kundvagn.png"));

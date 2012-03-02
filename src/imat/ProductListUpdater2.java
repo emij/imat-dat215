@@ -80,11 +80,11 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
         chartButtons = new ArrayList<JButton>();
         valueMinusButtons = new ArrayList<JButton>();
         valuePlusButtons = new ArrayList<JButton>();
-        
+        products = new ArrayList<Product>();
         for(int i = 0; i < si.size(); i++){
-        
-            productPanels[i] = new ProductPanel(si.get(i).getProduct());
-            
+            int value = (int)si.get(i).getAmount();
+            productPanels[i] = new ProductPanel(si.get(i).getProduct(), value);
+            products.add(i, si.get(i).getProduct());
             favoriteButtons.add(i, productPanels[i].getFavoritesButton());
             chartButtons.add(i, productPanels[i].getChartButton());
             valueMinusButtons.add(i, productPanels[i].getMinusButton());
@@ -95,8 +95,8 @@ public class ProductListUpdater2 extends Observable implements ActionListener {
             chartButtons.get(i).addActionListener(this);
             valueMinusButtons.get(i).addActionListener(this);
             valuePlusButtons.get(i).addActionListener(this);
-            int value = (int)si.get(i).getAmount();
-            productPanels[i].setAmount(value);
+            
+            
             
             productPanels[i].setBorder(null);
             productList.addToProductList(productPanels[i]);

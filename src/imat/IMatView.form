@@ -34,7 +34,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="logPanel" min="-2" max="-2" attributes="3"/>
-                              <EmptySpace pref="80" max="32767" attributes="0"/>
+                              <EmptySpace pref="96" max="32767" attributes="0"/>
                               <Component id="valuePanel" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -43,12 +43,12 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="backButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                                      <EmptySpace pref="59" max="32767" attributes="0"/>
                                       <Component id="searchPanel" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="featurePanel" pref="585" max="32767" attributes="0"/>
+                                      <Component id="featurePanel" pref="595" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -67,7 +67,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="categoryPanel" pref="523" max="32767" attributes="0"/>
+                              <Component id="categoryPanel" pref="525" max="32767" attributes="0"/>
                               <EmptySpace min="20" pref="20" max="20" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -76,7 +76,7 @@
                                   <Component id="searchPanel" min="-2" max="-2" attributes="1"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="featurePanel" pref="471" max="32767" attributes="0"/>
+                              <Component id="featurePanel" pref="474" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -156,14 +156,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="categorySmallPanel" pref="565" max="32767" attributes="0"/>
+                              <Component id="categorySmallPanel" pref="583" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="categorySmallPanel" pref="451" max="32767" attributes="0"/>
+                              <Component id="categorySmallPanel" pref="462" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>

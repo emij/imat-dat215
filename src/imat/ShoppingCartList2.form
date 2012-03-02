@@ -57,11 +57,11 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="categoryScrollPane" pref="270" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="emptyChartButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="nextButton" min="-2" max="-2" attributes="0"/>
-                  <Component id="totalAmountDue" pref="52" max="32767" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="emptyChartButton" alignment="1" max="32767" attributes="1"/>
+                  <Component id="nextButton" alignment="1" max="32767" attributes="1"/>
+                  <Component id="totalAmountDue" alignment="1" max="32767" attributes="1"/>
               </Group>
               <EmptySpace min="12" pref="12" max="12" attributes="0"/>
           </Group>
@@ -150,6 +150,7 @@
         <Property name="font" type="java.awt.Font" resourceKey="totalAmountDue.font"/>
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" resourceKey="totalAmountDue.text"/>
+        <Property name="alignmentX" type="float" value="0.5"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
             <EmptyBorder/>

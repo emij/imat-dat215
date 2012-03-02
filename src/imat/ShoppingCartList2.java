@@ -111,6 +111,7 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
         totalAmountDue.setFont(resourceMap.getFont("totalAmountDue.font")); // NOI18N
         totalAmountDue.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         totalAmountDue.setText(resourceMap.getString("totalAmountDue.text")); // NOI18N
+        totalAmountDue.setAlignmentX(0.5F);
         totalAmountDue.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         totalAmountDue.setName("totalAmountDue"); // NOI18N
 
@@ -166,11 +167,11 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
                     .addComponent(rightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(categoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(emptyChartButton)
-                    .addComponent(nextButton)
-                    .addComponent(totalAmountDue, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(emptyChartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nextButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(totalAmountDue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
     }// </editor-fold>//GEN-END:initComponents
