@@ -67,8 +67,7 @@ public class IMatView extends FrameView implements Observer{
         r = new ReceiptPanel();
         s2 = new ShoppingCartObservable(this);
         h = new HistoryObservable(this);
-        
-        
+       
         
         categorypanel = new ProductListUpdater2();
         jLabel1.setCursor(new Cursor(Cursor.HAND_CURSOR));

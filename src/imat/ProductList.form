@@ -36,7 +36,7 @@
                       <Component id="leftLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="302" max="-2" attributes="0"/>
                       <Component id="middleLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                       <Component id="rightLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jPanel1" alignment="0" max="32767" attributes="1"/>

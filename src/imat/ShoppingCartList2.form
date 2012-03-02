@@ -20,10 +20,10 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="categoryScrollPane" alignment="0" pref="760" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="categoryScrollPane" alignment="0" pref="632" max="32767" attributes="1"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="leftLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
@@ -31,16 +31,16 @@
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="rightLabel" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="categoryLabel" alignment="0" min="-2" pref="650" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="1">
                       <Component id="emptyChartButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="totalAmountDue" min="-2" pref="302" max="-2" attributes="0"/>
-                      <EmptySpace pref="110" max="32767" attributes="0"/>
+                      <Component id="totalAmountDue" min="-2" pref="254" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="nextButton" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="categoryLabel" alignment="0" pref="632" max="32767" attributes="1"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -55,15 +55,15 @@
                   <Component id="middleLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="rightLabel" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="categoryScrollPane" min="-2" pref="250" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="categoryScrollPane" pref="270" max="32767" attributes="0"/>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="emptyChartButton" alignment="1" max="32767" attributes="1"/>
-                  <Component id="nextButton" alignment="1" max="32767" attributes="1"/>
-                  <Component id="totalAmountDue" alignment="1" max="32767" attributes="1"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="totalAmountDue" pref="35" max="32767" attributes="1"/>
+                  <Component id="emptyChartButton" alignment="0" min="-2" max="-2" attributes="1"/>
+                  <Component id="nextButton" min="-2" max="-2" attributes="1"/>
               </Group>
-              <EmptySpace min="12" pref="12" max="12" attributes="0"/>
+              <EmptySpace pref="23" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

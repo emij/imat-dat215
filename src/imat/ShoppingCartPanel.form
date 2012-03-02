@@ -29,17 +29,17 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="leftPanel" min="-2" pref="303" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="pricePanel" min="-2" max="-2" attributes="0"/>
+              <Component id="pricePanel" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="rightPanel" pref="277" max="32767" attributes="0"/>
+              <Component id="rightPanel" min="-2" pref="316" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="rightPanel" alignment="0" pref="55" max="32767" attributes="0"/>
           <Component id="leftPanel" alignment="1" pref="55" max="32767" attributes="0"/>
           <Component id="pricePanel" alignment="0" max="32767" attributes="0"/>
+          <Component id="rightPanel" alignment="0" pref="55" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -147,7 +147,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="productPrice" alignment="1" pref="78" max="32767" attributes="0"/>
+              <Component id="productPrice" alignment="1" pref="96" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">

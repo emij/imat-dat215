@@ -131,7 +131,7 @@ public class ProductList extends javax.swing.JPanel {
                         .addComponent(leftLabel)
                         .addGap(302, 302, 302)
                         .addComponent(middleLabel)
-                        .addGap(56, 56, 56)
+                        .addGap(68, 68, 68)
                         .addComponent(rightLabel))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
