@@ -73,7 +73,7 @@
                   </Group>
                   <Component id="cardPanel" min="-2" pref="301" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="9" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="doneButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -143,9 +143,11 @@
     <Component class="javax.swing.JButton" name="doneButton">
       <Properties>
         <Property name="font" type="java.awt.Font" resourceKey="doneButton.font"/>
+        <Property name="icon" type="javax.swing.Icon" resourceKey="doneButton.icon"/>
         <Property name="text" type="java.lang.String" resourceKey="doneButton.text"/>
+        <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Handmark&#xf6;r"/>
+          <Color id="Default Cursor"/>
         </Property>
         <Property name="name" type="java.lang.String" value="doneButton" noResource="true"/>
       </Properties>

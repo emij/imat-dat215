@@ -155,8 +155,10 @@ public class PaymentPanel extends javax.swing.JPanel {
         jSeparator1.setName("jSeparator1"); // NOI18N
 
         doneButton.setFont(resourceMap.getFont("doneButton.font")); // NOI18N
+        doneButton.setIcon(resourceMap.getIcon("doneButton.icon")); // NOI18N
         doneButton.setText(resourceMap.getString("doneButton.text")); // NOI18N
-        doneButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        doneButton.setBorderPainted(false);
+        doneButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         doneButton.setName("doneButton"); // NOI18N
         doneButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -199,7 +201,7 @@ public class PaymentPanel extends javax.swing.JPanel {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(kontantButton))
                     .add(cardPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 301, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(doneButton)
                 .addContainerGap())
         );
