@@ -310,6 +310,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         amount = amount + 1;
         value.setText("" + amount);
         item.setAmount(amount);
+        sc.fireShoppingCartChanged();
         
     }
     public void negValue(ShoppingItem item){
@@ -317,6 +318,7 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
             amount = amount -1;
             value.setText("" + amount);
             item.setAmount(amount);
+            sc.fireShoppingCartChanged();
         }
     }
     public void zeroValue(){

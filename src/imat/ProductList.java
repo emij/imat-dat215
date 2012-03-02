@@ -56,6 +56,7 @@ public class ProductList extends javax.swing.JPanel {
         setBackground(resourceMap.getColor("Form.background")); // NOI18N
         setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         setName("Form"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(623, 429));
 
         categoryScrollPane.setBackground(resourceMap.getColor("categoryScrollPane.background")); // NOI18N
         categoryScrollPane.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));

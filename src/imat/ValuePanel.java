@@ -138,6 +138,7 @@ public class ValuePanel extends JPanel implements ShoppingCartListener, Serializ
 
 
     public void shoppingCartChanged() {
+        System.out.println("Lagt till vara");
         setLabeltext();
         repaint();
         revalidate();
