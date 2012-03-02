@@ -32,9 +32,11 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
     private ImageIcon remFavoritesIcon;
     private ImageIcon plusIcon;
     private ImageIcon minusIcon;
-    
+    ShoppingItem shopitem;
     private IMatDataHandler data = IMatDataHandler.getInstance();
-    private Color typBrun = new Color(195, 182, 154);
+
+    ShoppingCart sc = data.getShoppingCart();
+    private Color typBrun = new Color(164, 157, 157);
     /** Creates new form ShoppingCartPanel */
     
     public ShoppingCartPanel(Product product, int amount, Double totalValue){
@@ -304,19 +306,23 @@ public class ShoppingCartPanel extends javax.swing.JPanel {
         this.totalValue = totalValue;
         totalCost.setText("" + totalValue + " kr");
     }
-    public void addValue(){
+    public void addValue(ShoppingItem item){
         amount = amount + 1;
         value.setText("" + amount);
+        item.setAmount(amount);
+        
     }
-    public void negValue(){
+    public void negValue(ShoppingItem item){
         if (amount != 1){
             amount = amount -1;
             value.setText("" + amount);
+            item.setAmount(amount);
         }
     }
     public void zeroValue(){
         amount = 1;
         value.setText("" + amount);
+        sc.removeProduct(product);
     }
     public void changeMouseCursor(){
         addToFavorites.setCursor(new Cursor(Cursor.HAND_CURSOR));

@@ -117,12 +117,18 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
 
         nextButton.setIcon(resourceMap.getIcon("nextButton.icon")); // NOI18N
         nextButton.setText(resourceMap.getString("nextButton.text")); // NOI18N
+        nextButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         nextButton.setBorderPainted(false);
         nextButton.setDisabledIcon(resourceMap.getIcon("nextButton.disabledIcon")); // NOI18N
+        nextButton.setMaximumSize(new java.awt.Dimension(136, 35));
+        nextButton.setMinimumSize(new java.awt.Dimension(136, 35));
         nextButton.setName("nextButton"); // NOI18N
+        nextButton.setPreferredSize(new java.awt.Dimension(136, 35));
 
         emptyChartButton.setIcon(resourceMap.getIcon("emptyChartButton.icon")); // NOI18N
         emptyChartButton.setText(resourceMap.getString("emptyChartButton.text")); // NOI18N
+        emptyChartButton.setAlignmentX(0.5F);
+        emptyChartButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         emptyChartButton.setBorderPainted(false);
         emptyChartButton.setDisabledIcon(resourceMap.getIcon("emptyChartButton.disabledIcon")); // NOI18N
         emptyChartButton.setName("emptyChartButton"); // NOI18N
@@ -207,6 +213,7 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
         favoriteButtons.clear();
         plusButtons.clear();
         minusButtons.clear();
+        cartPanels.clear();
         
         for(int i = 0; i < shoppingItems.size(); i++) {
             product = shoppingItems.get(i).getProduct();
@@ -250,9 +257,11 @@ public class ShoppingCartList2 extends javax.swing.JPanel implements ActionListe
                 } else if(ae.getSource().equals(favoriteButtons.get(i))) {
                     cartPanels.get(i).setFavoritesButton();
                 } else if(ae.getSource().equals(plusButtons.get(i))) {
-                    cartPanels.get(i).addValue();
+                    cartPanels.get(i).addValue(shoppingItems.get(i));
+                    updateView();
                 } else if(ae.getSource().equals(minusButtons.get(i))) {
-                    cartPanels.get(i).negValue();
+                    cartPanels.get(i).negValue(shoppingItems.get(i));
+                    updateView();
                 }
         }
         
