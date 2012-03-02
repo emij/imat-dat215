@@ -148,10 +148,10 @@ public class IMatView extends FrameView implements Observer{
         categoryPanel = new javax.swing.JPanel();
         featurePanel = new javax.swing.JPanel();
         categoryBigPanel = new javax.swing.JPanel();
-        backButton = new javax.swing.JButton();
         categorySmallPanel = new javax.swing.JPanel();
-        searchPanel = new javax.swing.JPanel();
         valuePanel = new javax.swing.JPanel();
+        backButton = new javax.swing.JButton();
+        searchPanel = new javax.swing.JPanel();
 
         mainPanel.setName("mainPanel"); // NOI18N
 
@@ -200,6 +200,42 @@ public class IMatView extends FrameView implements Observer{
         categoryBigPanel.setBackground(resourceMap.getColor("categoryBigPanel.background")); // NOI18N
         categoryBigPanel.setName("categoryBigPanel"); // NOI18N
 
+        categorySmallPanel.setBackground(null);
+        categorySmallPanel.setForeground(resourceMap.getColor("categorySmallPanel.foreground")); // NOI18N
+        categorySmallPanel.setName("categorySmallPanel"); // NOI18N
+        categorySmallPanel.setLayout(new java.awt.CardLayout());
+
+        org.jdesktop.layout.GroupLayout categoryBigPanelLayout = new org.jdesktop.layout.GroupLayout(categoryBigPanel);
+        categoryBigPanel.setLayout(categoryBigPanelLayout);
+        categoryBigPanelLayout.setHorizontalGroup(
+            categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(categoryBigPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE))
+        );
+        categoryBigPanelLayout.setVerticalGroup(
+            categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(categoryBigPanelLayout.createSequentialGroup()
+                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 451, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        featurePanel.add(categoryBigPanel, "card2");
+
+        valuePanel.setBackground(resourceMap.getColor("valuePanel.background")); // NOI18N
+        valuePanel.setName("valuePanel"); // NOI18N
+
+        org.jdesktop.layout.GroupLayout valuePanelLayout = new org.jdesktop.layout.GroupLayout(valuePanel);
+        valuePanel.setLayout(valuePanelLayout);
+        valuePanelLayout.setHorizontalGroup(
+            valuePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 428, Short.MAX_VALUE)
+        );
+        valuePanelLayout.setVerticalGroup(
+            valuePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 103, Short.MAX_VALUE)
+        );
+
         backButton.setIcon(resourceMap.getIcon("backButton.icon")); // NOI18N
         backButton.setText(resourceMap.getString("backButton.text")); // NOI18N
         backButton.setActionCommand(resourceMap.getString("backButton.actionCommand")); // NOI18N
@@ -214,11 +250,6 @@ public class IMatView extends FrameView implements Observer{
             }
         });
 
-        categorySmallPanel.setBackground(null);
-        categorySmallPanel.setForeground(resourceMap.getColor("categorySmallPanel.foreground")); // NOI18N
-        categorySmallPanel.setName("categorySmallPanel"); // NOI18N
-        categorySmallPanel.setLayout(new java.awt.CardLayout());
-
         searchPanel.setBackground(resourceMap.getColor("searchPanel.background")); // NOI18N
         searchPanel.setName("searchPanel"); // NOI18N
 
@@ -226,53 +257,11 @@ public class IMatView extends FrameView implements Observer{
         searchPanel.setLayout(searchPanelLayout);
         searchPanelLayout.setHorizontalGroup(
             searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 357, Short.MAX_VALUE)
+            .add(0, 359, Short.MAX_VALUE)
         );
         searchPanelLayout.setVerticalGroup(
             searchPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(0, 65, Short.MAX_VALUE)
-        );
-
-        org.jdesktop.layout.GroupLayout categoryBigPanelLayout = new org.jdesktop.layout.GroupLayout(categoryBigPanel);
-        categoryBigPanel.setLayout(categoryBigPanelLayout);
-        categoryBigPanelLayout.setHorizontalGroup(
-            categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, categoryBigPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, categoryBigPanelLayout.createSequentialGroup()
-                        .add(backButton)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 129, Short.MAX_VALUE)
-                        .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        categoryBigPanelLayout.setVerticalGroup(
-            categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(categoryBigPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .add(categoryBigPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(backButton)
-                    .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(2, 2, 2)
-                .add(categorySmallPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        featurePanel.add(categoryBigPanel, "card2");
-
-        valuePanel.setBackground(resourceMap.getColor("valuePanel.background")); // NOI18N
-        valuePanel.setName("valuePanel"); // NOI18N
-
-        org.jdesktop.layout.GroupLayout valuePanelLayout = new org.jdesktop.layout.GroupLayout(valuePanel);
-        valuePanel.setLayout(valuePanelLayout);
-        valuePanelLayout.setHorizontalGroup(
-            valuePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 376, Short.MAX_VALUE)
-        );
-        valuePanelLayout.setVerticalGroup(
-            valuePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 103, Short.MAX_VALUE)
         );
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
@@ -282,15 +271,22 @@ public class IMatView extends FrameView implements Observer{
             .add(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(logPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(categoryPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(10, 10, 10)
-                        .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE))
+                        .add(logPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 80, Short.MAX_VALUE)
+                        .add(valuePanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(valuePanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                        .add(categoryPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 194, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jPanel1Layout.createSequentialGroup()
+                                .add(22, 22, 22)
+                                .add(backButton)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 43, Short.MAX_VALUE)
+                                .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 585, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -301,9 +297,14 @@ public class IMatView extends FrameView implements Observer{
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel1Layout.createSequentialGroup()
-                        .add(categoryPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+                        .add(categoryPanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
                         .add(20, 20, 20))
-                    .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 538, Short.MAX_VALUE)))
+                    .add(jPanel1Layout.createSequentialGroup()
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(backButton)
+                            .add(searchPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(featurePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE))))
         );
 
         org.jdesktop.layout.GroupLayout mainPanelLayout = new org.jdesktop.layout.GroupLayout(mainPanel);
